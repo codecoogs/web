@@ -11,9 +11,9 @@ Make sure you have the following on your machine:
 - pnpm - [Install](https://pnpm.io/installation) | [Documentation](https://pnpm.io/motivation)
 
 We recommend being familiar with these:
-- React [Documentation](https://reactjs.org/docs/getting-started.html)
-- TypeScript [Documentation](https://www.typescriptlang.org/docs/)
-- TailwindCSS [Documentation](https://tailwindcss.com/docs/utility-first)
+- React - [Documentation](https://reactjs.org/docs/getting-started.html)
+- TypeScript - [Documentation](https://www.typescriptlang.org/docs/)
+- TailwindCSS - [Documentation](https://tailwindcss.com/docs/utility-first)
 
 ### Installation
 Clone the repository onto your machine
