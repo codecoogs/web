@@ -1,16 +1,19 @@
 import React from "react";
 
+import Navbar from "./Navbar";
+
 interface LayoutProps {
     children: React.ReactNode;
 };
 
 const Layout = (props: LayoutProps) => {
     return (
-        <React.Fragment>
+        <>
+            <Navbar />
             <main>
                 {props.children}
             </main>
-        </React.Fragment>
+        </>
     );
 };
 
