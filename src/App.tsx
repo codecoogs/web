@@ -7,12 +7,14 @@ import {
 
 import Layout from "./common/Layout";
 
+import Home from "./home/Home";
+
 const App = () => {
     return (
         <BrowserRouter>
             <Layout>
                 <Routes>
-                    <Route exact path="/" element={<p>Hello World</p>} />
+                    <Route exact path="/" element={<Home />} />
                 </Routes>
             </Layout>
         </BrowserRouter>
