@@ -22,8 +22,8 @@ module.exports = {
                 variant: "#0077ff",
             },
             surface: {
-                DEFAULT: "#292929",
-                variant: "#121212",
+                DEFAULT: "#121212",
+                variant: "#292929",
             },
             error: "#cf6679",
         },
@@ -33,6 +33,9 @@ module.exports = {
     screens: {
         "sm": "320px",
         "lg": "1024px",
+    },
+    fontFamily: {
+        custom: ['Fira Code'],
     },
   },
 }
