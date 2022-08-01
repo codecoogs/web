@@ -8,12 +8,12 @@ interface LayoutProps {
 
 const Layout = (props: LayoutProps) => {
     return (
-        <>
+        <div className="bg-dark-surface h-screen font-custom">
             <Navbar />
             <main>
                 {props.children}
             </main>
-        </>
+        </div>
     );
 };
 
