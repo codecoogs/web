@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 
+import banner from "../assets/banner.png";
+
 interface HomeButtonProps {
     link: string;
     children: string;
@@ -26,6 +28,9 @@ const Home = () => {
 
     return (
         <>
+            <div className="pt-16">
+                <img className="my-0 mx-auto" src={banner} alt="Banner" width="800" height="240"/>
+            </div>
             <div className="flex flex-wrap">
                 <div className="w-1/5"></div>
                 <div className="w-1/5">
