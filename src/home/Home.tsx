@@ -31,6 +31,9 @@ const Home = () => {
             <div className="pt-16">
                 <img className="my-0 mx-auto" src={banner} alt="Banner" width="800" height="240"/>
             </div>
+            <div className="my-16 text-center">
+                <span className="text-2xl text-white">Competitive Programming Organization</span>
+            </div>
             <div className="flex flex-wrap">
                 <div className="w-1/5"></div>
                 <div className="w-1/5">
