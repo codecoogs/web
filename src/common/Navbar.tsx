@@ -1,23 +1,78 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+
+import logo from "../assets/coco.png";
+
+const setTextColor = (to: string) => {
+    const location = useLocation();
+
+    if (location.pathname == to) {
+        return "text-dark-primary"
+    }
+
+    return "text-white";
+};
 
 interface NavlinkProps {
     to: string;
-    children: React.ReactNode;
+    text: string;
 };
 
 const Navlink = (props: NavlinkProps) => {
-    const location = useLocation();
+    const [isHover, setIsHover] = useState<boolean>(false);
 
-    let textColor = "text-white";
-    if (location.pathname == props.to) textColor = "text-dark-primary";
+    const textColor = setTextColor(props.to);
+
+    const handleMouseEnter = () => {
+        setIsHover(true);
+    };
+
+    const handleMouseLeave = () => {
+        setIsHover(false);
+    };
+
+    return (
+        <li>
+            <Link
+                className={`block h-full ${textColor} font-semibold hover:text-dark-primary`}
+                to={props.to}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+            >
+                {isHover ? 
+                    <span>[{props.text}]</span>
+                    :
+                    <span>&nbsp;{props.text}&nbsp;</span>
+                }
+            </Link>
+        </li>
+    );
+};
+
+const Navhome = () => {
+    const [isHover, setIsHover] = useState<boolean>(false);
+
+    const textColor = setTextColor("/");
+
+    const handleMouseEnter = () => {
+        setIsHover(true);
+    };
+
+    const handleMouseLeave = () => {
+        setIsHover(false);
+    };
 
     return (
         <Link
-            className={"mr-6 h-full "+ textColor +" font-semibold hover:text-dark-primary"}
-            to={props.to}
+            className={"flex items-center ml-4"}
+            to="/"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
         >
-            {props.children}
+            <img className="mr-4" src={logo} alt="Logo" width="64" height="64"/>
+            <span className={`self-center text-2xl ${textColor} font-semibold hover:text-dark-primary`} >
+                Code{isHover ? "[" : " "}<span className="text-dark-error">Coogs</span>{isHover ? "]" : " "}
+            </span>
         </Link>
     );
 };
@@ -25,16 +80,14 @@ const Navlink = (props: NavlinkProps) => {
 const Navbar = () => {
     return (
         <nav className="bg-dark-surface-variant lg:h-16 sm:h-14">
-            <div className="flex">
-                <div className="pl-4 pt-2.5 pb-2.5 text-4xl h-16">
-                    <Navlink to="/">
-                        Code <span className="text-dark-error">Coogs</span>
-                    </Navlink>
-                </div>
-                <div className="my-auto ml-auto">
-                    <Navlink to="/events">Events</Navlink>
-                    <Navlink to="/projects">Projects</Navlink>
-                    <Navlink to="/about">About</Navlink>
+            <div className="flex flex-wrap justify-between items-center mx-auto">
+                <Navhome />
+                <div className="w-auto block">
+                    <ul className="flex flex-row space-x-8 mr-4">
+                        <Navlink to="/events" text="Events"/>
+                        <Navlink to="/projects" text="Projects"/>
+                        <Navlink to="/about" text="About"/>
+                    </ul>
                 </div>
             </div>
         </nav>
