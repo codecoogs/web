@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 interface HomeButtonProps {
     link: string;
@@ -19,6 +19,10 @@ const HomeButton = (props: HomeButtonProps) => {
 };
 
 const Home = () => {
+
+    useEffect(() => {
+        document.title = "Home";
+    }, []);
 
     return (
         <>
