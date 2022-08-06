@@ -85,6 +85,7 @@ const Navbar = () => {
                 <div className="w-auto block">
                     <ul className="flex flex-row space-x-8 mr-4">
                         <Navlink to="/events" text="Events"/>
+                        <Navlink to="/teams" text="Teams"/>
                         <Navlink to="/projects" text="Projects"/>
                         <Navlink to="/about" text="About"/>
                     </ul>
