@@ -84,11 +84,12 @@ const Navbar = () => {
             <div className="flex flex-wrap justify-between items-center mx-auto">
                 <Navhome />
                 <div className="w-auto block">
-                    <ul className="flex flex-row space-x-8 mr-4">
+                    <ul className="flex flex-row space-x-4 mr-4">
+                        <Navlink to="/about" text="About"/>
                         <Navlink to="/events" text="Events"/>
                         <Navlink to="/teams" text="Teams"/>
                         <Navlink to="/projects" text="Projects"/>
-                        <Navlink to="/about" text="About"/>
+                        <Navlink to="/members" text="Members"/>
                     </ul>
                 </div>
             </div>
