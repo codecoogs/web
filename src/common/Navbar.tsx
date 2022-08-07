@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-import logo from "../assets/coco.png";
+import happyCoCo from "../assets/happy-coco.png";
+import determinedCoCo from "../assets/determined-coco.png";
 
 const setTextColor = (to: string) => {
     const location = useLocation();
@@ -69,7 +70,7 @@ const Navhome = () => {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >
-            <img className="mr-4" src={logo} alt="Logo" width="64" height="64"/>
+            <img className="mr-4" src={!isHover ? happyCoCo : determinedCoCo} alt="Logo" width="64" height="64"/>
             <span className={`self-center text-2xl ${textColor} font-semibold hover:text-dark-primary`} >
                 Code{isHover ? "[" : " "}<span className="text-dark-error">Coogs</span>{isHover ? "]" : " "}
             </span>
