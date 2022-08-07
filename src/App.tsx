@@ -8,13 +8,15 @@ import {
 import Layout from "./common/Layout";
 
 import Home from "./home/Home";
+import About from "./about/About";
 
 const App = () => {
     return (
         <BrowserRouter>
             <Layout>
                 <Routes>
-                    <Route exact path="/" element={<Home />} />
+                    <Route path="/" element={<Home />} />
+                    <Route path="/about" element={<About />} />
                 </Routes>
             </Layout>
         </BrowserRouter>
