@@ -9,6 +9,7 @@ import Layout from "./common/Layout";
 
 import Home from "./home/Home";
 import About from "./about/About";
+import Members from "./members/Members";
 
 const App = () => {
     return (
@@ -17,6 +18,7 @@ const App = () => {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/about" element={<About />} />
+                    <Route path="/members" element={<Members />} />
                 </Routes>
             </Layout>
         </BrowserRouter>
