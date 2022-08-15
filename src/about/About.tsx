@@ -33,7 +33,7 @@ interface OfficerCardProps {
 
 const OfficerCard = (props: OfficerCardProps) => {
     return (
-        <div className="bg-dark-surface-variant rounded text-center p-8">
+        <div className="bg-dark-surface-variant rounded text-center p-8 hover:text-dark-primary">
             <img 
                 className="mx-auto rounded-full"
                 src={props.avatarURL}
@@ -56,24 +56,24 @@ const About = () => {
         <div className="bg-dark-surface text-white">
             <AboutSideNav/>
             <AboutSection id="us">
-                <div className="p-8">
-                    <h1 className="text-xl">About Us</h1>
-                    <p className="text-sm">{aboutUsDesc}</p>
+                <div className="p-8 text-center">
+                    <h1 className="text-xl font-bold">About Us</h1>
+                    <p className="text-sm p-8">{aboutUsDesc}</p>
                 </div>
                 <div className="p-8">
-                    <h2 className="text-lg">Socials</h2>
+                    <h2 className="text-lg underline">Socials</h2>
                     <p className="text-sm">{socialsDesc}</p>
                 </div>
                 <div className="p-8">
-                    <h2 className="text-lg">Teams</h2>
+                    <h2 className="text-lg underline">Teams</h2>
                     <p className="text-sm">{teamsDesc}</p>
                 </div>
                 <div className="p-8">
-                    <h2 className="text-lg">Competitions</h2>
+                    <h2 className="text-lg underline">Competitions</h2>
                     <p className="text-sm">{competitionsDesc}</p>
                 </div>
                 <div className="p-8">
-                    <h2 className="text-lg">Workshops</h2>
+                    <h2 className="text-lg underline">Workshops</h2>
                     <p className="text-sm">{workshopsDesc}</p>
                 </div>
             </AboutSection>

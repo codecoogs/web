@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 import {
@@ -9,23 +9,14 @@ import {
     QuestionIcon
 } from "./AboutIcons";
 
-const setColor = (to: string) => {
-    const location = useLocation();
-    console.log(location.hash == `#${to}`, location.hash);
-    if (location.hash == `#${to}`) { 
-        return "dark-primary";
-    }
-
-    return "white";
-}
-
 interface SideNavlinkProps {
     to: string;
+    currentHash: string;
     children: React.ReactNode;
 };
 
 const SideNavlink = (props: SideNavlinkProps) => {
-    const color = setColor(props.to);
+    let color = (props.currentHash == `#${props.to}`) ? "dark-primary" : "white";
 
     return (
         <li>
@@ -52,25 +43,32 @@ const SideNavtext = (props: SideNavtextProps) => {
 };
 
 const AboutSideNav = () => {
+    const location = useLocation();
+    const [currentHash, setCurrentHash] = useState<string>(location.hash);
+
+    useEffect(() => {
+        setCurrentHash(location.hash);
+    }, [location]);
+
     return (
         <ul className="flex flex-col fixed group bg-dark-surface-variant z-1 top-1/2 left-3 white transform -translate-y-1/2 gap-y-4 p-2 rounded text-white font-semibold">
-            <SideNavlink to="us">
+            <SideNavlink to="us" currentHash={currentHash}>
                 <InfoIcon/>
                 <SideNavtext>About Us</SideNavtext>
             </SideNavlink>
-            <SideNavlink to="officers">
+            <SideNavlink to="officers" currentHash={currentHash}>
                 <OfficerIcon/>
                 <SideNavtext>Officers</SideNavtext>
             </SideNavlink>
-            <SideNavlink to="sponsors">
+            <SideNavlink to="sponsors" currentHash={currentHash}>
                 <SponsorIcon/>
                 <SideNavtext>Sponsors</SideNavtext>
             </SideNavlink>
-            <SideNavlink to="partners">
+            <SideNavlink to="partners" currentHash={currentHash}>
                 <PartnerIcon/>
                 <SideNavtext>Partners</SideNavtext>
             </SideNavlink>
-            <SideNavlink to="faq">
+            <SideNavlink to="faq" currentHash={currentHash}>
                 <QuestionIcon />
                 <SideNavtext>FAQ</SideNavtext>
             </SideNavlink>

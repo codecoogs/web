@@ -1,4 +1,4 @@
-const iconStyle = "h-6 w-6 fill-inherit"
+const iconStyle = "h-6 w-6 fill-current"
 
 export const InfoIcon = () => {
     return (
