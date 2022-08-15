@@ -40,7 +40,7 @@ const Home = () => {
                     <HomeButton link="/about">About Us</HomeButton>
                 </div>
                 <div className="w-1/5">
-                    <HomeButton link="/membership">Membership</HomeButton>
+                    <HomeButton link="/members">Membership</HomeButton>
                 </div>
                 <div className="w-1/5">
                     <HomeButton link="https://linktr.ee/codecoogs">LinkTree</HomeButton>
