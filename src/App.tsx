@@ -9,6 +9,7 @@ import Layout from "./common/Layout";
 
 import Home from "./home/Home";
 import About from "./about/About";
+import Events from "./events/Events";
 import Teams from "./teams/Teams";
 import Projects from "./projects/Projects";
 import Members from "./members/Members";
@@ -20,6 +21,7 @@ const App = () => {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/about" element={<About />} />
+                    <Route path="/events" element={<Events />} />
                     <Route path="/teams" element={<Teams />} />
                     <Route path="/projects" element={<Projects />} />
                     <Route path="/members" element={<Members />} />
