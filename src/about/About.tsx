@@ -81,7 +81,7 @@ const About = () => {
             <AboutSection id="officers">
                 <div className="p-8 text-center">
                     <h1 className="text-xl font-bold">Officers</h1>
-                    <div className="grid grid-cols-4 gap-4 p-8">
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-8">
                         { officers.map((officer, index) => {
                                 return <OfficerCard 
                                     key={index} 
