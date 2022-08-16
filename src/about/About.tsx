@@ -59,6 +59,7 @@ const About = () => {
                 <div className="p-8 text-center">
                     <h1 className="text-xl font-bold">About Us</h1>
                     <p className="text-sm p-8">{aboutUsDesc}</p>
+                    <span>Contact: <span className="text-dark-primary">main@codecoogs.com</span></span>
                 </div>
                 <div className="p-8">
                     <h2 className="text-lg underline">Socials</h2>
