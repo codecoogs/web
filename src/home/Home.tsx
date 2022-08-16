@@ -9,14 +9,14 @@ interface HomeButtonProps {
 
 const HomeButton = (props: HomeButtonProps) => {
     return (
-        <div className="bg-dark-primary w-40 h-10 mx-auto text-center rounded leading-10">
-            <a
-                className="font-semibold"
-                href={props.link}
-            >
+        <a
+            className="font-semibold"
+            href={props.link}
+        >
+            <div className="bg-dark-primary w-40 h-10 mx-auto text-center rounded leading-10">
                 {props.children}
-            </a>
-        </div>
+            </div>
+        </a>
     );
 };
 
