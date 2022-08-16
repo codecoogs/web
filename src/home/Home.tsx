@@ -27,27 +27,27 @@ const Home = () => {
     }, []);
 
     return (
-        <>
+        <div className="bg-dark-surface h-full pb-8">
             <div className="pt-16">
                 <img className="my-0 mx-auto" src={banner} alt="Banner" width="800" height="240"/>
             </div>
             <div className="my-16 text-center">
                 <span className="text-2xl text-white">Socials | Teams | Competitions | Workshops</span>
             </div>
-            <div className="flex flex-wrap">
-                <div className="w-1/5"></div>
-                <div className="w-1/5">
-                    <HomeButton link="/about">About Us</HomeButton>
-                </div>
-                <div className="w-1/5">
-                    <HomeButton link="/members">Membership</HomeButton>
-                </div>
-                <div className="w-1/5">
-                    <HomeButton link="https://linktr.ee/codecoogs">LinkTree</HomeButton>
-                </div>
-                <div className="w-1/5"></div>
+            <div className="table my-0 mx-auto">
+                <ul className="flex flex-col items-center space-x-0 space-y-4 md:space-x-24 md:space-y-0 md:flex-row">
+                    <li>
+                        <HomeButton link="/about">About Us</HomeButton>
+                    </li>
+                    <li>
+                        <HomeButton link="/members">Membership</HomeButton>
+                    </li>
+                    <li>
+                        <HomeButton link="https://linktr.ee/codecoogs">LinkTree</HomeButton>
+                    </li>
+                </ul>
             </div>
-        </>
+        </div>
     );
 };
 
