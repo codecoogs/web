@@ -10,6 +10,7 @@ import Layout from "./common/Layout";
 import Home from "./home/Home";
 import About from "./about/About";
 import Teams from "./teams/Teams";
+import Projects from "./projects/Projects";
 import Members from "./members/Members";
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
                     <Route path="/" element={<Home />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/teams" element={<Teams />} />
+                    <Route path="/projects" element={<Projects />} />
                     <Route path="/members" element={<Members />} />
                 </Routes>
             </Layout>
