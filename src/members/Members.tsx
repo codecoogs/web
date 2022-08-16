@@ -27,7 +27,8 @@ const Members = () => {
     return (
         <div className="m-8 text-white bg-dark-surface-variant rounded h-full pb-8">
             <h1 className="p-8 font-bold text-xl">Membership</h1>
-            <ul className="p-8">
+            <h2 className="px-8 font-bold text-lg">Benefits</h2>
+            <ul className="px-10 pb-8">
                 <li>
                     <span>T-shirt</span>
                 </li>
