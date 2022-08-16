@@ -78,13 +78,35 @@ const Navhome = () => {
     );
 };
 
-const Navbar = () => {
+const MenuIcon = () => {
     return (
-        <nav className="bg-dark-surface-variant lg:h-16 sm:h-14">
+        <svg class="w-6 h-6" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd">
+            </path>
+        </svg>
+    );
+};
+
+const Navbar = () => {
+    const [clicked, setClicked] = useState<boolean>(false);
+
+    const handleClick = () => {
+        setClicked(!clicked);
+    };
+
+    return (
+        <nav className="bg-dark-surface-variant lg:h-16 md:h-14">
             <div className="flex flex-wrap justify-between items-center mx-auto">
                 <Navhome />
-                <div className="w-auto block">
-                    <ul className="flex flex-row space-x-4 mr-4">
+                <button 
+                    className="inline-flex items-center fill-white md:hidden" 
+                    onClick={handleClick}
+                    type="button"
+                >
+                    <MenuIcon />
+                </button>
+                <div className={`${clicked ? "hidden": "block"} relative w-full md:w-auto md:block`}>
+                    <ul className="flex flex-col space-y-4 pb-4 items-center bg-dark-surface-variant md:pb-0 md:space-y-0 md:flex-row md:space-x-4 md:mr-4">
                         <Navlink to="/about" text="About"/>
                         <Navlink to="/events" text="Events"/>
                         <Navlink to="/teams" text="Teams"/>
