@@ -1,6 +1,9 @@
 import React from "react";
 
+import { teams } from "../data/teams";
+
 interface TeamCardProps {
+    key: number;
     children: React.ReactNode;
 };
 
@@ -16,22 +19,16 @@ const Teams = () => {
     return (
         <div className="bg-dark-surface">
             <div className="text-center">
-                <ul className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 md:flex-row m-8 bg-dark-surface pb-4">
-                    <TeamCard>
-                        <span>Git Gud</span>
-                    </TeamCard>
-                    <TeamCard>
-                        <span>Team O(n)</span>
-                    </TeamCard>
-                    <TeamCard>
-                        <span>Dream Team</span>
-                    </TeamCard>
-                    <TeamCard>
-                        <span>Runtime Terror</span>
-                    </TeamCard>
-                    <TeamCard>
-                        <span>Team Tux</span>
-                    </TeamCard>
+                <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:flex-row m-8 bg-dark-surface pb-4">
+                    { teams.map((team, index) => {
+                            return (
+                                <TeamCard key={index}>  
+                                    <img src={team.photo} alt={`${team.name} photo`}/>
+                                    <h1>{team.name}</h1>
+                                </TeamCard>
+                            );
+                      })
+                    }
                 </ul>
             </div>
         </div>
