@@ -1,3 +1,25 @@
+import jakePhoto from "../assets/officers/jake.png";
+import adamPhoto from "../assets/officers/adam.png";
+import samiPhoto from "../assets/officers/sami.png";
+import reginaldPhoto from "../assets/officers/reginald.png";
+import nataliePhoto from "../assets/officers/natalie.png";
+import peterPhoto from "../assets/officers/peter.png";
+import wyattPhoto from "../assets/officers/wyatt.png";
+import jenniferPhoto from "../assets/officers/jennifer.png";
+import benjaminPhoto from "../assets/officers/benjamin.png";
+import fernandoPhoto from "../assets/officers/fernando.png";
+import omarPhoto from "../assets/officers/omar.png";
+import hanyaPhoto from "../assets/officers/hanya.png";
+import alexandriaPhoto from "../assets/officers/alexandria.png";
+import bryantPhoto from "../assets/officers/bryant.png";
+
+import hcssLogo from "../assets/logos/hcss.png";
+import tomNTomsLogo from "../assets/logos/tom-n-toms.png";
+
+import csGirlsLogo from "../assets/logos/csgirls.webp";
+
+export const email = "main@codecoogs.com";
+
 export const aboutUsDesc = "Founded in September 2021, we are student-led computer science organization at the University of Houston. We focus on socials, teams, competitions, and workshops. We hope to foster an environment to develop exciting projects, refine technical skills, and gain new friends.";
 export const socialsDesc = "The socials are a time for members to kick back and relax. Whether it is a sports day at a park or a virtual movie night, our socials are sure to enable our members to get closer to one another to promote the community aspect within our members. Show up to our in-person socials for a good time!";
 export const teamsDesc = "Being part of a team in Code Coogs gives members the opportunity to hone their coding skills while making worthwhile friends. Members will work with a diverse group of fellow programmers, and people from all coding and cultural backgrounds. Members will get to experience a collective effort from their own team in producing a hefty end of year project showcased at our banquet";
@@ -6,73 +28,173 @@ export const workshopsDesc = "Workshops are where our members will develop their
 
 export const officers = [
     {
-        avatarURL: "https://media-exp1.licdn.com/dms/image/C5603AQE7sT0nr27Hhg/profile-displayphoto-shrink_400_400/0/1651125058280?e=1666224000&v=beta&t=0C6tndX7OsR-PMXmW2qOchNCHzfjhb1wcCPwLKpzfMM",
         name: "Jake Burger",
-        position: "President"
+        position: "President",
+        photo: jakePhoto,
+        socials: {
+            instagram: "https://www.instagram.com/jaykeburger/",
+            linkedin: "https://www.linkedin.com/in/jake-d-burger/",
+        }
     },
     {
-        avatarURL: "https://media-exp1.licdn.com/dms/image/D4E03AQHUJ67FJ-oGFw/profile-displayphoto-shrink_400_400/0/1645419091689?e=1666224000&v=beta&t=KRci_2gQ73k3baI_u5AkFNQecTfEDz5DriLjl-r0g0E",
         name: "Adam Nguyen",
-        position: "VP of Internal Affairs"
+        position: "VP of Internal Affairs",
+        photo: adamPhoto,
+        socials: {
+            instagram: "https://www.instagram.com/ad_nguy/",
+            linkedin: "https://www.linkedin.com/in/adam-nguyen-267b21183/",
+        }
     },
     {
-        avatarURL: "https://media-exp1.licdn.com/dms/image/C5603AQG3rpUlWkocKg/profile-displayphoto-shrink_400_400/0/1650396692079?e=1666224000&v=beta&t=bBAueSHbX-qBQ0IlmAzqUuZYL3cup4q-0gFPv4dkWL8",
         name: "Sami Alsayed",
-        position: "VP of External Affairs"
+        position: "VP of External Affairs",
+        photo: samiPhoto,
+        socials: {
+            instagram: "https://www.instagram.com/sami.alsayed1/",
+            linkedin: "https://www.linkedin.com/in/alsayedsami/",
+        }
     },
     {
-        avatarURL: "https://media-exp1.licdn.com/dms/image/C4D0BAQHx8BvztOOKLw/company-logo_200_200/0/1635064060156?e=1668643200&v=beta&t=nZoEWW-tLjDXO34agJPfNuDd6YqhLpXynp6CgFTjQsE",
         name: "Reginald Green",
-        position: "Secretary"
+        position: "Secretary",
+        photo: reginaldPhoto,
+        socials: {
+            instagram: "https://www.instagram.com/dr.dusrespkt/",
+            linkedin: "",
+        }
     },
     {
-        avatarURL: "https://media-exp1.licdn.com/dms/image/C5603AQGIIhaUHFVBlA/profile-displayphoto-shrink_400_400/0/1639973530628?e=1666224000&v=beta&t=t0dW8EWWC2UmwtY5d_5Zwu6T68D0YHgzQPZ0sEo-otY",
         name: "Natalie Severino",
-        position: "Treasurer"
+        position: "Treasurer",
+        photo: nataliePhoto,
+        socials: {
+            instagram: "",
+            linkedin: "https://www.linkedin.com/in/natalie-severin/",
+        }
     },
     {
-        avatarURL: "https://media-exp1.licdn.com/dms/image/C4D0BAQHx8BvztOOKLw/company-logo_200_200/0/1635064060156?e=1668643200&v=beta&t=nZoEWW-tLjDXO34agJPfNuDd6YqhLpXynp6CgFTjQsE",
         name: "Peter Dinh",
-        position: "Marketing Director"
+        position: "Marketing Director",
+        photo: peterPhoto,
+        socials: {
+            instagram: "https://www.instagram.com/sir.absolute0/",
+            linkedin: "",
+        }
     },
     {
-        avatarURL: "https://media-exp1.licdn.com/dms/image/C4D0BAQHx8BvztOOKLw/company-logo_200_200/0/1635064060156?e=1668643200&v=beta&t=nZoEWW-tLjDXO34agJPfNuDd6YqhLpXynp6CgFTjQsE",
         name: "Wyatt Fernandez",
-        position: "Activities Director"
+        position: "Activities Director",
+        photo: wyattPhoto,
+        socials: {
+            instagram: "https://www.instagram.com/bean_salsa/",
+            linkedin: "",
+        }
     },
     {
-        avatarURL: "https://media-exp1.licdn.com/dms/image/C4D03AQGmR9l-dyu_8w/profile-displayphoto-shrink_400_400/0/1646352753099?e=1666224000&v=beta&t=BudjmvG6ISI5XrO1HWO-Z_br9OUuN9l0Jh7zk-TTU04",
         name: "Jennifer Hernandez",
-        position: "Artist"
+        position: "Artist",
+        photo: jenniferPhoto,
+        socials: {
+            instagram: "https://www.instagram.com/effeesen/",
+            linkedin: "https://www.linkedin.com/in/jennifer-hern/",
+        }
     },
     {
-        avatarURL: "https://media-exp1.licdn.com/dms/image/C5603AQEdkJLEiO73AA/profile-displayphoto-shrink_400_400/0/1648152500026?e=1666224000&v=beta&t=zpOuREjj6qZpAv05AH5uyQudJQ1w0Kbz0h1ExalkVfY",
         name: "Benjamin Guzman",
-        position: "Competitions Director"
+        position: "Competitions Director",
+        photo: benjaminPhoto,
+        socials: {
+            instagram: "",
+            linkedin: "https://www.linkedin.com/in/benjamin-guzman-4b6732235/",
+        }
     },
     {
-        avatarURL: "https://media-exp1.licdn.com/dms/image/D4D03AQHJWNuXJycc4w/profile-displayphoto-shrink_400_400/0/1645570570954?e=1666224000&v=beta&t=8mSKvl3c6U1NmlTftpJ13cJNPkkVo9XkzLVWqIVKxlQ",
         name: "Fernando Ramirez",
-        position: "Teams Director"
+        position: "Teams Director",
+        photo: fernandoPhoto,
+        socials: {
+            instagram: "https://www.instagram.com/fndo9/",
+            linkedin: "https://www.linkedin.com/in/fram3/",
+        }
     },
     {
-        avatarURL: "https://media-exp1.licdn.com/dms/image/C4D0BAQHx8BvztOOKLw/company-logo_200_200/0/1635064060156?e=1668643200&v=beta&t=nZoEWW-tLjDXO34agJPfNuDd6YqhLpXynp6CgFTjQsE",
         name: "Omar Meziou",
-        position: "Workshops Director"
+        position: "Workshops Director",
+        photo: omarPhoto,
+        socials: {
+            instagram: "",
+            linkedin: "https://www.linkedin.com/in/omar-meziou/",
+        }
     },
     {
-        avatarURL: "https://media-exp1.licdn.com/dms/image/C4D0BAQHx8BvztOOKLw/company-logo_200_200/0/1635064060156?e=1668643200&v=beta&t=nZoEWW-tLjDXO34agJPfNuDd6YqhLpXynp6CgFTjQsE",
         name: "Hanya Elmasik",
-        position: "Historian"
+        position: "Historian",
+        photo: hanyaPhoto,
+        socials: {
+            instagram: "https://www.instagram.com/hanyaelmasikk/",
+            linkedin: "",
+        }
     },
     {
-        avatarURL: "https://media-exp1.licdn.com/dms/image/C4D0BAQHx8BvztOOKLw/company-logo_200_200/0/1635064060156?e=1668643200&v=beta&t=nZoEWW-tLjDXO34agJPfNuDd6YqhLpXynp6CgFTjQsE",
         name: "Alexandria Harp",
-        position: "Historian"
+        position: "Historian",
+        photo: alexandriaPhoto,
+        socials: {
+            instagram: "https://www.instagram.com/alexharp3/",
+            linkedin: "",
+        }
     },
     {
-        avatarURL: "https://media-exp1.licdn.com/dms/image/C5603AQGMFDlpvcjM2g/profile-displayphoto-shrink_400_400/0/1643153551954?e=1666224000&v=beta&t=-COeInxha0gjb6DHFdUwixKZ2dA2Fiad1oT6vcKdGqs",
         name: "Bryant Le",
-        position: "Wizard"
+        position: "Wizard",
+        photo: bryantPhoto,
+        socials: {
+            linkedin: "https://www.linkedin.com/in/bnle/",
+            instagram: "https://www.instagram.com/bnleft/"
+        }
+    }
+];
+
+export const sponsors = [
+    {
+        name: "HCSS",
+        link: "https://careers.hcss.com/",
+        logo: hcssLogo
+    },
+    {
+        name: "Tom N Toms",
+        link: "https://www.tomntomsbellaire.com/",
+        logo: tomNTomsLogo
+    }
+];
+
+export const partners =[
+    {
+        name: "CSGirls",
+        link: "https://csgirls.org/",
+        logo: csGirlsLogo
+    },
+];
+
+export const faq = [
+    {
+        question: "How much is membership?",
+        answer: "$25 dollars for the whole year or $15 dollars per semester"
+    },
+    {
+        question: "What makes Code[Coogs] special?",
+        answer: "Code Coogs is the only student organization at UH that offers coordinated computer science group projects. We also focus on building a strong community with our team system, host many fun socials throughout the semester, and have several teams that prepare for ICPC by competing in Leetcode style competitions."
+    },
+    {
+        question: "Why should I become a member?",
+        answer: "Members get access to all of the following: being placed on one of our teams, reimbursement for project supplies, free food at our meetings, member exclusive events, scholarships, and more!"
+    },
+    {
+        question: "How can I be updated on upcoming events?",
+        answer: "We will be making announcements on our discord server and on instagram regarding all upcoming events. All of our social medias are on our LinkTree."
+    },
+    {
+        question: "Is programming experience required?",
+        answer: "Code Coogs is open to all levels of programming experience. Hopefully after guidance from our team leads, workshops facilitators, and other experienced members, those who entered the club as beginners will become experienced."
     }
 ];
