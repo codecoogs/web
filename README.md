@@ -18,11 +18,19 @@ We recommend being familiar with these:
 ### Installation
 Clone the repository onto your machine
 ```bash
-$ git clone https://github.com/codecoogs/web.git
+git clone https://github.com/codecoogs/web.git
 ```
 
 ## Usage
-TBA
+Run this command to start the project
+```bash
+pnpm dev
+```
+
+Run this command to build the project to static files in a `dist` folder
+```bash
+pnpm build
+```
 
 ## Contributing
 Please make sure to read the [Contributing Guide](https://github.com/codecoogs/.github/blob/main/CONTRIBUTING.md)
