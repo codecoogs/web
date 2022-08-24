@@ -1,22 +1,22 @@
-import jakePhoto from "../assets/officers/jake.png";
-import adamPhoto from "../assets/officers/adam.png";
-import samiPhoto from "../assets/officers/sami.png";
-import reginaldPhoto from "../assets/officers/reginald.png";
-import nataliePhoto from "../assets/officers/natalie.png";
-import peterPhoto from "../assets/officers/peter.png";
-import wyattPhoto from "../assets/officers/wyatt.png";
-import jenniferPhoto from "../assets/officers/jennifer.png";
-import benjaminPhoto from "../assets/officers/benjamin.png";
-import fernandoPhoto from "../assets/officers/fernando.png";
-import omarPhoto from "../assets/officers/omar.png";
-import hanyaPhoto from "../assets/officers/hanya.png";
-import alexandriaPhoto from "../assets/officers/alexandria.png";
-import bryantPhoto from "../assets/officers/bryant.png";
+import jakePhoto from "./../assets/officers/jake.png";
+import adamPhoto from "./../assets/officers/adam.png";
+import samiPhoto from "./../assets/officers/sami.png";
+import reginaldPhoto from "./../assets/officers/reginald.png";
+import nataliePhoto from "./../assets/officers/natalie.png";
+import peterPhoto from "./../assets/officers/peter.png";
+import wyattPhoto from "./../assets/officers/wyatt.png";
+import jenniferPhoto from "./../assets/officers/jennifer.png";
+import benjaminPhoto from "./../assets/officers/benjamin.png";
+import fernandoPhoto from "./../assets/officers/fernando.png";
+import omarPhoto from "./../assets/officers/omar.png";
+import hanyaPhoto from "./../assets/officers/hanya.png";
+import alexandriaPhoto from "./../assets/officers/alexandria.png";
+import bryantPhoto from "./../assets/officers/bryant.png";
 
-import hcssLogo from "../assets/logos/hcss.png";
-import tomNTomsLogo from "../assets/logos/tom-n-toms.png";
+import hcssLogo from "./../assets/logos/hcss.png";
+import tomNTomsLogo from "./../assets/logos/tom-n-toms.png";
 
-import csGirlsLogo from "../assets/logos/csgirls.webp";
+import csGirlsLogo from "./../assets/logos/csgirls.webp";
 
 export const email = "main@codecoogs.com";
 
