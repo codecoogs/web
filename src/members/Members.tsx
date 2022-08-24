@@ -1,5 +1,13 @@
 import React, { useEffect } from "react";
 
+import MemberBanner from "../assets/banner2.png";
+import computerCoCo from "../assets/computer-coco.png";
+
+import { 
+    benefits, 
+    signupLink
+} from "../data/members";
+
 interface MembersButtonProps {
     link: string;
     children: string;
@@ -12,7 +20,7 @@ const MembersButton = (props: MembersButtonProps) => {
             target="_blank"
             href={props.link}
         >
-            <div className="bg-dark-primary w-40 h-10 mx-auto text-center rounded leading-10">
+            <div className="bg-dark-primary w-40 h-10 text-center rounded leading-10">
                 {props.children}
             </div>
         </a>
@@ -25,31 +33,48 @@ const Members = () => {
     });
 
     return (
-        <div className="m-8 text-white bg-dark-surface-variant rounded h-full pb-8">
-            <h1 className="p-8 font-bold text-xl">Membership</h1>
-            <h2 className="px-8 font-bold text-lg">Benefits</h2>
-            <ul className="px-10 pb-8">
-                <li>
-                    <span>T-shirt</span>
-                </li>
-                <li>
-                    <span>Discord Role</span>
-                </li>
-                <li>
-                    <span>Teams System</span>
-                </li>
-                <li>
-                    <span>Swag</span>
-                </li>
-                <li>
-                    <span>Socials</span>
-                </li>
-                <li>
-                    <span>Special workshops</span>
-                </li>
-            </ul>
-            <div className="text-black">
-                <MembersButton link="https://forms.gle/qpz35Memf9Zqdimn9">Sign Up</MembersButton>
+        <div className="bg-dark-surface text-white">
+            <div className="bg-dark-surface-variant rounded m-8">
+                <h1 className="p-8 font-bold text-xl text-center">Membership</h1>
+                <div className="flex flex-col md:flex-row">
+                    <div className="mx-auto">
+                        <h2 className="font-bold text-lg text-center">Benefits</h2>
+                        <ul className="align-middle pb-8 text-center">
+                            { benefits.map((benefit, index) => {
+                                    return (
+                                        <li key={index}> 
+                                            <span>
+                                                <span className="text-dark-primary">
+                                                    {`${index+1}.`}  
+                                                </span>
+                                                {` ${benefit}`}
+                                            </span>
+                                        </li>
+                                    );
+                              }) 
+                            }
+                        </ul>
+                    </div>
+                    <div className="mx-auto">
+                        <img
+                            src={computerCoCo}
+                            alt="Computer CoCo"
+                            width="300"
+                            height="300"
+                        />
+                    </div>
+                </div>
+                <div className="table text-black my-0 mx-auto">
+                    <MembersButton link={signupLink}>Sign Up</MembersButton>
+                </div>
+                <div className="table my-0 mx-auto">
+                    <img    
+                        src={MemberBanner}
+                        alt="Member Banner"
+                        width="800"
+                        height="240"
+                    />
+                </div>
             </div>
         </div>
     );
