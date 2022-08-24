@@ -4,7 +4,7 @@ interface EventCardProps {
     children: React.ReactNode;
 };
 
-const EventCard = (props: ProjectCardProps) => {
+const EventCard = (props: EventCardProps) => {
     return (
         <li className="flex flex-col bg-dark-surface-variant rounded text-white p-8 m-8">
             {props.children}
