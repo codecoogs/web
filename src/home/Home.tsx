@@ -1,22 +1,29 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import banner from "../assets/banner.png";
 
 interface HomeButtonProps {
     link: string;
+    external?: boolean;
     children: string;
 };
 
 const HomeButton = (props: HomeButtonProps) => {
-    return (
-        <a
-            className="font-semibold"
-            href={props.link}
-        >
-            <div className="bg-dark-primary w-40 h-10 mx-auto text-center rounded leading-10">
+    const style = "bg-dark-primary w-40 h-10 mx-auto text-center rounded leading-10 font-semibold";
+
+    return props.external ? (
+        <a href={props.link} target="_blank">
+            <div className={style}>
                 {props.children}
             </div>
         </a>
+    ) : (
+        <Link to={props.link}>
+            <div className={style}>
+                {props.children}
+            </div>
+        </Link>
     );
 };
 
@@ -43,7 +50,7 @@ const Home = () => {
                         <HomeButton link="/members">Membership</HomeButton>
                     </li>
                     <li>
-                        <HomeButton link="https://linktr.ee/codecoogs">LinkTree</HomeButton>
+                        <HomeButton link="https://linktr.ee/codecoogs" external>LinkTree</HomeButton>
                     </li>
                 </ul>
             </div>
