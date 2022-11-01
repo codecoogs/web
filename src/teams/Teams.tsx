@@ -9,7 +9,7 @@ interface TeamCardProps {
 
 const TeamCard = (props: TeamCardProps) => {
     return (
-        <li className="bg-dark-surface-variant rounded text-white p-8 m-8">
+        <li className="bg-dark-surface-variant rounded-lg text-white p-8 m-8">
             {props.children}
         </li>
     );
@@ -31,12 +31,12 @@ const Teams = () => {
                         yearlyTeams.map((year, yearIndex) => {
                             return(
                                 <div>
-                                    <h2 className="p-8 font-bold text-xl text-center">{year.year}</h2>  
-                                    <ul className="grid grid-cols-4 gap-4 ">
+                                    <h2 className="p-8 font-bold text-4xl text-center underline underline-offset-8">{year.year}</h2>  
+                                    <ul className="grid grid-cols-3 gap-4">
                                         {
                                             year.info.map((team, index ) => {
                                                 return (
-                                                    <TeamCard key={index}>  
+                                                    <TeamCard key={index} >  
                                                         <img src={team.photo} alt={`${team.name} photo`}/>
                                                         <h1>{team.name}</h1>
                                                     </TeamCard>
