@@ -1,6 +1,6 @@
 import React from "react";
 
-import { teams } from "../data/teams";
+import { yearlyTeams } from "../data/teams";
 
 interface TeamCardProps {
     key: number;
@@ -15,23 +15,42 @@ const TeamCard = (props: TeamCardProps) => {
     );
 };
 
+/*
+    Create a year (card)
+        (card)
+        - Connects a series of teams
+*/
+
+
 const Teams = () => {
     return (
-        <div className="bg-dark-surface">
+        <div className="bg-dark-surface text-white">
             <div className="text-center">
-                <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:flex-row m-8 bg-dark-surface pb-4">
-                    { teams.map((team, index) => {
-                            return (
-                                <TeamCard key={index}>  
-                                    <img src={team.photo} alt={`${team.name} photo`}/>
-                                    <h1>{team.name}</h1>
-                                </TeamCard>
+                <div>
+                    {
+                        yearlyTeams.map((year, yearIndex) => {
+                            return(
+                                <div>
+                                    <h2 className="p-8 font-bold text-xl text-center">{year.year}</h2>  
+                                    <ul className="grid grid-cols-4 gap-4 ">
+                                        {
+                                            year.info.map((team, index ) => {
+                                                return (
+                                                    <TeamCard key={index}>  
+                                                        <img src={team.photo} alt={`${team.name} photo`}/>
+                                                        <h1>{team.name}</h1>
+                                                    </TeamCard>
+                                                    );
+                                            })
+                                        }
+                                    </ul>
+                                </div>
                             );
-                      })
+                        })
                     }
-                </ul>
+                </div>
             </div>
-        </div>
+        </div>  
     );
 };
 
