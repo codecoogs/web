@@ -15,13 +15,6 @@ const TeamCard = (props: TeamCardProps) => {
     );
 };
 
-/*
-    Create a year (card)
-        (card)
-        - Connects a series of teams
-*/
-
-
 const Teams = () => {
     return (
         <div className="bg-dark-surface text-white">
