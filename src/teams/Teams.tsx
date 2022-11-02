@@ -9,7 +9,7 @@ interface TeamCardProps {
 
 const TeamCard = (props: TeamCardProps) => {
     return (
-        <li className="bg-dark-surface-variant rounded-lg text-white p-8 m-8 md:hover:scale-11">
+        <li className="bg-dark-surface-variant rounded-lg text-white p-8 m-8 md:hover:scale-110">
             {props.children}
         </li>
     );
