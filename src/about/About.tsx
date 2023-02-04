@@ -64,12 +64,12 @@ const OfficerCard = (props: OfficerCardProps) => {
 
     return (
         <div className="bg-dark-surface-variant rounded text-center p-8 hover:text-dark-primary">
-            <img 
-                className="mx-auto rounded-full"
-                src={props.photo}
-                width="200"
-                height="200"
-            />
+            <div className="inline-block w-40 h-40">
+                <img 
+                    className="relative object-cover w-full h-full rounded-full"
+                    src={props.photo}
+                />
+            </div>
             <span className="block font-bold pt-4">{props.name}</span>
             <span className="block text-sm">{props.position}</span>
             <div className="table mx-auto pt-4">
@@ -77,6 +77,7 @@ const OfficerCard = (props: OfficerCardProps) => {
                     { instagram !== "" &&
                         <a href={instagram} target="_blank">
                             <img
+                                className="hover:invert"
                                 src={instagramLogo}
                                 width="50"
                                 height="50"
@@ -86,6 +87,7 @@ const OfficerCard = (props: OfficerCardProps) => {
                     { linkedin !== "" &&
                         <a href={linkedin} target="_blank">
                             <img
+                                className="hover:invert"
                                 src={linkedinLogo}
                                 width="50"
                                 height="50"
