@@ -1,10 +1,10 @@
-import jakePhoto from "./../assets/officers/jake.png";
+// import jakePhoto from "./../assets/officers/jake.png";
 import adamPhoto from "./../assets/officers/adam.png";
 import samiPhoto from "./../assets/officers/sami.png";
 import reginaldPhoto from "./../assets/officers/reginald.png";
-import nataliePhoto from "./../assets/officers/natalie.png";
-import peterPhoto from "./../assets/officers/peter.png";
-import wyattPhoto from "./../assets/officers/wyatt.png";
+// import nataliePhoto from "./../assets/officers/natalie.png";
+// import peterPhoto from "./../assets/officers/peter.png";
+// import wyattPhoto from "./../assets/officers/wyatt.png";
 import jenniferPhoto from "./../assets/officers/jennifer.png";
 import benjaminPhoto from "./../assets/officers/benjamin.png";
 import fernandoPhoto from "./../assets/officers/fernando.png";
@@ -12,6 +12,7 @@ import omarPhoto from "./../assets/officers/omar.png";
 import hanyaPhoto from "./../assets/officers/hanya.png";
 import alexandriaPhoto from "./../assets/officers/alexandria.png";
 import bryantPhoto from "./../assets/officers/bryant.png";
+import yuryPhoto from "./../assets/officers/yury.png";
 
 import hcssLogo from "./../assets/logos/hcss.png";
 import tomNTomsLogo from "./../assets/logos/tom-n-toms.png";
@@ -28,12 +29,12 @@ export const workshopsDesc = "Workshops are where our members will develop their
 
 export const officers = [
     {
-        name: "Jake Burger",
+        name: "Yury Ionov",
         position: "President",
-        photo: jakePhoto,
+        photo: yuryPhoto,
         socials: {
-            instagram: "https://www.instagram.com/jaykeburger/",
-            linkedin: "https://www.linkedin.com/in/jake-d-burger/",
+            instagram: "",
+            linkedin: "https://www.linkedin.com/in/yuryion/",
         }
     },
     {
@@ -64,29 +65,11 @@ export const officers = [
         }
     },
     {
-        name: "Natalie Severino",
-        position: "Treasurer",
-        photo: nataliePhoto,
-        socials: {
-            instagram: "",
-            linkedin: "https://www.linkedin.com/in/natalie-severin/",
-        }
-    },
-    {
-        name: "Peter Dinh",
+        name: "Hanya Elmasik",
         position: "Marketing Director",
-        photo: peterPhoto,
+        photo: hanyaPhoto,
         socials: {
-            instagram: "https://www.instagram.com/sir.absolute0/",
-            linkedin: "",
-        }
-    },
-    {
-        name: "Wyatt Fernandez",
-        position: "Activities Director",
-        photo: wyattPhoto,
-        socials: {
-            instagram: "https://www.instagram.com/bean_salsa/",
+            instagram: "https://www.instagram.com/hanyaelmasikk/",
             linkedin: "",
         }
     },
@@ -124,15 +107,6 @@ export const officers = [
         socials: {
             instagram: "",
             linkedin: "https://www.linkedin.com/in/omar-meziou/",
-        }
-    },
-    {
-        name: "Hanya Elmasik",
-        position: "Historian",
-        photo: hanyaPhoto,
-        socials: {
-            instagram: "https://www.instagram.com/hanyaelmasikk/",
-            linkedin: "",
         }
     },
     {
