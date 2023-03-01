@@ -2,8 +2,10 @@ import React, { useEffect } from "react";
 
 import AboutSideNav from "./AboutSideNav";
 
-import instagramLogo from "../assets/logos/instagram.png";
-import linkedinLogo from "../assets/logos/linkedin.png";
+import {
+    InstagramIcon,
+    LinkedInIcon
+} from "./AboutIcons";
 
 import { 
     email,
@@ -73,25 +75,15 @@ const OfficerCard = (props: OfficerCardProps) => {
             <span className="block font-bold pt-4">{props.name}</span>
             <span className="block text-sm">{props.position}</span>
             <div className="table mx-auto pt-4">
-                <div className="flex flex-row">
+                <div className="flex flex-row space-x-2">
                     { instagram !== "" &&
                         <a href={instagram} target="_blank">
-                            <img
-                                className="hover:invert"
-                                src={instagramLogo}
-                                width="50"
-                                height="50"
-                            />
+                            <InstagramIcon/>
                         </a>
                     }
                     { linkedin !== "" &&
                         <a href={linkedin} target="_blank">
-                            <img
-                                className="hover:invert"
-                                src={linkedinLogo}
-                                width="50"
-                                height="50"
-                            />
+                            <LinkedInIcon/>
                         </a>
                     }
                 </div>
