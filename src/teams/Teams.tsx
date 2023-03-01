@@ -23,7 +23,7 @@ const Teams = () => {
                     { teams.map((team, index) => {
                             return (
                                 <TeamCard key={index}>  
-                                    <img src={team.photo} alt={`${team.name} photo`}/>
+                                    <img className="relative object-cover w-full h-full" src={team.photo} alt={`${team.name} photo`}/>
                                     <h1>{team.name}</h1>
                                 </TeamCard>
                             );

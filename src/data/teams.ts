@@ -1,7 +1,8 @@
-import GitGudPhoto from "../assets/git-gud.jpg";
-import TeamONPhoto from "../assets/team-on.jpg";
-import DreamTeamPhoto from "../assets/dream-team.png";
-import TeamTuxPhoto from "../assets/team-tux.jpg";
+import GitGudPhoto from "../assets/teams/2022/git-gud.webp";
+import TeamONPhoto from "../assets/teams/2022/team-on.webp";
+import DreamTeamPhoto from "../assets/teams/2022/dream-team.webp";
+import TeamTuxPhoto from "../assets/teams/2022/team-tux.webp";
+import RuntimeTerrorPhoto from "../assets/teams/2022/runtime-terror.webp";
 
 export const teams = [
     {
@@ -19,5 +20,9 @@ export const teams = [
     {
         name: "Team Tux",
         photo: TeamTuxPhoto
+    },
+    {
+        name: "Runtime Terror",
+        photo: RuntimeTerrorPhoto
     }
 ];
