@@ -1,4 +1,5 @@
 import React from "react";
+import { eventGoogleCalendarLink } from "../data/events";
 
 interface EventCardProps {
     children: React.ReactNode;
@@ -17,11 +18,9 @@ const Events = () => {
         <div className="bg-dark-surface">
             <div className="bg-dark-surface-variant p-4 m-4 rounded">
                 <iframe 
-                    src="https://calendar.google.com/calendar/embed?mode=AGENDA&showPrint=0&showNav=0&src=fuqc9tebmdtr1b1gnrj6b9tsrk%40group.calendar.google.com&ctz=America%2FChicago"
-                    className="border-0 w-full" 
-                    height="500"
-                    frameBorder="0" 
-                    scrolling="no" 
+                    src={eventGoogleCalendarLink}
+                    className="border-0 w-full overflow-hidden" 
+                    height="500" 
                 />
             </div>
             <div className="text-center">
