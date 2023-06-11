@@ -13,6 +13,7 @@ import Events from "./events/Events";
 import Teams from "./teams/Teams";
 import Projects from "./projects/Projects";
 import Members from "./members/Members";
+import PastOfficers from "./pastofficers/pastofficers";
 
 const App = () => {
     return (
@@ -24,6 +25,7 @@ const App = () => {
                     <Route path="/events" element={<Events />} />
                     <Route path="/teams" element={<Teams />} />
                     <Route path="/projects" element={<Projects />} />
+                    <Route path="/past-officers" element={<PastOfficers />} />
                     <Route path="/members" element={<Members />} />
                 </Routes>
             </Layout>
