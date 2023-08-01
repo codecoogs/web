@@ -9,4 +9,4 @@ export const benefits = [
     "Free food at our meetings and events"
 ];
 
-export const signupLink = "https://forms.gle/jRiceEDFZXYEWJGY7";
+export const signupLink = "https://forms.gle/TcKqnfFJ8xEDwM7CA";
