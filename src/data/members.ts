@@ -9,4 +9,6 @@ export const benefits = [
     "Free food at our meetings and events"
 ];
 
-export const signupLink = "https://forms.gle/jRiceEDFZXYEWJGY7";
+export const signupLink = "https://forms.gle/TcKqnfFJ8xEDwM7CA";
+
+export const SIGNUP_API_URL = "https://script.google.com/macros/s/AKfycbx_b9OmHPBkpXK7OhpjkrJZ0PqJmEOGY1Vkq1i5AbUbDgutl0k4elP-BVlBRYT6by1h/exec";

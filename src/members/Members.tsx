@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 
+import MembershipForm from "./MembershipForm";
 import MemberBanner from "../assets/banner2.png";
 import computerCoCo from "../assets/computer-coco.png";
 
@@ -64,9 +65,10 @@ const Members = () => {
                         />
                     </div>
                 </div>
-                <div className="table text-black my-0 mx-auto">
+                <MembershipForm />
+                {/*<div className="table text-black my-0 mx-auto">
                     <MembersButton link={signupLink}>Sign Up</MembersButton>
-                </div>
+                </div>*/}
                 <div className="table my-0 mx-auto">
                     <img    
                         src={MemberBanner}
