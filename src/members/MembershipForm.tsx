@@ -65,10 +65,8 @@ const SignUpForm: React.FC = () => {
         required
       >
         <option value="Venmo">Venmo</option>
-        <option value="Cashapp">Cashapp</option>
         <option value="Cash">Cash</option>
         <option value="Zelle">Zelle</option>
-        <option value="Paypal">Paypal</option>
       </select>
       <label htmlFor="firstName">First Name</label>
       <input
