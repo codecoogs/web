@@ -6,6 +6,7 @@ import computerCoCo from "../assets/computer-coco.png";
 
 import { 
     benefits, 
+    discordLink,
     signupLink
 } from "../data/members";
 
@@ -58,12 +59,12 @@ const Members = () => {
                         <div>
                             <h1 className="font-bold text-lg text-center" style={{color:'red'}}>Read before signing up:</h1>
                             <ul className="align-middle pb-8 text-center">
-                                <li><span className="text-dark-primary">1.</span> All announcements are posted here: <a target="blank" href="https://discord.gg/2x96eawm"><u>discord server</u></a></li>
+                                <li><span className="text-dark-primary">1.</span> All announcements are posted here: <a target="blank" href={discordLink}><u>discord server</u></a></li>
                                 <li><span className="text-dark-primary">2.</span> Membership is $25 per year or $15 per semester and can be paid with:</li>
                                 <li>Cash: at any event</li>
                                 <li>Venmo: @Code-Coogs</li>
                                 <li>Zelle: 8186579832</li>
-                                <li><span className="text-dark-primary">3.</span>When paying online, include full name</li>
+                                <li><span className="text-dark-primary">3.</span> When paying online, include full name</li>
                             </ul>
                         </div>
                     </div>
