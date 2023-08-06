@@ -13,7 +13,6 @@ import Events from "./events/Events";
 import Teams from "./teams/Teams";
 import Projects from "./projects/Projects";
 import Members from "./members/Members";
-import PastOfficers from "./pastofficers/PastOfficers";
 
 const App = () => {
     return (
