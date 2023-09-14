@@ -36,7 +36,7 @@ const Members = () => {
 
     return (
         <div className="bg-dark-surface text-white">
-            <div className="bg-dark-surface-variant rounded m-8">
+            <div className="bg-dark-surface-variant rounded md:m-8">
                 <h1 className="p-8 font-bold text-xl text-center">Membership</h1>
                 <div className="flex flex-col md:flex-row">
                     <div className="mx-auto">
