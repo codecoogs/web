@@ -1,18 +1,24 @@
-// import jakePhoto from "./../assets/officers/jake.png";
-import adamPhoto from "./../assets/officers/adam.png";
-import samiPhoto from "./../assets/officers/sami.png";
-import reginaldPhoto from "./../assets/officers/reginald.png";
-// import nataliePhoto from "./../assets/officers/natalie.png";
-// import peterPhoto from "./../assets/officers/peter.png";
-// import wyattPhoto from "./../assets/officers/wyatt.png";
-import jenniferPhoto from "./../assets/officers/jennifer.png";
-import benjaminPhoto from "./../assets/officers/benjamin.png";
-import fernandoPhoto from "./../assets/officers/fernando.png";
-import omarPhoto from "./../assets/officers/omar.png";
-import hanyaPhoto from "./../assets/officers/hanya.png";
-import alexandriaPhoto from "./../assets/officers/alexandria.png";
-import bryantPhoto from "./../assets/officers/bryant.png";
-import yuryPhoto from "./../assets/officers/yury.png";
+import jakePhoto from "./../assets/officers/jake.webp";
+import alliePhoto from "./../assets/officers/Allie.webp";
+import hieuPhoto from "./../assets/officers/Hieu.webp";
+import ilanPhoto from "./../assets/officers/Ilan.webp";
+import yuryPhoto from "./../assets/officers/Yury.webp";
+import jorgePhoto from "./../assets/officers/Jorge.webp";
+import andrewPhoto from "./../assets/officers/Andrew.webp";
+import benPhoto from "./../assets/officers/Ben.webp";
+import enlaiPhoto from "./../assets/officers/Enlai.webp";
+import ayushPhoto from "./../assets/officers/Ayush.webp";
+import richerPhoto from "./../assets/officers/Richer.webp";
+import ashishPhoto from "./../assets/officers/Ashish.webp";
+import bryantPhoto from "./../assets/officers/Bryant.webp";
+import saloniPhoto from "./../assets/officers/Saloni.webp";
+import khanhPhoto from "./../assets/officers/Khanh.webp";
+import muskanPhoto from "./../assets/officers/Muskan.webp";
+import widyanPhoto from "./../assets/officers/Widyan.webp";
+import brendanPhoto from "./../assets/officers/Brendan.webp";
+import jacksonPhoto from "./../assets/officers/Jackson.webp";
+import ayselPhoto from "./../assets/officers/Aysel.webp";
+import vishPhoto from "./../assets/officers/Vishruth.webp";
 
 import hcssLogo from "./../assets/logos/hcss.png";
 import tomNTomsLogo from "./../assets/logos/tom-n-toms.png";
@@ -29,8 +35,44 @@ export const workshopsDesc = "Workshops are where our members will develop their
 
 export const officers = [
     {
-        name: "Yury Ionov",
+        name: "Jake Burger",
         position: "President",
+        photo: jakePhoto,
+        socials: {
+            instagram: "",
+            linkedin: "https://www.linkedin.com/in/jake-d-burger/",
+        }
+    },
+    {
+        name: "Albamaria Rodrigues",
+        position: "VP of Internal Affairs",
+        photo: alliePhoto,
+        socials: {
+            instagram: "",
+            linkedin: "https://www.linkedin.com/in/albamaria-rodrigues-38b129216/",
+        }
+    },
+    {
+        name: "Hieu Bui",
+        position: "VP of External Affairs",
+        photo: hieuPhoto,
+        socials: {
+            instagram: "",
+            linkedin: "https://www.linkedin.com/in/hbui0107/",
+        }
+    },
+    {
+        name: "Ilan Lipsky",
+        position: "Secretary",
+        photo: ilanPhoto,
+        socials: {
+            instagram: "",
+            linkedin: "https://www.linkedin.com/in/ilan-lipsky-43392178/",
+        }
+    },
+    {
+        name: "Yury Ionov",
+        position: "Senior Advisor",
         photo: yuryPhoto,
         socials: {
             instagram: "",
@@ -38,84 +80,75 @@ export const officers = [
         }
     },
     {
-        name: "Adam Nguyen",
-        position: "VP of Internal Affairs",
-        photo: adamPhoto,
+        name: "Jorge Umanzor",
+        position: "Ambassador",
+        photo: jorgePhoto,
         socials: {
-            instagram: "https://www.instagram.com/ad_nguy/",
-            linkedin: "https://www.linkedin.com/in/adam-nguyen-267b21183/",
+            instagram: "",
+            linkedin: "https://www.linkedin.com/in/jorge-umanzor/",
         }
     },
     {
-        name: "Sami Alsayed",
-        position: "VP of External Affairs",
-        photo: samiPhoto,
+        name: "Andrew Almasi",
+        position: "Activities Director",
+        photo: andrewPhoto,
         socials: {
-            instagram: "https://www.instagram.com/sami.alsayed1/",
-            linkedin: "https://www.linkedin.com/in/alsayedsami/",
-        }
-    },
-    {
-        name: "Reginald Green",
-        position: "Secretary",
-        photo: reginaldPhoto,
-        socials: {
-            instagram: "https://www.instagram.com/dr.dusrespkt/",
-            linkedin: "",
-        }
-    },
-    {
-        name: "Hanya Elmasik",
-        position: "Marketing Director",
-        photo: hanyaPhoto,
-        socials: {
-            instagram: "https://www.instagram.com/hanyaelmasikk/",
-            linkedin: "",
-        }
-    },
-    {
-        name: "Jennifer Hernandez",
-        position: "Artist",
-        photo: jenniferPhoto,
-        socials: {
-            instagram: "https://www.instagram.com/effeesen/",
-            linkedin: "https://www.linkedin.com/in/jennifer-hern/",
+            instagram: "",
+            linkedin: "https://www.linkedin.com/in/arshiaalmasi/",
         }
     },
     {
         name: "Benjamin Guzman",
         position: "Competitions Director",
-        photo: benjaminPhoto,
+        photo: benPhoto,
         socials: {
             instagram: "",
             linkedin: "https://www.linkedin.com/in/benjamin-guzman-4b6732235/",
         }
     },
     {
-        name: "Fernando Ramirez",
-        position: "Teams Director",
-        photo: fernandoPhoto,
-        socials: {
-            instagram: "https://www.instagram.com/fndo9/",
-            linkedin: "https://www.linkedin.com/in/fram3/",
-        }
-    },
-    {
-        name: "Omar Meziou",
+        name: "Enlai Yii",
         position: "Workshops Director",
-        photo: omarPhoto,
+        photo: enlaiPhoto,
         socials: {
             instagram: "",
-            linkedin: "https://www.linkedin.com/in/omar-meziou/",
+            linkedin: "https://www.linkedin.com/in/enlai-yii-97621321a/",
         }
     },
     {
-        name: "Alexandria Harp",
-        position: "Historian",
-        photo: alexandriaPhoto,
+        name: "Vishruth Kodikanti",
+        position: "Workshops Committee",
+        photo: vishPhoto,
         socials: {
-            instagram: "https://www.instagram.com/alexharp3/",
-            linkedin: "",
+            instagram: "",
+            linkedin: "https://www.linkedin.com/in/vishu-k/",
+        }
+    },
+    {
+        name: "Ayush Patel",
+        position: "Teams Director",
+        photo: ayushPhoto,
+        socials: {
+            instagram: "",
+            linkedin: "https://www.linkedin.com/in/ayush-patel-54226a1ab/",
+        }
+    },
+    {
+        name: "Richer Duong",
+        position: "Teams Director",
+        photo: richerPhoto,
+        socials: {
+            instagram: "",
+            linkedin: "https://www.linkedin.com/in/duong-richer/",
+        }
+    },
+    {
+        name: "Ashish Job",
+        position: "Teams Director",
+        photo: ashishPhoto,
+        socials: {
+            instagram: "",
+            linkedin: "https://www.linkedin.com/in/ashish-job/",
         }
     },
     {
@@ -126,7 +159,70 @@ export const officers = [
             linkedin: "https://www.linkedin.com/in/bnle/",
             instagram: "https://www.instagram.com/bnleft/"
         }
-    }
+    },
+    {
+        name: "Saloni Sharma",
+        position: "Historian",
+        photo: saloniPhoto,
+        socials: {
+            instagram: "",
+            linkedin: "https://www.linkedin.com/in/saloni-sharma-929221272/",
+        }
+    },
+    {
+        name: "Khanh Nguyen",
+        position: "Artist",
+        photo: khanhPhoto,
+        socials: {
+            instagram: "",
+            linkedin: "https://www.linkedin.com/in/khanhn2002/",
+        }
+    },
+    {
+        name: "Widyan Hussien",
+        position: "Artist",
+        photo: widyanPhoto,
+        socials: {
+            instagram: "",
+            linkedin: "https://www.linkedin.com/in/widyan-hussien/",
+        }
+    },
+    {
+        name: "Muskan Nehra",
+        position: "Marketing Director",
+        photo: muskanPhoto,
+        socials: {
+            instagram: "",
+            linkedin: "https://www.linkedin.com/in/muskan-nehra/",
+        }
+    },
+    {
+        name: "Jackson Nace",
+        position: "Marketing Committee",
+        photo: jacksonPhoto,
+        socials: {
+            instagram: "",
+            linkedin: "https://www.linkedin.com/in/jacksonnace/",
+        }
+    },
+    {
+        name: "Aysel R.",
+        position: "Marketing Committee",
+        photo: ayselPhoto,
+        socials: {
+            instagram: "",
+            linkedin: "https://www.linkedin.com/in/aysel-r-a363b1220/",
+        }
+    },
+    {
+        name: "Brendan Diaz",
+        position: "Marketing Committee",
+        photo: brendanPhoto,
+        socials: {
+            instagram: "",
+            linkedin: "https://www.linkedin.com/in/brendandiaz1/",
+        }
+    },
 ];
 
 export const sponsors = [
