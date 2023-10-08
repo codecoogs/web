@@ -1,24 +1,45 @@
 import jakePhoto from "./../assets/officers/jake.webp";
+import jakeVideo from "./../assets/officers/Jake.gif";
 import alliePhoto from "./../assets/officers/Allie.webp";
+import allieVideo from "./../assets/officers/Allie.gif";
 import hieuPhoto from "./../assets/officers/Hieu.webp";
+import hieuVideo from "./../assets/officers/Hieu.gif";
 import ilanPhoto from "./../assets/officers/Ilan.webp";
+import ilanVideo from "./../assets/officers/Ilan.gif";
 import yuryPhoto from "./../assets/officers/Yury.webp";
+import yuryVideo from "./../assets/officers/Yury.gif";
 import jorgePhoto from "./../assets/officers/Jorge.webp";
+import jorgeVideo from "./../assets/officers/Jorge.gif";
 import andrewPhoto from "./../assets/officers/Andrew.webp";
+import andrewVideo from "./../assets/officers/Andrew.gif";
 import benPhoto from "./../assets/officers/Ben.webp";
+import benVideo from "./../assets/officers/Ben.gif";
 import enlaiPhoto from "./../assets/officers/Enlai.webp";
+import enlaiVideo from "./../assets/officers/Enlai.gif";
 import ayushPhoto from "./../assets/officers/Ayush.webp";
+import ayushVideo from "./../assets/officers/Ayush.gif";
 import richerPhoto from "./../assets/officers/Richer.webp";
+import richerVideo from "./../assets/officers/Richer.gif";
 import ashishPhoto from "./../assets/officers/Ashish.webp";
+import ashishVideo from "./../assets/officers/Ashish.gif";
 import bryantPhoto from "./../assets/officers/Bryant.webp";
+import bryantVideo from "./../assets/officers/Bryant.gif";
 import saloniPhoto from "./../assets/officers/Saloni.webp";
+import saloniVideo from "./../assets/officers/Saloni.gif";
 import khanhPhoto from "./../assets/officers/Khanh.webp";
+import khanhVideo from "./../assets/officers/Khanh.gif";
 import muskanPhoto from "./../assets/officers/Muskan.webp";
+import muskanVideo from "./../assets/officers/Muskan.gif";
 import widyanPhoto from "./../assets/officers/Widyan.webp";
+import widyanVideo from "./../assets/officers/Widyan.gif";
 import brendanPhoto from "./../assets/officers/Brendan.webp";
+import brendanVideo from "./../assets/officers/Brendan.gif";
 import jacksonPhoto from "./../assets/officers/Jackson.webp";
+import jacksonVideo from "./../assets/officers/Jackson.gif";
 import ayselPhoto from "./../assets/officers/Aysel.webp";
+import ayselVideo from "./../assets/officers/Aysel.gif";
 import vishPhoto from "./../assets/officers/Vishruth.webp";
+import vishVideo from "./../assets/officers/Vishruth.gif";
 
 import hcssLogo from "./../assets/logos/hcss.png";
 import tomNTomsLogo from "./../assets/logos/tom-n-toms.png";
@@ -38,6 +59,7 @@ export const officers = [
         name: "Jake Burger",
         position: "President",
         photo: jakePhoto,
+        video: jakeVideo,
         socials: {
             instagram: "",
             linkedin: "https://www.linkedin.com/in/jake-d-burger/",
@@ -47,6 +69,7 @@ export const officers = [
         name: "Albamaria Rodrigues",
         position: "VP of Internal Affairs",
         photo: alliePhoto,
+        video: allieVideo,
         socials: {
             instagram: "",
             linkedin: "https://www.linkedin.com/in/albamaria-rodrigues-38b129216/",
@@ -56,6 +79,7 @@ export const officers = [
         name: "Hieu Bui",
         position: "VP of External Affairs",
         photo: hieuPhoto,
+        video: hieuVideo,
         socials: {
             instagram: "",
             linkedin: "https://www.linkedin.com/in/hbui0107/",
@@ -65,6 +89,7 @@ export const officers = [
         name: "Ilan Lipsky",
         position: "Secretary",
         photo: ilanPhoto,
+        video: ilanVideo,
         socials: {
             instagram: "",
             linkedin: "https://www.linkedin.com/in/ilan-lipsky-43392178/",
@@ -74,6 +99,7 @@ export const officers = [
         name: "Yury Ionov",
         position: "Senior Advisor",
         photo: yuryPhoto,
+        video: yuryVideo,
         socials: {
             instagram: "",
             linkedin: "https://www.linkedin.com/in/yuryion/",
@@ -83,6 +109,7 @@ export const officers = [
         name: "Jorge Umanzor",
         position: "Ambassador",
         photo: jorgePhoto,
+        video: jorgeVideo,
         socials: {
             instagram: "",
             linkedin: "https://www.linkedin.com/in/jorge-umanzor/",
@@ -92,6 +119,7 @@ export const officers = [
         name: "Andrew Almasi",
         position: "Activities Director",
         photo: andrewPhoto,
+        video: andrewVideo,
         socials: {
             instagram: "",
             linkedin: "https://www.linkedin.com/in/arshiaalmasi/",
@@ -101,6 +129,7 @@ export const officers = [
         name: "Benjamin Guzman",
         position: "Competitions Director",
         photo: benPhoto,
+        video: benVideo,
         socials: {
             instagram: "",
             linkedin: "https://www.linkedin.com/in/benjamin-guzman-4b6732235/",
@@ -110,6 +139,7 @@ export const officers = [
         name: "Enlai Yii",
         position: "Workshops Director",
         photo: enlaiPhoto,
+        video: enlaiVideo,
         socials: {
             instagram: "",
             linkedin: "https://www.linkedin.com/in/enlai-yii-97621321a/",
@@ -119,6 +149,7 @@ export const officers = [
         name: "Vishruth Kodikanti",
         position: "Workshops Committee",
         photo: vishPhoto,
+        video: vishVideo,
         socials: {
             instagram: "",
             linkedin: "https://www.linkedin.com/in/vishu-k/",
@@ -128,6 +159,7 @@ export const officers = [
         name: "Ayush Patel",
         position: "Teams Director",
         photo: ayushPhoto,
+        video: ayushVideo,
         socials: {
             instagram: "",
             linkedin: "https://www.linkedin.com/in/ayush-patel-54226a1ab/",
@@ -137,6 +169,7 @@ export const officers = [
         name: "Richer Duong",
         position: "Teams Director",
         photo: richerPhoto,
+        video: richerVideo,
         socials: {
             instagram: "",
             linkedin: "https://www.linkedin.com/in/duong-richer/",
@@ -146,6 +179,7 @@ export const officers = [
         name: "Ashish Job",
         position: "Teams Director",
         photo: ashishPhoto,
+        video: ashishVideo,
         socials: {
             instagram: "",
             linkedin: "https://www.linkedin.com/in/ashish-job/",
@@ -155,6 +189,7 @@ export const officers = [
         name: "Bryant Le",
         position: "Wizard",
         photo: bryantPhoto,
+        video: bryantVideo,
         socials: {
             linkedin: "https://www.linkedin.com/in/bnle/",
             instagram: "https://www.instagram.com/bnleft/"
@@ -164,6 +199,7 @@ export const officers = [
         name: "Saloni Sharma",
         position: "Historian",
         photo: saloniPhoto,
+        video: saloniVideo,
         socials: {
             instagram: "",
             linkedin: "https://www.linkedin.com/in/saloni-sharma-929221272/",
@@ -173,6 +209,7 @@ export const officers = [
         name: "Khanh Nguyen",
         position: "Artist",
         photo: khanhPhoto,
+        video: khanhVideo,
         socials: {
             instagram: "",
             linkedin: "https://www.linkedin.com/in/khanhn2002/",
@@ -182,6 +219,7 @@ export const officers = [
         name: "Widyan Hussien",
         position: "Artist",
         photo: widyanPhoto,
+        video: widyanVideo,
         socials: {
             instagram: "",
             linkedin: "https://www.linkedin.com/in/widyan-hussien/",
@@ -191,6 +229,7 @@ export const officers = [
         name: "Muskan Nehra",
         position: "Marketing Director",
         photo: muskanPhoto,
+        video: muskanVideo,
         socials: {
             instagram: "",
             linkedin: "https://www.linkedin.com/in/muskan-nehra/",
@@ -200,6 +239,7 @@ export const officers = [
         name: "Jackson Nace",
         position: "Marketing Committee",
         photo: jacksonPhoto,
+        video: jacksonVideo,
         socials: {
             instagram: "",
             linkedin: "https://www.linkedin.com/in/jacksonnace/",
@@ -209,6 +249,7 @@ export const officers = [
         name: "Aysel R.",
         position: "Marketing Committee",
         photo: ayselPhoto,
+        video: ayselVideo,
         socials: {
             instagram: "",
             linkedin: "https://www.linkedin.com/in/aysel-r-a363b1220/",
@@ -218,6 +259,7 @@ export const officers = [
         name: "Brendan Diaz",
         position: "Marketing Committee",
         photo: brendanPhoto,
+        video: brendanVideo,
         socials: {
             instagram: "",
             linkedin: "https://www.linkedin.com/in/brendandiaz1/",

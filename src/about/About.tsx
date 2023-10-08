@@ -55,6 +55,7 @@ interface OfficerCardProps {
     name: string;
     position: string;
     photo: string;
+    video: string;
     socials: SocialsObj;
 }
 
@@ -68,8 +69,10 @@ const OfficerCard = (props: OfficerCardProps) => {
         <div className="bg-dark-surface-variant rounded text-center p-8 hover:text-dark-primary">
             <div className="inline-block w-40 h-40">
                 <img 
-                    className="relative object-cover w-full h-full rounded-full"
+                    className="relative object-cover w-full h-full rounded-full hover:object-top"
                     src={props.photo}
+                    onMouseOver={e => (e.currentTarget.src = props.video)}
+                    onMouseOut={e => (e.currentTarget.src = props.photo)}
                 />
             </div>
             <span className="block font-bold pt-4">{props.name}</span>
@@ -150,6 +153,7 @@ const About = () => {
                                     name={officer.name} 
                                     position={officer.position} 
                                     photo={officer.photo}
+                                    video={officer.video}
                                     socials={officer.socials}
                                 />;
                           })
