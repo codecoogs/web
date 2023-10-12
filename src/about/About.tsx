@@ -15,6 +15,7 @@ import {
     competitionsDesc,
     workshopsDesc,
     officers,
+    alumni,
     sponsors,
     partners,
     faq
@@ -54,6 +55,7 @@ interface OfficerCardProps {
     key: number;
     name: string;
     position: string;
+    company: string;
     photo: string;
     video: string;
     socials: SocialsObj;
@@ -77,6 +79,9 @@ const OfficerCard = (props: OfficerCardProps) => {
             </div>
             <span className="block font-bold pt-4">{props.name}</span>
             <span className="block text-sm">{props.position}</span>
+            { props.company !== "" && 
+                <span className="block text-sm">{props.company}</span>
+            }
             <div className="table mx-auto pt-4">
                 <div className="flex flex-row space-x-2">
                     { instagram !== "" &&
@@ -152,6 +157,7 @@ const About = () => {
                                     key={index} 
                                     name={officer.name} 
                                     position={officer.position} 
+                                    company=""
                                     photo={officer.photo}
                                     video={officer.video}
                                     socials={officer.socials}
@@ -161,6 +167,26 @@ const About = () => {
                     </div>
                 </div>
             </AboutSection>
+
+            <AboutSection id="alumni">
+                <div className="p-8 text-center">
+                    <AboutSectionTitle>Alumni</AboutSectionTitle>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-8">
+                        { alumni.map((officer, index) => {
+                                return <OfficerCard 
+                                    key={index} 
+                                    name={officer.name} 
+                                    position={officer.position} 
+                                    company={officer.company}
+                                    photo={officer.photo}
+                                    socials={officer.socials}
+                                />;
+                          })
+                        }
+                    </div>
+                </div>
+            </AboutSection>
+
             <AboutSection id="sponsors">
                 <div className="p-8 text-center">
                     <AboutSectionTitle>Sponsors</AboutSectionTitle>
