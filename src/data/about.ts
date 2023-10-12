@@ -20,6 +20,19 @@ import jacksonPhoto from "./../assets/officers/Jackson.webp";
 import ayselPhoto from "./../assets/officers/Aysel.webp";
 import vishPhoto from "./../assets/officers/Vishruth.webp";
 
+import tailerPhoto from "./../assets/alumni/Tailer.webp";
+import toriPhoto from "./../assets/alumni/Tori.webp";
+import rodolfoPhoto from "./../assets/alumni/Rodolfo.webp";
+import jenniferPhoto from "./../assets/alumni/Jennifer.webp";
+import eithanPhoto from "./../assets/alumni/Eithan.webp";
+import nghiaPhoto from "./../assets/alumni/Nghia.webp";
+import abdullahPhoto from "./../assets/alumni/Abdullah.webp";
+import omarPhoto from "./../assets/alumni/Omar.webp";
+import christianPhoto from "./../assets/alumni/Christian.webp";
+import gabriellePhoto from "./../assets/alumni/Gabrielle.webp";
+import fernandoPhoto from "./../assets/alumni/Fernando.webp";
+import sanaPhoto from "./../assets/alumni/Sana.webp";
+
 import hcssLogo from "./../assets/logos/hcss.png";
 import tomNTomsLogo from "./../assets/logos/tom-n-toms.png";
 
@@ -224,6 +237,129 @@ export const officers = [
         }
     },
 ];
+
+export const alumni = [
+    {
+        name: "Tailer Nguyen",
+        position: "President",
+        photo: tailerPhoto,
+        company: "Microsoft (SWE)",
+        socials: {
+            instagram: "",
+            linkedin: "https://www.linkedin.com/in/tailer-nguyen/",
+        }
+    },
+    {
+        name: "Tori Nguyen",
+        position: "VP of External Affairs",
+        photo: toriPhoto,
+        company: "Oracle (Technical Consultant)",
+        socials: {
+            instagram: "",
+            linkedin: "https://www.linkedin.com/in/tori-nguyen23/",
+        }
+    },
+    {
+        name: "Rodolfo Chavez",
+        position: "VP of Internal Affairs",
+        photo: rodolfoPhoto,
+        company: "JP Morgan (SWE)",
+        socials: {
+            instagram: "",
+            linkedin: "https://www.linkedin.com/in/rodolfo-chavez-478287183/",
+        }
+    },
+    {
+        name: "Jennifer Figueroa",
+        position: "Treasurer",
+        photo: jenniferPhoto,
+        company: "JP Morgan (SWE Intern)",
+        socials: {
+            instagram: "",
+            linkedin: "https://www.linkedin.com/in/jennifer-figueroa-maria/",
+        }
+    },
+    {
+        name: "Eithan Austria",
+        position: "Workshop Facilitator",
+        photo: eithanPhoto,
+        company: "JP Morgan (SWE)",
+        socials: {
+            instagram: "",
+            linkedin: "https://www.linkedin.com/in/eithanaustria/",
+        }
+    },
+    {
+        name: "Nghia Luu",
+        position: "Competitions Director",
+        photo: nghiaPhoto,
+        company: "JP Morgan (SWE)",
+        socials: {
+            instagram: "",
+            linkedin: "https://www.linkedin.com/in/nghiep-nghia-luu/",
+        }
+    },
+    {
+        name: "Abdullah S.",
+        position: "Workshops Director",
+        photo: abdullahPhoto,
+        company: "Meta (SWE)",
+        socials: {
+            instagram: "",
+            linkedin: "https://www.linkedin.com/in/abdullah-samma/",
+        }
+    },
+    {
+        name: "Omar Romero",
+        position: "Activities Director",
+        photo: omarPhoto,
+        company: "P&G (R&D Intern)",
+        socials: {
+            instagram: "",
+            linkedin: "https://www.linkedin.com/in/omar-f-romero/",
+        }
+    },
+    {
+        name: "Christian Montemayor",
+        position: "Team lead",
+        photo: christianPhoto,
+        company: "Google (SWE)",
+        socials: {
+            instagram: "",
+            linkedin: "https://www.linkedin.com/in/christianmontemayor/",
+        }
+    },
+    {
+        name: "Gabrielle Co",
+        position: "Team lead",
+        photo: gabriellePhoto,
+        company: "Sprout Social (SWE)",
+        socials: {
+            instagram: "",
+            linkedin: "https://www.linkedin.com/in/gabrielleco/",
+        }
+    },
+    {
+        name: "Fernando Ramirez",
+        position: "Teams Director",
+        photo: fernandoPhoto,
+        company: "Amazon (SWE Intern)",
+        socials: {
+            instagram: "",
+            linkedin: "https://www.linkedin.com/in/fndo/",
+        }
+    },
+    {
+        name: "Sana A.",
+        position: "VP of Internal Affairs Intern",
+        photo: sanaPhoto,
+        company: "Google (SWE Intern)",
+        socials: {
+            instagram: "",
+            linkedin: "https://www.linkedin.com/in/sana-akbani/",
+        }
+    },
+]
 
 export const sponsors = [
     {
