@@ -57,7 +57,7 @@ interface OfficerCardProps {
     position: string;
     company: string;
     photo: string;
-    video: string;
+    video?: string;
     socials: SocialsObj;
 }
 
@@ -73,7 +73,7 @@ const OfficerCard = (props: OfficerCardProps) => {
                 <img 
                     className="relative object-cover w-full h-full rounded-full hover:object-top"
                     src={props.photo}
-                    onMouseOver={e => (e.currentTarget.src = props.video)}
+                    onMouseOver={e => (e.currentTarget.src = props.video ? props.video : props.photo)}
                     onMouseOut={e => (e.currentTarget.src = props.photo)}
                 />
             </div>
