@@ -32,6 +32,10 @@ Run this command to build the project to static files in a `dist` folder
 pnpm build
 ```
 
+## Deployment
+
+Refer to [Vercel Deployment Docs](https://vercel.com/docs/deployments/overview )
+
 ## Contributing
 Please make sure to read the [Contributing Guide](https://github.com/codecoogs/.github/blob/main/CONTRIBUTING.md)
 
