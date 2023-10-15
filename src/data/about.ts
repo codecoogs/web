@@ -1,4 +1,4 @@
-import jakePhoto from "./../assets/officers/jake.webp";
+import jakePhoto from "./../assets/officers/Jake.webp";
 import jakeVideo from "./../assets/officers/Jake.gif";
 import alliePhoto from "./../assets/officers/Allie.webp";
 import allieVideo from "./../assets/officers/Allie.gif";
