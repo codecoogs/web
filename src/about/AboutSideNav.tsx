@@ -4,6 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import {
     InfoIcon,
     OfficerIcon,
+    AlumniIcon,
     SponsorIcon,
     PartnerIcon,
     QuestionIcon
@@ -59,6 +60,10 @@ const AboutSideNav = () => {
             <SideNavlink to="officers" currentHash={currentHash}>
                 <OfficerIcon/>
                 <SideNavtext>Officers</SideNavtext>
+            </SideNavlink>
+            <SideNavlink to="alumni" currentHash={currentHash}>
+                <AlumniIcon/>
+                <SideNavtext>Alumni</SideNavtext>
             </SideNavlink>
             <SideNavlink to="sponsors" currentHash={currentHash}>
                 <SponsorIcon/>
