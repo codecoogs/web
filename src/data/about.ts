@@ -54,8 +54,8 @@ import gabriellePhoto from "./../assets/alumni/Gabrielle.webp";
 import fernandoPhoto from "./../assets/alumni/Fernando.webp";
 import sanaPhoto from "./../assets/alumni/Sana.webp";
 
-import hcssLogo from "./../assets/logos/hcss.png";
-import tomNTomsLogo from "./../assets/logos/tom-n-toms.png";
+import hcssLogo from "./../assets/logos/hcss.webp";
+import tomNTomsLogo from "./../assets/logos/tom-n-toms.webp";
 
 import csGirlsLogo from "./../assets/logos/csgirls.webp";
 

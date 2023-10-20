@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import banner from "../assets/banner.png";
+import banner from "../assets/banner.webp";
 
 interface HomeButtonProps {
     link: string;

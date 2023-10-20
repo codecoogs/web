@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-import happyCoCo from "../assets/happy-coco.png";
-import determinedCoCo from "../assets/determined-coco.png";
+import happyCoCo from "../assets/happy-coco.webp";
+import determinedCoCo from "../assets/determined-coco.webp";
 
 const setTextColor = (to: string) => {
     const location = useLocation();
@@ -102,6 +102,7 @@ const Navbar = () => {
                     className="inline-flex items-center fill-white md:hidden" 
                     onClick={handleClick}
                     type="button"
+                    aria-label="Hamburger menu"
                 >
                     <MenuIcon />
                 </button>
