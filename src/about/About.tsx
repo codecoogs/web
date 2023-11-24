@@ -73,6 +73,7 @@ const OfficerCard = (props: OfficerCardProps) => {
                 <img 
                     className="relative object-cover w-full h-full rounded-full hover:object-top"
                     src={props.photo}
+                    alt={props.name}
                     onMouseOver={e => (e.currentTarget.src = props.video ? props.video : props.photo)}
                     onMouseOut={e => (e.currentTarget.src = props.photo)}
                 />
@@ -85,12 +86,12 @@ const OfficerCard = (props: OfficerCardProps) => {
             <div className="table mx-auto pt-4">
                 <div className="flex flex-row space-x-2">
                     { instagram !== "" &&
-                        <a href={instagram} target="_blank">
+                        <a href={instagram} target="_blank" aria-label="Go to our Instagram">
                             <InstagramIcon/>
                         </a>
                     }
                     { linkedin !== "" &&
-                        <a href={linkedin} target="_blank">
+                        <a href={linkedin} target="_blank" aria-label="Go to our LinkedIn">
                             <LinkedInIcon/>
                         </a>
                     }
@@ -198,6 +199,7 @@ const About = () => {
                                         <img    
                                             className={sponsor.name == "HCSS" ? "" : "rounded-full"} 
                                             src={sponsor.logo} 
+                                            alt={sponsor.name}
                                             width="200" 
                                             height="200" 
                                         />
@@ -220,6 +222,7 @@ const About = () => {
                                             <img    
                                                 className="rounded-full"
                                                 src={partner.logo} 
+                                                alt={partner.name}
                                                 width="200" 
                                                 height="200" 
                                             />

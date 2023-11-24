@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 import {
     InfoIcon,
@@ -24,6 +24,7 @@ const SideNavlink = (props: SideNavlinkProps) => {
             <a 
                 className={`flex flex-row items-center gap-x-3 fill-${color} text-${color} hover:fill-dark-primary hover:text-dark-primary scroll-smooth`}
                 href={`#${props.to}`}
+                aria-label={`Go to '${props.to}' page section`}
             >
                 {props.children}
             </a>
