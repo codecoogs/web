@@ -85,12 +85,12 @@ const OfficerCard = (props: OfficerCardProps) => {
             }
             <div className="table mx-auto pt-4">
                 <div className="flex flex-row space-x-2">
-                    { instagram !== "" &&
+                    { instagram &&
                         <a href={instagram} target="_blank" aria-label="Go to our Instagram">
                             <InstagramIcon/>
                         </a>
                     }
-                    { linkedin !== "" &&
+                    { linkedin &&
                         <a href={linkedin} target="_blank" aria-label="Go to our LinkedIn">
                             <LinkedInIcon/>
                         </a>
