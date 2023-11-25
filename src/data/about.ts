@@ -26,7 +26,7 @@ export const teamsDesc = "Being part of a team in Code Coogs gives members the o
 export const competitionsDesc = "Every two weeks we will hold a competition that will put your skills to the test. Each competition will push you to become a better programmer. The skills you gain from solving these problems will show when you do technical interviews!";
 export const workshopsDesc = "Workshops are where our members will develop their programming skills and gain a sense of collaboration with their peers, and gain confidence in their problem-solving skills. Workshops will go over challenging problems that utilize a variety of programming concepts, and students will learn the patterns and techniques used to tackle these problems. It is encouraged to collaborate and bounce ideas off of one another to understand different angles of solving these problems!";
 
-export const officers = allOfficers[1];
+export const officers = allOfficers[allOfficers.length - 1];
 
 export const alumni = [
     {
