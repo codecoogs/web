@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 import AboutSideNav from "./AboutSideNav";
 
@@ -55,7 +55,7 @@ interface OfficerCardProps {
     key: number;
     name: string;
     position: string;
-    company: string;
+    company?: string;
     photo: string;
     video?: string;
     socials: SocialsObj;
@@ -80,7 +80,7 @@ const OfficerCard = (props: OfficerCardProps) => {
             </div>
             <span className="block font-bold pt-4">{props.name}</span>
             <span className="block text-sm">{props.position}</span>
-            { props.company !== "" && 
+            { props.company && 
                 <span className="block text-sm">{props.company}</span>
             }
             <div className="table mx-auto pt-4">
@@ -96,6 +96,42 @@ const OfficerCard = (props: OfficerCardProps) => {
                         </a>
                     }
                 </div>
+            </div>
+        </div>
+    );
+};
+
+const OfficerSection = () => {
+    const numOfficers = officers.length;
+    const [semester, setSemester] = useState(numOfficers - 1);
+
+    const handleDecrementSemester = () => {
+        setSemester(prevSemester => Math.max(0, prevSemester - 1));
+    };
+
+    const handleIncrementSemester = () => {
+        setSemester(prevSemester => Math.min(numOfficers - 1, prevSemester + 1));
+    };
+
+    return (
+        <div className="p-8 text-center">
+            <div className="flex justify-center items-center space-x-4">
+                { semester > 0 && <button onClick={handleDecrementSemester}>&lt;</button> }
+                <AboutSectionTitle>{ officers[semester].semester } Officers</AboutSectionTitle>
+                { semester < numOfficers - 1 && <button onClick={handleIncrementSemester}>&gt;</button> }
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-8">
+                { officers[semester].list.map((officer, index) => {
+                        return <OfficerCard 
+                            key={index} 
+                            name={officer.name} 
+                            position={officer.position} 
+                            photo={officer.photo}
+                            video={officer.video}
+                            socials={officer.socials}
+                        />;
+                })
+                }
             </div>
         </div>
     );
@@ -150,23 +186,7 @@ const About = () => {
             </AboutSection>
 
             <AboutSection id="officers">
-                <div className="p-8 text-center">
-                    <AboutSectionTitle>Officers</AboutSectionTitle>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-8">
-                        { officers.map((officer, index) => {
-                                return <OfficerCard 
-                                    key={index} 
-                                    name={officer.name} 
-                                    position={officer.position} 
-                                    company=""
-                                    photo={officer.photo}
-                                    video={officer.video}
-                                    socials={officer.socials}
-                                />;
-                          })
-                        }
-                    </div>
-                </div>
+                <OfficerSection />
             </AboutSection>
 
             <AboutSection id="alumni">
