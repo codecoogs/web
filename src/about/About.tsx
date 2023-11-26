@@ -47,7 +47,7 @@ const AboutSectionTitle = (props: AboutSectionTitleProps) => {
 };
 
 interface SocialsObj {
-    instagram: string;
+    instagram?: string;
     linkedin: string;
 }
 

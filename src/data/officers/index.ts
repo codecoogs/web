@@ -4,7 +4,19 @@ import Fall2022 from "./2022Fall";
 import Spring2023 from "./2023Spring";
 import Fall2023 from "./2023Fall";
 
-const officers = [
+type Officer = {
+  name: string,
+  position: string,
+  photo: any,
+  video?: string,
+  socials: {
+    linkedin: string
+  }
+}
+
+type Officers = Officer[];
+
+const officers: Officers[] = [
   Fall2021,
   Spring2022,
   Fall2022,
