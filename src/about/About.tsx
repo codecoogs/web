@@ -117,7 +117,7 @@ const OfficerSection = () => {
         <div className="p-8 text-center">
             <div className="flex justify-center items-center space-x-4">
                 { semester > 0 && <button onClick={handleDecrementSemester}>&lt;</button> }
-                <AboutSectionTitle>{ officers[semester].semester } Officers</AboutSectionTitle>
+                <AboutSectionTitle>Officers[<span className="text-dark-primary">{ officers[semester].semester }</span>]</AboutSectionTitle>
                 { semester < numOfficers - 1 && <button onClick={handleIncrementSemester}>&gt;</button> }
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-8">

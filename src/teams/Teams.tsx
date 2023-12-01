@@ -24,7 +24,7 @@ const Teams = () => {
     return (
         <div className="bg-dark-surface">
             <div className="text-center">
-                <h1 className="text-xl text-white font-bold mt-8">Teams[{teams[year].year}]</h1>
+                <h1 className="text-xl text-white font-bold mt-8">Teams[<span className="text-dark-primary">{teams[year].year}</span>]</h1>
                 <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:flex-row mx-8 bg-dark-surface pb-4">
                     { teams[year].list.map((team, index) => {
                             return (
