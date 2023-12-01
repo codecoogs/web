@@ -111,7 +111,6 @@ const Navbar = () => {
                         <Navlink to="/about" text="About"/>
                         <Navlink to="/events" text="Events"/>
                         <Navlink to="/teams" text="Teams"/>
-                        <Navlink to="/projects" text="Projects"/>
                         <Navlink to="/members" text="Members"/>
                     </ul>
                 </div>
