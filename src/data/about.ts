@@ -18,7 +18,7 @@ import tomNTomsLogo from "./../assets/logos/tom-n-toms.webp";
 
 import csGirlsLogo from "./../assets/logos/csgirls.webp";
 
-export const email = "main@codecoogs.com";
+export const email = "codecoogs@gmail.com";
 
 export const aboutUsDesc = "Founded in September 2021, we are student-led computer science organization at the University of Houston. We focus on socials, teams, competitions, and workshops. We hope to foster an environment to develop exciting projects, refine technical skills, and gain new friends.";
 export const socialsDesc = "The socials are a time for members to kick back and relax. Whether it is a sports day at a park or a virtual movie night, our socials are sure to enable our members to get closer to one another to promote the community aspect within our members. Show up to our in-person socials for a good time!";

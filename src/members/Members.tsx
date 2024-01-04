@@ -59,7 +59,7 @@ const Members = () => {
                         <div>
                             <h1 className="font-bold text-lg text-center" style={{color:'red'}}>Read before signing up:</h1>
                             <ul className="align-middle pb-8 text-center">
-                                <li><span className="text-dark-primary">1.</span> All announcements are posted here: <a target="blank" href={discordLink}><u>discord server</u></a></li>
+                                <li><span className="text-dark-primary">1.</span> All announcements are posted here: <a className="text-dark-primary" target="blank" href={discordLink}><u>discord server</u></a></li>
                                 <li><span className="text-dark-primary">2.</span> Membership is $25 per year or $15 per semester and can be paid with:</li>
                                 <li>Cash: at any event</li>
                                 <li>Venmo: @Code-Coogs</li>

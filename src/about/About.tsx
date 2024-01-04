@@ -40,7 +40,7 @@ interface AboutSectionTitleProps {
 
 const AboutSectionTitle = (props: AboutSectionTitleProps) => {
     return (
-        <h1 className="text-xl font-bold">
+        <h1 className="text-2xl font-bold">
             {props.children}
         </h1>
     );
@@ -116,9 +116,9 @@ const OfficerSection = () => {
     return (
         <div className="p-8 text-center">
             <div className="flex justify-center items-center space-x-4">
-                { semester > 0 && <button onClick={handleDecrementSemester}>&lt;</button> }
+                { semester > 0 && <button className="text-3xl hover:text-dark-primary" onClick={handleDecrementSemester}>&#129190;</button> }
                 <AboutSectionTitle>Officers[<span className="text-dark-primary">{ officers[semester].semester }</span>]</AboutSectionTitle>
-                { semester < numOfficers - 1 && <button onClick={handleIncrementSemester}>&gt;</button> }
+                { semester < numOfficers - 1 && <button className="text-3xl hover:text-dark-primary" onClick={handleIncrementSemester}>&#129191;</button> }
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-8">
                 { officers[semester].list.map((officer, index) => {
@@ -160,31 +160,33 @@ const About = () => {
 
     return (
         <div className="bg-dark-surface text-white">
+            <div className="bg-dark-surface-variant rounded md:m-24">
             <AboutSideNav/>
             <AboutSection id="us">
-                <div className="p-8 text-center">
+                <div className="p-6 text-center">
                     <AboutSectionTitle>About Us</AboutSectionTitle>
-                    <p className="text-sm p-8">{aboutUsDesc}</p>
+                    <p className="text-sm p-6">{aboutUsDesc}</p>
                     <span>Contact: <span className="text-dark-primary">{email}</span></span>
                 </div>
-                <div className="p-8">
+                <div className="p-6">
                     <h2 className="text-lg text-dark-primary">Socials</h2>
                     <p className="text-sm">{socialsDesc}</p>
                 </div>
-                <div className="p-8">
+                <div className="p-6">
                     <h2 className="text-lg text-dark-primary">Teams</h2>
                     <p className="text-sm">{teamsDesc}</p>
                 </div>
-                <div className="p-8">
+                <div className="p-6">
                     <h2 className="text-lg text-dark-primary">Competitions</h2>
                     <p className="text-sm">{competitionsDesc}</p>
                 </div>
-                <div className="p-8">
+                <div className="p-6 pb-12">
                     <h2 className="text-lg text-dark-primary">Workshops</h2>
                     <p className="text-sm">{workshopsDesc}</p>
                 </div>
             </AboutSection>
-
+            </div>
+            
             <AboutSection id="officers">
                 <OfficerSection />
             </AboutSection>
