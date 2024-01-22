@@ -16,7 +16,7 @@ dependencies:
 
 devDependencies:
   '@types/react':
-    specifier: ^18.2.11
+    specifier: ^18.2.18
     version: 18.2.18
   '@types/react-dom':
     specifier: ^18.0.6
@@ -455,7 +455,7 @@ packages:
       postcss: ^8.1.0
     dependencies:
       browserslist: 4.21.2
-      caniuse-lite: 1.0.30001458
+      caniuse-lite: 1.0.30001579
       fraction.js: 4.2.0
       normalize-range: 0.1.2
       picocolors: 1.0.0
@@ -480,7 +480,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001458
+      caniuse-lite: 1.0.30001579
       electron-to-chromium: 1.4.199
       node-releases: 2.0.6
       update-browserslist-db: 1.0.5(browserslist@4.21.2)
@@ -491,8 +491,8 @@ packages:
     engines: {node: '>= 6'}
     dev: true
 
-  /caniuse-lite@1.0.30001458:
-    resolution: {integrity: sha512-lQ1VlUUq5q9ro9X+5gOEyH7i3vm+AYVT1WDCVB69XOZ17KZRhnZ9J0Sqz7wTHQaLBJccNCHq8/Ww5LlOIZbB0w==}
+  /caniuse-lite@1.0.30001579:
+    resolution: {integrity: sha512-u5AUVkixruKHJjw/pj9wISlcMpgFWzSrczLZbrqBSxukQixmg0SJ5sZTpvaFvxU0HoQKd4yoyAogyrAz9pzJnA==}
     dev: true
 
   /chalk@2.4.2:
@@ -516,7 +516,7 @@ packages:
       normalize-path: 3.0.0
       readdirp: 3.6.0
     optionalDependencies:
-      fsevents: 2.3.2
+      fsevents: 2.3.3
     dev: true
 
   /color-convert@1.9.3:
@@ -812,8 +812,8 @@ packages:
     resolution: {integrity: sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA==}
     dev: true
 
-  /fsevents@2.3.2:
-    resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
+  /fsevents@2.3.3:
+    resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
     requiresBuild: true
@@ -1152,7 +1152,7 @@ packages:
     engines: {node: '>=10.0.0'}
     hasBin: true
     optionalDependencies:
-      fsevents: 2.3.2
+      fsevents: 2.3.3
     dev: true
 
   /run-parallel@1.2.0:
@@ -1287,7 +1287,7 @@ packages:
       resolve: 1.22.1
       rollup: 2.77.0
     optionalDependencies:
-      fsevents: 2.3.2
+      fsevents: 2.3.3
     dev: true
 
   /xtend@4.0.2:
