@@ -61,8 +61,9 @@ const Members = () => {
                             <ul className="align-middle pb-8 text-center">
                                 <li><span className="text-dark-primary">1.</span> All announcements are posted here: <a className="text-dark-primary" target="blank" href={discordLink}><u>discord server</u></a></li>
                                 <li><span className="text-dark-primary">2.</span> Membership is $25 per year or $15 per semester and can be paid with:</li>
-                                <li>Cash: at any event</li>
-                                <li>Venmo: @Code-Coogs</li>
+                                <li><span className="underline">Cash:</span> at any event</li>
+                                <li><span className="underline">Venmo:</span> @Code-Coogs</li>
+                                <li><span className="underline">Zelle:</span> 832-721-5937</li>
                                 <li><span className="text-dark-primary">3.</span> When paying online, include full name</li>
                             </ul>
                         </div>
