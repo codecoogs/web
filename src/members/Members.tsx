@@ -63,7 +63,7 @@ const Members = () => {
                                 <li><span className="text-dark-primary">2.</span> Membership is $25 per year or $15 per semester and can be paid with:</li>
                                 <li><span className="underline">Cash:</span> at any event</li>
                                 <li><span className="underline">Venmo:</span> @Code-Coogs</li>
-                                <li><span className="underline">Zelle:</span> 832-721-5937</li>
+                                <li><span className="underline">Zelle:</span> 832-535-7320</li>
                                 <li><span className="text-dark-primary">3.</span> When paying online, include full name</li>
                             </ul>
                         </div>
