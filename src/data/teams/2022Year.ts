@@ -16,25 +16,25 @@ const year2022Teams = [
     {
         name: "Team O(n)",
         photo: TeamONPhoto,
-        leads: ["TBA"],
+        leads: ["Alfredo", "John"],
         github: "https://github.com/"
     },
     {
         name: "Dream Team",
         photo: DreamTeamPhoto,
-        leads: ["TBA"],
+        leads: ["Jake", "Yury"],
         github: "https://github.com/"
     },
     {
         name: "Team Tux",
         photo: TeamTuxPhoto,
-        leads: ["TBA"],
+        leads: ["Frosty"],
         github: "https://github.com/"
     },
     {
         name: "Runtime Terror",
         photo: RuntimeTerrorPhoto,
-        leads: ["TBA"],
+        leads: ["Reggie"],
         github: "https://github.com/"
     }
 ];
