@@ -68,7 +68,7 @@ const OfficerCard = (props: OfficerCardProps) => {
     } = props.socials;
 
     return (
-        <div className="bg-dark-surface-variant rounded text-center p-8 hover:text-dark-primary">
+        <div className="bg-dark-surface rounded-xl text-center p-8 hover:text-dark-primary ring-1 ring-inset ring-white/[.3]">
             <div className="inline-block w-40 h-40">
                 <img 
                     className="relative object-cover w-full h-full rounded-full hover:object-top"
@@ -145,7 +145,7 @@ interface FAQCardProps {
 
 const FAQCard = (props: FAQCardProps) => {
     return (
-        <div className="flex flex-col bg-dark-surface-variant rounded p-8 mb-8">
+        <div className="flex flex-col bg-dark-surface rounded p-8 mb-8 ring-1 ring-inset ring-white/[.3]">
             <span className="text-dark-primary">{props.question}</span>
             <span>{props.answer}</span>
         </div>
@@ -160,7 +160,7 @@ const About = () => {
 
     return (
         <div className="bg-dark-surface text-white">
-            <div className="bg-dark-surface-variant rounded md:m-24">
+            <div className="bg-dark-surface rounded md:m-24 ring-1 ring-inset ring-white/[.3]">
             <AboutSideNav/>
             <AboutSection id="us">
                 <div className="p-6 text-center">

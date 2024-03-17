@@ -53,7 +53,7 @@ const AboutSideNav = () => {
     }, [location]);
 
     return (
-        <ul className="flex flex-col fixed group bg-dark-surface-variant z-1 top-1/2 left-3 white transform -translate-y-1/2 gap-y-4 p-2 rounded text-white fill-white font-semibold">
+        <ul className="flex flex-col fixed group bg-dark-surface z-1 top-1/2 left-3 white transform -translate-y-1/2 gap-y-4 p-2 rounded text-white fill-white ring-1 ring-inset ring-white/[.3]">
             <SideNavlink to="us" currentHash={currentHash}>
                 <InfoIcon/>
                 <SideNavtext>About Us</SideNavtext>

@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 
 import MembershipForm from "./MembershipForm";
-import MemberBanner from "../assets/banner2.webp";
 import computerCoCo from "../assets/computer-coco.webp";
 
 import { 
@@ -36,7 +35,7 @@ const Members = () => {
 
     return (
         <div className="bg-dark-surface text-white">
-            <div className="bg-dark-surface-variant rounded md:m-8">
+            <div className="bg-dark-surface rounded md:m-8">
                 <h1 className="p-8 font-bold text-xl text-center">Membership</h1>
                 <div className="flex flex-col md:flex-row">
                     <div className="mx-auto">
@@ -81,14 +80,6 @@ const Members = () => {
                 {/*<div className="table text-black my-0 mx-auto">
                     <MembersButton link={signupLink}>Sign Up</MembersButton>
                 </div>*/}
-                <div className="table my-0 mx-auto">
-                    <img    
-                        src={MemberBanner}
-                        alt="Member Banner"
-                        width="800"
-                        height="240"
-                    />
-                </div>
             </div>
         </div>
     );

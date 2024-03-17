@@ -11,7 +11,7 @@ interface TeamCardProps {
 
 const TeamCard = (props: TeamCardProps) => {
     return (
-        <li className="bg-dark-surface-variant rounded text-white flex flex-col p-4 m-4">
+        <li className="bg-dark-surface rounded-lg text-white flex flex-col p-4 m-4 ring-1 ring-inset ring-white/[.3]">
             {props.children}
         </li>
     );
@@ -40,7 +40,7 @@ const Teams = () => {
                 { teams[year].list.map((team, index) => {
                         return (
                             <TeamCard key={index}>  
-                                {team.photo && <img className="relative object-cover w-full h-full" src={team.photo} alt={`${team.name} photo`}/>}
+                                {team.photo && <img className="relative object-cover w-full h-full rounded-lg" src={team.photo} alt={`${team.name} photo`}/>}
                                 <h1 className="font-bold pt-2">{team.name}</h1>
                                 <h2 className="pt-2">Leads: {team.leads.join(", ")}</h2>
                                 <div className="table mx-auto pt-4">

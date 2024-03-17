@@ -54,10 +54,10 @@ const SignUpForm: React.FC = () => {
   };
 
   return (
-    <form className="grid text-center font-bold" onSubmit={handleSubmit}>
+    <form className="rounded-lg grid text-center font-bold ring-1 ring-inset ring-white/[.3] p-8" onSubmit={handleSubmit}>
       <label htmlFor="paymentMethod">Payment Method</label>
       <select
-        className="bg-dark-surface font-normal text-center mx-24 rounded mt-1 mb-4 py-1"
+        className="bg-dark-surface-variant font-normal text-center mx-24 rounded mt-1 mb-4 py-1"
         id="paymentMethod"
         name="paymentMethod"
         value={formData.paymentMethod}
@@ -70,7 +70,7 @@ const SignUpForm: React.FC = () => {
       </select>
       <label htmlFor="firstName">First Name</label>
       <input
-        className="bg-dark-surface font-normal text-center mx-24 rounded mt-1 mb-4 py-1"
+        className="bg-dark-surface-variant font-normal text-center mx-24 rounded mt-1 mb-4 py-1"
         type="text"
         id="firstName"
         name="firstName"
@@ -80,7 +80,7 @@ const SignUpForm: React.FC = () => {
       />
       <label htmlFor="lastName">Last Name</label>
       <input
-        className="bg-dark-surface font-normal text-center mx-24 rounded mt-1 mb-4 py-1"
+        className="bg-dark-surface-variant font-normal text-center mx-24 rounded mt-1 mb-4 py-1"
         type="text"
         id="lastName"
         name="lastName"
@@ -90,7 +90,7 @@ const SignUpForm: React.FC = () => {
       />
       <label htmlFor="discord">Discord Tag</label>
       <input
-        className="bg-dark-surface font-normal text-center mx-24 rounded mt-1 mb-4 py-1"
+        className="bg-dark-surface-variant font-normal text-center mx-24 rounded mt-1 mb-4 py-1"
         type="text"
         id="discord"
         name="discord"
@@ -100,7 +100,7 @@ const SignUpForm: React.FC = () => {
       />
       <label htmlFor="email">Email</label>
       <input
-        className="bg-dark-surface font-normal text-center mx-24 rounded mt-1 mb-4 py-1"
+        className="bg-dark-surface-variant font-normal text-center mx-24 rounded mt-1 mb-4 py-1"
         type="email"
         id="email"
         name="email"
@@ -110,7 +110,7 @@ const SignUpForm: React.FC = () => {
       />
       <label htmlFor="classification">Classification</label>
       <select
-        className="bg-dark-surface font-normal text-center mx-24 rounded mt-1 mb-4 py-1"
+        className="bg-dark-surface-variant font-normal text-center mx-24 rounded mt-1 mb-4 py-1"
         id="classification"
         name="classification"
         value={formData.classification}
@@ -124,7 +124,7 @@ const SignUpForm: React.FC = () => {
       </select>
       <label htmlFor="major">Major</label>
       <input
-        className="bg-dark-surface font-normal text-center mx-24 rounded mt-1 mb-4 py-1"
+        className="bg-dark-surface-variant font-normal text-center mx-24 rounded mt-1 mb-4 py-1"
         type="text"
         id="major"
         name="major"
@@ -134,7 +134,7 @@ const SignUpForm: React.FC = () => {
       />
       <label htmlFor="codingExperience">Coding Experience</label>
       <select
-        className="bg-dark-surface font-normal text-center mx-24 rounded mt-1 mb-4 py-1"
+        className="bg-dark-surface-variant font-normal text-center mx-24 rounded mt-1 mb-4 py-1"
         id="codingExperience"
         name="codingExperience"
         value={formData.codingExperience}

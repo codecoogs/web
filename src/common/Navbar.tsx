@@ -35,7 +35,7 @@ const Navlink = (props: NavlinkProps) => {
     return (
         <li>
             <Link
-                className={`block h-full ${textColor} font-semibold hover:text-dark-primary`}
+                className={`block h-full ${textColor} hover:text-dark-primary`}
                 to={props.to}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
@@ -95,7 +95,7 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="bg-dark-surface-variant lg:h-16 md:h-14">
+        <nav className="bg-dark-surface border-b border-white border-opacity-10 lg:h-16 md:h-14">
             <div className="flex flex-wrap justify-between items-center mx-auto">
                 <Navhome />
                 <button 
@@ -107,11 +107,11 @@ const Navbar = () => {
                     <MenuIcon />
                 </button>
                 <div className={`${clicked ? "hidden": "block"} relative w-full md:w-auto md:block`}>
-                    <ul className="flex flex-col space-y-4 pb-4 items-center bg-dark-surface-variant md:pb-0 md:space-y-0 md:flex-row md:space-x-4 md:mr-4">
+                    <ul className="flex flex-col space-y-4 pb-4 items-center md:pb-0 md:space-y-0 md:flex-row md:space-x-4 md:mr-4">
                         <Navlink to="/about" text="About"/>
                         <Navlink to="/events" text="Events"/>
                         <Navlink to="/teams" text="Teams"/>
-                        <Navlink to="/members" text="Members"/>
+                        <Navlink to="/members" text="Join"/>
                     </ul>
                 </div>
             </div>

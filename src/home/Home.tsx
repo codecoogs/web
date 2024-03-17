@@ -10,7 +10,7 @@ interface HomeButtonProps {
 };
 
 const HomeButton = (props: HomeButtonProps) => {
-    const style = "bg-dark-primary w-40 h-10 mx-auto text-center rounded leading-10 font-semibold";
+    const style = "w-40 h-10 mx-auto text-center rounded-xl leading-10 bg-dark text-white ring-1 ring-inset ring-white/[.3]";
 
     return props.external ? (
         <a href={props.link} target="_blank">
