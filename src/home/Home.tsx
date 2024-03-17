@@ -6,25 +6,29 @@ import banner from "../assets/banner.webp";
 interface HomeButtonProps {
     link: string;
     external?: boolean;
-    children: string;
+    children: React.ReactNode;
 };
 
 const HomeButton = (props: HomeButtonProps) => {
-    const style = "w-40 h-10 mx-auto text-center rounded-xl leading-10 bg-dark text-white ring-1 ring-inset ring-white/[.3]";
+    const style = "flex items-center p-6 h-10 relative text-center rounded-lg bg-black text-white ring-1 ring-white/[.8] ring-inset";
 
-    return props.external ? (
-        <a href={props.link} target="_blank">
-            <div className={style}>
-                {props.children}
-            </div>
-        </a>
-    ) : (
-        <Link to={props.link}>
-            <div className={style}>
-                {props.children}
-            </div>
-        </Link>
-    );
+    return (
+        <div className="relative group">
+            <div className="absolute -inset-0.5 bg-dark-primary blur rounded-lg opacity-80"></div>
+            {props.external ? (
+                <a href={props.link} target="_blank">
+                    <div className={style}>
+                        {props.children}
+                    </div>
+                </a>
+            ) : (
+                <Link to={props.link}>
+                    <div className={style}>
+                        {props.children}
+                    </div>
+                </Link>
+            )}
+        </div>);
 };
 
 const Home = () => {
@@ -44,13 +48,11 @@ const Home = () => {
             <div className="table my-0 mx-auto">
                 <ul className="flex flex-col items-center space-x-0 space-y-4 md:space-x-24 md:space-y-0 md:flex-row">
                     <li>
-                        <HomeButton link="/about">About Us</HomeButton>
-                    </li>
-                    <li>
-                        <HomeButton link="/members">Membership</HomeButton>
-                    </li>
-                    <li>
-                        <HomeButton link="https://linktr.ee/codecoogs" external>LinkTree</HomeButton>
+                        <HomeButton link="/about">
+                            <span className="flex items-center">
+                                <span>About Us</span>
+                            </span>
+                        </HomeButton>
                     </li>
                 </ul>
             </div>

@@ -1,30 +1,26 @@
 import React, { useEffect } from "react";
 
 import MembershipForm from "./MembershipForm";
-import computerCoCo from "../assets/computer-coco.webp";
 
 import { 
     benefits, 
     discordLink,
-    signupLink
 } from "../data/members";
 
-interface MembersButtonProps {
-    link: string;
-    children: string;
-};
+interface MemberBenefitCardProps {
+    benefit: string;
+    index: number;
+}
 
-const MembersButton = (props: MembersButtonProps) => {
+const MemberBenefitCard = (props: MemberBenefitCardProps) => {
+    const { benefit, index } = props;
+
     return (
-        <a
-            className="font-semibold"
-            target="_blank"
-            href={props.link}
-        >
-            <div className="bg-dark-primary w-40 h-10 text-center rounded leading-10">
-                {props.children}
+        <li key={index}>
+            <div className="bg-dark-surface-variant h-full rounded-lg text-center p-2 ring-1 ring-inset ring-white/[.3]">
+                {`${benefit}`}
             </div>
-        </a>
+        </li>
     );
 };
 
@@ -35,51 +31,36 @@ const Members = () => {
 
     return (
         <div className="bg-dark-surface text-white">
-            <div className="bg-dark-surface rounded md:m-8">
-                <h1 className="p-8 font-bold text-xl text-center">Membership</h1>
-                <div className="flex flex-col md:flex-row">
-                    <div className="mx-auto">
-                        <h2 className="font-bold text-lg text-center">Benefits</h2>
-                        <ul className="align-middle pb-8 text-center">
-                            { benefits.map((benefit, index) => {
-                                    return (
-                                        <li key={index}> 
-                                            <span>
-                                                <span className="text-dark-primary">
-                                                    {`${index+1}.`}  
-                                                </span>
-                                                {` ${benefit}`}
-                                            </span>
-                                        </li>
-                                    );
-                              }) 
-                            }
-                        </ul>
+            <div className="bg-dark-surface rounded m-4 md:m-8">
+                <div className="flex flex-col md:flex-row md:gap-4">
+                    <div className="flex-1 basis-1/2">
                         <div>
-                            <h1 className="font-bold text-lg text-center" style={{color:'red'}}>Read before signing up:</h1>
-                            <ul className="align-middle pb-8 text-center">
-                                <li><span className="text-dark-primary">1.</span> All announcements are posted here: <a className="text-dark-primary" target="blank" href={discordLink}><u>discord server</u></a></li>
-                                <li><span className="text-dark-primary">2.</span> Membership is $25 per year or $15 per semester and can be paid with:</li>
+                            <h1 className="font-bold text-lg text-center">Pricing</h1>
+                            <ul className="align-middle pb-8">
+                                <li><span className="text-dark-primary">1.</span> Stay up to date by joining our <a
+                                    className="text-dark-primary" target="blank" href={discordLink}><u>discord</u></a>
+                                </li>
+                                <li><span className="text-dark-primary">2.</span> Membership is $25 per year or $15 per
+                                    semester and can be paid with:
+                                </li>
                                 <li><span className="underline">Cash:</span> at any event</li>
                                 <li><span className="underline">Venmo:</span> @Code-Coogs</li>
                                 <li><span className="underline">Zelle:</span> 832-535-7320</li>
-                                <li><span className="text-dark-primary">3.</span> When paying online, include full name</li>
+                                <li><span className="text-dark-primary">3.</span> When paying online, include full name
+                                </li>
                             </ul>
                         </div>
+                        <h2 className="mt-4 font-bold text-lg text-center">Benefits</h2>
+                        <ul className="grid grid-cols-2 gap-4">
+                            {benefits.map((benefit, index) => {
+                                return <MemberBenefitCard benefit={benefit} index={index}/>;
+                            })}
+                        </ul>
                     </div>
-                    <div className="mx-auto">
-                        <img
-                            src={computerCoCo}
-                            alt="Computer CoCo"
-                            width="300"
-                            height="300"
-                        />
+                    <div className="flex-1 basis-1/2">
+                        <MembershipForm/>
                     </div>
                 </div>
-                <MembershipForm />
-                {/*<div className="table text-black my-0 mx-auto">
-                    <MembersButton link={signupLink}>Sign Up</MembersButton>
-                </div>*/}
             </div>
         </div>
     );

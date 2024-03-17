@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 
 import happyCoCo from "../assets/happy-coco.webp";
 import determinedCoCo from "../assets/determined-coco.webp";
+import {DiscordIcon, MenuIcon} from "./NavbarIcons";
 
 const setTextColor = (to: string) => {
     const location = useLocation();
@@ -40,7 +41,7 @@ const Navlink = (props: NavlinkProps) => {
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
             >
-                {isHover ? 
+                {isHover ?
                     <span>[{props.text}]</span>
                     :
                     <span>&nbsp;{props.text}&nbsp;</span>
@@ -78,15 +79,6 @@ const Navhome = () => {
     );
 };
 
-const MenuIcon = () => {
-    return (
-        <svg className="w-6 h-6" viewBox="0 0 20 20">
-            <path fillRule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd">
-            </path>
-        </svg>
-    );
-};
-
 const Navbar = () => {
     const [clicked, setClicked] = useState<boolean>(false);
 
@@ -106,17 +98,23 @@ const Navbar = () => {
                 >
                     <MenuIcon />
                 </button>
-                <div className={`${clicked ? "hidden": "block"} relative w-full md:w-auto md:block`}>
+                <div className={`${clicked ? "hidden" : "block"} relative w-full md:w-auto md:block`}>
                     <ul className="flex flex-col space-y-4 pb-4 items-center md:pb-0 md:space-y-0 md:flex-row md:space-x-4 md:mr-4">
                         <Navlink to="/about" text="About"/>
                         <Navlink to="/events" text="Events"/>
                         <Navlink to="/teams" text="Teams"/>
                         <Navlink to="/members" text="Join"/>
-                    </ul>
-                </div>
+                        <a href="https://discord.gg/e33CQVNTSV" target="_blank">
+                            <div className="pl-4 md:pl-2 md:pt-3 fill-white self-center">
+                                <DiscordIcon/>
+                            </div>
+                        </a>
+                </ul>
             </div>
-        </nav>
-    );
+        </div>
+</nav>
+)
+    ;
 };
 
 export default Navbar;

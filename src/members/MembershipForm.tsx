@@ -4,14 +4,13 @@ import { SIGNUP_API_URL } from '../data/members';
 
 const SignUpForm: React.FC = () => {
   const [formData, setFormData] = useState({
-    paymentMethod: 'Venmo',
     firstName: '',
     lastName: '',
-    discord: '',
     email: '',
-    classification: 'Freshman',
+    phone: '',
     major: '',
-    codingExperience: 'None'
+    classification: 'Freshman',
+    expectedGraduation: '2024-05'
   });
 
   const handleChange = (e: any) => {
@@ -35,14 +34,13 @@ const SignUpForm: React.FC = () => {
       if (response.ok) {
         alert('Success! Your response has been recorded.');
         setFormData({
-          paymentMethod: 'Venmo',
-          firstName: '',
-          lastName: '',
-          discord: '',
-          email: '',
-          classification: 'Freshman',
-          major: '',
-          codingExperience: 'None'
+            firstName: '',
+            lastName: '',
+            email: '',
+            phone: '',
+            major: 'Computer Science',
+            classification: 'Freshman',
+            expectedGraduation: 'None'
         })
       } else {
         alert('Error submitting the form. Please try again later.');
@@ -54,109 +52,142 @@ const SignUpForm: React.FC = () => {
   };
 
   return (
-    <form className="rounded-lg grid text-center font-bold ring-1 ring-inset ring-white/[.3] p-8" onSubmit={handleSubmit}>
-      <label htmlFor="paymentMethod">Payment Method</label>
-      <select
-        className="bg-dark-surface-variant font-normal text-center mx-24 rounded mt-1 mb-4 py-1"
-        id="paymentMethod"
-        name="paymentMethod"
-        value={formData.paymentMethod}
-        onChange={handleChange}
-        required
-      >
-        <option value="Venmo">Venmo</option>
-        <option value="Cash">Cash</option>
-        <option value="Zelle">Zelle</option>
-      </select>
-      <label htmlFor="firstName">First Name</label>
-      <input
-        className="bg-dark-surface-variant font-normal text-center mx-24 rounded mt-1 mb-4 py-1"
-        type="text"
-        id="firstName"
-        name="firstName"
-        value={formData.firstName}
-        onChange={handleChange}
-        required
-      />
-      <label htmlFor="lastName">Last Name</label>
-      <input
-        className="bg-dark-surface-variant font-normal text-center mx-24 rounded mt-1 mb-4 py-1"
-        type="text"
-        id="lastName"
-        name="lastName"
-        value={formData.lastName}
-        onChange={handleChange}
-        required
-      />
-      <label htmlFor="discord">Discord Tag</label>
-      <input
-        className="bg-dark-surface-variant font-normal text-center mx-24 rounded mt-1 mb-4 py-1"
-        type="text"
-        id="discord"
-        name="discord"
-        value={formData.discord}
-        onChange={handleChange}
-        required
-      />
-      <label htmlFor="email">Email</label>
-      <input
-        className="bg-dark-surface-variant font-normal text-center mx-24 rounded mt-1 mb-4 py-1"
-        type="email"
-        id="email"
-        name="email"
-        value={formData.email}
-        onChange={handleChange}
-        required
-      />
-      <label htmlFor="classification">Classification</label>
-      <select
-        className="bg-dark-surface-variant font-normal text-center mx-24 rounded mt-1 mb-4 py-1"
-        id="classification"
-        name="classification"
-        value={formData.classification}
-        onChange={handleChange}
-        required
-      >
-        <option value="Freshman">Freshman</option>
-        <option value="Sophomore">Sophomore</option>
-        <option value="Junior">Junior</option>
-        <option value="Senior">Senior</option>
-      </select>
-      <label htmlFor="major">Major</label>
-      <input
-        className="bg-dark-surface-variant font-normal text-center mx-24 rounded mt-1 mb-4 py-1"
-        type="text"
-        id="major"
-        name="major"
-        value={formData.major}
-        onChange={handleChange}
-        required
-      />
-      <label htmlFor="codingExperience">Coding Experience</label>
-      <select
-        className="bg-dark-surface-variant font-normal text-center mx-24 rounded mt-1 mb-4 py-1"
-        id="codingExperience"
-        name="codingExperience"
-        value={formData.codingExperience}
-        onChange={handleChange}
-        required
-      >
-        <option value="None">None</option>
-        <option value="Novice">Novice</option>
-        <option value="Intermediate">Intermediate</option>
-        <option value="Advanced">Advanced</option>
-      </select>
-
-      <div className="table text-black my-0 mx-auto">
-        <button 
-          className="bg-dark-primary w-40 h-10 text-dark-surface items-center text-center rounded leading-10"        
-          type="submit"
-        >
-          Sign Up
-        </button>
-      </div>
-    </form>
-  );
+      <form
+          className="bg-dark-surface-variant rounded-lg grid font-bold ring-1 ring-inset ring-white/[.3] p-8"
+          onSubmit={handleSubmit}>
+          <div className="flex justify-between">
+              <div className="relative">
+                  <input
+                      className="peer bg-dark-surface-variant h-10 w-full border-b-2 border-white/[.3] placeholder-dark-surface-variant focus:outline-none focus:border-dark-primary"
+                      type="text"
+                      id="firstName"
+                      name="firstName"
+                      value={formData.firstName}
+                      onChange={handleChange}
+                      placeholder="First Name"
+                      required
+                  />
+                  <label
+                      className="absolute left-0 -top-3.5 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-sm peer-focus:text-white/[.4]"
+                      htmlFor="firstName"
+                  >
+                      First Name
+                  </label>
+              </div>
+              <div className="relative">
+                  <input
+                      className="peer bg-dark-surface-variant h-10 w-full border-b-2 border-white/[.3] placeholder-dark-surface-variant focus:outline-none focus:border-dark-primary"
+                      type="text"
+                      id="lastName"
+                      name="lastName"
+                      value={formData.lastName}
+                      onChange={handleChange}
+                      placeholder="Last Name"
+                      required
+                  />
+                  <label
+                      className="absolute left-0 -top-3.5 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-sm"
+                      htmlFor="lastName"
+                  >
+                      Last Name
+                  </label>
+              </div>
+          </div>
+          <div className="relative mt-4">
+              <input
+                  className="peer bg-dark-surface-variant h-10 w-full border-b-2 border-white/[.3] placeholder-dark-surface-variant focus:outline-none focus:border-dark-primary"
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="Email"
+                  required
+              />
+              <label
+                  className="absolute left-0 -top-3.5 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-sm"
+                  htmlFor="email"
+              >
+                  Email
+              </label>
+          </div>
+          <div className="relative mt-4">
+              <input
+                  className="peer bg-dark-surface-variant h-10 w-full border-b-2 border-white/[.3] placeholder-dark-surface-variant focus:outline-none focus:border-dark-primary"
+                  type="tel"
+                  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  placeholder="Phone"
+                  required
+              />
+              <label
+                  className="absolute left-0 -top-3.5 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-sm"
+                  htmlFor="phone"
+              >
+                  Phone
+              </label>
+          </div>
+          <div className="flex flex-col mt-4">
+              <label htmlFor="major">Major</label>
+              <select
+                  className="bg-dark-surface-variant font-normal rounded mt-1 p-2 ring-1 ring-inset ring-white/[.3]"
+                  id="major"
+                  name="major"
+                  value={formData.major}
+                  onChange={handleChange}
+                  required
+              >
+                  <option value="Computer Science">Computer Science</option>
+                  <option value="Mathematics">Mathematics</option>
+                  <option value="Computer Engineering">Computer Engineering</option>
+                  <option value="Electrical Engineering">Electrical Engineering</option>
+                  <option value="Management Information System">MIS</option>
+                  <option value="Computer Information System">CIS</option>
+                  <option value="Other">Other</option>
+              </select>
+          </div>
+          <div className="flex flex-col mt-4">
+              <label htmlFor="classification">Classification</label>
+              <select
+                  className="bg-dark-surface-variant font-normal rounded mt-1 p-2 ring-1 ring-inset ring-white/[.3]"
+                  id="classification"
+                  name="classification"
+                  value={formData.classification}
+                  onChange={handleChange}
+                  required
+              >
+                  <option value="Freshman">Freshman</option>
+                  <option value="Sophomore">Sophomore</option>
+                  <option value="Junior">Junior</option>
+                  <option value="Senior">Senior</option>
+              </select>
+          </div>
+          <div className="flex flex-col mt-4">
+              <label htmlFor="expectedGraduation">Expected Graduation</label>
+              <input
+                  className="bg-dark-surface-variant font-normal rounded mt-1 p-2 ring-1 ring-inset ring-white/[.3]"
+                  type="month"
+                  id="expectedGraduation"
+                  name="expectedGraduation"
+                  min="2024-05"
+                  value={formData.expectedGraduation}
+                  onChange={handleChange}
+                  required
+              />
+          </div>
+          <div className="table text-black my-0 mx-auto mt-6">
+              <button
+                  className="bg-dark-surface-variant hover:bg-dark-primary/[.6] px-4 h-10 items-center text-center text-white rounded-lg ring-1 ring-inset ring-white"
+                  type="submit"
+              >
+                  Join
+              </button>
+          </div>
+      </form>
+);
 };
 
 export default SignUpForm;
