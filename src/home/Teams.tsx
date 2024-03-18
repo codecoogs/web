@@ -31,7 +31,7 @@ const Teams = () => {
 
     return (
         <div className="bg-dark-surface text-center">
-            <div className="flex justify-center items-center space-x-4 text-white mt-8">
+            <div className="flex justify-center items-center space-x-4 text-white">
               { year > 0 && <button onClick={handleDecrementYear} className="text-3xl hover:text-dark-primary">&#129190;</button>}
               <h1 className="text-2xl font-bold">Teams[<span className="text-dark-primary">{teams[year].year}</span>]</h1>
               { year < numTeams - 1 && <button className="text-3xl hover:text-dark-primary" onClick={handleIncrementYear}>&#129191;</button>}

@@ -67,7 +67,7 @@ const Navhome = () => {
 
     return (
         <Link
-            className={"flex items-center ml-4"}
+            className={"flex items-center ml-4 md:ml-14"}
             to="/"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
@@ -101,12 +101,10 @@ const Navbar = () => {
                 </button>
                 <div className={`${clicked ? "hidden" : "block"} relative w-full md:w-auto md:block`}>
                     <ul className="flex flex-col space-y-4 pb-4 items-center md:pb-0 md:space-y-0 md:flex-row md:space-x-4 md:mr-4">
-                        <Navlink to="/about" text="About"/>
                         <Navlink to="/events" text="Events"/>
-                        <Navlink to="/teams" text="Teams"/>
                         <Navlink to="/join" text="Join"/>
                         <a href={discordLink} target="_blank">
-                            <div className="pl-4 md:pl-2 md:pt-3 fill-white self-center">
+                            <div className="fill-white self-center">
                                 <DiscordIcon/>
                             </div>
                         </a>

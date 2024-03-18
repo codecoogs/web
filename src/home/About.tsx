@@ -1,6 +1,4 @@
-import React, { useState, useEffect } from "react";
-
-import AboutSideNav from "./AboutSideNav";
+import React, { useState } from "react";
 
 import {
     InstagramIcon,
@@ -8,14 +6,12 @@ import {
 } from "./AboutIcons";
 
 import { 
-    email,
     aboutUsDesc,
     socialsDesc,
     teamsDesc,
     competitionsDesc,
     workshopsDesc,
     officers,
-    alumni,
     sponsors,
     partners,
 } from "../data/about";
@@ -54,7 +50,6 @@ interface OfficerCardProps {
     key: number;
     name: string;
     position: string;
-    company?: string;
     photo: string;
     video?: string;
     socials: SocialsObj;
@@ -78,10 +73,7 @@ const OfficerCard = (props: OfficerCardProps) => {
                 />
             </div>
             <span className="block font-bold pt-4">{props.name}</span>
-            <span className="block text-sm">{props.position}</span>
-            { props.company && 
-                <span className="block text-sm">{props.company}</span>
-            }
+            <span className="block text-sm opacity-50">{props.position}</span>
             <div className="table mx-auto pt-4">
                 <div className="flex flex-row space-x-2">
                     { instagram &&
@@ -119,7 +111,7 @@ const OfficerSection = () => {
                 <AboutSectionTitle>Officers[<span className="text-dark-primary">{ officers[semester].semester }</span>]</AboutSectionTitle>
                 { semester < numOfficers - 1 && <button className="text-3xl hover:text-dark-primary" onClick={handleIncrementSemester}>&#129191;</button> }
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 p-8">
                 { officers[semester].list.map((officer, index) => {
                         return <OfficerCard 
                             key={index} 
@@ -136,98 +128,28 @@ const OfficerSection = () => {
     );
 };
 
-interface FAQCardProps {
-    key: number;
-    question: string;
-    answer: string;
-}
-
-const FAQCard = (props: FAQCardProps) => {
-    return (
-        <div className="flex flex-col bg-dark-surface-variant rounded p-8 mb-8 ring-1 ring-inset ring-white/[.3]">
-            <span className="text-dark-primary">{props.question}</span>
-            <span>{props.answer}</span>
-        </div>
-    );
-};
-
 const About = () => {
-
-    useEffect(() => {
-        document.title = "About";
-    }, []);
-
     return (
-        <div className="bg-dark-surface text-white">
-            <div className="rounded md:m-24">
-            <AboutSideNav/>
-            <AboutSection id="us">
-                <div className="p-6 text-center">
-                    <AboutSectionTitle>About Us</AboutSectionTitle>
-                    <p className="text-sm p-6">{aboutUsDesc}</p>
-                    <span>Contact: <span className="text-dark-primary">{email}</span></span>
-                </div>
-                <div className="p-8 rounded-lg ring-1 ring-inset ring-white/[.3]">
-                    <h2 className="text-lg text-dark-primary">Socials</h2>
-                    <p className="text-sm">{socialsDesc}</p>
-                </div>
-                <div className="p-8 mt-4 rounded-lg ring-1 ring-inset ring-white/[.3]">
-                    <h2 className="text-lg text-dark-primary">Teams</h2>
-                    <p className="text-sm">{teamsDesc}</p>
-                </div>
-                <div className="p-8 mt-4 rounded-lg ring-1 ring-inset ring-white/[.3]">
-                    <h2 className="text-lg text-dark-primary">Competitions</h2>
-                    <p className="text-sm">{competitionsDesc}</p>
-                </div>
-                <div className="p-8 mt-4 rounded-lg ring-1 ring-inset ring-white/[.3]">
-                    <h2 className="text-lg text-dark-primary">Workshops</h2>
-                    <p className="text-sm">{workshopsDesc}</p>
-                </div>
-            </AboutSection>
-            </div>
-
-            <AboutSection id="officers">
-                <OfficerSection />
-            </AboutSection>
-
-            <AboutSection id="alumni">
-                <div className="p-8 text-center">
-                    <AboutSectionTitle>Alumni</AboutSectionTitle>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-8">
-                        { alumni.map((officer, index) => {
-                                return <OfficerCard 
-                                    key={index} 
-                                    name={officer.name} 
-                                    position={officer.position} 
-                                    company={officer.company}
-                                    photo={officer.photo}
-                                    socials={officer.socials}
-                                />;
-                          })
-                        }
-                    </div>
-                </div>
-            </AboutSection>
-
+        <div className="text-white p-4">
             <AboutSection id="sponsors">
                 <div className="p-8 text-center">
                     <AboutSectionTitle>Sponsors</AboutSectionTitle>
                     <div className="grid grid-cols-2 pt-8">
                         { sponsors.map((sponsor, index) => {
-                                return (
-                                    <div key={index} className="mx-auto">
-                                        <a href={sponsor.link} target="_blank">
-                                        <img    
-                                            className={sponsor.name == "HCSS" ? "" : "rounded-full"} 
-                                            src={sponsor.logo} 
+                            return (
+                                <div key={index} className="mx-auto">
+                                    <a href={sponsor.link} target="_blank">
+                                        <img
+                                            className={sponsor.name == "HCSS" ? "" : "rounded-full"}
+                                            src={sponsor.logo}
                                             alt={sponsor.name}
-                                            width="200" 
-                                            height="200" 
+                                            width="200"
+                                            height="200"
                                         />
-                                        </a>
-                                    </div>
-                                );
-                          })
+                                    </a>
+                                </div>
+                            );
+                        })
                         }
                     </div>
                 </div>
@@ -237,23 +159,53 @@ const About = () => {
                     <AboutSectionTitle>Partners</AboutSectionTitle>
                     <div className="grid grid-cols-1 pt-8">
                         { partners.map((partner, index) => {
-                                return (
-                                    <div key={index} className="mx-auto">
-                                        <a href={partner.link} target="_blank">
-                                            <img    
-                                                className="rounded-full"
-                                                src={partner.logo} 
-                                                alt={partner.name}
-                                                width="200" 
-                                                height="200" 
-                                            />
-                                        </a>
-                                    </div>
-                                );
-                          })
+                            return (
+                                <div key={index} className="mx-auto">
+                                    <a href={partner.link} target="_blank">
+                                        <img
+                                            className="rounded-full"
+                                            src={partner.logo}
+                                            alt={partner.name}
+                                            width="200"
+                                            height="200"
+                                        />
+                                    </a>
+                                </div>
+                            );
+                        })
                         }
                     </div>
                 </div>
+            </AboutSection>
+            <div className="rounded md:m-24">
+                <AboutSection id="us">
+                    <div className="p-6 text-center">
+                        <AboutSectionTitle>About Us</AboutSectionTitle>
+                        <p className="text-sm p-6">{aboutUsDesc}</p>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div className="p-8 rounded-lg ring-1 ring-inset ring-white/[.3]">
+                            <h2 className="text-lg text-dark-primary">Socials</h2>
+                            <p className="text-sm">{socialsDesc}</p>
+                        </div>
+                        <div className="p-8 rounded-lg ring-1 ring-inset ring-white/[.3]">
+                            <h2 className="text-lg text-dark-primary">Teams</h2>
+                            <p className="text-sm">{teamsDesc}</p>
+                        </div>
+                        <div className="p-8 rounded-lg ring-1 ring-inset ring-white/[.3]">
+                            <h2 className="text-lg text-dark-primary">Competitions</h2>
+                            <p className="text-sm">{competitionsDesc}</p>
+                        </div>
+                        <div className="p-8 rounded-lg ring-1 ring-inset ring-white/[.3]">
+                            <h2 className="text-lg text-dark-primary">Workshops</h2>
+                            <p className="text-sm">{workshopsDesc}</p>
+                        </div>
+                    </div>
+                </AboutSection>
+            </div>
+
+            <AboutSection id="officers">
+                <OfficerSection/>
             </AboutSection>
         </div>
     );

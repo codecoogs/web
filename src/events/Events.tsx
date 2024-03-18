@@ -15,7 +15,7 @@ const EventCard = (props: EventCardProps) => {
 
 const Events = () => {
     return (
-        <div className="bg-dark-surface">
+        <div className="p-4">
             <div className="bg-dark-surface mt-8 ml-4 mr-4 rounded ring-1 ring-white/[.3]">
                 <iframe 
                     src={eventGoogleCalendarLink}

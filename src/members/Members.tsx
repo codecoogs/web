@@ -20,7 +20,7 @@ const MemberBenefitCard = (props: MemberBenefitCardProps) => {
         <li key={`member-benefit-${index}`}>
             <div
                 className="flex justify-between items-center bg-dark-surface-variant h-full rounded-lg text-center p-2 hover:ring-dark-primary transform transition-all hover:-translate-y-2 duration-300">
-                <div className="flex-1 basis-1/4 pt-3">
+                <div className="flex-1 basis-1/4">
                     <CheckIcon/>
                 </div>
                 <div className="flex-1 basis-3/4 opacity-50 text-right">
@@ -128,7 +128,7 @@ const Members = () => {
     });
 
     return (
-        <div className="bg-dark-surface text-white p-8">
+        <div className="text-white p-8">
             <h1 className="font-extrabold text-3xl md:text-5xl text-center md:mt-8 ">
                 Join a <span className="text-dark-primary-variant">community</span> of hobbyist programmers
             </h1>
