@@ -4,6 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import happyCoCo from "../assets/happy-coco.webp";
 import determinedCoCo from "../assets/determined-coco.webp";
 import {DiscordIcon, MenuIcon} from "./NavbarIcons";
+import {discordLink} from "../data/members";
 
 const setTextColor = (to: string) => {
     const location = useLocation();
@@ -103,8 +104,8 @@ const Navbar = () => {
                         <Navlink to="/about" text="About"/>
                         <Navlink to="/events" text="Events"/>
                         <Navlink to="/teams" text="Teams"/>
-                        <Navlink to="/members" text="Join"/>
-                        <a href="https://discord.gg/e33CQVNTSV" target="_blank">
+                        <Navlink to="/join" text="Join"/>
+                        <a href={discordLink} target="_blank">
                             <div className="pl-4 md:pl-2 md:pt-3 fill-white self-center">
                                 <DiscordIcon/>
                             </div>

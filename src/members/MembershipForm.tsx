@@ -4,14 +4,16 @@ import { SIGNUP_API_URL } from '../data/members';
 
 const SignUpForm: React.FC = () => {
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
+    first_name: '',
+    last_name: '',
     email: '',
     phone: '',
     major: '',
     classification: 'Freshman',
-    expectedGraduation: '2024-05'
+    expected_graduation: '2024-05'
   });
+  const [successMessage, setSuccessMessage] = useState<String>('');
+  const [errorMessage, setErrorMessage] = useState<String>('');
 
   const handleChange = (e: any) => {
     const { name, value } = e.target;
@@ -19,41 +21,38 @@ const SignUpForm: React.FC = () => {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    try {
+      e.preventDefault();
+        console.log(SIGNUP_API_URL)
       const response = await fetch(SIGNUP_API_URL, {
-        redirect: 'follow',
         method: 'POST',
         headers: {
-          'Content-Type': 'text/plain',
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
       });
 
-      if (response.ok) {
-        alert('Success! Your response has been recorded.');
+      const { success, error } = await response.json();
+
+      if (success) {
+        setSuccessMessage('Success! Contact us on discord to complete the payment.');
         setFormData({
-            firstName: '',
-            lastName: '',
+            first_name: '',
+            last_name: '',
             email: '',
             phone: '',
             major: 'Computer Science',
             classification: 'Freshman',
-            expectedGraduation: 'None'
-        })
+            expected_graduation: 'None'
+        });
       } else {
-        alert('Error submitting the form. Please try again later.');
+          console.error('Error submitting the form:', error);
+          setErrorMessage(`Error submitting the form: ${error}`);
       }
-    } catch (error) {
-      console.error('Error submitting the form:', error);
-      alert('Error submitting the form. Please try again later.');
-    }
   };
 
   return (
       <form
-          className="bg-dark-surface-variant rounded-lg grid font-bold ring-1 ring-inset ring-white/[.3] p-8"
+          className="bg-dark-surface-variant rounded-lg grid ring-1 ring-inset ring-white/[.3] p-8"
           onSubmit={handleSubmit}>
           <div className="flex justify-between">
               <div className="relative">
@@ -61,10 +60,11 @@ const SignUpForm: React.FC = () => {
                       className="peer bg-dark-surface-variant h-10 w-full border-b-2 border-white/[.3] placeholder-dark-surface-variant focus:outline-none focus:border-dark-primary"
                       type="text"
                       id="firstName"
-                      name="firstName"
-                      value={formData.firstName}
+                      name="first_name"
+                      value={formData.first_name}
                       onChange={handleChange}
                       placeholder="First Name"
+                      autoComplete="off"
                       required
                   />
                   <label
@@ -79,14 +79,15 @@ const SignUpForm: React.FC = () => {
                       className="peer bg-dark-surface-variant h-10 w-full border-b-2 border-white/[.3] placeholder-dark-surface-variant focus:outline-none focus:border-dark-primary"
                       type="text"
                       id="lastName"
-                      name="lastName"
-                      value={formData.lastName}
+                      name="last_name"
+                      value={formData.last_name}
                       onChange={handleChange}
                       placeholder="Last Name"
+                      autoComplete="off"
                       required
                   />
                   <label
-                      className="absolute left-0 -top-3.5 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-sm"
+                      className="absolute left-0 -top-3.5 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-sm peer-focus:text-white/[.4]"
                       htmlFor="lastName"
                   >
                       Last Name
@@ -102,10 +103,11 @@ const SignUpForm: React.FC = () => {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="Email"
+                  autoComplete="off"
                   required
               />
               <label
-                  className="absolute left-0 -top-3.5 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-sm"
+                  className="absolute left-0 -top-3.5 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-sm peer-focus:text-white/[.4]"
                   htmlFor="email"
               >
                   Email
@@ -121,19 +123,20 @@ const SignUpForm: React.FC = () => {
                   value={formData.phone}
                   onChange={handleChange}
                   placeholder="Phone"
+                  autoComplete="off"
                   required
               />
               <label
-                  className="absolute left-0 -top-3.5 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-sm"
+                  className="absolute left-0 -top-3.5 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-sm peer-focus:text-white/[.4]"
                   htmlFor="phone"
               >
                   Phone
               </label>
           </div>
           <div className="flex flex-col mt-4">
-              <label htmlFor="major">Major</label>
+              <label className="text-sm" htmlFor="major">Major</label>
               <select
-                  className="bg-dark-surface-variant font-normal rounded mt-1 p-2 ring-1 ring-inset ring-white/[.3]"
+                  className="bg-dark-surface-variant font-normal rounded mt-1 p-2 ring-1 ring-inset ring-white/[.3] focus:ring-dark-primary"
                   id="major"
                   name="major"
                   value={formData.major}
@@ -150,9 +153,9 @@ const SignUpForm: React.FC = () => {
               </select>
           </div>
           <div className="flex flex-col mt-4">
-              <label htmlFor="classification">Classification</label>
+              <label className="text-sm" htmlFor="classification">Classification</label>
               <select
-                  className="bg-dark-surface-variant font-normal rounded mt-1 p-2 ring-1 ring-inset ring-white/[.3]"
+                  className="bg-dark-surface-variant font-normal rounded mt-1 p-2 ring-1 ring-inset ring-white/[.3] focus:ring-dark-primary"
                   id="classification"
                   name="classification"
                   value={formData.classification}
@@ -163,31 +166,38 @@ const SignUpForm: React.FC = () => {
                   <option value="Sophomore">Sophomore</option>
                   <option value="Junior">Junior</option>
                   <option value="Senior">Senior</option>
+                  <option value="Super Senior">Super Senior</option>
               </select>
           </div>
           <div className="flex flex-col mt-4">
-              <label htmlFor="expectedGraduation">Expected Graduation</label>
+              <label className="text-sm" htmlFor="expectedGraduation">Expected Graduation</label>
               <input
-                  className="bg-dark-surface-variant font-normal rounded mt-1 p-2 ring-1 ring-inset ring-white/[.3]"
+                  className="bg-dark-surface-variant font-normal rounded mt-1 p-2 pl-3 pr-1 ring-1 ring-inset ring-white/[.3] focus:ring-dark-primary"
                   type="month"
                   id="expectedGraduation"
-                  name="expectedGraduation"
+                  name="expected_graduation"
                   min="2024-05"
-                  value={formData.expectedGraduation}
+                  value={formData.expected_graduation}
                   onChange={handleChange}
                   required
               />
           </div>
-          <div className="table text-black my-0 mx-auto mt-6">
-              <button
-                  className="bg-dark-surface-variant hover:bg-dark-primary/[.6] px-4 h-10 items-center text-center text-white rounded-lg ring-1 ring-inset ring-white"
-                  type="submit"
-              >
-                  Join
-              </button>
+          <div className="flex mt-6">
+              <div className="flex-1 basis-1/2 text-sm text-dark-error">
+                  <span className="text-dark-primary-variant">{successMessage}</span>
+                  <span className="text-dark-error">{errorMessage}</span>
+              </div>
+              <div className="">
+                  <button
+                      className="bg-dark-surface-variant hover:ring-dark-primary px-4 h-10 items-center text-center text-white rounded-lg ring-1 ring-inset ring-white"
+                      type="submit"
+                  >
+                      Join
+                  </button>
+              </div>
           </div>
       </form>
-);
+  );
 };
 
 export default SignUpForm;

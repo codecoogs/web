@@ -7,7 +7,6 @@ import {
     AlumniIcon,
     SponsorIcon,
     PartnerIcon,
-    QuestionIcon
 } from "./AboutIcons";
 
 interface SideNavlinkProps {
@@ -53,7 +52,7 @@ const AboutSideNav = () => {
     }, [location]);
 
     return (
-        <ul className="flex flex-col fixed group bg-dark-surface-variant z-1 top-1/2 left-3 white transform -translate-y-1/2 gap-y-4 p-2 rounded text-white fill-white ring-1 ring-inset ring-white/[.3]">
+        <ul className="flex flex-col fixed group bg-dark-surface-variant z-0 top-1/2 left-3 white transform -translate-y-1/2 gap-y-4 p-2 rounded text-white fill-white ring-1 ring-inset ring-white/[.3]">
             <SideNavlink to="us" currentHash={currentHash}>
                 <InfoIcon/>
                 <SideNavtext>About Us</SideNavtext>
@@ -73,10 +72,6 @@ const AboutSideNav = () => {
             <SideNavlink to="partners" currentHash={currentHash}>
                 <PartnerIcon/>
                 <SideNavtext>Partners</SideNavtext>
-            </SideNavlink>
-            <SideNavlink to="faq" currentHash={currentHash}>
-                <QuestionIcon />
-                <SideNavtext>FAQ</SideNavtext>
             </SideNavlink>
         </ul>
     );

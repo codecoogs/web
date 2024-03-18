@@ -10,11 +10,13 @@ interface HomeButtonProps {
 };
 
 const HomeButton = (props: HomeButtonProps) => {
-    const style = "flex items-center p-6 h-10 relative text-center rounded-lg bg-black text-white ring-1 ring-white/[.8] ring-inset";
+    const style = "flex items-center p-6 h-10 relative font-bold text-center rounded-lg bg-black text-white ring-1 ring-dark-primary ring-inset hover:text-black hover:bg-dark-primary";
 
     return (
         <div className="relative group">
-            <div className="absolute -inset-0.5 bg-dark-primary blur rounded-lg opacity-80"></div>
+            <div
+                className="absolute -inset-0.5 bg-dark-primary blur-lg rounded-full opacity-50 transform scale-75 group-hover:scale-100 transition-all duration-300"
+            ></div>
             {props.external ? (
                 <a href={props.link} target="_blank">
                     <div className={style}>
@@ -39,7 +41,7 @@ const Home = () => {
 
     return (
         <div className="bg-dark-surface h-full pb-8">
-            <div className="pt-16">
+        <div className="pt-16">
                 <img className="my-0 mx-auto" src={banner} alt="Banner" width="800" height="240"/>
             </div>
             <div className="my-16 text-center">

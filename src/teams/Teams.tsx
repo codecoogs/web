@@ -11,7 +11,7 @@ interface TeamCardProps {
 
 const TeamCard = (props: TeamCardProps) => {
     return (
-        <li className="bg-dark-surface-variant rounded-lg text-white flex flex-col pt-2 m-4 ring-1 ring-inset ring-white/[.3]">
+        <li className="bg-dark-surface-variant rounded-lg text-white flex flex-col pt-2 m-4 ring-1 ring-inset ring-white/[.3] transform transition-all hover:-translate-y-2 duration-300 hover:ring-dark-primary">
             {props.children}
         </li>
     );

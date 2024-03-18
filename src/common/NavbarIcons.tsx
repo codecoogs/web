@@ -1,4 +1,4 @@
-const iconStyle = "h-10 w-10 fill-white"
+const iconStyle = "h-10 w-10 fill-white hover:fill-dark-primary-variant"
 export const DiscordIcon = () => {
     return (
         <svg className={iconStyle} viewBox="0 0 24 24">

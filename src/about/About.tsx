@@ -18,7 +18,6 @@ import {
     alumni,
     sponsors,
     partners,
-    faq
 } from "../data/about";
 
 interface AboutSectionProps {
@@ -68,7 +67,7 @@ const OfficerCard = (props: OfficerCardProps) => {
     } = props.socials;
 
     return (
-        <div className="bg-dark-surface-variant rounded-xl text-center p-8 hover:text-dark-primary ring-1 ring-inset ring-white/[.3]">
+        <div className="bg-dark-surface-variant rounded-xl text-center p-8 hover:ring-dark-primary ring-1 ring-inset ring-white/[.3] transform transition-all hover:-translate-y-2 duration-300">
             <div className="inline-block w-40 h-40">
                 <img 
                     className="relative object-cover w-full h-full rounded-full hover:object-top"
@@ -251,23 +250,6 @@ const About = () => {
                                         </a>
                                     </div>
                                 );
-                          })
-                        }
-                    </div>
-                </div>
-            </AboutSection>
-            <AboutSection id="faq">
-                <div className="p-8 text-center">
-                    <AboutSectionTitle>FAQ</AboutSectionTitle>
-                </div>
-                <div className="px-8 pb-4">
-                    <div className="pl-4">
-                        { faq.map((response, index) => {
-                                return <FAQCard
-                                    key={index}
-                                    question={response.question}
-                                    answer={response.answer}
-                                />;
                           })
                         }
                     </div>
