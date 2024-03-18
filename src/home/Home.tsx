@@ -22,7 +22,7 @@ const HomeButton = (props: HomeButtonProps) => {
         </div>);
 };
 
-const PhraseTransition: React.FC = () => {
+const HomeTitle = () => {
     const phrases = ['Potential', 'Creativity', 'Teamwork'];
     const [index, setIndex] = useState<number>(0);
     const [fade, setFade] = useState<boolean>(true);
@@ -40,7 +40,7 @@ const PhraseTransition: React.FC = () => {
     }, []);
 
     return (
-        <div className="flex flex-col text-5xl text-white font-normal text-center">
+        <div className="flex flex-col text-6xl text-white font-normal text-center">
             <div>
                 <span>We Foster </span>
                 <span className={`text-dark-primary transition-opacity duration-500 inline-block ${fade ? 'opacity-100' : 'opacity-0'}`}>
@@ -64,7 +64,7 @@ const Home = () => {
         <div>
             <div className="flex flex-col justify-center min-h-screen">
                 <div className="my-4">
-                <PhraseTransition/>
+                <HomeTitle />
                 </div>
                 <div className="my-4 mx-auto md:w-1/2 text-center">
                     <span className="text-base text-white">Build projects and compete with teams; we enhance your coding skills in a collaborative environment, unlocking the potential for community and technical growth.</span>

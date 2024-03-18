@@ -4,8 +4,11 @@ import {
     InstagramIcon,
     LinkedInIcon
 } from "./AboutIcons";
+import {
+    companyLogos
+} from "./AboutLogos";
 
-import { 
+import {
     aboutUsDesc,
     socialsDesc,
     teamsDesc,
@@ -16,6 +19,9 @@ import {
     partners,
 } from "../data/about";
 
+// TODO: add moving section of where we have worked at
+// TODO: add moving section of partners and sponsors
+
 interface AboutSectionProps {
     id: string;
     children: React.ReactNode;
@@ -23,7 +29,7 @@ interface AboutSectionProps {
 
 const AboutSection = (props: AboutSectionProps) => {
     return (
-        <section id={props.id} className="h-full m-8 rounded">
+        <section id={props.id} className="h-full rounded">
             {props.children}
         </section>
     );
@@ -64,7 +70,7 @@ const OfficerCard = (props: OfficerCardProps) => {
     return (
         <div className="bg-dark-surface-variant rounded-xl text-center p-8 hover:ring-dark-primary ring-1 ring-inset ring-white/[.3] transform transition-all hover:-translate-y-2 duration-300">
             <div className="inline-block w-40 h-40">
-                <img 
+                <img
                     className="relative object-cover w-full h-full rounded-full hover:object-top"
                     src={props.photo}
                     alt={props.name}
@@ -113,10 +119,10 @@ const OfficerSection = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 p-8">
                 { officers[semester].list.map((officer, index) => {
-                        return <OfficerCard 
-                            key={index} 
-                            name={officer.name} 
-                            position={officer.position} 
+                        return <OfficerCard
+                            key={index}
+                            name={officer.name}
+                            position={officer.position}
                             photo={officer.photo}
                             video={officer.video}
                             socials={officer.socials}
@@ -128,23 +134,38 @@ const OfficerSection = () => {
     );
 };
 
+const CompanySection = () => {
+    return (
+        <div className="text-center">
+            <AboutSectionTitle>Where our alumni have worked at</AboutSectionTitle>
+            <div className="flex flex-wrap justify-center items-center">
+                {companyLogos.map(({name, component: Component}) => (
+                    <div key={name} className="p-4">
+                        <Component />
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
+}
+
 const About = () => {
     return (
         <div className="text-white p-4">
             <AboutSection id="sponsors">
                 <div className="p-8 text-center">
-                    <AboutSectionTitle>Sponsors</AboutSectionTitle>
-                    <div className="grid grid-cols-2 pt-8">
+                    <AboutSectionTitle>Our sponsors</AboutSectionTitle>
+                    <div className="flex flex-wrap justify-center items-center pt-8">
                         { sponsors.map((sponsor, index) => {
                             return (
-                                <div key={index} className="mx-auto">
+                                <div key={index} className="p-4">
                                     <a href={sponsor.link} target="_blank">
                                         <img
                                             className={sponsor.name == "HCSS" ? "" : "rounded-full"}
                                             src={sponsor.logo}
                                             alt={sponsor.name}
-                                            width="200"
-                                            height="200"
+                                            width="100"
+                                            height="100"
                                         />
                                     </a>
                                 </div>
@@ -156,18 +177,18 @@ const About = () => {
             </AboutSection>
             <AboutSection id="partners">
                 <div className="p-8 text-center">
-                    <AboutSectionTitle>Partners</AboutSectionTitle>
-                    <div className="grid grid-cols-1 pt-8">
+                    <AboutSectionTitle>Our partners</AboutSectionTitle>
+                    <div className="flex flex-wrap justify-center items-center pt-8">
                         { partners.map((partner, index) => {
                             return (
-                                <div key={index} className="mx-auto">
+                                <div key={index} className="p-4">
                                     <a href={partner.link} target="_blank">
                                         <img
-                                            className="rounded-full"
+                                            className=""
                                             src={partner.logo}
                                             alt={partner.name}
-                                            width="200"
-                                            height="200"
+                                            width="100"
+                                            height="100"
                                         />
                                     </a>
                                 </div>
@@ -177,6 +198,7 @@ const About = () => {
                     </div>
                 </div>
             </AboutSection>
+            <CompanySection />
             <div className="rounded md:m-24">
                 <AboutSection id="us">
                     <div className="p-6 text-center">
