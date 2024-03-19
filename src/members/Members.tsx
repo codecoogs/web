@@ -64,7 +64,7 @@ const PricingCard = () => {
                 </ul>
 
                 <h2 className="my-4 font-bold text-lg text-center">Payment Methods</h2>
-                <ul className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+                <ul className="grid grid-cols-1 gap-4 md:w-1/2 mx-auto">
                     <li>
                         <div
                             className="flex items-center justify-between bg-[#084F09] h-full rounded-lg text-center p-2 ring-1 ring-inset ring-white/[.3] transform transition-all hover:-translate-y-2 duration-300"

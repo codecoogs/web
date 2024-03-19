@@ -36,7 +36,7 @@ const BackgroundCircles = () => {
 }
 
 const HomeTitle = () => {
-    const phrases = ['Capability', 'Creativity', 'Cooperation'];
+    const phrases = ['Community', 'Creativity', 'Collaboration'];
     const [index, setIndex] = useState<number>(0);
     const [fade, setFade] = useState<boolean>(true);
 
@@ -56,7 +56,7 @@ const HomeTitle = () => {
         <div className="flex flex-col text-2xl md:text-4xl lg:text-6xl text-white font-normal text-center">
             <div className="flex">
                 <span className="flex-1 text-right">We Foster&nbsp;</span>
-                <span className={`flex-1 text-left text-dark-primary transition-opacity duration-500 inline-block ${fade ? 'opacity-100' : 'opacity-0'}`}>
+                <span className={`flex-1 text-left text-dark-primary transition-opacity duration-700 inline-block ${fade ? 'opacity-100' : 'opacity-0'}`}>
                     {phrases[index]}
                 </span>
             </div>
