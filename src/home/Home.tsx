@@ -22,8 +22,21 @@ const HomeButton = (props: HomeButtonProps) => {
         </div>);
 };
 
+const BackgroundCircles = () => {
+    return (
+        <>
+            <div
+                className="absolute transform -translate-x-0 w-full h-full rounded filter blur-xl opacity-70 blob 7s infinite"
+                style={{
+                    background: 'radial-gradient(circle, rgba(191, 64, 191, 0) 0%, rgba(0, 198, 247, 0.1) 100%)'
+                }}>
+            </div>
+        </>
+    );
+}
+
 const HomeTitle = () => {
-    const phrases = ['Potential', 'Creativity', 'Teamwork'];
+    const phrases = ['Capability', 'Creativity', 'Cooperation'];
     const [index, setIndex] = useState<number>(0);
     const [fade, setFade] = useState<boolean>(true);
 
@@ -40,10 +53,10 @@ const HomeTitle = () => {
     }, []);
 
     return (
-        <div className="flex flex-col text-6xl text-white font-normal text-center">
-            <div>
-                <span>We Foster </span>
-                <span className={`text-dark-primary transition-opacity duration-500 inline-block ${fade ? 'opacity-100' : 'opacity-0'}`}>
+        <div className="flex flex-col text-2xl md:text-4xl lg:text-6xl text-white font-normal text-center">
+            <div className="flex">
+                <span className="flex-1 text-right">We Foster&nbsp;</span>
+                <span className={`flex-1 text-left text-dark-primary transition-opacity duration-500 inline-block ${fade ? 'opacity-100' : 'opacity-0'}`}>
                     {phrases[index]}
                 </span>
             </div>
@@ -62,9 +75,11 @@ const Home = () => {
 
     return (
         <div>
-            <div className="flex flex-col justify-center min-h-screen">
+            <div className="relative flex flex-col justify-center min-h-screen">
+                <BackgroundCircles />
+                <BackgroundCircles />
                 <div className="my-4">
-                <HomeTitle />
+                    <HomeTitle/>
                 </div>
                 <div className="my-4 mx-auto md:w-1/2 text-center">
                     <span className="text-base text-white">Build projects and compete with teams; we enhance your coding skills in a collaborative environment, unlocking the potential for community and technical growth.</span>
@@ -81,8 +96,8 @@ const Home = () => {
                     </ul>
                 </div>
             </div>
-            <About />
-            <Teams />
+            <About/>
+            <Teams/>
         </div>
     );
 };

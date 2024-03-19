@@ -19,9 +19,6 @@ import {
     partners,
 } from "../data/about";
 
-// TODO: add moving section of where we have worked at
-// TODO: add moving section of partners and sponsors
-
 interface AboutSectionProps {
     id: string;
     children: React.ReactNode;
@@ -29,7 +26,7 @@ interface AboutSectionProps {
 
 const AboutSection = (props: AboutSectionProps) => {
     return (
-        <section id={props.id} className="h-full rounded">
+        <section id={props.id} className="md:w-3/4 mx-auto">
             {props.children}
         </section>
     );
@@ -61,6 +58,7 @@ interface OfficerCardProps {
     socials: SocialsObj;
 }
 
+// TODO: fix video hover
 const OfficerCard = (props: OfficerCardProps) => {
     const {
         instagram,
@@ -68,20 +66,22 @@ const OfficerCard = (props: OfficerCardProps) => {
     } = props.socials;
 
     return (
-        <div className="bg-dark-surface-variant rounded-xl text-center p-8 hover:ring-dark-primary ring-1 ring-inset ring-white/[.3] transform transition-all hover:-translate-y-2 duration-300">
-            <div className="inline-block w-40 h-40">
-                <img
-                    className="relative object-cover w-full h-full rounded-full hover:object-top"
-                    src={props.photo}
-                    alt={props.name}
-                    onMouseOver={e => (e.currentTarget.src = props.video ? props.video : props.photo)}
-                    onMouseOut={e => (e.currentTarget.src = props.photo)}
-                />
+        <div className="flex flex-col bg-dark-surface-variant rounded-xl text-center p-4 hover:ring-dark-primary ring-1 ring-inset ring-white/[.3] transform transition-all hover:-translate-y-2 duration-300">
+            <div className="flex-grow">
+                <div className="w-24 h-24 md:w-32 md:h-32 mx-auto">
+                    <img
+                        className="w-full h-full relative object-cover rounded-full hover:object-top"
+                        src={props.photo}
+                        alt={props.name}
+                        // onMouseOver={e => (e.currentTarget.src = props.video ? props.video : props.photo)}
+                        onMouseOut={e => (e.currentTarget.src = props.photo)}
+                    />
+                </div>
+                <span className="block text-sm font-bold pt-4">{props.name}</span>
+                <span className="block text-sm opacity-50">{props.position}</span>
             </div>
-            <span className="block font-bold pt-4">{props.name}</span>
-            <span className="block text-sm opacity-50">{props.position}</span>
-            <div className="table mx-auto pt-4">
-                <div className="flex flex-row space-x-2">
+            <div className="pt-4">
+                <div className="flex space-x-2 justify-end">
                     { instagram &&
                         <a href={instagram} target="_blank" aria-label="Go to our Instagram">
                             <InstagramIcon/>
@@ -98,6 +98,7 @@ const OfficerCard = (props: OfficerCardProps) => {
     );
 };
 
+// TODO: smooth the semester change transition
 const OfficerSection = () => {
     const numOfficers = officers.length;
     const [semester, setSemester] = useState(numOfficers - 1);
@@ -111,22 +112,42 @@ const OfficerSection = () => {
     };
 
     return (
-        <div className="p-8 text-center">
-            <div className="flex justify-center items-center space-x-4">
-                { semester > 0 && <button className="text-3xl hover:text-dark-primary" onClick={handleDecrementSemester}>&#129190;</button> }
-                <AboutSectionTitle>Officers[<span className="text-dark-primary">{ officers[semester].semester }</span>]</AboutSectionTitle>
-                { semester < numOfficers - 1 && <button className="text-3xl hover:text-dark-primary" onClick={handleIncrementSemester}>&#129191;</button> }
+        <div className="px-2  text-center mx-auto md:w-3/4">
+            <AboutSectionTitle>Meet the people behind the scenes</AboutSectionTitle>
+            <div className="flex text-lg justify-center items-center space-x-4 my-8">
+                <div className="flex-1 relative">
+                    <div className="relative flex justify-end">
+                        <span
+                            className={`absolute transition-transform duration-300 opacity-30 cursor-pointer translate-x-0 -translate-y-6`}
+                            onClick={handleDecrementSemester}
+                        >
+                            {semester - 1 >= 0 && officers[semester - 1].semester}
+                        </span>
+                        <span
+                            className={`text-dark-primary opacity-100 z-10`}
+                        >
+                                {officers[semester].semester}
+                        </span>
+                        <span
+                            className={`absolute transition-transform duration-300 opacity-30 cursor-pointer translate-y-6`}
+                            onClick={handleIncrementSemester}
+                        >
+                                {semester + 1 < numOfficers && officers[semester + 1].semester}
+                        </span>
+                    </div>
+                </div>
+                <span className="flex-1 text-left relative z-10 ml-4">Officers</span>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 p-8">
-                { officers[semester].list.map((officer, index) => {
-                        return <OfficerCard
-                            key={index}
-                            name={officer.name}
-                            position={officer.position}
-                            photo={officer.photo}
-                            video={officer.video}
-                            socials={officer.socials}
-                        />;
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-0 md:px-8">
+                {officers[semester].list.map((officer, index) => {
+                    return <OfficerCard
+                        key={index}
+                        name={officer.name}
+                        position={officer.position}
+                        photo={officer.photo}
+                        video={officer.video}
+                        socials={officer.socials}
+                    />;
                 })
                 }
             </div>
@@ -141,7 +162,7 @@ const CompanySection = () => {
             <div className="flex flex-wrap justify-center items-center">
                 {companyLogos.map(({name, component: Component}) => (
                     <div key={name} className="p-4">
-                        <Component />
+                        <Component/>
                     </div>
                 ))}
             </div>
@@ -152,7 +173,7 @@ const CompanySection = () => {
 const About = () => {
     return (
         <div className="text-white p-4">
-            <AboutSection id="sponsors">
+            <div className="flex flex-wrap justify-center">
                 <div className="p-8 text-center">
                     <AboutSectionTitle>Our sponsors</AboutSectionTitle>
                     <div className="flex flex-wrap justify-center items-center pt-8">
@@ -164,8 +185,8 @@ const About = () => {
                                             className={sponsor.name == "HCSS" ? "" : "rounded-full"}
                                             src={sponsor.logo}
                                             alt={sponsor.name}
-                                            width="100"
-                                            height="100"
+                                            width="50"
+                                            height="50"
                                         />
                                     </a>
                                 </div>
@@ -174,8 +195,6 @@ const About = () => {
                         }
                     </div>
                 </div>
-            </AboutSection>
-            <AboutSection id="partners">
                 <div className="p-8 text-center">
                     <AboutSectionTitle>Our partners</AboutSectionTitle>
                     <div className="flex flex-wrap justify-center items-center pt-8">
@@ -187,8 +206,8 @@ const About = () => {
                                             className=""
                                             src={partner.logo}
                                             alt={partner.name}
-                                            width="100"
-                                            height="100"
+                                            width="50"
+                                            height="50"
                                         />
                                     </a>
                                 </div>
@@ -197,7 +216,7 @@ const About = () => {
                         }
                     </div>
                 </div>
-            </AboutSection>
+            </div>
             <CompanySection />
             <div className="rounded md:m-24">
                 <AboutSection id="us">
@@ -226,9 +245,7 @@ const About = () => {
                 </AboutSection>
             </div>
 
-            <AboutSection id="officers">
-                <OfficerSection/>
-            </AboutSection>
+            <OfficerSection/>
         </div>
     );
 };

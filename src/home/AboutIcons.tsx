@@ -1,4 +1,4 @@
-const iconStyle = "h-12 w-12 fill-white hover:fill-dark-primary"
+const iconStyle = "h-6 w-6 fill-white hover:fill-dark-primary"
 
 export const InstagramIcon = () => {
     return (
