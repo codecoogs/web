@@ -39,21 +39,24 @@ const PricingCard = () => {
     return (
         <div className="bg-dark-surface-variant h-full rounded-lg p-2 ring-1 ring-inset ring-white/[.3]">
             <div className="bg-dark-surface-variant p-4 rounded">
-                <div className="text-2xl">
-                    <span className="text-3xl text-dark-primary">{isYearly ? "$25" : "$15"}</span>
-                    <span> per </span>
-                    <div className="inline-block relative cursor-pointer h-8" onClick={togglePricing}>
-                        <span
-                            className={`absolute transition-all duration-300 ${isYearly ? 'top-2 opacity-100' : '-top-4 opacity-20'}`}
-                        >
-                            year
-                        </span>
-                        <span
-                            className={`absolute transition-all duration-300 ${isYearly ? '-top-4 opacity-20' : 'top-2 opacity-100'}`}
-                        >
-                            semester
-                        </span>
+                <div className="flex flex-col text-2xl">
+                    <div>
+                        <span className="text-3xl text-dark-primary">{isYearly ? "$25" : "$15"}</span>
+                        <span> per </span>
+                        <div className="inline-block relative cursor-pointer h-8" onClick={togglePricing}>
+                            <span
+                                className={`absolute transition-all duration-300 ${isYearly ? 'top-2 opacity-100' : '-top-4 opacity-20'}`}
+                            >
+                                year
+                            </span>
+                            <span
+                                className={`absolute transition-all duration-300 ${isYearly ? '-top-4 opacity-20' : 'top-2 opacity-100'}`}
+                            >
+                                semester
+                            </span>
+                        </div>
                     </div>
+                    <span className="text-dark-error text-sm">{isYearly && "* Valid August - November"}</span>
                 </div>
 
                 <h2 className="my-4 font-bold text-lg text-center">Benefits</h2>
