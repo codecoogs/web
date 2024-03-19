@@ -23,7 +23,7 @@ const MemberBenefitCard = (props: MemberBenefitCardProps) => {
                 <div className="flex-1 basis-1/4">
                     <CheckIcon/>
                 </div>
-                <div className="flex-1 basis-3/4 opacity-50 text-right">
+                <div className="flex-1 basis-3/4 opacity-50 text-left">
                     {`${benefit}`}
                 </div>
             </div>
@@ -60,7 +60,7 @@ const PricingCard = () => {
                 </div>
 
                 <h2 className="my-4 font-bold text-lg text-center">Benefits</h2>
-                <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 text-sm">
+                <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
                     {benefits.map((benefit, index) => {
                         return <MemberBenefitCard benefit={benefit} index={index}/>;
                     })}
@@ -70,7 +70,7 @@ const PricingCard = () => {
                 <ul className="grid grid-cols-1 gap-4 md:w-1/2 mx-auto">
                     <li>
                         <div
-                            className="flex items-center justify-between bg-[#084F09] h-full rounded-lg text-center p-2 ring-1 ring-inset ring-white/[.3] transform transition-all hover:-translate-y-2 duration-300"
+                            className="flex items-center justify-between bg-[#084F09] h-full rounded-lg text-center p-2 ring-1 ring-inset ring-white/[.3] hover:ring-white transform transition-all hover:-translate-y-1 duration-300"
                         >
                             <span>Cash</span>
                             <span className="text-sm">Pay in person</span>
@@ -78,7 +78,7 @@ const PricingCard = () => {
                     </li>
                     <li>
                         <div
-                            className="flex items-center justify-between bg-[#3D95CE] h-full rounded-lg text-center p-2 ring-1 ring-inset ring-white/[.3] transform transition-all hover:-translate-y-2 duration-300"
+                            className="flex items-center justify-between bg-[#3D95CE] h-full rounded-lg text-center p-2 ring-1 ring-inset ring-white/[.3] hover:ring-white transform transition-all hover:-translate-y-1 duration-300"
                         >
                             <span>Venmo</span>
                             <span className="text-sm">@Code-Coogs</span>
@@ -86,7 +86,7 @@ const PricingCard = () => {
                     </li>
                     <li>
                         <div
-                            className="flex items-center justify-between bg-[#6c1cd3] h-full rounded-lg text-center p-2 ring-1 ring-inset ring-white/[.3] transform transition-all hover:-translate-y-2 duration-300"
+                            className="flex items-center justify-between bg-[#6c1cd3] h-full rounded-lg text-center p-2 ring-1 ring-inset ring-white/[.3] hover:ring-white transform transition-all hover:-translate-y-1 duration-300"
                         >
                             <span className="">Zelle</span>
                             <span className="text-sm">832-535-7320</span>

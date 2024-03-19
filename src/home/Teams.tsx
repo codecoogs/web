@@ -44,7 +44,7 @@ const Teams = () => {
     }
 
     return (
-        <div className="bg-dark-surface text-center md:w-1/2 mx-auto">
+        <div className="bg-dark-surface text-center md:w-3/4 mx-auto">
             <h1 className="text-2xl font-bold text-white m-6">Explore our teams</h1>
             <div className="text-center text-lg text-white my-8 flex items-center justify-center space-x-4">
                 <div className="relative">
@@ -70,13 +70,13 @@ const Teams = () => {
                 </div>
                 <span className="relative z-10 ml-4">Teams</span>
             </div>
-            <ul className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:flex-row mx-8 bg-dark-surface pb-4 my-4">
+            <ul className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:flex-row mx-8 bg-dark-surface pb-4 my-4">
                 {teams[year].list.map((team, index) => {
                     return (
                         <TeamCard key={index}>
                             <div className="flex flex-col px-4">
                                 <div className="flex-grow">
-                                    {team.photo && <div className="w-24 h-24 md:w-40 md:h-40 mx-auto"><img className="object-cover w-full h-full rounded-full" src={team.photo}
+                                    {team.photo && <div className="w-24 h-24 md:w-40 md:h-40 my-4 mx-auto"><img className="object-cover w-full h-full rounded-full" src={team.photo}
                                                              alt={`${team.name} photo`}/></div>}
                                     <h1 className="font-bold pt-2">{team.name}</h1>
                                     {/**<h2 className="pt-2">Leads: {team.leads.join(", ")}</h2>**/}

@@ -218,13 +218,14 @@ const About = () => {
                 </div>
             </div>
             <CompanySection />
-            <div className="rounded md:m-24">
+            <div className="rounded md:mx-24 my-8">
                 <AboutSection id="us">
                     <div className="p-6 text-center">
                         <AboutSectionTitle>About Us</AboutSectionTitle>
                         <p className="text-sm p-6">{aboutUsDesc}</p>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {/** TODO: add Icons for each section **/}
+                    <div className="grid grid-cols-1 gap-4">
                         <div className="p-8 rounded-lg ring-1 ring-inset ring-white/[.3]">
                             <h2 className="text-lg text-dark-primary">Socials</h2>
                             <p className="text-sm">{socialsDesc}</p>

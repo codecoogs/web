@@ -387,11 +387,6 @@ const SproutSocialLogo = () => {
                   fill="#006B40"/>
             <path fillRule="evenodd" clipRule="evenodd" d="M51.3954 0.889282L21.928 30.3783H51.3954V0.889282Z" fill="#75DD66"/>
         </g>
-        <defs>
-            <clipPath id="clip0_1_794">
-                <rect width="320" height="64.2215" fill="white" transform="translate(0 0.889282)"/>
-            </clipPath>
-        </defs>
     </svg>
     );
 }

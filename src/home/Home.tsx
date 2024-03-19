@@ -2,13 +2,22 @@ import React, {useEffect, useState} from "react";
 
 import About from "./About";
 import Teams from "./Teams";
+import {Link} from "react-router-dom";
 
-interface HomeButtonProps {
-    link: string;
-    children: React.ReactNode;
-}
+const AboutUsButton = () => {
+    const style = "flex items-center p-6 h-10 relative font-bold text-center rounded-lg bg-transparent text-white hover:text-dark-primary";
 
-const HomeButton = (props: HomeButtonProps) => {
+    return (
+        <div className="relative group">
+            <a href="#us" className={style}>
+                <span className="flex items-center">
+                    <span>About Us</span>
+                </span>
+            </a>
+        </div>);
+};
+
+const JoinUsButton = () => {
     const style = "flex items-center p-6 h-10 relative font-bold text-center rounded-lg bg-black text-white ring-1 ring-dark-primary ring-inset hover:text-black hover:bg-dark-primary";
 
     return (
@@ -16,9 +25,11 @@ const HomeButton = (props: HomeButtonProps) => {
             <div
                 className="absolute -inset-0.5 bg-dark-primary blur-lg rounded-full opacity-50 transform scale-75 group-hover:scale-100 transition-all duration-300"
             ></div>
-            <a href={props.link} className={style}>
-                {props.children}
-            </a>
+            <Link to="/join" className={style}>
+                <span className="flex items-center">
+                    <span>Join Us</span>
+                </span>
+            </Link>
         </div>);
 };
 
@@ -85,13 +96,12 @@ const Home = () => {
                     <span className="text-base text-white">Build projects and compete with teams; we enhance your coding skills in a collaborative environment, unlocking the potential for community and technical growth.</span>
                 </div>
                 <div className="table mt-8 mx-auto">
-                    <ul className="flex flex-col items-center space-x-0 space-y-4 md:space-x-24 md:space-y-0 md:flex-row">
+                    <ul className="flex flex-col items-center space-x-0 space-y-4 md:space-x-6 md:space-y-0 md:flex-row">
                         <li>
-                            <HomeButton link="#us">
-                                <span className="flex items-center">
-                                    <span>About Us</span>
-                                </span>
-                            </HomeButton>
+                            <JoinUsButton />
+                        </li>
+                        <li>
+                            <AboutUsButton />
                         </li>
                     </ul>
                 </div>
