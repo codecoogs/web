@@ -157,9 +157,9 @@ const OfficerSection = () => {
 
 const CompanySection = () => {
     return (
-        <div className="text-center">
+        <div className="text-center md:pt-8">
             <AboutSectionTitle>Where our alumni have worked at</AboutSectionTitle>
-            <div className="flex flex-wrap justify-center items-center">
+            <div className="flex flex-wrap justify-center items-center md:w-1/3 mx-auto">
                 {companyLogos.map(({name, component: Component}) => (
                     <div key={name} className="p-4">
                         <Component/>

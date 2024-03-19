@@ -117,7 +117,7 @@ const SignUpForm: React.FC = () => {
               <input
                   className="peer bg-dark-surface-variant h-10 w-full border-b-2 border-white/[.3] placeholder-dark-surface-variant focus:outline-none focus:border-dark-primary"
                   type="tel"
-                  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                  pattern="[0-9]{10}"
                   id="phone"
                   name="phone"
                   value={formData.phone}

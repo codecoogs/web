@@ -3,6 +3,8 @@ import allOfficers from "./officers";
 import hcssLogo from "./../assets/logos/hcss.webp";
 import tomNTomsLogo from "./../assets/logos/tom-n-toms.webp";
 import csGirlsLogo from "./../assets/logos/csgirls.webp";
+import cougarCSLogo from "./../assets/logos/cougarcs.png";
+import cougarAILogo from "./../assets/logos/cougarai.webp";
 
 export const email = "codecoogs@gmail.com";
 
@@ -33,4 +35,14 @@ export const partners =[
         link: "https://csgirls.org/",
         logo: csGirlsLogo
     },
+    {
+        name: "CougarCS",
+        link: "https://cougarcs.com/",
+        logo: cougarCSLogo
+    },
+    {
+        name: "CougarAI",
+        link: "https://www.cougarai.org/",
+        logo: cougarAILogo
+    }
 ];
