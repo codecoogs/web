@@ -15,8 +15,8 @@ const EventCard = (props: EventCardProps) => {
 
 const Events = () => {
     return (
-        <div className="bg-dark-surface">
-            <div className="bg-dark-surface-variant mt-8 ml-4 mr-4 rounded">
+        <div className="p-4">
+            <div className="bg-dark-surface mt-8 ml-4 mr-4 rounded ring-1 ring-white/[.3]">
                 <iframe 
                     src={eventGoogleCalendarLink}
                     className="border-0 w-full overflow-hidden" 
@@ -25,6 +25,7 @@ const Events = () => {
             </div>
             <div className="text-center">
                 <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 m-8 bg-dark-surface pb-4">
+                    { /**
                     <EventCard>
                         <span>General Meetings</span>
                     </EventCard>
@@ -40,6 +41,7 @@ const Events = () => {
                     <EventCard>
                         <span>Banquets</span>
                     </EventCard>
+                    **/}
                 </ul>
             </div>
         </div>

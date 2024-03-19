@@ -23,12 +23,12 @@ module.exports = {
             },
             surface: {
                 DEFAULT: "#121212",
-                variant: "#292929",
+                variant: "#161616",
             },
             error: "#cf6679",
         },
         black: "#000000",
-        white: "#ffffff",
+        white: "#f0f0f0",
     },
     screens: {
         "sm": "320px",

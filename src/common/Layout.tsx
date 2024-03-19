@@ -1,6 +1,7 @@
 import React from "react";
 
 import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 interface LayoutProps {
     children: React.ReactNode;
@@ -8,11 +9,12 @@ interface LayoutProps {
 
 const Layout = (props: LayoutProps) => {
     return (
-        <div className="bg-dark-surface h-screen font-custom">
+        <div className="flex flex-col min-h-screen font-custom">
             <Navbar />
-            <main>
+            <main className="flex-1 bg-dark-surface">
                 {props.children}
             </main>
+            <Footer />
         </div>
     );
 };

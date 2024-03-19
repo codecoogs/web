@@ -8,9 +8,7 @@ import {
 import Layout from "./common/Layout";
 
 import Home from "./home/Home";
-import About from "./about/About";
 import Events from "./events/Events";
-import Teams from "./teams/Teams";
 import Members from "./members/Members";
 
 const App = () => {
@@ -19,10 +17,8 @@ const App = () => {
             <Layout>
                 <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="/about" element={<About />} />
                     <Route path="/events" element={<Events />} />
-                    <Route path="/teams" element={<Teams />} />
-                    <Route path="/members" element={<Members />} />
+                    <Route path="/join" element={<Members />} />
                 </Routes>
             </Layout>
         </BrowserRouter>

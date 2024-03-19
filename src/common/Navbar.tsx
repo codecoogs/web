@@ -3,6 +3,8 @@ import { Link, useLocation } from "react-router-dom";
 
 import happyCoCo from "../assets/happy-coco.webp";
 import determinedCoCo from "../assets/determined-coco.webp";
+import {DiscordIcon, MenuIcon} from "./NavbarIcons";
+import {discordLink} from "../data/members";
 
 const setTextColor = (to: string) => {
     const location = useLocation();
@@ -35,12 +37,12 @@ const Navlink = (props: NavlinkProps) => {
     return (
         <li>
             <Link
-                className={`block h-full ${textColor} font-semibold hover:text-dark-primary`}
+                className={`block h-full ${textColor} hover:text-dark-primary`}
                 to={props.to}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
             >
-                {isHover ? 
+                {isHover ?
                     <span>[{props.text}]</span>
                     :
                     <span>&nbsp;{props.text}&nbsp;</span>
@@ -65,7 +67,7 @@ const Navhome = () => {
 
     return (
         <Link
-            className={"flex items-center ml-4"}
+            className={"flex items-center ml-4 md:ml-14"}
             to="/"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
@@ -78,15 +80,6 @@ const Navhome = () => {
     );
 };
 
-const MenuIcon = () => {
-    return (
-        <svg className="w-6 h-6" viewBox="0 0 20 20">
-            <path fillRule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd">
-            </path>
-        </svg>
-    );
-};
-
 const Navbar = () => {
     const [clicked, setClicked] = useState<boolean>(false);
 
@@ -95,7 +88,7 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="bg-dark-surface-variant lg:h-16 md:h-14">
+        <nav className="bg-dark-surface border-b border-white border-opacity-10 lg:h-16 md:h-14">
             <div className="flex flex-wrap justify-between items-center mx-auto">
                 <Navhome />
                 <button 
@@ -106,17 +99,21 @@ const Navbar = () => {
                 >
                     <MenuIcon />
                 </button>
-                <div className={`${clicked ? "hidden": "block"} relative w-full md:w-auto md:block`}>
-                    <ul className="flex flex-col space-y-4 pb-4 items-center bg-dark-surface-variant md:pb-0 md:space-y-0 md:flex-row md:space-x-4 md:mr-4">
-                        <Navlink to="/about" text="About"/>
+                <div className={`${clicked ? "hidden" : "block"} relative w-full md:w-auto md:block`}>
+                    <ul className="flex flex-col space-y-4 pb-4 items-center md:pb-0 md:space-y-0 md:flex-row md:space-x-4 md:mr-4">
                         <Navlink to="/events" text="Events"/>
-                        <Navlink to="/teams" text="Teams"/>
-                        <Navlink to="/members" text="Members"/>
-                    </ul>
-                </div>
+                        <Navlink to="/join" text="Join"/>
+                        <a href={discordLink} target="_blank">
+                            <div className="fill-white self-center">
+                                <DiscordIcon/>
+                            </div>
+                        </a>
+                </ul>
             </div>
-        </nav>
-    );
+        </div>
+</nav>
+)
+    ;
 };
 
 export default Navbar;

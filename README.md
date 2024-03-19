@@ -22,12 +22,22 @@ git clone https://github.com/codecoogs/web.git
 ```
 
 ## Usage
-Run this command to start the project
+Populate environment variables
+```bash
+VITE_API_URL=
+```
+
+Install dependencies
+```bash
+pnpm i
+```
+
+Start the project
 ```bash
 pnpm dev
 ```
 
-Run this command to build the project to static files in a `dist` folder
+Build the project to static files in a `dist` folder
 ```bash
 pnpm build
 ```
