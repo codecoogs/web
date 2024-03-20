@@ -27,20 +27,20 @@ enum Direction {
 const Teams = () => {
     const numTeams = teams.length;
     const [year, setYear] = useState(numTeams - 1);
-    const [currentDirection, setCurrentDirection] = useState<Direction>(Direction.None);
+    const [teamCardOpacity, setTeamCardOpacity] = useState<string>('opacity-100')
 
     const handleYearChange = (direction: Direction) => {
-        setCurrentDirection(direction);
+        setTeamCardOpacity('opacity-0');
 
-        if (direction == Direction.Up) {
-            setYear(prevYear => Math.min(numTeams - 1, prevYear + 1));
-        } else if (direction == Direction.Down) {
-            setYear(prevYear => Math.max(0, prevYear - 1));
-        }
 
         setTimeout(() => {
-            setCurrentDirection(Direction.None)
-        }, 300);
+            if (direction == Direction.Up) {
+                setYear(prevYear => Math.min(numTeams - 1, prevYear + 1));
+            } else if (direction == Direction.Down) {
+                setYear(prevYear => Math.max(0, prevYear - 1));
+            }
+            setTeamCardOpacity('opacity-100');
+        }, 500);
     }
 
     return (
@@ -50,7 +50,7 @@ const Teams = () => {
                 <div className="relative">
                     <div className="relative flex items-center">
                         <span
-                            className={`absolute transition-transform duration-300 opacity-30 cursor-pointer ${currentDirection === Direction.Down ? 'translate-y-0' : '-translate-y-6'}`}
+                            className={`absolute transition-transform duration-300 opacity-30 cursor-pointer -translate-y-6`}
                             onClick={() => handleYearChange(Direction.Down)}
                         >
                             {year - 1 >= 0 && teams[year - 1].year}
@@ -61,7 +61,7 @@ const Teams = () => {
                                 {teams[year].year}
                         </span>
                         <span
-                            className={`absolute transition-transform duration-300 opacity-30 cursor-pointer ${currentDirection === Direction.Up ? 'translate-y-0' : 'translate-y-6'}`}
+                            className={`absolute transition-transform duration-300 opacity-30 cursor-pointer translate-y-6`}
                             onClick={() => handleYearChange(Direction.Up)}
                         >
                                 {year + 1 < numTeams && teams[year + 1].year}
@@ -70,7 +70,7 @@ const Teams = () => {
                 </div>
                 <span className="relative z-10 ml-4">Teams</span>
             </div>
-            <ul className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:flex-row mx-8 bg-dark-surface pb-4 my-4">
+            <ul className={`grid grid-cols-2 lg:grid-cols-4 gap-4 md:flex-row mx-8 bg-dark-surface pb-4 my-4 ease-in-out transition-opacity duration-500 ${teamCardOpacity}`}>
                 {teams[year].list.map((team, index) => {
                     return (
                         <TeamCard key={index}>

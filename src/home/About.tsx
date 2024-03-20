@@ -75,11 +75,11 @@ const OfficerCard = (props: OfficerCardProps) => {
             <div className="flex-grow">
                 <div className="w-24 h-24 md:w-32 md:h-32 mx-auto">
                     <img
-                        className="w-full h-full relative object-cover rounded-full hover:object-top"
+                        className="w-full h-full relative object-cover rounded-full"
                         src={props.photo}
                         alt={props.name}
                         // onMouseOver={e => (e.currentTarget.src = props.video ? props.video : props.photo)}
-                        onMouseOut={e => (e.currentTarget.src = props.photo)}
+                        // onMouseOut={e => (e.currentTarget.src = props.photo)}
                     />
                 </div>
                 <span className="block text-sm font-bold pt-4">{props.name}</span>
@@ -106,15 +106,29 @@ const OfficerCard = (props: OfficerCardProps) => {
 // TODO: smooth the semester change transition
 const OfficerSection = () => {
     const numOfficers = officers.length;
-    const [semester, setSemester] = useState(numOfficers - 1);
+    const [semester, setSemester] = useState<number>(numOfficers - 1);
+    const [officerCardOpacity, setOfficerCardOpacity] = useState<string>('opacity-100')
+
+    const changeSemester = (newSemester: number) => {
+        setOfficerCardOpacity('opacity-0');
+        setTimeout(() => {
+            setSemester(newSemester);
+            setOfficerCardOpacity('opacity-100');
+        }, 500);
+    };
 
     const handleDecrementSemester = () => {
-        setSemester(prevSemester => Math.max(0, prevSemester - 1));
+        if (semester > 0) {
+            changeSemester(semester - 1);
+        }
     };
 
     const handleIncrementSemester = () => {
-        setSemester(prevSemester => Math.min(numOfficers - 1, prevSemester + 1));
+        if (semester < numOfficers - 1) {
+            changeSemester(semester + 1);
+        }
     };
+
 
     return (
         <div className="px-2  text-center mx-auto md:w-3/4">
@@ -143,7 +157,7 @@ const OfficerSection = () => {
                 </div>
                 <span className="flex-1 text-left relative z-10 ml-4">Officers</span>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-0 md:px-8">
+            <div className={`grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-0 md:px-8 ease-in-out transition-opacity duration-500 ${officerCardOpacity}`}>
                 {officers[semester].list.map((officer, index) => {
                     return <OfficerCard
                         key={index}
