@@ -39,7 +39,7 @@ const BackgroundCircles = () => {
             <div
                 className="absolute transform -translate-x-0 w-full h-full rounded filter blur-xl opacity-70 blob 7s infinite"
                 style={{
-                    background: 'radial-gradient(circle, rgba(191, 64, 191, 0) 0%, rgba(0, 198, 247, 0.1) 100%)'
+                    background: 'radial-gradient(circle, rgba(191, 64, 191, 0) 0%, rgba(0, 198, 247, 0.05) 100%)'
                 }}>
             </div>
         </>

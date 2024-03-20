@@ -24,7 +24,15 @@ const Footer = () => {
                     <div
                         className="flex items-center ml-4 md:ml-14"
                     >
-                        <img className="mr-4" src={!isHover ? happyCoCo : determinedCoCo} alt="Logo" width="72" height="72"/>
+                        <img
+                            className="mr-4"
+                            src={!isHover ? happyCoCo : determinedCoCo}
+                            alt="Logo"
+                            width="72"
+                            height="72"
+                            onMouseEnter={handleMouseEnter}
+                            onMouseLeave={handleMouseLeave}
+                        />
                     </div>
                 </div>
                 <div className="flex-1 grid grid-cols-1">

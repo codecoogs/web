@@ -1,5 +1,10 @@
 import React, { useState } from "react";
 
+import competitionsCoCo from "../assets/competitions-coco.webp";
+import socialsCoCo from "../assets/socials-coco.webp";
+import teamsCoCo from "../assets/teams-coco.webp";
+import workshopsCoCo from "../assets/workshops-coco.webp";
+
 import {
     InstagramIcon,
     LinkedInIcon
@@ -222,25 +227,44 @@ const About = () => {
                 <AboutSection id="us">
                     <div className="p-6 text-center">
                         <AboutSectionTitle>About Us</AboutSectionTitle>
-                        <p className="text-sm p-6">{aboutUsDesc}</p>
+                        <p className="text-sm p-6 opacity-90">{aboutUsDesc}</p>
                     </div>
-                    {/** TODO: add Icons for each section **/}
                     <div className="grid grid-cols-1 gap-4">
-                        <div className="p-8 rounded-lg ring-1 ring-inset ring-white/[.3]">
-                            <h2 className="text-lg text-dark-primary">Socials</h2>
-                            <p className="text-sm">{socialsDesc}</p>
+                        <div className="p-8 rounded-lg ring-0 ring-inset ring-white/[.3] flex flex-col md:flex-row items-center">
+                            <div className="w-56 h-36 flex-shrink-0 md:border-r-2 border-white/[.8]">
+                                <img className="w-36 h-full mx-auto md:mr-0" src={socialsCoCo} alt="Socials CoCo"/>
+                            </div>
+                            <div className="flex-1 ml-4 pt-2 border-t-2 md:pt-0 md:border-t-0">
+                                <h2 className="text-lg text-dark-primary">Socials</h2>
+                                <p className="text-sm opacity-70">{socialsDesc}</p>
+                            </div>
                         </div>
-                        <div className="p-8 rounded-lg ring-1 ring-inset ring-white/[.3]">
-                            <h2 className="text-lg text-dark-primary">Teams</h2>
-                            <p className="text-sm">{teamsDesc}</p>
+                        <div className="p-8 rounded-lg ring-0 ring-inset ring-white/[.3] flex flex-col md:flex-row items-center">
+                            <div className="w-56 h-36 flex-shrink-0 md:border-r-2 border-white/[.8]">
+                                <img className="w-48 h-full mx-auto md:mr-2" src={teamsCoCo} alt="Teams CoCo"/>
+                            </div>
+                            <div className="flex-1 ml-4 pt-2 border-t-2 md:pt-0 md:border-t-0">
+                                <h2 className="text-lg text-dark-primary">Teams</h2>
+                                <p className="text-sm opacity-70">{teamsDesc}</p>
+                            </div>
                         </div>
-                        <div className="p-8 rounded-lg ring-1 ring-inset ring-white/[.3]">
-                            <h2 className="text-lg text-dark-primary">Competitions</h2>
-                            <p className="text-sm">{competitionsDesc}</p>
+                        <div className="p-8 rounded-lg ring-0 ring-inset ring-white/[.3] flex flex-col md:flex-row items-center">
+                            <div className="w-56 h-36 flex-shrink-0 md:border-r-2 border-white/[.8]">
+                                <img className="w-full h-full mx-auto md:mr-0" src={competitionsCoCo} alt="Competitions CoCo"/>
+                            </div>
+                            <div className="flex-1 ml-4 pt-2 border-t-2 md:pt-0 md:border-t-0">
+                                <h2 className="text-lg text-dark-primary">Competitions</h2>
+                                <p className="text-sm opacity-70">{competitionsDesc}</p>
+                            </div>
                         </div>
-                        <div className="p-8 rounded-lg ring-1 ring-inset ring-white/[.3]">
-                            <h2 className="text-lg text-dark-primary">Workshops</h2>
-                            <p className="text-sm">{workshopsDesc}</p>
+                        <div className="p-8 rounded-lg ring-0 ring-inset ring-white/[.3] flex flex-col md:flex-row items-center">
+                            <div className="w-56 h-36 flex-shrink-0 md:border-r-2 border-white/[.8]">
+                                <img className="w-36 h-full mx-auto md:mr-0" src={workshopsCoCo} alt="Workshops CoCo"/>
+                            </div>
+                            <div className="flex-1 ml-4 pt-2 border-t-2 md:pt-0 md:border-t-0">
+                                <h2 className="text-lg text-dark-primary">Workshops</h2>
+                                <p className="text-sm opacity-70">{workshopsDesc}</p>
+                            </div>
                         </div>
                     </div>
                 </AboutSection>
