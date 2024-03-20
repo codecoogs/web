@@ -4,6 +4,7 @@ import {email} from "../data/about";
 import happyCoCo from "../assets/happy-coco.webp";
 import determinedCoCo from "../assets/determined-coco.webp";
 import {Link} from "react-router-dom";
+import {discordLink} from "../data/members";
 
 
 const Footer = () => {
@@ -82,7 +83,7 @@ const Footer = () => {
                         <div>
                             <DiscordIcon/>
                         </div>
-                        <a className="text-sm" href={`mailto: ${email}`}>discord</a>
+                        <a className="text-sm" href={`${discordLink}`}>discord</a>
                     </div>
                     <div className="flex space-x-4 justify-start items-center opacity-50 hover:opacity-90">
                         <div>
