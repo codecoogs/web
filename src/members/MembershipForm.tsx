@@ -22,7 +22,9 @@ const SignUpForm: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
       e.preventDefault();
-        console.log(SIGNUP_API_URL)
+      setSuccessMessage('');
+      setErrorMessage('');
+
       const response = await fetch(SIGNUP_API_URL, {
         method: 'POST',
         headers: {
@@ -45,7 +47,6 @@ const SignUpForm: React.FC = () => {
             expected_graduation: 'None'
         });
       } else {
-          console.error('Error submitting the form:', error);
           setErrorMessage(`Error submitting the form: ${error}`);
       }
   };
