@@ -8,7 +8,7 @@ const SignUpForm: React.FC = () => {
     last_name: '',
     email: '',
     phone: '',
-    major: '',
+    major: 'Computer Science',
     classification: 'Freshman',
     expected_graduation: '2024-05'
   });
