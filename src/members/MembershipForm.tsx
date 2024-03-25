@@ -3,6 +3,10 @@ import { SIGNUP_API_URL } from '../data/members';
 
 
 const SignUpForm: React.FC = () => {
+  const selectInputStyle: React.CSSProperties = {
+    colorScheme: 'dark',
+  };
+
   const [formData, setFormData] = useState({
     first_name: '',
     last_name: '',
@@ -138,6 +142,7 @@ const SignUpForm: React.FC = () => {
               <label className="text-sm" htmlFor="major">Major</label>
               <select
                   className="bg-dark-surface-variant font-normal rounded mt-1 p-2 ring-1 ring-inset ring-white/[.3] focus:ring-dark-primary"
+                  style={selectInputStyle}
                   id="major"
                   name="major"
                   value={formData.major}
@@ -157,6 +162,7 @@ const SignUpForm: React.FC = () => {
               <label className="text-sm" htmlFor="classification">Classification</label>
               <select
                   className="bg-dark-surface-variant font-normal rounded mt-1 p-2 ring-1 ring-inset ring-white/[.3] focus:ring-dark-primary"
+                  style={selectInputStyle}
                   id="classification"
                   name="classification"
                   value={formData.classification}
@@ -174,6 +180,7 @@ const SignUpForm: React.FC = () => {
               <label className="text-sm" htmlFor="expectedGraduation">Expected Graduation</label>
               <input
                   className="bg-dark-surface-variant font-normal rounded mt-1 p-2 pl-3 pr-1 ring-1 ring-inset ring-white/[.3] focus:ring-dark-primary"
+                  style={selectInputStyle}
                   type="month"
                   id="expectedGraduation"
                   name="expected_graduation"
