@@ -1,4 +1,4 @@
-const logoStyle = "h-12 w-12 fill-white"
+const logoStyle = "h-12 w-24 fill-white"
 const AmazonLogo = () => {
     return (
         <svg className={logoStyle} viewBox="0 0 110 48" xmlns="http://www.w3.org/2000/svg">
