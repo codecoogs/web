@@ -1,10 +1,10 @@
 import allOfficers from "./officers";
 
-import hcssLogo from "./../assets/logos/hcss.webp";
-import tomNTomsLogo from "./../assets/logos/tom-n-toms.webp";
-import csGirlsLogo from "./../assets/logos/csgirls.webp";
-import cougarCSLogo from "./../assets/logos/cougarcs.png";
-import cougarAILogo from "./../assets/logos/cougarai.webp";
+import hcssLogo from "../assets/logos/hcss.webp";
+import tomNTomsLogo from "../assets/logos/tom-n-toms.webp";
+import csGirlsLogo from "../assets/logos/csgirls.webp";
+import cougarCSLogo from "../assets/logos/cougarcs.png";
+import cougarAILogo from "../assets/logos/cougarai.webp";
 
 export const email = "codecoogs@gmail.com";
 
