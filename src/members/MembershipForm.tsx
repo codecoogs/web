@@ -59,8 +59,8 @@ const SignUpForm: React.FC = () => {
       <form
           className="bg-dark-surface-variant rounded-lg grid ring-1 ring-inset ring-white/[.3] p-8"
           onSubmit={handleSubmit}>
-          <div className="flex justify-between">
-              <div className="relative">
+          <div className="flex">
+              <div className="relative flex-[1_1_100%]">
                   <input
                       className="peer bg-dark-surface-variant h-10 w-full border-b-2 border-white/[.3] placeholder-dark-surface-variant focus:outline-none focus:border-dark-primary"
                       type="text"
@@ -79,7 +79,7 @@ const SignUpForm: React.FC = () => {
                       First Name
                   </label>
               </div>
-              <div className="relative">
+              <div className="relative flex-[1_1_100%] ml-8">
                   <input
                       className="peer bg-dark-surface-variant h-10 w-full border-b-2 border-white/[.3] placeholder-dark-surface-variant focus:outline-none focus:border-dark-primary"
                       type="text"
@@ -190,6 +190,26 @@ const SignUpForm: React.FC = () => {
                   required
               />
           </div>
+
+          <div className="flex flex-col mt-4">
+              <label className="text-sm" htmlFor="paymentMethod">Payment Method</label>
+              <select
+                  className="bg-dark-surface-variant font-normal rounded mt-1 p-2 ring-1 ring-inset ring-white/[.3] focus:ring-dark-primary"
+                  style={selectInputStyle}
+                  id="classification"
+                  name="classification"
+                  value={formData.classification}
+                  onChange={handleChange}
+                  required
+              >
+                  <option value="Cash">Cash</option>
+                  <option value="Venmo">Venmo</option>
+                  <option value="Zelle">Zelle</option>
+              </select>
+          </div>
+
+          <div className="mt-4 text-sm">* Include <span className="text-dark-primary-variant">full name</span> when paying with Venmo or Zelle</div>
+
           <div className="flex mt-6">
               <div className="flex-1 basis-1/2 text-sm text-dark-error">
                   <span className="text-dark-primary-variant">{successMessage}</span>

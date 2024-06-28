@@ -1,12 +1,12 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 
 import MembershipForm from "./MembershipForm";
 
-import { 
-    benefits, 
+import {
+    benefits,
     faq
 } from "../data/members";
-import {CheckIcon} from "./MembersIcons";
+import { CheckIcon } from "./MembersIcons";
 
 interface MemberBenefitCardProps {
     benefit: string;
@@ -21,7 +21,7 @@ const MemberBenefitCard = (props: MemberBenefitCardProps) => {
             <div
                 className="flex justify-between items-center bg-dark-surface-variant h-full rounded-lg text-center p-2 hover:ring-dark-primary transform transition-all hover:-translate-y-2 duration-300">
                 <div className="flex-1 basis-1/4">
-                    <CheckIcon/>
+                    <CheckIcon />
                 </div>
                 <div className="flex-1 basis-3/4 opacity-50 text-left">
                     {`${benefit}`}
@@ -62,7 +62,7 @@ const PricingCard = () => {
                 <h2 className="my-4 font-bold text-lg text-center">Benefits</h2>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
                     {benefits.map((benefit, index) => {
-                        return <MemberBenefitCard benefit={benefit} index={index}/>;
+                        return <MemberBenefitCard benefit={benefit} index={index} />;
                     })}
                 </ul>
 
@@ -93,7 +93,6 @@ const PricingCard = () => {
                         </div>
                     </li>
                 </ul>
-                <div className="mt-4 text-sm">Include <span className="text-dark-primary-variant">full name</span> when paying with Venmo or Zelle</div>
             </div>
         </div>
     );
@@ -135,25 +134,28 @@ const Members = () => {
             <h1 className="font-extrabold text-3xl md:text-5xl text-center md:mt-8 ">
                 Join a <span className="text-dark-primary-variant">community</span> of hobbyist programmers
             </h1>
-            <div className="bg-dark-surface flex flex-col mt-8 md:flex-row md:gap-4 md:p-10">
+            <div className="bg-dark-surface flex flex-col mt-8 md:flex-row md:gap-8 md:p-10">
+
+                <div className="flex-1 basis-1/2 md:mt-0">
+                    <MembershipForm />
+                </div>
+
                 <div className="flex-1 basis-1/2">
-                    <PricingCard/>
+                    <PricingCard />
                 </div>
-                <div className="flex-1 basis-1/2 my-4 md:mt-0">
-                    <MembershipForm/>
-                </div>
+
             </div>
             <div className="mx-auto md:w-1/3">
                 <h2 className="text-3xl text-center mb-4">FAQs</h2>
                 <div className="border-t-2 border-t-white/[.3]">
-                { faq.map((response, index) => {
-                    return <FAQCard
-                        key={index}
-                        question={response.question}
-                        answer={response.answer}
-                    />;
-                })
-                }
+                    {faq.map((response, index) => {
+                        return <FAQCard
+                            key={index}
+                            question={response.question}
+                            answer={response.answer}
+                        />;
+                    })
+                    }
                 </div>
             </div>
         </div>
