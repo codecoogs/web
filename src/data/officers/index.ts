@@ -7,14 +7,14 @@ import Spring2024 from "./2024Spring";
 import Fall2024 from "./2024Fall";
 
 type Officer = {
-  name: string,
-  position: string,
-  photo?: any,
-  video?: string,
+  name: string;
+  position: string;
+  photo?: any;
+  video?: string;
   socials: {
-    linkedin: string
-  }
-}
+    linkedin: string;
+  };
+};
 
 type Officers = {
   semester: string;
@@ -23,33 +23,33 @@ type Officers = {
 
 const officers: Officers = [
   {
-    semester: "Fall 2021", 
-    list:Fall2021
+    semester: "Fall 2021",
+    list: Fall2021,
   },
   {
-    semester: "Spring 2022", 
-    list: Spring2022
+    semester: "Spring 2022",
+    list: Spring2022,
   },
   {
-    semester: "Fall 2022", 
-    list: Fall2022
+    semester: "Fall 2022",
+    list: Fall2022,
   },
   {
-    semester: "Spring 2023", 
-    list: Spring2023
+    semester: "Spring 2023",
+    list: Spring2023,
   },
   {
-    semester: "Fall 2023", 
-    list: Fall2023
+    semester: "Fall 2023",
+    list: Fall2023,
   },
   {
     semester: "Spring 2024",
-    list: Spring2024
+    list: Spring2024,
   },
-  {
-    semester: "Fall 2024",
-    list: Fall2024
-  }
+  // {
+  //   semester: "Fall 2024",
+  //   list: Fall2024
+  // }
 ];
 
 export default officers;

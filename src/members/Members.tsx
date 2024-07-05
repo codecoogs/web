@@ -84,14 +84,14 @@ const PricingCard = () => {
                             <span className="text-sm">@Code-Coogs</span>
                         </div>
                     </li>
-                    <li>
+                    {/* <li>
                         <div
                             className="flex items-center justify-between bg-[#6c1cd3] h-full rounded-lg text-center p-2 ring-1 ring-inset ring-white/[.3] hover:ring-white transform transition-all hover:-translate-y-1 duration-300"
                         >
                             <span className="">Zelle</span>
                             <span className="text-sm">832-535-7320</span>
                         </div>
-                    </li>
+                    </li> */}
                 </ul>
             </div>
         </div>
