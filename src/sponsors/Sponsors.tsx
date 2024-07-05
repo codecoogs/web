@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import HTMLFlipBook from "react-pageflip";
+
 import { Document, Page as ReactPDFPage, pdfjs } from "react-pdf";
+pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
-import sponsorship from "../../src/data/sponsorship.pdf";
-
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+// import sponsorship from "./sponsorship.pdf";
 
 const width = 720;
 const height = 1280;
@@ -26,8 +26,8 @@ const Sponsors = () => {
 
   return (
     <div>
-        <h1>TEST</h1>
-      <Document file={sponsorship}>
+      <h1>TEST</h1>
+      {/* <Document file={sponsorship}>
         <HTMLFlipBook
           style={{}}
           // children={{}}
@@ -52,14 +52,14 @@ const Sponsors = () => {
           maxShadowOpacity={0.5}
           showCover={true}
           mobileScrollSupport={true}
-          onFlip={() => {}}
-          onChangeOrientation={() => {}}
-          onChangeState={() => {}}
+          onFlip={() => { }}
+          onChangeOrientation={() => { }}
+          onChangeState={() => { }}
           className="demo-book"
         >
           <Page pageNumber={1} />
         </HTMLFlipBook>
-      </Document>
+      </Document> */}
     </div>
   );
 };
