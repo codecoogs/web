@@ -56,7 +56,7 @@ const PricingCard = () => {
                             </span>
                         </div>
                     </div>
-                    <span className="text-dark-error text-sm">{isYearly && "* Valid August - November"}</span>
+                    <span className="text-dark-error text-sm">{isYearly && "* Valid July - November"}</span>
                 </div>
 
                 <h2 className="my-4 font-bold text-lg text-center">Benefits</h2>
