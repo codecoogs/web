@@ -58,7 +58,7 @@ const officers2024Fall = [
     },
 
     {
-        name: "Yousif",
+        name: "Yousif Saieb",
         position: "Teams Director",
         socials: {
             linkedin: "",
@@ -66,7 +66,7 @@ const officers2024Fall = [
     },
 
     {
-        name: "Alan",
+        name: "Alan Gregoryx",
         position: "Teams Director",
 
         socials: {
@@ -84,7 +84,7 @@ const officers2024Fall = [
         }
     },
     {
-        name: "Salvador",
+        name: "Salvador Gonzales",
         position: "Historian",
 
         socials: {

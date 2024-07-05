@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import HTMLFlipBook from "react-pageflip";
 import { Document, Page as ReactPDFPage, pdfjs } from "react-pdf";
 
-import sponsorship from "../../public/sponsorship.pdf";
+import sponsorship from "../../src/data/sponsorship.pdf";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
