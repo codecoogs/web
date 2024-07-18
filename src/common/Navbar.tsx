@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-import happyCoCo from "../assets/happy-coco.webp";
-import determinedCoCo from "../assets/determined-coco.webp";
-import {DiscordIcon, MenuIcon} from "./NavbarIcons";
-import {discordLink} from "../data/members";
+// import happyCoCo from "../assets/happy-coco.webp";
+// import determinedCoCo from "../assets/determined-coco.webp";
+import { DiscordIcon, MenuIcon } from "./NavbarIcons";
+import { discordLink } from "../data/members";
 
 const setTextColor = (to: string) => {
     const location = useLocation();
@@ -72,7 +72,7 @@ const Navhome = () => {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >
-            <img className="mr-4" src={!isHover ? happyCoCo : determinedCoCo} alt="Logo" width="64" height="64"/>
+            <img className="mr-4" src={!isHover ? "/assets/happy-coco.webp" : "/assets/determined-coco.webp"} alt="Logo" width="64" height="64" />
             <span className={`self-center text-2xl ${textColor} font-semibold hover:text-dark-primary`} >
                 Code{isHover ? "[" : " "}<span className="text-dark-error">Coogs</span>{isHover ? "]" : " "}
             </span>
@@ -91,8 +91,8 @@ const Navbar = () => {
         <nav className="bg-dark-surface border-b border-white border-opacity-10 lg:h-16 md:h-14">
             <div className="flex flex-wrap justify-between items-center mx-auto">
                 <Navhome />
-                <button 
-                    className="inline-flex items-center fill-white md:hidden" 
+                <button
+                    className="inline-flex items-center fill-white md:hidden"
                     onClick={handleClick}
                     type="button"
                     aria-label="Hamburger menu"
@@ -101,19 +101,19 @@ const Navbar = () => {
                 </button>
                 <div className={`${clicked ? "hidden" : "block"} relative w-full md:w-auto md:block`}>
                     <ul className="flex flex-col space-y-4 pb-4 items-center md:pb-0 md:space-y-0 md:flex-row md:space-x-4 md:mr-4">
-                        <Navlink to="/events" text="Events"/>
-                        <Navlink to="/join" text="Join"/>
+                        <Navlink to="/events" text="Events" />
+                        <Navlink to="/join" text="Join" />
                         <a href={discordLink} target="_blank">
                             <div className="fill-white self-center">
-                                <DiscordIcon/>
+                                <DiscordIcon />
                             </div>
                         </a>
-                </ul>
+                    </ul>
+                </div>
             </div>
-        </div>
-</nav>
-)
-    ;
+        </nav>
+    )
+        ;
 };
 
 export default Navbar;
