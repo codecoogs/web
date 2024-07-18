@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
-import competitionsCoCo from "../assets/competitions-coco.webp";
-import socialsCoCo from "../assets/socials-coco.webp";
-import teamsCoCo from "../assets/teams-coco.webp";
-import workshopsCoCo from "../assets/workshops-coco.webp";
+// import competitionsCoCo from "../assets/competitions-coco.webp";
+// import socialsCoCo from "../assets/socials-coco.webp";
+// import teamsCoCo from "../assets/teams-coco.webp";
+// import workshopsCoCo from "../assets/workshops-coco.webp";
 
 import { InstagramIcon, LinkedInIcon } from "./AboutIcons";
 import { companyLogos } from "./AboutLogos";
@@ -66,7 +66,7 @@ const OfficerCard = (props: OfficerCardProps) => {
       .reverse()
       .join("")
       .toLowerCase();
-    image = `/src/assets/officers/${folderName}/${props.name.replace(
+    image = `/assets/officers/${folderName}/${props.name.replace(
       " ",
       ""
     )}.jpg`;
@@ -82,8 +82,8 @@ const OfficerCard = (props: OfficerCardProps) => {
             className="w-full h-full relative object-cover rounded-full"
             src={image}
             alt={props.name}
-            // onMouseOver={e => (e.currentTarget.src = props.video ? props.video : props.photo)}
-            // onMouseOut={e => (e.currentTarget.src = props.photo)}
+          // onMouseOver={e => (e.currentTarget.src = props.video ? props.video : props.photo)}
+          // onMouseOut={e => (e.currentTarget.src = props.photo)}
           />
         </div>
         <span className="block text-sm font-bold pt-4">{props.name}</span>
@@ -260,7 +260,7 @@ const About = () => {
               <div className="w-56 h-36 flex-shrink-0 md:border-r-2 border-white/[.8]">
                 <img
                   className="w-36 h-full mx-auto md:mr-0"
-                  src={socialsCoCo}
+                  src={"/assets/socials-coco.webp"}
                   alt="Socials CoCo"
                 />
               </div>
@@ -273,7 +273,7 @@ const About = () => {
               <div className="w-56 h-36 flex-shrink-0 md:border-r-2 border-white/[.8]">
                 <img
                   className="w-48 h-full mx-auto md:mr-2"
-                  src={teamsCoCo}
+                  src={"/assets/teams-coco.webp"}
                   alt="Teams CoCo"
                 />
               </div>
@@ -286,7 +286,7 @@ const About = () => {
               <div className="w-56 h-36 flex-shrink-0 md:border-r-2 border-white/[.8]">
                 <img
                   className="w-full h-full mx-auto md:mr-0"
-                  src={competitionsCoCo}
+                  src={"/assets/competitions-coco.webp"}
                   alt="Competitions CoCo"
                 />
               </div>
@@ -299,7 +299,7 @@ const About = () => {
               <div className="w-56 h-36 flex-shrink-0 md:border-r-2 border-white/[.8]">
                 <img
                   className="w-36 h-full mx-auto md:mr-0"
-                  src={workshopsCoCo}
+                  src={"/assets/workshops-coco.webp"}
                   alt="Workshops CoCo"
                 />
               </div>

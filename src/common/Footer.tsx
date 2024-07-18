@@ -1,10 +1,10 @@
-import React, {useState} from "react";
-import {DiscordIcon, GitHubIcon, InstagramIcon, LinkedInIcon, MailIcon} from "./FooterIcons";
-import {email} from "../data/about";
-import happyCoCo from "../assets/happy-coco.webp";
-import determinedCoCo from "../assets/determined-coco.webp";
-import {Link} from "react-router-dom";
-import {discordLink} from "../data/members";
+import React, { useState } from "react";
+import { DiscordIcon, GitHubIcon, InstagramIcon, LinkedInIcon, MailIcon } from "./FooterIcons";
+import { email } from "../data/about";
+// import happyCoCo from "../assets/happy-coco.webp";
+// import determinedCoCo from "../assets/determined-coco.webp";
+import { Link } from "react-router-dom";
+import { discordLink } from "../data/members";
 
 
 const Footer = () => {
@@ -27,7 +27,7 @@ const Footer = () => {
                     >
                         <img
                             className="mr-4"
-                            src={!isHover ? happyCoCo : determinedCoCo}
+                            src={!isHover ? "/assets/happy-coco.webp" : "/assets/determined-coco.webp"}
                             alt="Logo"
                             width="72"
                             height="72"
@@ -75,33 +75,33 @@ const Footer = () => {
                     <h2>Links</h2>
                     <div className="flex space-x-4 justify-start items-center opacity-50 hover:opacity-90">
                         <div>
-                            <MailIcon/>
+                            <MailIcon />
                         </div>
                         <a className="text-sm" href={`mailto: ${email}`}>{email}</a>
                     </div>
                     <div className="flex space-x-4 justify-start items-center opacity-50 hover:opacity-90">
                         <div>
-                            <DiscordIcon/>
+                            <DiscordIcon />
                         </div>
                         <a className="text-sm" href={`${discordLink}`}>discord</a>
                     </div>
                     <div className="flex space-x-4 justify-start items-center opacity-50 hover:opacity-90">
                         <div>
-                            <InstagramIcon/>
+                            <InstagramIcon />
                         </div>
                         <a className="text-sm"
-                           href="https://www.instagram.com/uh_codecoogs/">uh_codecoogs</a>
+                            href="https://www.instagram.com/uh_codecoogs/">uh_codecoogs</a>
                     </div>
                     <div className="flex space-x-4 justify-start items-center opacity-50 hover:opacity-90">
                         <div>
-                            <LinkedInIcon/>
+                            <LinkedInIcon />
                         </div>
                         <a className="text-sm"
-                           href="https://www.linkedin.com/company/code-coogs">company/code-coogs</a>
+                            href="https://www.linkedin.com/company/code-coogs">company/code-coogs</a>
                     </div>
                     <div className="flex space-x-4 justify-start items-center opacity-50 hover:opacity-90">
                         <div>
-                            <GitHubIcon/>
+                            <GitHubIcon />
                         </div>
                         <a className="text-sm" href="https://github.com/codecoogs">codecoogs</a>
                     </div>
