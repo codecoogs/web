@@ -4,15 +4,7 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
 
-  optimizeDeps: {
-    include: ["pdfjs-dist/build/pdf.worker.entry"],
-  },
-
   server: {
-    fs: {
-      strict: false,
-    },
-
     proxy: {
       "/api": {
         target: "https://api.codecoogs.com/v1",
