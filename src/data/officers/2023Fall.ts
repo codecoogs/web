@@ -2,7 +2,7 @@ const officers2023Fall = [
   {
     name: "Jake Burger",
     position: "President",
-    photo: "/assets/officers/2023fall/Vishruth.webp",
+    photo: "/assets/officers/2023fall/Jake.webp",
     // video: jakeVideo,
     socials: {
       linkedin: "https://www.linkedin.com/in/jake-d-burger/",
