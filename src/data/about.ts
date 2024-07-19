@@ -43,7 +43,7 @@ export const partners = [
   {
     name: "CougarCS",
     link: "https://cougarcs.com/",
-    logo: "/assets/logos/cougarcs.webp",
+    logo: "/assets/logos/cougarcs.png",
   },
   {
     name: "CougarAI",
