@@ -1,8 +1,8 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 
 import About from "./About";
 import Teams from "./Teams";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const AboutUsButton = () => {
     const style = "flex items-center p-6 h-10 relative font-bold text-center rounded-lg bg-transparent text-white hover:text-dark-primary";
@@ -12,6 +12,19 @@ const AboutUsButton = () => {
             <a href="#us" className={style}>
                 <span className="flex items-center">
                     <span>About Us</span>
+                </span>
+            </a>
+        </div>);
+};
+
+const SponsorUsButton = () => {
+    const style = "flex items-center p-6 h-10 relative font-bold text-center rounded-lg bg-transparent text-white hover:text-dark-primary";
+
+    return (
+        <div className="relative group">
+            <a href="/sponsors" className={style}>
+                <span className="flex items-center">
+                    <span>Sponsor Us</span>
                 </span>
             </a>
         </div>);
@@ -90,13 +103,16 @@ const Home = () => {
                 <BackgroundCircles />
                 <BackgroundCircles />
                 <div className="my-4">
-                    <HomeTitle/>
+                    <HomeTitle />
                 </div>
                 <div className="my-4 mx-auto md:w-1/2 text-center">
                     <span className="text-base text-white">Build projects and compete with teams; we enhance your coding skills in a collaborative environment, unlocking the potential for community and technical growth.</span>
                 </div>
                 <div className="table mt-8 mx-auto">
                     <ul className="flex flex-col items-center space-x-0 space-y-4 md:space-x-6 md:space-y-0 md:flex-row">
+                        <li>
+                            <SponsorUsButton />
+                        </li>
                         <li>
                             <JoinUsButton />
                         </li>
@@ -106,8 +122,8 @@ const Home = () => {
                     </ul>
                 </div>
             </div>
-            <About/>
-            <Teams/>
+            <About />
+            <Teams />
         </div>
     );
 };

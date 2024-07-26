@@ -13,7 +13,7 @@ const PDFViewer: React.FC<PDFViewerProps> = ({ pdfUrl }) => {
   const workerUrl = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js`;
 
   return (
-    <div style={{ width: '40vw', height: '90vh' }}>
+    <div className='w-[100vw] md:w-[75vw] lg:w-[40vw] h-[90vh]'>
       <Worker workerUrl={workerUrl}>
         <Viewer theme="dark" scrollMode={ScrollMode.Vertical} fileUrl={pdfUrl} plugins={[defaultLayoutPluginInstance]} />
       </Worker>

@@ -103,6 +103,7 @@ const Navbar = () => {
                     <ul className="flex flex-col space-y-4 pb-4 items-center md:pb-0 md:space-y-0 md:flex-row md:space-x-4 md:mr-4">
                         <Navlink to="/events" text="Events" />
                         <Navlink to="/join" text="Join" />
+                        <Navlink to="/sponsors" text="Sponsor" />
                         <a href={discordLink} target="_blank">
                             <div className="fill-white self-center">
                                 <DiscordIcon />
