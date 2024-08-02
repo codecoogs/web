@@ -2,7 +2,7 @@ const officers2021Fall = [
   {
     name: "Tailer Nguyen",
     position: "President",
-    photo: "/assets/officers/2021fall/tailer.jpg",
+    photo: "/assets/officers/2021fall/tailer.webp",
     socials: {
       linkedin: "https://www.linkedin.com/in/tailer-nguyen/",
     },
@@ -10,7 +10,7 @@ const officers2021Fall = [
   {
     name: "Janice Liang",
     position: "Vice President of External Affairs",
-    photo: "/assets/officers/2021fall/janice.jpg",
+    photo: "/assets/officers/2021fall/janice.webp",
     socials: {
       linkedin: "https://www.linkedin.com/in/janice-liang-5b9130205/",
     },
@@ -18,7 +18,7 @@ const officers2021Fall = [
   {
     name: "Rodolfo Chavez",
     position: "Vice President of Internal Affairs",
-    photo: "/assets/officers/2021fall/rodolfo.jpg",
+    photo: "/assets/officers/2021fall/rodolfo.webp",
     socials: {
       linkedin: "https://www.linkedin.com/in/rodolfo-chavez-478287183/",
     },
@@ -26,7 +26,7 @@ const officers2021Fall = [
   {
     name: "Jennifer Figueroa",
     position: "Treasurer",
-    photo: "/assets/officers/2021fall/jenniferf.jpg",
+    photo: "/assets/officers/2021fall/jenniferf.webp",
     socials: {
       linkedin: "https://www.linkedin.com/in/jennifer-figueroa-maria/",
     },
@@ -34,7 +34,7 @@ const officers2021Fall = [
   {
     name: "Abdullah Samma",
     position: "Workshops Director",
-    photo: "/assets/officers/2021fall/abdullah.jpg",
+    photo: "/assets/officers/2021fall/abdullah.webp",
     socials: {
       linkedin: "https://www.linkedin.com/in/abdullah-samma/",
     },
@@ -42,7 +42,7 @@ const officers2021Fall = [
   {
     name: "Nghiep Nghia Luu",
     position: "Competitions Director",
-    photo: "/assets/officers/2021fall/nghia.jpg",
+    photo: "/assets/officers/2021fall/nghia.webp",
     socials: {
       linkedin: "https://www.linkedin.com/in/nghiep-nghia-luu/",
     },
@@ -50,7 +50,7 @@ const officers2021Fall = [
   {
     name: "Grace Do",
     position: "Activities Director",
-    photo: "/assets/officers/2021fall/grace.jpg",
+    photo: "/assets/officers/2021fall/grace.webp",
     socials: {
       linkedin: "https://www.linkedin.com/in/gracetxdo/",
     },
@@ -58,7 +58,7 @@ const officers2021Fall = [
   {
     name: "Lupita Valle",
     position: "Marketing Director",
-    photo: "/assets/officers/2021fall/lupita.jpg",
+    photo: "/assets/officers/2021fall/lupita.webp",
     socials: {
       linkedin: "https://www.linkedin.com/in/lupita-valle/",
     },
@@ -66,7 +66,7 @@ const officers2021Fall = [
   {
     name: "Jennifer Hernandez",
     position: "Artist",
-    photo: "/assets/officers/2021fall/jenniferh.jpg",
+    photo: "/assets/officers/2021fall/jenniferh.webp",
     socials: {
       linkedin: "https://www.linkedin.com/in/jennifer-hern/",
     },
@@ -74,7 +74,7 @@ const officers2021Fall = [
   {
     name: "Bryant Le",
     position: "Wizard",
-    photo: "/assets/officers/2021fall/bryant.jpg",
+    photo: "/assets/officers/2021fall/bryant.webp",
     socials: {
       linkedin: "https://www.linkedin.com/in/bnle/",
     },
@@ -82,7 +82,7 @@ const officers2021Fall = [
   {
     name: "Eithan Austria",
     position: "Workshops Facilitator",
-    photo: "/assets/officers/2021fall/eithan.jpg",
+    photo: "/assets/officers/2021fall/eithan.webp",
     socials: {
       linkedin: "https://www.linkedin.com/in/eithanaustria/",
     },
@@ -90,7 +90,7 @@ const officers2021Fall = [
   {
     name: "Frank Bui",
     position: "Workshops Facilitator",
-    photo: "/assets/officers/2021fall/frank.jpg",
+    photo: "/assets/officers/2021fall/frank.webp",
     socials: {
       linkedin: "https://www.linkedin.com/in/frank-bui/",
     },
