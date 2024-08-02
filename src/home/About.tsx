@@ -69,7 +69,7 @@ const OfficerCard = (props: OfficerCardProps) => {
     image = `/assets/officers/${folderName}/${props.name.replace(
       " ",
       ""
-    )}.jpg`;
+    )}.webp`;
   }
 
   console.log(image);
