@@ -2,7 +2,7 @@ const officers2022Spring = [
   {
     name: "Tailer Nguyen",
     position: "President",
-    photo: "/assets/officers/2022spring/tailer.jpeg",
+    photo: "/assets/officers/2022spring/tailer.webp",
     socials: {
       linkedin: "https://www.linkedin.com/in/tailer-nguyen/",
     },
@@ -10,7 +10,7 @@ const officers2022Spring = [
   {
     name: "Jake Burger",
     position: "Vice President of Internal Affairs",
-    photo: "/assets/officers/2022spring/jake.jpeg",
+    photo: "/assets/officers/2022spring/jake.webp",
     socials: {
       linkedin: "https://www.linkedin.com/in/jake-d-burger/",
     },
@@ -18,7 +18,7 @@ const officers2022Spring = [
   {
     name: "Tori Nguyen",
     position: "Vice President of External Affairs",
-    photo: "/assets/officers/2022spring/tori.jpeg",
+    photo: "/assets/officers/2022spring/tori.webp",
     socials: {
       linkedin: "https://www.linkedin.com/in/tori-nguyen23/",
     },
@@ -26,7 +26,7 @@ const officers2022Spring = [
   {
     name: "Frank Trinh",
     position: "Senior Advisor",
-    photo: "/assets/officers/2022spring/frank.jpeg",
+    photo: "/assets/officers/2022spring/frank.webp",
     socials: {
       linkedin: "https://www.linkedin.com/in/frank-trinh-5ba0731a2/",
     },
@@ -34,7 +34,7 @@ const officers2022Spring = [
   {
     name: "Jennifer Figueroa",
     position: "Treasurer",
-    photo: "/assets/officers/2022spring/jenniferf.jpeg",
+    photo: "/assets/officers/2022spring/jenniferf.webp",
     socials: {
       linkedin: "https://www.linkedin.com/in/jennifer-figueroa-maria/",
     },
@@ -42,7 +42,7 @@ const officers2022Spring = [
   {
     name: "Omar Romero",
     position: "Director of Activities",
-    photo: "/assets/officers/2022spring/omar.jpeg",
+    photo: "/assets/officers/2022spring/omar.webp",
     socials: {
       linkedin: "https://www.linkedin.com/in/omar-f-romero/",
     },
@@ -50,7 +50,7 @@ const officers2022Spring = [
   {
     name: "Abdullah Samma",
     position: "Workshop Director",
-    photo: "/assets/officers/2022spring/abdullah.jpeg",
+    photo: "/assets/officers/2022spring/abdullah.webp",
     socials: {
       linkedin: "https://www.linkedin.com/in/abdullah-samma/",
     },
@@ -58,7 +58,7 @@ const officers2022Spring = [
   {
     name: "Lupita Valle",
     position: "Marketing Director",
-    photo: "/assets/officers/2022spring/lupita.jpeg",
+    photo: "/assets/officers/2022spring/lupita.webp",
     socials: {
       linkedin: "https://www.linkedin.com/in/lupita-valle/",
     },
@@ -66,7 +66,7 @@ const officers2022Spring = [
   {
     name: "Nghiep Nghia Luu",
     position: "Competitions Director",
-    photo: "/assets/officers/2022spring/nghiep.jpeg",
+    photo: "/assets/officers/2022spring/nghiep.webp",
     socials: {
       linkedin: "https://www.linkedin.com/in/nghiep-nghia-luu/",
     },
@@ -74,7 +74,7 @@ const officers2022Spring = [
   {
     name: "Bryant Le",
     position: "Wizard",
-    photo: "/assets/officers/2022spring/bryant.jpeg",
+    photo: "/assets/officers/2022spring/bryant.webp",
     socials: {
       linkedin: "https://www.linkedin.com/in/bnle/",
     },
@@ -82,7 +82,7 @@ const officers2022Spring = [
   {
     name: "Jennifer Hernandez",
     position: "Artist",
-    photo: "/assets/officers/2022spring/jenniferh.png",
+    photo: "/assets/officers/2022spring/jenniferh.webp",
     socials: {
       linkedin: "https://www.linkedin.com/in/jennifer-hern/",
     },

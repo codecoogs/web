@@ -2,7 +2,7 @@ const officers2022Fall = [
   {
     name: "Jake Burger",
     position: "President",
-    photo: "/assets/officers/2022fall/jake.png",
+    photo: "/assets/officers/2022fall/jake.webp",
     socials: {
       linkedin: "https://www.linkedin.com/in/jake-d-burger/",
     },
@@ -10,7 +10,7 @@ const officers2022Fall = [
   {
     name: "Adam Nguyen",
     position: "Vice President of Internal Affairs",
-    photo: "/assets/officers/2022fall/adam.png",
+    photo: "/assets/officers/2022fall/adam.webp",
     socials: {
       linkedin: "https://www.linkedin.com/in/ah-nguyen/",
     },
@@ -18,7 +18,7 @@ const officers2022Fall = [
   {
     name: "Sami Alsayed",
     position: "Vice President of External Affairs",
-    photo: "/assets/officers/2022fall/sami.png",
+    photo: "/assets/officers/2022fall/sami.webp",
     socials: {
       linkedin: "https://www.linkedin.com/in/alsayedsami/",
     },
@@ -26,7 +26,7 @@ const officers2022Fall = [
   {
     name: "Natalie Severino",
     position: "Treasurer",
-    photo: "/assets/officers/2022fall/natalie.png",
+    photo: "/assets/officers/2022fall/natalie.webp",
     socials: {
       linkedin: "https://www.linkedin.com/in/natalie-severin/",
     },
@@ -34,7 +34,7 @@ const officers2022Fall = [
   {
     name: "Reginald Green",
     position: "Secretary",
-    photo: "/assets/officers/2022fall/reginald.png",
+    photo: "/assets/officers/2022fall/reginald.webp",
     socials: {
       linkedin: "https://www.linkedin.com/in/reginaldgreen1102/",
     },
@@ -42,7 +42,7 @@ const officers2022Fall = [
   {
     name: "Omar Meziou",
     position: "Workshops Director",
-    photo: "/assets/officers/2022fall/omar.png",
+    photo: "/assets/officers/2022fall/omar.webp",
     socials: {
       linkedin: "https://www.linkedin.com/in/omar-meziou/",
     },
@@ -50,7 +50,7 @@ const officers2022Fall = [
   {
     name: "Wyatt Fernandez",
     position: "Activities Director",
-    photo: "/assets/officers/2022fall/wyatt.png",
+    photo: "/assets/officers/2022fall/wyatt.webp",
     socials: {
       linkedin: "https://www.linkedin.com/feed/",
     },
@@ -58,7 +58,7 @@ const officers2022Fall = [
   {
     name: "Benjamin Guzman",
     position: "Competitions Director",
-    photo: "/assets/officers/2022fall/benjamin.png",
+    photo: "/assets/officers/2022fall/benjamin.webp",
     socials: {
       linkedin: "https://www.linkedin.com/in/benjamin-guzman-4b6732235/",
     },
@@ -66,7 +66,7 @@ const officers2022Fall = [
   {
     name: "Fernando Ramirez",
     position: "Teams Director",
-    photo: "/assets/officers/2022fall/fernando.png",
+    photo: "/assets/officers/2022fall/fernando.webp",
     socials: {
       linkedin: "https://www.linkedin.com/in/fndo/",
     },
@@ -74,7 +74,7 @@ const officers2022Fall = [
   {
     name: "Peter Dinh",
     position: "Marketing Director",
-    photo: "/assets/officers/2022fall/peter.png",
+    photo: "/assets/officers/2022fall/peter.webp",
     socials: {
       linkedin: "https://www.linkedin.com/in/phuong-dinh-1209/",
     },
@@ -82,7 +82,7 @@ const officers2022Fall = [
   {
     name: "Hanya Elmasik",
     position: "Historian",
-    photo: "/assets/officers/2022fall/hanya.png",
+    photo: "/assets/officers/2022fall/hanya.webp",
     socials: {
       linkedin: "https://www.linkedin.com/in/hanya-elmasik-a78b95232/",
     },
@@ -90,7 +90,7 @@ const officers2022Fall = [
   {
     name: "Alexandria Harp",
     position: "Historian",
-    photo: "/assets/officers/2022fall/alexandria.png",
+    photo: "/assets/officers/2022fall/alexandria.webp",
     socials: {
       linkedin: "https://www.linkedin.com/in/alharp3/",
     },
@@ -98,7 +98,7 @@ const officers2022Fall = [
   {
     name: "Bryant Le",
     position: "Wizard",
-    photo: "/assets/officers/2022fall/bryant.png",
+    photo: "/assets/officers/2022fall/bryant.webp",
     socials: {
       linkedin: "https://www.linkedin.com/in/bnle/",
     },
@@ -106,7 +106,7 @@ const officers2022Fall = [
   {
     name: "Jennifer Hernandez",
     position: "Artist",
-    photo: "/assets/officers/2022fall/jennifer.png",
+    photo: "/assets/officers/2022fall/jennifer.webp",
     socials: {
       linkedin: "https://www.linkedin.com/in/jennifer-hern/",
     },
