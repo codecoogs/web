@@ -51,7 +51,7 @@ const Footer = () => {
                             className="text-sm"
                             href="/#us"
                         >
-                            About Us
+                            About
                         </a>
                     </div>
                     <div className="opacity-50 hover:opacity-90">
@@ -67,7 +67,7 @@ const Footer = () => {
                             className="text-sm"
                             to="/join"
                         >
-                            Join Us
+                            Membership
                         </Link>
                     </div>
                 </div>

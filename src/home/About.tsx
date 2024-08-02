@@ -259,7 +259,7 @@ const About = () => {
             <div className="p-8 rounded-lg ring-0 ring-inset ring-white/[.3] flex flex-col md:flex-row items-center">
               <div className="w-56 h-36 flex-shrink-0 md:border-r-2 border-white/[.8]">
                 <img
-                  className="w-36 h-full mx-auto md:mr-0"
+                  className="w-36 h-full mx-auto md:mr-5"
                   src={"/assets/socials-coco.webp"}
                   alt="Socials CoCo"
                 />

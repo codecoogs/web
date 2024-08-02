@@ -11,7 +11,7 @@ const AboutUsButton = () => {
         <div className="relative group">
             <a href="#us" className={style}>
                 <span className="flex items-center">
-                    <span>About Us</span>
+                    <span>About</span>
                 </span>
             </a>
         </div>);
@@ -24,7 +24,7 @@ const SponsorUsButton = () => {
         <div className="relative group">
             <a href="/sponsors" className={style}>
                 <span className="flex items-center">
-                    <span>Sponsor Us</span>
+                    <span>Sponsor</span>
                 </span>
             </a>
         </div>);
@@ -40,7 +40,7 @@ const JoinUsButton = () => {
             ></div>
             <Link to="/join" className={style}>
                 <span className="flex items-center">
-                    <span>Join Us</span>
+                    <span>Membership</span>
                 </span>
             </Link>
         </div>);
