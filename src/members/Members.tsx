@@ -7,6 +7,7 @@ import {
     faq
 } from "../data/members";
 import { CheckIcon } from "./MembersIcons";
+import { SubmitProps } from "../common/interface";
 
 interface MemberBenefitCardProps {
     benefit: string;
@@ -66,33 +67,16 @@ const PricingCard = () => {
                     })}
                 </ul>
 
-                <h2 className="my-4 font-bold text-lg text-center">Payment Methods</h2>
-                <ul className="grid grid-cols-1 gap-4 md:w-1/2 mx-auto">
-                    <li>
-                        <div
-                            className="flex items-center justify-between bg-[#084F09] h-full rounded-lg text-center p-2 ring-1 ring-inset ring-white/[.3] hover:ring-white transform transition-all hover:-translate-y-1 duration-300"
-                        >
-                            <span>Cash</span>
-                            <span className="text-sm">Pay in person</span>
-                        </div>
-                    </li>
-                    <li>
-                        <div
-                            className="flex items-center justify-between bg-[#3D95CE] h-full rounded-lg text-center p-2 ring-1 ring-inset ring-white/[.3] hover:ring-white transform transition-all hover:-translate-y-1 duration-300"
-                        >
-                            <span>Venmo</span>
-                            <span className="text-sm">@Code-Coogs</span>
-                        </div>
-                    </li>
-                    {/* <li>
-                        <div
-                            className="flex items-center justify-between bg-[#6c1cd3] h-full rounded-lg text-center p-2 ring-1 ring-inset ring-white/[.3] hover:ring-white transform transition-all hover:-translate-y-1 duration-300"
-                        >
-                            <span className="">Zelle</span>
-                            <span className="text-sm">832-535-7320</span>
-                        </div>
-                    </li> */}
-                </ul>
+                <h2 className="my-4 mt-10 font-bold text-lg text-center">Already a member?</h2>
+                <div className="flex justify-center">
+                    <button
+                        className="bg-dark-surface-variant hover:ring-dark-primary px-4 h-10 items-center text-center text-white rounded-lg ring-1 ring-inset ring-white"
+                        type="submit"
+                    >
+                        Resubmit your missing resume
+                    </button>
+                </div>
+
             </div>
         </div>
     );
@@ -125,6 +109,13 @@ const FAQCard = ({ question, answer }: FAQCardProps) => {
 };
 
 const Members = () => {
+    const [submitProcess, setSubmitProcess] = useState<boolean>(false)
+
+    const submitProps: SubmitProps = {
+        submitProcess,
+        setSubmitProcess,
+    };
+
     useEffect(() => {
         document.title = "Join";
     });
@@ -137,7 +128,7 @@ const Members = () => {
             <div className="bg-dark-surface flex flex-col mt-8 md:flex-row md:gap-8 md:p-10">
 
                 <div className="flex-1 basis-1/2 md:mt-0">
-                    <MembershipForm />
+                    <MembershipForm submitProps={submitProps} />
                 </div>
 
                 <div className="flex-1 basis-1/2">

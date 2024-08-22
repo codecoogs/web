@@ -6,6 +6,7 @@ export default defineConfig({
 
   server: {
     proxy: {
+      '/dev': 'http://localhost:3000',
       "/api": {
         target: "https://api.codecoogs.com/v1",
         changeOrigin: true,
