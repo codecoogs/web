@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { SIGNUP_API_URL } from '../data/members';
-import { SubmitProps } from '../common/interface';
+import { StripeURL, SubmitProps } from '../common/interface';
 
 
-const SignUpForm: React.FC<{submitProps : SubmitProps}> = ({submitProps}) => {
+const SignUpForm: React.FC<{submitProps : SubmitProps, stripeProps: StripeURL}> = ({submitProps, stripeProps}) => {
     const selectInputStyle: React.CSSProperties = {
         colorScheme: 'dark',
     };
@@ -16,7 +16,6 @@ const SignUpForm: React.FC<{submitProps : SubmitProps}> = ({submitProps}) => {
         major: 'Computer Science',
         classification: 'Freshman',
         expected_graduation: '2024-05',
-        resume: null,
         membership: "Semester",
     });
 
@@ -61,6 +60,8 @@ const SignUpForm: React.FC<{submitProps : SubmitProps}> = ({submitProps}) => {
             setSuccessMessage('Success! Please continue your payment at Stripe.');
             window.open(url, "_blank")
 
+            stripeProps.setStripeUrl(url)
+
             if (resumeInputRef.current) {
                 resumeInputRef.current.value = '';
             }
@@ -73,7 +74,6 @@ const SignUpForm: React.FC<{submitProps : SubmitProps}> = ({submitProps}) => {
                 major: 'Computer Science',
                 classification: 'Freshman',
                 expected_graduation: '2024-05',
-                resume: null,
                 membership: "Semester",
             });
         } else {
@@ -81,7 +81,7 @@ const SignUpForm: React.FC<{submitProps : SubmitProps}> = ({submitProps}) => {
             console.log(error)
         }
 
-        submitProps.setSubmitProcess(false)
+        // submitProps.setSubmitProcess(false)
     };
 
     return (
@@ -235,20 +235,6 @@ const SignUpForm: React.FC<{submitProps : SubmitProps}> = ({submitProps}) => {
                     <option value="Year">Year ($25)</option>
                     {/* <option value="Zelle">Zelle</option> */}
                 </select>
-            </div>
-
-            <div className="flex flex-col mt-4">
-                <label className="text-sm" htmlFor="resume">Resume (Optional)</label>
-                <input
-                    ref={resumeInputRef}
-                    className="bg-dark-surface-variant font-normal rounded mt-1 p-2 pr-1 ring-1 ring-inset ring-white/[.3] focus:ring-dark-primary"
-                    style={selectInputStyle}
-                    id="resume"
-                    name="resume"
-                    type="file"
-                    onChange={handleChange}
-                    accept="application/pdf"
-                />
             </div>
 
             {/* <div className="mt-4 text-sm">* Include <span className="text-dark-primary-variant">full name</span> when paying with Venmo or Zelle</div> */}
