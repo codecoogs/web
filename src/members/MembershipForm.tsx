@@ -17,6 +17,7 @@ const SignUpForm: React.FC<{submitProps : SubmitProps, stripeProps: StripeURL}> 
         classification: 'Freshman',
         expected_graduation: '2024-05',
         membership: "Semester",
+        discord: "",
     });
 
     const [successMessage, setSuccessMessage] = useState<String>('');
@@ -75,6 +76,7 @@ const SignUpForm: React.FC<{submitProps : SubmitProps, stripeProps: StripeURL}> 
                 classification: 'Freshman',
                 expected_graduation: '2024-05',
                 membership: "Semester",
+                discord: "",
             });
         } else {
             setErrorMessage(`Error submitting the form: ${error}`);
@@ -165,6 +167,25 @@ const SignUpForm: React.FC<{submitProps : SubmitProps, stripeProps: StripeURL}> 
                     htmlFor="phone"
                 >
                     Phone
+                </label>
+            </div>
+            <div className="relative mt-4">
+                <input
+                    className="peer bg-dark-surface-variant h-10 w-full border-b-2 border-white/[.3] placeholder-dark-surface-variant focus:outline-none focus:border-dark-primary"
+                    type="discord"
+                    id="discord"
+                    name="discord"
+                    value={formData.discord}
+                    onChange={handleChange}
+                    placeholder="Discord"
+                    autoComplete="off"
+                    required
+                />
+                <label
+                    className="absolute left-0 -top-3.5 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-sm peer-focus:text-white/[.4]"
+                    htmlFor="discord"
+                >
+                    Discord User
                 </label>
             </div>
             <div className="flex flex-col mt-4">
