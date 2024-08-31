@@ -49,7 +49,7 @@ const SignUpForm: React.FC<{submitProps : SubmitProps, stripeProps: StripeURL}> 
         //     console.log(pair[0]+ ', ' + pair[1]); 
         // }
 
-        const response = await fetch("http://localhost:3000/v1/users", {
+        const response = await fetch(SIGNUP_API_URL, {
             method: 'POST',
             body: convertedData,
         });
