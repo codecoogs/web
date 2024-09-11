@@ -102,13 +102,13 @@ const Home = () => {
             <div className="relative flex flex-col justify-center min-h-screen">
                 <BackgroundCircles />
                 <BackgroundCircles />
-                <div className="my-4">
+                <div className="animate-fade-down animate-once animate-duration-[1500ms] my-4">
                     <HomeTitle />
                 </div>
-                <div className="my-4 mx-auto md:w-1/2 text-center">
+                <div className="my-4 mx-auto md:w-1/2 text-center animate-fade-up animate-duration-[1500ms]">
                     <span className="text-base text-white">Build projects and compete with teams; we enhance your coding skills in a collaborative environment, unlocking the potential for community and technical growth.</span>
                 </div>
-                <div className="table mt-8 mx-auto">
+                <div className="table mt-8 mx-auto animate-fade-up animate-duration-[1500ms]">
                     <ul className="flex flex-col items-center space-x-0 space-y-4 md:space-x-6 md:space-y-0 md:flex-row">
                         <li>
                             <SponsorUsButton />
