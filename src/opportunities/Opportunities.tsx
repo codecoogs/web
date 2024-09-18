@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from "react";
-
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 import OpportunitiesInfo from "./OpportunitiesInfo";
 
@@ -12,12 +10,13 @@ const ApplyButton = () => {
             <div
                 className="absolute -inset-0.5 bg-dark-primary blur-lg rounded-full opacity-50 transform scale-75 group-hover:scale-100 transition-all duration-300"
             ></div>
-            <Link to="/join" className={style}>
+            <a href="#opportunitiesInfo" className={style}>
                 <span className="flex items-center">
                     <span>Apply now</span>
                 </span>
-            </Link>
-        </div>);
+            </a>
+        </div>
+    );
 };
 
 const BackgroundRoles = () => {
