@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import OpportunitiesInfo from "./OpportunitiesInfo";
 
@@ -46,11 +46,32 @@ const BackgroundCircles = () => {
 }
 
 const OpportunitiesTitle = () => {
+    const actions = [
+        "Intern",
+        "Lead",
+        "Collaborate"
+    ];
+
+    const [index, setIndex] = useState<number>(0);
+    const [fade, setFade] = useState<boolean>(true);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setFade(false);
+            setTimeout(() => {
+                setIndex((currentIndex) => (currentIndex + 1) % actions.length);
+                setFade(true);
+            }, 500);
+        }, 3000);
+
+        return () => clearInterval(interval);
+    }, []);
+
     return (
         <div className="flex flex-col items-center text-2xl md:text-4xl lg:text-6xl text-white font-normal text-center">
             <div className="flex animate-fade animate-once animate-duration-[1500ms]">
-                <span className={`text-dark-primary`}>
-                    Intern&nbsp;
+                <span className={`flex-1 text-left text-dark-primary transition-opacity duration-700 inline-block ${fade ? 'opacity-100' : 'opacity-0'}`}>
+                    {actions[index]}&nbsp;
                 </span>
                 <span>for experience</span>
             </div>
