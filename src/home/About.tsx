@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 // import competitionsCoCo from "../assets/competitions-coco.webp";
-// import socialsCoCo from "../assets/socials-coco.webp";
+// import sociclassName: "FadeInSectionrom "../assets/socials-coco.webp";
 // import teamsCoCo from "../assets/teams-coco.webp";
 // import workshopsCoCo from "../assets/workshops-coco.webp";
 
@@ -18,6 +18,7 @@ import {
   sponsors,
   partners,
 } from "../data/about";
+import FadeInSection from "../common/FadeInSection";
 
 interface AboutSectionProps {
   id: string;
@@ -187,17 +188,22 @@ const OfficerSection = () => {
 const CompanySection = () => {
   return (
     <div className="text-center md:pt-8">
-      <AboutSectionTitle>Where our alumni work</AboutSectionTitle>
-      <div className="flex flex-wrap justify-center items-center md:w-1/3 mx-auto pt-8">
-        {companyLogos.map(({ name, component: Component }) => (
-          <div key={name} className="p-4">
-            <Component />
-          </div>
-        ))}
-      </div>
+      <FadeInSection className={"animate-fade-down"}>
+        <AboutSectionTitle>Where our alumni work</AboutSectionTitle>
+
+
+        <div className="flex flex-wrap justify-center items-center md:w-1/3 mx-auto pt-8">
+          {companyLogos.map(({ name, component: Component }) => (
+            <div key={name} className="p-4">
+              <Component />
+            </div>
+          ))}
+        </div>
+      </FadeInSection>
     </div>
   );
 };
+
 
 const About = () => {
   return (
@@ -207,44 +213,49 @@ const About = () => {
 
         <div className="flex justify-center">
           <div className="p-8 text-center">
-            <AboutSectionTitle>Our sponsors</AboutSectionTitle>
-            <div className="flex flex-wrap justify-center items-center pt-8">
-              {sponsors.map((sponsor, index) => {
-                return (
-                  <div key={index} className="p-4">
-                    <a href={sponsor.link} target="_blank">
-                      <img
-                        className={sponsor.name == "HCSS" ? "" : "rounded-full"}
-                        src={sponsor.logo}
-                        alt={sponsor.name}
-                        width="50"
-                        height="50"
-                      />
-                    </a>
-                  </div>
-                );
-              })}
-            </div>
+            <FadeInSection className={"animate-fade-right"}>
+              <AboutSectionTitle>Our sponsors</AboutSectionTitle>
+              <div className="flex flex-wrap justify-center items-center pt-8">
+                {sponsors.map((sponsor, index) => {
+                  return (
+                    <div key={index} className="p-4">
+                      <a href={sponsor.link} target="_blank">
+                        <img
+                          className={sponsor.name == "HCSS" ? "" : "rounded-full"}
+                          src={sponsor.logo}
+                          alt={sponsor.name}
+                          width="50"
+                          height="50"
+                        />
+                      </a>
+                    </div>
+                  );
+                })}
+              </div>
+            </FadeInSection>
           </div>
           <div className="p-8 text-center">
-            <AboutSectionTitle>Our partners</AboutSectionTitle>
-            <div className="flex flex-wrap justify-center items-center pt-8">
-              {partners.map((partner, index) => {
-                return (
-                  <div key={index} className="p-4">
-                    <a href={partner.link} target="_blank">
-                      <img
-                        className=""
-                        src={partner.logo}
-                        alt={partner.name}
-                        width="50"
-                        height="50"
-                      />
-                    </a>
-                  </div>
-                );
-              })}
-            </div>
+            <FadeInSection className={"animate-fade-left"}>
+              <AboutSectionTitle>Our partners</AboutSectionTitle>
+              <div className="flex flex-wrap justify-center items-center pt-8">
+                {partners.map((partner, index) => {
+                  return (
+                    <div key={index} className="p-4">
+                      <a href={partner.link} target="_blank">
+                        <img
+                          className=""
+                          src={partner.logo}
+                          alt={partner.name}
+                          width="50"
+                          height="50"
+                        />
+                      </a>
+                    </div>
+                  );
+                })}
+              </div>
+            </FadeInSection>
+
           </div>
         </div>
       </div>
@@ -258,54 +269,75 @@ const About = () => {
           <div className="grid grid-cols-1 gap-4">
             <div className="p-8 rounded-lg ring-0 ring-inset ring-white/[.3] flex flex-col md:flex-row items-center">
               <div className="w-56 h-36 flex-shrink-0 md:border-r-2 border-white/[.8]">
-                <img
-                  className="w-36 h-full mx-auto md:mr-5"
-                  src={"/assets/socials-coco.webp"}
-                  alt="Socials CoCo"
-                />
+                <FadeInSection className={"animate-fade-right animate-once animate-duration-[1700ms]"}>
+                  <img
+                    className="w-36 h-full mx-auto md:mr-5"
+                    src={"/assets/socials-coco.webp"}
+                    alt="Socials CoCo"
+                  />
+                </FadeInSection>
+
               </div>
               <div className="flex-1 ml-4 pt-2 border-t-2 md:pt-0 md:border-t-0">
-                <h2 className="text-lg text-dark-primary">Socials</h2>
-                <p className="text-sm opacity-70">{socialsDesc}</p>
+                <FadeInSection className={"animate-fade-left animate-once animate-duration-[1700ms]"}>
+                  <h2 className="text-lg text-dark-primary">Socials</h2>
+                  <p className="text-sm opacity-70">{socialsDesc}</p>
+                </FadeInSection>
               </div>
             </div>
             <div className="p-8 rounded-lg ring-0 ring-inset ring-white/[.3] flex flex-col md:flex-row items-center">
               <div className="w-56 h-36 flex-shrink-0 md:border-r-2 border-white/[.8]">
-                <img
-                  className="w-48 h-full mx-auto md:mr-2"
-                  src={"/assets/teams-coco.webp"}
-                  alt="Teams CoCo"
-                />
+                <FadeInSection className={"animate-fade-right animate-once animate-duration-[1700ms]"}>
+                  <img
+                    className="w-48 h-full mx-auto md:mr-2"
+                    src={"/assets/teams-coco.webp"}
+                    alt="Teams CoCo"
+                  />
+                </FadeInSection>
               </div>
               <div className="flex-1 ml-4 pt-2 border-t-2 md:pt-0 md:border-t-0">
-                <h2 className="text-lg text-dark-primary">Teams</h2>
-                <p className="text-sm opacity-70">{teamsDesc}</p>
+                <FadeInSection className={"animate-fade-left animate-once animate-duration-[1700ms]"}>
+
+                  <h2 className="text-lg text-dark-primary">Teams</h2>
+                  <p className="text-sm opacity-70">{teamsDesc}</p>
+                </FadeInSection>
               </div>
             </div>
             <div className="p-8 rounded-lg ring-0 ring-inset ring-white/[.3] flex flex-col md:flex-row items-center">
               <div className="w-56 h-36 flex-shrink-0 md:border-r-2 border-white/[.8]">
-                <img
-                  className="w-full h-full mx-auto md:mr-0"
-                  src={"/assets/competitions-coco.webp"}
-                  alt="Competitions CoCo"
-                />
+                <FadeInSection className={"animate-fade-right animate-once animate-duration-[1700ms]"}>
+
+                  <img
+                    className="w-full h-full mx-auto md:mr-0"
+                    src={"/assets/competitions-coco.webp"}
+                    alt="Competitions CoCo"
+                  />
+                </FadeInSection>
               </div>
               <div className="flex-1 ml-4 pt-2 border-t-2 md:pt-0 md:border-t-0">
-                <h2 className="text-lg text-dark-primary">Competitions</h2>
-                <p className="text-sm opacity-70">{competitionsDesc}</p>
+                <FadeInSection className={"animate-fade-left animate-once animate-duration-[1700ms]"}>
+
+                  <h2 className="text-lg text-dark-primary">Competitions</h2>
+                  <p className="text-sm opacity-70">{competitionsDesc}</p>
+                </FadeInSection>
               </div>
             </div>
             <div className="p-8 rounded-lg ring-0 ring-inset ring-white/[.3] flex flex-col md:flex-row items-center">
               <div className="w-56 h-36 flex-shrink-0 md:border-r-2 border-white/[.8]">
-                <img
-                  className="w-36 h-full mx-auto md:mr-0"
-                  src={"/assets/workshops-coco.webp"}
-                  alt="Workshops CoCo"
-                />
+                <FadeInSection className={"animate-fade-right animate-once animate-duration-[1700ms]"}>
+                  <img
+                    className="w-36 h-full mx-auto md:mr-0"
+                    src={"/assets/workshops-coco.webp"}
+                    alt="Workshops CoCo"
+                  />
+                </FadeInSection>
               </div>
               <div className="flex-1 ml-4 pt-2 border-t-2 md:pt-0 md:border-t-0">
-                <h2 className="text-lg text-dark-primary">Workshops</h2>
-                <p className="text-sm opacity-70">{workshopsDesc}</p>
+                <FadeInSection className={"animate-fade-left animate-once animate-duration-[1700ms]"}>
+
+                  <h2 className="text-lg text-dark-primary">Workshops</h2>
+                  <p className="text-sm opacity-70">{workshopsDesc}</p>
+                </FadeInSection>
               </div>
             </div>
           </div>

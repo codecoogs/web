@@ -3,7 +3,7 @@ import { SIGNUP_API_URL } from '../data/members';
 import { StripeURL, SubmitProps } from '../common/interface';
 
 
-const SignUpForm: React.FC<{submitProps : SubmitProps, stripeProps: StripeURL}> = ({submitProps, stripeProps}) => {
+const SignUpForm: React.FC<{ submitProps: SubmitProps, stripeProps: StripeURL }> = ({ submitProps, stripeProps }) => {
     const selectInputStyle: React.CSSProperties = {
         colorScheme: 'dark',
     };
@@ -267,7 +267,7 @@ const SignUpForm: React.FC<{submitProps : SubmitProps, stripeProps: StripeURL}> 
                 </div>
                 <div className="">
                     <button
-                        className="bg-dark-surface-variant hover:ring-dark-primary px-4 h-10 items-center text-center text-white rounded-lg ring-1 ring-inset ring-white"
+                        className="bg-dark-surface-variant hover:ring-dark-primary px-4 w-44 md:w-52 h-10 items-center text-center text-white rounded-lg ring-1 ring-inset ring-white"
                         type="submit"
                     >
                         Pay with Stripe

@@ -12,6 +12,7 @@ import Events from "./events/Events";
 import Members from "./members/Members";
 import Sponsors from "./sponsors/Sponsors";
 import Success from "./payments/Success";
+import Opportunities from "./opportunities/Opportunities";
 
 const App = () => {
     return (
@@ -23,6 +24,7 @@ const App = () => {
                     <Route path="/join" element={<Members />} />
                     <Route path="/sponsors" element={<Sponsors />} />
                     <Route path="/success" element={<Success />} />
+                    <Route path="/opportunities" element={<Opportunities />} />
                 </Routes>
             </Layout>
         </BrowserRouter>
