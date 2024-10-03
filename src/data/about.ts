@@ -32,6 +32,11 @@ export const sponsors = [
     link: "https://www.tomntomsbellaire.com/",
     logo: "/assets/logos/tom-n-toms.webp",
   },
+  {
+    name: "Energy AI Solutions",
+    link: "https://energyaisolutions.com/",
+    logo: "/assets/logos/energyai.webp"
+  }
 ];
 
 export const partners = [

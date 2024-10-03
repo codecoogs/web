@@ -15,16 +15,16 @@ const officers2024Fall = [
     },
     {
         name: "Khanh Nguyen",
-        position: "VP of Corporate",
+        position: "VP of External Affairs",
         socials: {
             linkedin: "https://www.linkedin.com/in/khanhn2002/",
         }
     },
     {
-        name: "Khushi",
-        position: "VP of Marketing",
+        name: "YunLing Wang",
+        position: "Marketing Director",
         socials: {
-            linkedin: "",
+            linkedin: "https://www.linkedin.com/in/yun-ling-wang-69b843264/",
         }
     },
     {
@@ -36,10 +36,10 @@ const officers2024Fall = [
     },
 
     {
-        name: "Melina Bobina",
+        name: "Melina Moore",
         position: "Activities Director",
         socials: {
-            linkedin: "",
+            linkedin: "https://www.linkedin.com/in/melina-moore-52515b24b/",
         }
     },
     {
@@ -61,25 +61,25 @@ const officers2024Fall = [
         name: "Yousif Saieb",
         position: "Teams Director",
         socials: {
-            linkedin: "",
+            linkedin: "https://www.linkedin.com/in/saieby/",
         }
     },
 
     {
-        name: "Alan Gregoryx",
+        name: "Alan Gregory",
         position: "Teams Director",
 
         socials: {
-            linkedin: "",
+            linkedin: "https://www.linkedin.com/in/thealangregory/",
         }
     },
 
     {
         name: "Henry Nguyen",
-        position: "Wizard",
+        position: "Software Engineer",
 
         socials: {
-            linkedin: "",
+            linkedin: "https://www.linkedin.com/in/duc-nguyen-b27425287/",
             instagram: ""
         }
     },
@@ -88,15 +88,42 @@ const officers2024Fall = [
         position: "Historian",
 
         socials: {
-            linkedin: "",
+            linkedin: "https://www.linkedin.com/in/salvador-gonzales-9a2491267/",
+        }
+    },
+
+    {
+        name: "Cole Woody",
+        position: "Corporate Relations Director",
+
+        socials: {
+            linkedin: "https://www.linkedin.com/in/cole-woody/",
+            // instagram: ""
+        }
+    },
+
+    {
+        name: "Hieu Bui",
+        position: "IT Support",
+
+        socials: {
+            linkedin: "https://www.linkedin.com/in/hbui0107/",
         }
     },
     {
-        name: "Widyan Hussien",
-        position: "Artist",
+        name: "Abdullah Shittu",
+        position: "Workshops Intern",
 
         socials: {
-            linkedin: "https://www.linkedin.com/in/widyan-hussien/",
+            linkedin: "https://www.linkedin.com/in/abdullah-shittu/",
+        }
+    },
+    {
+        name: "Karim",
+        position: "Competitions Intern",
+
+        socials: {
+            linkedin: "",
         }
     },
 ];
