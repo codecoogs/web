@@ -29,7 +29,8 @@ const OpportunitiesRoles = [
         name: "Committee Position",
         icon: "/assets/opportunities/committee.svg",
         year: "Coming Soon",
-        description: "Contribute to workshops, events, web development, and marketing initiatives."
+        description: "Contribute to workshops, events, web development, and marketing initiatives.",
+        applicationLink: ""
     },
 ]
 
@@ -56,7 +57,7 @@ const OpportunitiesItems = OpportunitiesRoles.map(role =>
         ></div>
         <div className={style + " justify-around items-start h-full flex-col"}>
             <span className="flex h-full flex-col items-center justify-between font-normal">
-                <span className="md:text-lg text-sm">
+                <span className="md:text-md text-sm">
                     {role.description}
                 </span>
 
