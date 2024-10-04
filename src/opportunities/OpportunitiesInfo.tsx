@@ -28,9 +28,9 @@ const OpportunitiesRoles = [
     {
         name: "Committee Position",
         icon: "/assets/opportunities/committee.svg",
-        year: "Coming Soon",
+        year: "Fall 2024 - Spring 2025",
         description: "Contribute to workshops, events, web development, and marketing initiatives.",
-        applicationLink: ""
+        applicationLink: "https://docs.google.com/forms/d/e/1FAIpQLSe2ek4WWAqtz3If-p55_HuN1DNjL9xHhegTxytHtZDXOb79Bw/viewform"
     },
 ]
 
