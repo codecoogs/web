@@ -57,15 +57,15 @@ const OpportunitiesItems = OpportunitiesRoles.map(role =>
         ></div>
         <div className={style + " justify-around items-start h-full flex-col"}>
             <span className="flex h-full flex-col items-center justify-between font-normal">
-                <span className="md:text-md text-sm">
+                <span className="md:text-sm lg:text-base text-sm">
                     {role.description}
                 </span>
 
                 {role.applicationLink &&
                     <div className="relative group">
-                        <a href={role.applicationLink} target="_blank" className="flex justify-center items-center p-2 h-10 w-36 relative font-bold text-center rounded-lg bg-black text-white ring-1 ring-dark-primary ring-inset hover:text-black hover:bg-dark-primary">
+                        <a href={role.applicationLink} target="_blank" className="flex h-8 w-32 md:h-10 md:w-36 justify-center items-center p-2 relative font-bold text-center rounded-lg bg-black text-white ring-1 ring-dark-primary ring-inset hover:text-black hover:bg-dark-primary">
                             <span className="flex">
-                                <span>Apply</span>
+                                <span className="text-xs md:text-base">Apply</span>
                             </span>
                         </a>
                     </div>

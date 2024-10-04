@@ -224,8 +224,8 @@ const About = () => {
                           className={sponsor.name == "HCSS" ? "" : "rounded-full"}
                           src={sponsor.logo}
                           alt={sponsor.name}
-                          width="60"
-                          height="60"
+                          width={sponsor.name == "Energy AI Solutions" ? "120" : "60"}
+                          height={sponsor.name == "Energy AI Solutions" ? "70" : "60"}
                         />
                       </a>
                     </div>
