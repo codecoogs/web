@@ -46,10 +46,10 @@ const officers: Officers = [
     semester: "Spring 2024",
     list: Spring2024,
   },
-  // {
-  //   semester: "Fall 2024",
-  //   list: Fall2024
-  // }
+  {
+    semester: "Fall 2024",
+    list: Fall2024
+  }
 ];
 
 export default officers;
