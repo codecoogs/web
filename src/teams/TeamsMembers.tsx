@@ -24,7 +24,7 @@ enum Direction {
 }
 
 // TODO: smooth the year change transition
-const Teams = () => {
+const TeamsMembers = () => {
     const numTeams = teams.length;
     const [year, setYear] = useState(numTeams - 1);
     const [teamCardOpacity, setTeamCardOpacity] = useState<string>('opacity-100')
@@ -58,13 +58,13 @@ const Teams = () => {
                         <span
                             className={`text-dark-primary opacity-100 z-10`}
                         >
-                                {teams[year].year}
+                            {teams[year].year}
                         </span>
                         <span
                             className={`absolute transition-transform duration-300 opacity-30 cursor-pointer translate-y-6`}
                             onClick={() => handleYearChange(Direction.Up)}
                         >
-                                {year + 1 < numTeams && teams[year + 1].year}
+                            {year + 1 < numTeams && teams[year + 1].year}
                         </span>
                     </div>
                 </div>
@@ -77,14 +77,14 @@ const Teams = () => {
                             <div className="flex flex-col px-4">
                                 <div className="flex-grow">
                                     {team.photo && <div className="w-24 h-24 md:w-40 md:h-40 my-4 mx-auto"><img className="object-cover w-full h-full rounded-full" src={team.photo}
-                                                             alt={`${team.name} photo`}/></div>}
+                                        alt={`${team.name} photo`} /></div>}
                                     <h1 className="font-bold pt-2">{team.name}</h1>
                                     {/**<h2 className="pt-2">Leads: {team.leads.join(", ")}</h2>**/}
                                 </div>
                                 <div className="pt-4">
                                     <div className="flex justify-end pb-4">
                                         <a href={team.github} target="_blank" aria-label="Go to GitHub">
-                                            <GitHubIcon/>
+                                            <GitHubIcon />
                                         </a>
                                     </div>
                                 </div>
@@ -98,4 +98,4 @@ const Teams = () => {
     );
 };
 
-export default Teams;
+export default TeamsMembers;

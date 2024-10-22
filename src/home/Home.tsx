@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 
 import About from "./About";
-import Teams from "./Teams";
 import { Link } from "react-router-dom";
 
 const AboutUsButton = () => {
@@ -123,7 +122,6 @@ const Home = () => {
                 </div>
             </div>
             <About />
-            <Teams />
         </div>
     );
 };
