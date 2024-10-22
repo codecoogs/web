@@ -87,7 +87,7 @@ const Opportunities = () => {
 
     return (
         <div>
-            <div className="relative flex flex-col justify-center min-h-[80vh]">
+            <div className="relative flex flex-col justify-center min-h-[85vh]">
                 <BackgroundCircles />
                 <BackgroundCircles />
                 <BackgroundRoles />
