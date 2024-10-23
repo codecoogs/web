@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 // import competitionsCoCo from "../assets/competitions-coco.webp";
 // import sociclassName: "FadeInSectionrom "../assets/socials-coco.webp";
@@ -83,8 +83,8 @@ const OfficerCard = (props: OfficerCardProps) => {
             className="w-full h-full relative object-cover rounded-full"
             src={image}
             alt={props.name}
-          // onMouseOver={e => (e.currentTarget.src = props.video ? props.video : props.photo)}
-          // onMouseOut={e => (e.currentTarget.src = props.photo)}
+            // onMouseOver={e => (e.currentTarget.src = props.video ? props.video : props.photo)}
+            // onMouseOut={e => (e.currentTarget.src = props.photo)}
           />
         </div>
         <span className="block text-sm font-bold pt-4">{props.name}</span>
@@ -191,7 +191,6 @@ const CompanySection = () => {
       <FadeInSection className={"animate-fade-down"}>
         <AboutSectionTitle>Where our alumni work</AboutSectionTitle>
 
-
         <div className="flex flex-wrap justify-center items-center md:w-1/3 mx-auto pt-8">
           {companyLogos.map(({ name, component: Component }) => (
             <div key={name} className="p-4">
@@ -203,7 +202,6 @@ const CompanySection = () => {
     </div>
   );
 };
-
 
 const About = () => {
   return (
@@ -221,11 +219,17 @@ const About = () => {
                     <div key={index} className="p-4">
                       <a href={sponsor.link} target="_blank">
                         <img
-                          className={sponsor.name == "HCSS" ? "" : "rounded-full"}
+                          className={
+                            sponsor.name == "HCSS" ? "" : "rounded-full"
+                          }
                           src={sponsor.logo}
                           alt={sponsor.name}
-                          width={sponsor.name == "Energy AI Solutions" ? "120" : "60"}
-                          height={sponsor.name == "Energy AI Solutions" ? "70" : "60"}
+                          width={
+                            sponsor.name == "Energy AI Solutions" ? "120" : "60"
+                          }
+                          height={
+                            sponsor.name == "Energy AI Solutions" ? "70" : "60"
+                          }
                         />
                       </a>
                     </div>
@@ -255,7 +259,6 @@ const About = () => {
                 })}
               </div>
             </FadeInSection>
-
           </div>
         </div>
       </div>
@@ -269,17 +272,24 @@ const About = () => {
           <div className="grid grid-cols-1 gap-4">
             <div className="p-8 rounded-lg ring-0 ring-inset ring-white/[.3] flex flex-col md:flex-row items-center">
               <div className="w-56 h-36 flex-shrink-0 md:border-r-2 border-white/[.8]">
-                <FadeInSection className={"animate-fade-right animate-once animate-duration-[1700ms]"}>
+                <FadeInSection
+                  className={
+                    "animate-fade-right animate-once animate-duration-[1700ms]"
+                  }
+                >
                   <img
                     className="w-36 h-full mx-auto md:mr-5"
                     src={"/assets/socials-coco.webp"}
                     alt="Socials CoCo"
                   />
                 </FadeInSection>
-
               </div>
               <div className="flex-1 ml-4 pt-2 border-t-2 md:pt-0 md:border-t-0">
-                <FadeInSection className={"animate-fade-left animate-once animate-duration-[1700ms]"}>
+                <FadeInSection
+                  className={
+                    "animate-fade-left animate-once animate-duration-[1700ms]"
+                  }
+                >
                   <h2 className="text-lg text-dark-primary">Socials</h2>
                   <p className="text-sm opacity-70">{socialsDesc}</p>
                 </FadeInSection>
@@ -287,7 +297,11 @@ const About = () => {
             </div>
             <div className="p-8 rounded-lg ring-0 ring-inset ring-white/[.3] flex flex-col md:flex-row items-center">
               <div className="w-56 h-36 flex-shrink-0 md:border-r-2 border-white/[.8]">
-                <FadeInSection className={"animate-fade-right animate-once animate-duration-[1700ms]"}>
+                <FadeInSection
+                  className={
+                    "animate-fade-right animate-once animate-duration-[1700ms]"
+                  }
+                >
                   <img
                     className="w-48 h-full mx-auto md:mr-2"
                     src={"/assets/teams-coco.webp"}
@@ -296,8 +310,11 @@ const About = () => {
                 </FadeInSection>
               </div>
               <div className="flex-1 ml-4 pt-2 border-t-2 md:pt-0 md:border-t-0">
-                <FadeInSection className={"animate-fade-left animate-once animate-duration-[1700ms]"}>
-
+                <FadeInSection
+                  className={
+                    "animate-fade-left animate-once animate-duration-[1700ms]"
+                  }
+                >
                   <h2 className="text-lg text-dark-primary">Teams</h2>
                   <p className="text-sm opacity-70">{teamsDesc}</p>
                 </FadeInSection>
@@ -305,8 +322,11 @@ const About = () => {
             </div>
             <div className="p-8 rounded-lg ring-0 ring-inset ring-white/[.3] flex flex-col md:flex-row items-center">
               <div className="w-56 h-36 flex-shrink-0 md:border-r-2 border-white/[.8]">
-                <FadeInSection className={"animate-fade-right animate-once animate-duration-[1700ms]"}>
-
+                <FadeInSection
+                  className={
+                    "animate-fade-right animate-once animate-duration-[1700ms]"
+                  }
+                >
                   <img
                     className="w-full h-full mx-auto md:mr-0"
                     src={"/assets/competitions-coco.webp"}
@@ -315,8 +335,11 @@ const About = () => {
                 </FadeInSection>
               </div>
               <div className="flex-1 ml-4 pt-2 border-t-2 md:pt-0 md:border-t-0">
-                <FadeInSection className={"animate-fade-left animate-once animate-duration-[1700ms]"}>
-
+                <FadeInSection
+                  className={
+                    "animate-fade-left animate-once animate-duration-[1700ms]"
+                  }
+                >
                   <h2 className="text-lg text-dark-primary">Competitions</h2>
                   <p className="text-sm opacity-70">{competitionsDesc}</p>
                 </FadeInSection>
@@ -324,7 +347,11 @@ const About = () => {
             </div>
             <div className="p-8 rounded-lg ring-0 ring-inset ring-white/[.3] flex flex-col md:flex-row items-center">
               <div className="w-56 h-36 flex-shrink-0 md:border-r-2 border-white/[.8]">
-                <FadeInSection className={"animate-fade-right animate-once animate-duration-[1700ms]"}>
+                <FadeInSection
+                  className={
+                    "animate-fade-right animate-once animate-duration-[1700ms]"
+                  }
+                >
                   <img
                     className="w-36 h-full mx-auto md:mr-0"
                     src={"/assets/workshops-coco.webp"}
@@ -333,8 +360,11 @@ const About = () => {
                 </FadeInSection>
               </div>
               <div className="flex-1 ml-4 pt-2 border-t-2 md:pt-0 md:border-t-0">
-                <FadeInSection className={"animate-fade-left animate-once animate-duration-[1700ms]"}>
-
+                <FadeInSection
+                  className={
+                    "animate-fade-left animate-once animate-duration-[1700ms]"
+                  }
+                >
                   <h2 className="text-lg text-dark-primary">Workshops</h2>
                   <p className="text-sm opacity-70">{workshopsDesc}</p>
                 </FadeInSection>
