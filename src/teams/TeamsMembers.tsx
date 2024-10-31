@@ -44,7 +44,7 @@ const TeamsMembers = () => {
     }
 
     return (
-        <div className="bg-dark-surface text-center md:w-3/4 mx-auto">
+        <div id="teamMembers" className="bg-dark-surface text-center md:w-3/4 mx-auto">
             <h1 className="text-2xl font-bold text-white m-6">Explore our teams</h1>
             <div className="text-center text-lg text-white my-8 flex items-center justify-center space-x-4">
                 <div className="relative">

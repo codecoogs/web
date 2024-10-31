@@ -19,9 +19,9 @@ const ApplyButton = () => {
   return (
     <div className="animate-fade-down animate-delay-200 relative group">
       <div className="absolute -inset-0.5 bg-dark-primary blur-lg rounded-full opacity-50 transform scale-75 group-hover:scale-100 transition-all duration-300"></div>
-      <a href="#opportunitiesInfo" className={style}>
+      <a href="#teamMembers" className={style}>
         <span className="flex items-center">
-          <span>Join as team member</span>
+          <span>Explore our teams</span>
         </span>
       </a>
     </div>
@@ -99,7 +99,7 @@ const Teams = () => {
       <div className="text-white rounded md:mx-24 mb-20">
         <AboutSection id="us">
           <div className="p-6 text-center mb-10">
-            <p className="text-md p-6 opacity-90">
+            <p className="text-lg p-6 opacity-90">
               Code[Coogs] embraces collaboration by offering members the
               opportunity to create projects as a team of around 10 students.
               Projects use industry-standard practices, frameworks, and APIs.
