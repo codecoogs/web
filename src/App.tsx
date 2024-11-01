@@ -1,9 +1,4 @@
-import React from "react";
-import {
-    BrowserRouter,
-    Route,
-    Routes
-} from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Layout from "./common/Layout";
 
@@ -15,20 +10,20 @@ import Success from "./payments/Success";
 import Opportunities from "./opportunities/Opportunities";
 
 const App = () => {
-    return (
-        <BrowserRouter>
-            <Layout>
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/events" element={<Events />} />
-                    <Route path="/join" element={<Members />} />
-                    <Route path="/sponsors" element={<Sponsors />} />
-                    <Route path="/success" element={<Success />} />
-                    <Route path="/opportunities" element={<Opportunities />} />
-                </Routes>
-            </Layout>
-        </BrowserRouter>
-    );
+	return (
+		<BrowserRouter>
+			<Layout>
+				<Routes>
+					<Route path="/" element={<Home />} />
+					<Route path="/events" element={<Events />} />
+					<Route path="/join" element={<Members />} />
+					<Route path="/sponsors" element={<Sponsors />} />
+					<Route path="/success" element={<Success />} />
+					<Route path="/opportunities" element={<Opportunities />} />
+				</Routes>
+			</Layout>
+		</BrowserRouter>
+	);
 };
 
 export default App;
