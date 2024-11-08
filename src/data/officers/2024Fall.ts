@@ -20,18 +20,20 @@ const officers2024Fall = [
       linkedin: "https://www.linkedin.com/in/khanhn2002/",
     },
   },
+
+  {
+    name: "Saloni Sharma",
+    position: "VP Operations",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/saloni-sharma-scholar/",
+    },
+  },
+
   {
     name: "YunLing Wang",
     position: "Marketing Director",
     socials: {
       linkedin: "https://www.linkedin.com/in/yun-ling-wang-69b843264/",
-    },
-  },
-  {
-    name: "Saloni Sharma",
-    position: "Secretary",
-    socials: {
-      linkedin: "https://www.linkedin.com/in/saloni-sharma-scholar/",
     },
   },
 
@@ -76,7 +78,7 @@ const officers2024Fall = [
 
   {
     name: "Henry Nguyen",
-    position: "Software Engineer",
+    position: "SWE Director",
 
     socials: {
       linkedin: "https://www.linkedin.com/in/duc-nguyen-b27425287/",
@@ -110,14 +112,14 @@ const officers2024Fall = [
       linkedin: "https://www.linkedin.com/in/hbui0107/",
     },
   },
-  // {
-  //     name: "Abdullah Shittu",
-  //     position: "Workshops Intern",
+  {
+    name: "Abdullah Shittu",
+    position: "Workshops Officer",
 
-  //     socials: {
-  //         linkedin: "https://www.linkedin.com/in/abdullah-shittu/",
-  //     }
-  // },
+    socials: {
+      linkedin: "https://www.linkedin.com/in/abdullah-shittu/",
+    },
+  },
   // {
   //     name: "Karim",
   //     position: "Competitions Intern",

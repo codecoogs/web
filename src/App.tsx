@@ -8,6 +8,7 @@ import Members from "./members/Members";
 import Sponsors from "./sponsors/Sponsors";
 import Success from "./payments/Success";
 import Opportunities from "./opportunities/Opportunities";
+import Teams from "./teams/Teams";
 
 const App = () => {
 	return (

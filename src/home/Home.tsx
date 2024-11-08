@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
 import About from "./About";
-import Teams from "./Teams";
 import { Link } from "react-router-dom";
 import { useTitle } from "../common/utils";
 
