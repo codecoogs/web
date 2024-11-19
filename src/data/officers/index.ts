@@ -9,7 +9,7 @@ import Fall2024 from "./2024Fall";
 type Officer = {
   name: string;
   position: string;
-  photo?: any;
+  photo?: string;
   video?: string;
   socials: {
     linkedin: string;

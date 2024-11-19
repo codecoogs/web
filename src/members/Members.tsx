@@ -46,6 +46,7 @@ const PricingCard = () => {
 						<div
 							className="inline-block relative cursor-pointer h-8"
 							onClick={togglePricing}
+							onKeyDown={() => {}}
 						>
 							<span
 								className={`absolute transition-all duration-300 ${
@@ -101,7 +102,7 @@ const PricingCard = () => {
 };
 
 interface FAQCardProps {
-	key: number;
+	key: string;
 	question: string;
 	answer: string;
 }
@@ -112,6 +113,7 @@ const FAQCard = ({ question, answer }: FAQCardProps) => {
 	return (
 		<div className="bg-dark-surface p-2 border-b-2 border-b-white/[.3]">
 			<button
+				type="button"
 				className="text-base text-left w-full text-white"
 				onClick={() => setOpen(!open)}
 			>
@@ -133,7 +135,7 @@ const LoadingScreen = ({
 			</h1>
 
 			<div className="h-14 w-24 flex justify-center items-center">
-				<div className="loader"></div>
+				<div className="loader" />
 			</div>
 
 			{stripeUrl !== "" && (
@@ -141,7 +143,7 @@ const LoadingScreen = ({
 					href={stripeUrl}
 					onClick={() => submitProps.setSubmitProcess(false)}
 					target="_blank"
-					className="text-dark-primary"
+					className="text-dark-primary" rel="noreferrer"
 				>
 					Click here if you didn't get redirected
 				</a>
@@ -168,7 +170,7 @@ const Members = () => {
 
 	return (
 		<div className="text-white p-8">
-			{submitProcess == true && (
+			{submitProcess === true && (
 				<LoadingScreen submitProps={submitProps} stripeUrl={stripeUrl} />
 			)}
 
@@ -194,7 +196,7 @@ const Members = () => {
 					{faq.map((response, index) => {
 						return (
 							<FAQCard
-								key={index}
+								key={response.question}
 								question={response.question}
 								answer={response.answer}
 							/>

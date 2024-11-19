@@ -1,9 +1,9 @@
 export interface SubmitProps {
     submitProcess: boolean;
-    setSubmitProcess: any;
+    setSubmitProcess: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export interface StripeURL {
     stripeUrl: string;
-    setStripeUrl: any;
+    setStripeUrl: React.Dispatch<React.SetStateAction<string>>;
 }

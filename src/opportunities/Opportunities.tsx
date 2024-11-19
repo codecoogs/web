@@ -52,7 +52,7 @@ const BackgroundCircles = () => {
 					background:
 						"linear-gradient(0deg, rgba(191, 64, 191, 0) 0%, rgba(0, 198, 247, 0.05) 50%)",
 				}}
-			></div>
+			/>
 		</>
 	);
 };

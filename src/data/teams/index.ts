@@ -5,7 +5,7 @@ import Year2024 from "./2024Year";
 
 type Team = {
   name: string;
-  photo?: any;
+  photo?: string;
   leads: string[];
   github: string;
 };

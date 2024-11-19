@@ -43,10 +43,10 @@ interface SocialsObj {
 }
 
 interface OfficerCardProps {
-	key: number;
+	key: string;
 	name: string;
 	position: string;
-	photo: string;
+	photo?: string;
 	video?: string;
 	semester: number;
 	socials: SocialsObj;
@@ -93,12 +93,18 @@ const OfficerCard = (props: OfficerCardProps) => {
 							href={instagram}
 							target="_blank"
 							aria-label="Go to our Instagram"
+							rel="noreferrer"
 						>
 							<InstagramIcon />
 						</a>
 					)}
 					{linkedin && (
-						<a href={linkedin} target="_blank" aria-label="Go to our LinkedIn">
+						<a
+							href={linkedin}
+							target="_blank"
+							aria-label="Go to our LinkedIn"
+							rel="noreferrer"
+						>
 							<LinkedInIcon />
 						</a>
 					)}
@@ -142,17 +148,19 @@ const OfficerSection = () => {
 				<div className="flex-1 relative">
 					<div className="relative flex justify-end">
 						<span
-							className={`absolute transition-transform duration-300 opacity-30 cursor-pointer translate-x-0 -translate-y-6`}
+							className={"absolute transition-transform duration-300 opacity-30 cursor-pointer translate-x-0 -translate-y-6"}
 							onClick={handleDecrementSemester}
+							onKeyDown={() => {}}
 						>
 							{semester - 1 >= 0 && officers[semester - 1].semester}
 						</span>
-						<span className={`text-dark-primary opacity-100 z-10`}>
+						<span className={"text-dark-primary opacity-100 z-10"}>
 							{officers[semester].semester}
 						</span>
 						<span
-							className={`absolute transition-transform duration-300 opacity-30 cursor-pointer translate-y-6`}
+							className={"absolute transition-transform duration-300 opacity-30 cursor-pointer translate-y-6"}
 							onClick={handleIncrementSemester}
+							onKeyDown={() => {}}
 						>
 							{semester + 1 < numOfficers && officers[semester + 1].semester}
 						</span>
@@ -166,7 +174,7 @@ const OfficerSection = () => {
 				{officers[semester].list.map((officer, index) => {
 					return (
 						<OfficerCard
-							key={index}
+							key={officer.name}
 							name={officer.name}
 							position={officer.position}
 							photo={officer.photo}
@@ -212,19 +220,19 @@ const About = () => {
 							<div className="flex flex-wrap justify-center items-center pt-8">
 								{sponsors.map((sponsor, index) => {
 									return (
-										<div key={index} className="p-4">
-											<a href={sponsor.link} target="_blank">
+										<div key={sponsor.name} className="p-4">
+											<a href={sponsor.link} target="_blank" rel="noreferrer">
 												<img
 													className={
-														sponsor.name == "HCSS" ? "" : "rounded-full"
+														sponsor.name === "HCSS" ? "" : "rounded-full"
 													}
 													src={sponsor.logo}
 													alt={sponsor.name}
 													width={
-														sponsor.name == "Energy AI Solutions" ? "120" : "60"
+														sponsor.name === "Energy AI Solutions" ? "120" : "60"
 													}
 													height={
-														sponsor.name == "Energy AI Solutions" ? "70" : "60"
+														sponsor.name === "Energy AI Solutions" ? "70" : "60"
 													}
 												/>
 											</a>
@@ -240,8 +248,8 @@ const About = () => {
 							<div className="flex flex-wrap justify-center items-center pt-8">
 								{partners.map((partner, index) => {
 									return (
-										<div key={index} className="p-4">
-											<a href={partner.link} target="_blank">
+										<div key={partner.name} className="p-4">
+											<a href={partner.link} target="_blank" rel="noreferrer">
 												<img
 													className=""
 													src={partner.logo}
