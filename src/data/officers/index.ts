@@ -5,6 +5,7 @@ import Spring2023 from "./2023Spring";
 import Fall2023 from "./2023Fall";
 import Spring2024 from "./2024Spring";
 import Fall2024 from "./2024Fall";
+import Spring2025 from "./2025Spring";
 
 type Officer = {
   name: string;
@@ -48,8 +49,12 @@ const officers: Officers = [
   },
   {
     semester: "Fall 2024",
-    list: Fall2024
-  }
+    list: Fall2024,
+  },
+  {
+    semester: "Spring 2025",
+    list: Spring2025,
+  },
 ];
 
 export default officers;
