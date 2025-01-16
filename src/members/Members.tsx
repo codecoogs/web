@@ -6,6 +6,7 @@ import MembershipForm from "./MembershipForm";
 import { benefits, faq } from "../data/members";
 import { CheckIcon } from "./MembersIcons";
 import type { StripeURL, SubmitProps } from "../common/interface";
+import { useTitle } from "../common/utils";
 
 interface MemberBenefitCardProps {
 	benefit: string;
@@ -46,6 +47,7 @@ const PricingCard = () => {
 						<div
 							className="inline-block relative cursor-pointer h-8"
 							onClick={togglePricing}
+							onKeyDown={() => {}}
 						>
 							<span
 								className={`absolute transition-all duration-300 ${
@@ -149,6 +151,8 @@ const LoadingScreen = ({
 };
 
 const Members = () => {
+	useTitle("Join");
+
 	const [submitProcess, setSubmitProcess] = useState<boolean>(false);
 	const [stripeUrl, setStripeUrl] = useState<string>("");
 
@@ -161,10 +165,6 @@ const Members = () => {
 		stripeUrl,
 		setStripeUrl,
 	};
-
-	useEffect(() => {
-		document.title = "Join";
-	});
 
 	return (
 		<div className="text-white p-8">

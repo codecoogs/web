@@ -1,91 +1,98 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-// import happyCoCo from "../assets/happy-coco.webp";
-// import determinedCoCo from "../assets/determined-coco.webp";
 import { DiscordIcon, MenuIcon } from "./NavbarIcons";
 import { discordLink } from "../data/members";
 
 const setTextColor = (to: string) => {
-    const location = useLocation();
+	const location = useLocation();
 
     if (location.pathname === to) {
         return "text-dark-primary"
     }
 
-    return "text-white";
+	return "text-white";
 };
 
 interface NavlinkProps {
-    to: string;
-    text: string;
-};
+	to: string;
+	text: string;
+}
 
 const Navlink = (props: NavlinkProps) => {
-    const [isHover, setIsHover] = useState<boolean>(false);
+	const [isHover, setIsHover] = useState<boolean>(false);
 
-    const textColor = setTextColor(props.to);
+	const textColor = setTextColor(props.to);
 
-    const handleMouseEnter = () => {
-        setIsHover(true);
-    };
+	const handleMouseEnter = () => {
+		setIsHover(true);
+	};
 
-    const handleMouseLeave = () => {
-        setIsHover(false);
-    };
+	const handleMouseLeave = () => {
+		setIsHover(false);
+	};
 
-    return (
-        <li>
-            <Link
-                className={`block h-full ${textColor} hover:text-dark-primary`}
-                to={props.to}
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-            >
-                {isHover ?
-                    <span>[{props.text}]</span>
-                    :
-                    <span>&nbsp;{props.text}&nbsp;</span>
-                }
-            </Link>
-        </li>
-    );
+	return (
+		<li>
+			<Link
+				className={`block h-full ${textColor} hover:text-dark-primary`}
+				to={props.to}
+				onMouseEnter={handleMouseEnter}
+				onMouseLeave={handleMouseLeave}
+			>
+				{isHover ? (
+					<span>[{props.text}]</span>
+				) : (
+					<span>&nbsp;{props.text}&nbsp;</span>
+				)}
+			</Link>
+		</li>
+	);
 };
 
 const Navhome = () => {
-    const [isHover, setIsHover] = useState<boolean>(false);
+	const [isHover, setIsHover] = useState<boolean>(false);
 
-    const textColor = setTextColor("/");
+	const handleMouseEnter = () => {
+		setIsHover(true);
+	};
 
-    const handleMouseEnter = () => {
-        setIsHover(true);
-    };
+	const handleMouseLeave = () => {
+		setIsHover(false);
+	};
 
-    const handleMouseLeave = () => {
-        setIsHover(false);
-    };
+	return (
+		<Link
+			className={"flex items-center ml-4 md:ml-14"}
+			to="/"
+			onMouseEnter={handleMouseEnter}
+			onMouseLeave={handleMouseLeave}
+		>
+			<img
+				src={
+					!isHover ? "/assets/happy-coco.webp" : "/assets/determined-coco.webp"
+				}
+				alt="Logo"
+				width="64"
+				height="64"
+			/>
 
-    return (
-        <Link
-            className={"flex items-center ml-4 md:ml-14"}
-            to="/"
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-        >
-            <img className="mr-4" src={!isHover ? "/assets/happy-coco.webp" : "/assets/determined-coco.webp"} alt="Logo" width="64" height="64" />
-            <span className={`self-center text-2xl ${textColor} font-semibold hover:text-dark-primary`} >
-                Code{isHover ? "[" : " "}<span className="text-dark-error">Coogs</span>{isHover ? "]" : " "}
-            </span>
-        </Link>
-    );
+			<img
+				className="my-[-20px]"
+				src={!isHover ? "/assets/coco-border.webp" : "/assets/coco.webp"}
+				alt="Logo"
+				width="200"
+			/>
+		</Link>
+	);
 };
 
 const Navbar = () => {
-    const [clicked, setClicked] = useState<boolean>(false);
+	const [clicked, setClicked] = useState<boolean>(false);
 
-    const handleClick = () => {
-        setClicked(!clicked);
-    };
+	const handleClick = () => {
+		setClicked(!clicked);
+	};
 
     return (
         <nav className="bg-dark-surface border-b border-white border-opacity-10 lg:h-16 md:h-14">

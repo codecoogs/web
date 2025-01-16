@@ -1,11 +1,12 @@
 import type React from "react";
 import { useState } from "react";
 
+import { GitHubIcon } from "./TeamsIcons";
+
 import teams from "../data/teams";
-import { GitHubIcon } from "../teams/TeamsIcons";
 
 interface TeamCardProps {
-	key: React.Key;
+	key: string;
 	children: React.ReactNode;
 }
 
@@ -24,7 +25,7 @@ enum Direction {
 }
 
 // TODO: smooth the year change transition
-const Teams = () => {
+const TeamsMembers = () => {
 	const numTeams = teams.length;
 	const [year, setYear] = useState(numTeams - 1);
 	const [teamCardOpacity, setTeamCardOpacity] = useState<string>("opacity-100");
@@ -43,7 +44,10 @@ const Teams = () => {
 	};
 
 	return (
-		<div className="bg-dark-surface text-center md:w-3/4 mx-auto">
+		<div
+			id="teamMembers"
+			className="bg-dark-surface text-center md:w-3/4 mx-auto"
+		>
 			<h1 className="text-2xl font-bold text-white m-6">Explore our teams</h1>
 			<div className="text-center text-lg text-white my-8 flex items-center justify-center space-x-4">
 				<div className="relative">
@@ -53,7 +57,7 @@ const Teams = () => {
 								"absolute transition-transform duration-300 opacity-30 cursor-pointer -translate-y-6"
 							}
 							onClick={() => handleYearChange(Direction.Down)}
-							onKeyDown={() => handleYearChange(Direction.Down)}
+							onKeyDown={() => {}}
 						>
 							{year - 1 >= 0 && teams[year - 1].year}
 						</span>
@@ -65,7 +69,7 @@ const Teams = () => {
 								"absolute transition-transform duration-300 opacity-30 cursor-pointer translate-y-6"
 							}
 							onClick={() => handleYearChange(Direction.Up)}
-							onKeyUp={() => handleYearChange(Direction.Up)}
+							onKeyDown={() => {}}
 						>
 							{year + 1 < numTeams && teams[year + 1].year}
 						</span>
@@ -86,7 +90,7 @@ const Teams = () => {
 											<img
 												className="object-cover w-full h-full rounded-full"
 												src={team.photo}
-												alt={`${team.name} portrait`}
+												alt={team.name}
 											/>
 										</div>
 									)}
@@ -98,8 +102,8 @@ const Teams = () => {
 										<a
 											href={team.github}
 											target="_blank"
-											rel="noreferrer"
 											aria-label="Go to GitHub"
+											rel="noreferrer"
 										>
 											<GitHubIcon />
 										</a>
@@ -114,4 +118,4 @@ const Teams = () => {
 	);
 };
 
-export default Teams;
+export default TeamsMembers;

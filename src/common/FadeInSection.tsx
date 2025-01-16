@@ -1,12 +1,17 @@
-import React, { type MutableRefObject } from "react";
+import type React from "react";
+import { useRef, useState, useEffect, type ReactNode } from "react"
 
-const FadeInSection = ({
+interface FadeInSectionProps {
+	children: ReactNode;
+	className?: string;
+}
+
+const FadeInSection: React.FC<FadeInSectionProps> = ({
 	children,
 	className,
-}: { children: React.JSX.Element; className: string }) => {
-	const domRef: MutableRefObject<HTMLElement | undefined> = React.useRef();
-
-	const [isVisible, setVisible] = React.useState(false);
+}) => {
+	const domRef = useRef<HTMLElement | null>(null); // Type is HTMLElement | null
+	const [isVisible, setVisible] = useState(false);
 
 	React.useEffect(() => {
         if (domRef.current) {
@@ -26,12 +31,37 @@ const FadeInSection = ({
             return () => observer.disconnect();
         }		
 	}, []);
+	useEffect(() => {
+		const observer = new IntersectionObserver((entries) => {
+			if (entries[0].isIntersecting) {
+				setVisible(true);
+				// Stop observing the element once it is visible
+				if (domRef.current) {
+					observer.unobserve(domRef.current);
+				}
+			}
+		});
+
+		if (domRef.current) {
+			observer.observe(domRef.current);
+		}
+
+		// Cleanup the observer on component unmount
+		return () => observer.disconnect();
+	}, []);
 
 	return (
 		<section ref={domRef as React.RefObject<HTMLElement>} className={isVisible ? className : ""}>
 			{children}
 		</section>
 	);
+	return (
+		<section ref={domRef} className={isVisible ? className : ""}>
+			{children}
+		</section>
+	);
 };
+
+export default FadeInSection;
 
 export default FadeInSection;

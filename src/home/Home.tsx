@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import About from "./About";
-import Teams from "./Teams";
 import { Link } from "react-router-dom";
+import { useTitle } from "../common/utils";
 
 const AboutUsButton = () => {
 	const style =
@@ -91,20 +91,22 @@ const HomeTitle = () => {
 					{phrases[index]}
 				</span>
 			</div>
+
 			<div>
-				<span>
-					{" "}
-					at Code[<span className="text-dark-error">Coogs</span>]
-				</span>
+				<p className="inline-block">at</p>
+
+				<img
+					className="relative inline-block my-[-75px] w-3/12 -z-10"
+					src={"/assets/coco-border.webp"}
+					alt="Logo"
+				/>
 			</div>
 		</div>
 	);
 };
 
 const Home = () => {
-	useEffect(() => {
-		document.title = "Home";
-	}, []);
+	useTitle("Code Coogs");
 
 	return (
 		<div>
@@ -136,7 +138,6 @@ const Home = () => {
 				</div>
 			</div>
 			<About />
-			<Teams />
 		</div>
 	);
 };

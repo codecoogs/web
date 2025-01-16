@@ -1,7 +1,8 @@
 export const GitHubIcon = () => {
 	return (
-		// biome-ignore lint/a11y/noSvgWithoutTitle: <explanation>
 		<svg
+			role="graphics-symbol"
+			aria-label="github"
 			className="h-6 w-6 fill-white hover:fill-dark-primary"
 			viewBox="0 0 15 15"
 		>

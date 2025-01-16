@@ -7,8 +7,6 @@ import {
 	MailIcon,
 } from "./FooterIcons";
 import { email } from "../data/about";
-// import happyCoCo from "../assets/happy-coco.webp";
-// import determinedCoCo from "../assets/determined-coco.webp";
 import { Link } from "react-router-dom";
 import { discordLink } from "../data/members";
 

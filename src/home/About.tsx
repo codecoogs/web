@@ -1,11 +1,6 @@
 import type React from "react";
 import { useState } from "react";
 
-// import competitionsCoCo from "../assets/competitions-coco.webp";
-// import sociclassName: "FadeInSectionrom "../assets/socials-coco.webp";
-// import teamsCoCo from "../assets/teams-coco.webp";
-// import workshopsCoCo from "../assets/workshops-coco.webp";
-
 import { InstagramIcon, LinkedInIcon } from "./AboutIcons";
 import { companyLogos } from "./AboutLogos";
 

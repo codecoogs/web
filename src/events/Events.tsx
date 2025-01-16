@@ -1,5 +1,6 @@
 import type React from "react";
 import { eventGoogleCalendarLink } from "../data/events";
+import { useTitle } from "../common/utils";
 
 interface EventCardProps {
 	children: React.ReactNode;
@@ -14,6 +15,8 @@ const EventCard = (props: EventCardProps) => {
 };
 
 const Events = () => {
+	useTitle("Events");
+
 	return (
 		<div className="p-4">
 			<div className="bg-dark-surface mt-8 ml-4 mr-4 rounded ring-1 ring-white/[.3]">

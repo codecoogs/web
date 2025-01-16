@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { useTitle } from "../common/utils";
 
 const BackgroundCircles = () => {
   return (
@@ -15,18 +15,18 @@ const BackgroundCircles = () => {
 };
 
 const SuccessTitle = () => {
-  return (
-    <div className="flex flex-col text-2xl md:text-4xl lg:text-6xl text-white font-normal text-center">
-      <div className="flex">
-        <span className="flex-1 text-center">Payment successful</span>
-      </div>
-    </div>
-  );
+	return (
+		<div className="flex flex-col text-2xl md:text-4xl lg:text-6xl text-white font-normal text-center">
+			<div className="flex">
+				<span className="flex-1 text-center">Payment successful</span>
+			</div>
+		</div>
+	);
 };
 
 const ResumeButton = () => {
-  const style =
-    "flex items-center justify-center p-6 h-10 relative font-bold text-center rounded-lg bg-black text-white ring-1 ring-dark-primary ring-inset hover:text-black hover:bg-dark-primary";
+	const style =
+		"flex items-center justify-center p-6 h-10 relative font-bold text-center rounded-lg bg-black text-white ring-1 ring-dark-primary ring-inset hover:text-black hover:bg-dark-primary";
 
   return (
     <div className="my-4 mx-auto md:w-[12%] relative group">
@@ -41,26 +41,28 @@ const ResumeButton = () => {
 };
 
 const Success = () => {
-  return (
-    <div>
-      <div className="relative flex flex-col justify-center min-h-screen">
-        <BackgroundCircles />
-        <BackgroundCircles />
-        <div className="my-4">
-          <SuccessTitle />
-        </div>
+	useTitle("Success");
 
-        <div className="my-4 mx-auto md:w-1/2 text-center">
-          <span className="text-lg text-white">
-            Welcome to Code[Coogs]! Please submit your resume by pressing the
-            button below.
-          </span>
-        </div>
+	return (
+		<div>
+			<div className="relative flex flex-col justify-center min-h-screen">
+				<BackgroundCircles />
+				<BackgroundCircles />
+				<div className="my-4">
+					<SuccessTitle />
+				</div>
 
-        <ResumeButton />
-      </div>
-    </div>
-  );
+				<div className="my-4 mx-auto md:w-1/2 text-center">
+					<span className="text-lg text-white">
+						Welcome to Code[Coogs]! Please submit your resume by pressing the
+						button below.
+					</span>
+				</div>
+
+				<ResumeButton />
+			</div>
+		</div>
+	);
 };
 
 export default Success;
