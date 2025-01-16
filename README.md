@@ -20,7 +20,7 @@ Clone the repository onto your machine
 ```bash
 git clone https://github.com/codecoogs/web.git
 ```
- 
+
 ## Usage
 Populate environment variables
 ```bash

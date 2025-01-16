@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { SIGNUP_API_URL } from '../data/members';
-import { StripeURL, SubmitProps } from '../common/interface';
+import type { StripeURL, SubmitProps } from '../common/interface';
 
 
 const SignUpForm: React.FC<{ submitProps: SubmitProps, stripeProps: StripeURL }> = ({ submitProps, stripeProps }) => {
@@ -20,18 +20,18 @@ const SignUpForm: React.FC<{ submitProps: SubmitProps, stripeProps: StripeURL }>
         discord: "",
     });
 
-    const [successMessage, setSuccessMessage] = useState<String>('');
-    const [errorMessage, setErrorMessage] = useState<String>('');
+    const [successMessage, setSuccessMessage] = useState<string>('');
+    const [errorMessage, setErrorMessage] = useState<string>('');
     const resumeInputRef = React.useRef<HTMLInputElement>(null);
 
-    const handleChange = (e: any) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
         setFormData((prevData) => ({ ...prevData, [name]: value }));
         console.log(formData)
     };
 
     const handleSubmit = async (e: React.FormEvent) => {
-        if (submitProps.submitProcess == true) return;
+        if (submitProps.submitProcess === true) return;
 
         submitProps.setSubmitProcess(true)
 
@@ -39,7 +39,7 @@ const SignUpForm: React.FC<{ submitProps: SubmitProps, stripeProps: StripeURL }>
         setSuccessMessage('');
         setErrorMessage('');
 
-        let convertedData = new FormData();
+        const convertedData = new FormData();
         for (const [key, value] of Object.entries(formData)) {
             if (value === null) continue;
             convertedData.append(key, value)
