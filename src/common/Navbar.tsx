@@ -9,7 +9,7 @@ import { discordLink } from "../data/members";
 const setTextColor = (to: string) => {
     const location = useLocation();
 
-    if (location.pathname == to) {
+    if (location.pathname === to) {
         return "text-dark-primary"
     }
 
@@ -105,7 +105,7 @@ const Navbar = () => {
                         <Navlink to="/join" text="Membership" />
                         <Navlink to="/opportunities" text="Opportunities" />
                         <Navlink to="/sponsors" text="Sponsor" />
-                        <a href={discordLink} target="_blank">
+                        <a href={discordLink} target="_blank" rel="noreferrer">
                             <div className="fill-white self-center">
                                 <DiscordIcon />
                             </div>

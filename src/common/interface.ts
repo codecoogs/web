@@ -1,9 +1,9 @@
 export interface SubmitProps {
     submitProcess: boolean;
-    setSubmitProcess: any;
+    setSubmitProcess: (value: boolean) => void;
 }
 
 export interface StripeURL {
     stripeUrl: string;
-    setStripeUrl: any;
+    setStripeUrl: (value: string) => void;
 }
