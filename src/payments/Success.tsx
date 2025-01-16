@@ -9,7 +9,7 @@ const BackgroundCircles = () => {
           background:
             "radial-gradient(circle, rgba(191, 64, 191, 0) 0%, rgba(0, 198, 247, 0.05) 100%)",
         }}
-      ></div>
+      />
     </>
   );
 };
@@ -30,7 +30,7 @@ const ResumeButton = () => {
 
   return (
     <div className="my-4 mx-auto md:w-[12%] relative group">
-      <div className="absolute -inset-0.5 bg-dark-primary blur-lg rounded-full opacity-50 transform scale-75 group-hover:scale-100 transition-all duration-300"></div>
+      <div className="absolute -inset-0.5 bg-dark-primary blur-lg rounded-full opacity-50 transform scale-75 group-hover:scale-100 transition-all duration-300" />
       <a href="https://forms.gle/hrZYtDXbtdJotny17" className={style}>
         <span className="flex items-center">
           <span>Submit Resume</span>

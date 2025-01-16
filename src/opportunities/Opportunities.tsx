@@ -9,7 +9,7 @@ const ApplyButton = () => {
         <div className="animate-fade-down animate-delay-200 relative group">
             <div
                 className="absolute -inset-0.5 bg-dark-primary blur-lg rounded-full opacity-50 transform scale-75 group-hover:scale-100 transition-all duration-300"
-            ></div>
+            />
             <a href="#opportunitiesInfo" className={style}>
                 <span className="flex items-center">
                     <span>Apply now</span>

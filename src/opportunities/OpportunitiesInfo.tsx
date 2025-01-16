@@ -37,14 +37,14 @@ const OpportunitiesRoles = [
 const style = "flex items-start p-7 h-[200px] relative font-bold  rounded-lg bg-[#151515] text-white ring-1 ring-dark-primary ring-inset";
 
 const OpportunitiesItems = OpportunitiesRoles.map(role =>
-    <Flashcard style={{ flex: "1 1 auto", width: "45%", height: "200px", marginBottom: "1rem", marginRight: "1rem" }} frontHTML={
+    <Flashcard key={role.name} style={{ flex: "1 1 auto", width: "45%", height: "200px", marginBottom: "1rem", marginRight: "1rem" }} frontHTML={
         <div className="relative group">
             <div
                 className="absolute -inset-0.5 bg-dark-primary blur-lg opacity-30 transform scale-90 group-hover:scale-100 transition-all duration-300"
-            ></div>
+            />
             <div className={style}>
                 <span className="flex h-full flex-col">
-                    <img src={role.icon} className="w-12 mb-3" alt=""></img>
+                    <img src={role.icon} className="w-12 mb-3" alt="" />
                     <h1 className="text-lg">{role.name}</h1>
                     <h1 className="text-lg font-normal">{role.year}</h1>
                 </span>
@@ -54,8 +54,8 @@ const OpportunitiesItems = OpportunitiesRoles.map(role =>
     } backHTML={<div className="relative group">
         <div
             className="absolute -inset-0.5 bg-dark-primary blur-lg opacity-30 transform scale-90 group-hover:scale-100 transition-all duration-300"
-        ></div>
-        <div className={style + " justify-around items-start h-full flex-col"}>
+        />
+        <div className={`${style} justify-around items-start h-full flex-col`}>
             <span className="flex h-full flex-col items-center justify-between font-normal">
                 <span className="md:text-sm lg:text-base text-sm">
                     {role.description}
@@ -63,7 +63,7 @@ const OpportunitiesItems = OpportunitiesRoles.map(role =>
 
                 {role.applicationLink &&
                     <div className="relative group">
-                        <a href={role.applicationLink} target="_blank" className="flex h-8 w-32 md:h-10 md:w-36 justify-center items-center p-2 relative font-bold text-center rounded-lg bg-black text-white ring-1 ring-dark-primary ring-inset hover:text-black hover:bg-dark-primary">
+                        <a href={role.applicationLink} target="_blank" className="flex h-8 w-32 md:h-10 md:w-36 justify-center items-center p-2 relative font-bold text-center rounded-lg bg-black text-white ring-1 ring-dark-primary ring-inset hover:text-black hover:bg-dark-primary" rel="noreferrer">
                             <span className="flex">
                                 <span className="text-xs md:text-base">Apply</span>
                             </span>
@@ -73,7 +73,7 @@ const OpportunitiesItems = OpportunitiesRoles.map(role =>
             </span>
         </div>
 
-    </div>}></Flashcard>
+    </div>} />
 )
 
 const OpportunitiesInfo = () => {

@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import type React from "react";
+import { useState } from "react";
 
 import { GitHubIcon } from "./TeamsIcons";
 
 import teams from "../data/teams";
 
 interface TeamCardProps {
-    key: number;
+    key: React.Key;
     children: React.ReactNode;
 };
 
@@ -18,9 +19,9 @@ const TeamCard = (props: TeamCardProps) => {
 };
 
 enum Direction {
-    None,
-    Up,
-    Down
+    None = 0,
+    Up = 1,
+    Down = 2
 }
 
 // TODO: smooth the year change transition
@@ -34,9 +35,9 @@ const Teams = () => {
 
 
         setTimeout(() => {
-            if (direction == Direction.Up) {
+            if (direction === Direction.Up) {
                 setYear(prevYear => Math.min(numTeams - 1, prevYear + 1));
-            } else if (direction == Direction.Down) {
+            } else if (direction === Direction.Down) {
                 setYear(prevYear => Math.max(0, prevYear - 1));
             }
             setTeamCardOpacity('opacity-100');
@@ -50,19 +51,21 @@ const Teams = () => {
                 <div className="relative">
                     <div className="relative flex items-center">
                         <span
-                            className={`absolute transition-transform duration-300 opacity-30 cursor-pointer -translate-y-6`}
+                            className={"absolute transition-transform duration-300 opacity-30 cursor-pointer -translate-y-6"}
                             onClick={() => handleYearChange(Direction.Down)}
+                            onKeyDown={() => handleYearChange(Direction.Down)}
                         >
                             {year - 1 >= 0 && teams[year - 1].year}
                         </span>
                         <span
-                            className={`text-dark-primary opacity-100 z-10`}
+                            className={"text-dark-primary opacity-100 z-10"}
                         >
                                 {teams[year].year}
                         </span>
                         <span
-                            className={`absolute transition-transform duration-300 opacity-30 cursor-pointer translate-y-6`}
+                            className={"absolute transition-transform duration-300 opacity-30 cursor-pointer translate-y-6"}
                             onClick={() => handleYearChange(Direction.Up)}
+                            onKeyUp={() => handleYearChange(Direction.Up)}
                         >
                                 {year + 1 < numTeams && teams[year + 1].year}
                         </span>
@@ -73,17 +76,17 @@ const Teams = () => {
             <ul className={`grid grid-cols-2 lg:grid-cols-4 gap-4 md:flex-row mx-8 bg-dark-surface pb-4 my-4 ease-in-out transition-opacity duration-500 ${teamCardOpacity}`}>
                 {teams[year].list.map((team, index) => {
                     return (
-                        <TeamCard key={index}>
+                        <TeamCard key={team.name}>
                             <div className="flex flex-col px-4">
                                 <div className="flex-grow">
                                     {team.photo && <div className="w-24 h-24 md:w-40 md:h-40 my-4 mx-auto"><img className="object-cover w-full h-full rounded-full" src={team.photo}
-                                                             alt={`${team.name} photo`}/></div>}
+                                                             alt={`${team.name} portrait`}/></div>}
                                     <h1 className="font-bold pt-2">{team.name}</h1>
                                     {/**<h2 className="pt-2">Leads: {team.leads.join(", ")}</h2>**/}
                                 </div>
                                 <div className="pt-4">
                                     <div className="flex justify-end pb-4">
-                                        <a href={team.github} target="_blank" aria-label="Go to GitHub">
+                                        <a href={team.github} target="_blank" rel="noreferrer" aria-label="Go to GitHub">
                                             <GitHubIcon/>
                                         </a>
                                     </div>
