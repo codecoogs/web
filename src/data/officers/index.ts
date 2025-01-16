@@ -10,7 +10,7 @@ import Spring2025 from "./2025Spring";
 type Officer = {
   name: string;
   position: string;
-  photo?: any;
+  photo?: string;
   video?: string;
   socials: {
     linkedin: string;
