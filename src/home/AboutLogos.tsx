@@ -1,5 +1,5 @@
 const logoStyle = "h-12 w-24 fill-white";
-const logoStyle = "h-12 w-24 fill-white";
+
 const AmazonLogo = () => {
 	return (
 		<svg
