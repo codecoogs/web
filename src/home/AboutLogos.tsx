@@ -601,17 +601,5 @@ export const companyLogos = [
 	{ name: "NASA", component: NASALogo },
 	{ name: "Oracle", component: OracleLogo },
 	{ name: "Sprout Social", component: SproutSocialLogo },
-	{ name: "Amazon", component: AmazonLogo },
-	{ name: "American Airlines", component: AmericanAirlinesLogo },
-	{ name: "Boeing", component: BoeingLogo },
-	{ name: "Geico", component: GeicoLogo },
-	{ name: "Google", component: GoogleLogo },
-	{ name: "HPE", component: HPELogo },
-	{ name: "JPMorgan", component: JPMorganLogo },
-	{ name: "Meta", component: MetaLogo },
-	{ name: "Microsoft", component: MicrosoftLogo },
-	{ name: "NASA", component: NASALogo },
-	{ name: "Oracle", component: OracleLogo },
-	{ name: "Sprout Social", component: SproutSocialLogo },
 ];
 
