@@ -49,7 +49,7 @@ const officers2025Spring = [
 		name: "Angela Marie",
 		position: "Activities Director",
 		socials: {
-			linkedin: "",
+			linkedin: "www.linkedin.com/in/angelam-abrea",
 		},
 	},
 	{
@@ -198,14 +198,14 @@ const officers2025Spring = [
 		},
 	},
 
-	{
-		name: "Kaylee Scanlin",
-		position: "Full Stack Workshops Officer",
+	// { (LEFT THIS SEMESTER FOR INTERNSHIP IN AUSTIN! :))
+	// 	name: "Kaylee Scanlin",
+	// 	position: "Full Stack Workshops Officer",
 
-		socials: {
-			linkedin: "",
-		},
-	},
+	// 	socials: {
+	// 		linkedin: "",
+	// 	},
+	// },
 
 	{
 		name: "Dominic McDonald",

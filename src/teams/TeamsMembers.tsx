@@ -6,7 +6,7 @@ import { GitHubIcon } from "./TeamsIcons";
 import teams from "../data/teams";
 
 interface TeamCardProps {
-	key: string;
+	key: React.Key;
 	children: React.ReactNode;
 }
 
@@ -80,7 +80,7 @@ const TeamsMembers = () => {
 			<ul
 				className={`grid grid-cols-2 lg:grid-cols-4 gap-4 md:flex-row mx-8 bg-dark-surface pb-4 my-4 ease-in-out transition-opacity duration-500 ${teamCardOpacity}`}
 			>
-				{teams[year].list.map((team, index) => {
+				{teams[year].list.map((team) => {
 					return (
 						<TeamCard key={team.name}>
 							<div className="flex flex-col px-4">
@@ -95,7 +95,6 @@ const TeamsMembers = () => {
 										</div>
 									)}
 									<h1 className="font-bold pt-2">{team.name}</h1>
-									{/**<h2 className="pt-2">Leads: {team.leads.join(", ")}</h2>**/}
 								</div>
 								<div className="pt-4">
 									<div className="flex justify-end pb-4">

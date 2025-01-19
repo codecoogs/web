@@ -28,7 +28,7 @@ const FadeInSection = ({
 	}, []);
 
 	return (
-		<section ref={domRef as React.RefObject<HTMLElement>} className={isVisible ? className : ""}>
+		<section ref={domRef as React.RefObject<HTMLElement>} className={isVisible ? className : "invisible"}>
 			{children}
 		</section>
 	);

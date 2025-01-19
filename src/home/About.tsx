@@ -152,7 +152,7 @@ const OfficerSection = () => {
 								"absolute transition-transform duration-300 opacity-30 cursor-pointer translate-x-0 -translate-y-6"
 							}
 							onClick={handleDecrementSemester}
-              onKeyDown={handleDecrementSemester}
+							onKeyDown={handleDecrementSemester}
 						>
 							{semester - 1 >= 0 && officers[semester - 1].semester}
 						</span>
@@ -164,7 +164,7 @@ const OfficerSection = () => {
 								"absolute transition-transform duration-300 opacity-30 cursor-pointer translate-y-6"
 							}
 							onClick={handleIncrementSemester}
-              onKeyUp={handleIncrementSemester}
+							onKeyUp={handleIncrementSemester}
 						>
 							{semester + 1 < numOfficers && officers[semester + 1].semester}
 						</span>
@@ -400,7 +400,11 @@ const About = () => {
 				</AboutSection>
 			</div>
 
-			<OfficerSection />
+			<FadeInSection
+				className={"animate-fade-up animate-once animate-duration-[1700ms]"}
+			>
+				<OfficerSection />
+			</FadeInSection>
 		</div>
 	);
 };
