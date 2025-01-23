@@ -216,35 +216,25 @@ const CompanySection = () => {
 const About = () => {
 	return (
 		<div className="text-white p-4">
-			<div className="flex flex-wrap flex-col justify-center">
+			<div className="flex flex-wrap flex-col justify-center items-center">
 				<CompanySection />
 
-				<div className="flex justify-center">
-					<div className="p-8 text-center">
+				<div className="flex justify-center flex-col md:flex-row max-w-[1000px]">
+					<div className="p-8 text-center w-full md:w-1/2">
 						<FadeInSection className={"animate-fade-right"}>
 							<>
 								<AboutSectionTitle>Our sponsors</AboutSectionTitle>
 								<div className="flex flex-wrap justify-center items-center pt-8">
 									{sponsors.map((sponsor, index) => {
 										return (
-											<div key={sponsor.name} className="p-4">
+											<div key={sponsor.name} className="p-4 flex justify-center md:w-[max-content]">
 												<a href={sponsor.link} target="_blank" rel="noreferrer">
 													<img
-														className={
-															sponsor.name === "HCSS" ? "" : "rounded-full"
-														}
+														className={sponsor.class || ""}
 														src={sponsor.logo}
 														alt={sponsor.name}
-														width={
-															sponsor.name === "Energy AI Solutions"
-																? "120"
-																: "60"
-														}
-														height={
-															sponsor.name === "Energy AI Solutions"
-																? "70"
-																: "60"
-														}
+														width={sponsor.width || 60}
+														height={sponsor.height || 60}
 													/>
 												</a>
 											</div>
@@ -254,7 +244,7 @@ const About = () => {
 							</>
 						</FadeInSection>
 					</div>
-					<div className="p-8 text-center">
+					<div className="p-8 text-center w-full md:w-1/2">
 						<FadeInSection className={"animate-fade-left"}>
 							<>
 								<AboutSectionTitle>Our partners</AboutSectionTitle>
@@ -267,8 +257,8 @@ const About = () => {
 														className=""
 														src={partner.logo}
 														alt={partner.name}
-														width="60"
-														height="60"
+														width={70}
+														height={70}
 													/>
 												</a>
 											</div>
