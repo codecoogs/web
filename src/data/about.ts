@@ -23,6 +23,20 @@ export const officers = allOfficers;
 
 export const sponsors = [
   {
+    name: "Centerpoint Energy",
+    link: "https://www.centerpointenergy.com/en-us/corporate",
+    logo: "/assets/logos/centerpoint.svg",
+    width: 130,
+    // height: 10,
+  },
+  {
+    name: "Energy AI Solutions",
+    link: "https://energyaisolutions.com/",
+    logo: "/assets/logos/energyai.webp",
+    width: 120,
+    height: 70,
+  },
+  {
     name: "HCSS",
     link: "https://careers.hcss.com/",
     logo: "/assets/logos/hcss.webp",
@@ -31,12 +45,8 @@ export const sponsors = [
     name: "Tom N Toms",
     link: "https://www.tomntomsbellaire.com/",
     logo: "/assets/logos/tom-n-toms.webp",
+    class: "rounded-full"
   },
-  {
-    name: "Energy AI Solutions",
-    link: "https://energyaisolutions.com/",
-    logo: "/assets/logos/energyai.webp"
-  }
 ];
 
 export const partners = [

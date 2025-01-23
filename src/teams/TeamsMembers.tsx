@@ -1,8 +1,9 @@
 import type React from "react";
 import { useState } from "react";
 
+import { GitHubIcon } from "./TeamsIcons";
+
 import teams from "../data/teams";
-import { GitHubIcon } from "../teams/TeamsIcons";
 
 interface TeamCardProps {
 	key: React.Key;
@@ -24,7 +25,7 @@ enum Direction {
 }
 
 // TODO: smooth the year change transition
-const Teams = () => {
+const TeamsMembers = () => {
 	const numTeams = teams.length;
 	const [year, setYear] = useState(numTeams - 1);
 	const [teamCardOpacity, setTeamCardOpacity] = useState<string>("opacity-100");
@@ -43,7 +44,10 @@ const Teams = () => {
 	};
 
 	return (
-		<div className="bg-dark-surface text-center md:w-3/4 mx-auto">
+		<div
+			id="teamMembers"
+			className="bg-dark-surface text-center md:w-3/4 mx-auto"
+		>
 			<h1 className="text-2xl font-bold text-white m-6">Explore our teams</h1>
 			<div className="text-center text-lg text-white my-8 flex items-center justify-center space-x-4">
 				<div className="relative">
@@ -53,7 +57,7 @@ const Teams = () => {
 								"absolute transition-transform duration-300 opacity-30 cursor-pointer -translate-y-6"
 							}
 							onClick={() => handleYearChange(Direction.Down)}
-							onKeyDown={() => handleYearChange(Direction.Down)}
+							onKeyDown={() => {}}
 						>
 							{year - 1 >= 0 && teams[year - 1].year}
 						</span>
@@ -65,7 +69,7 @@ const Teams = () => {
 								"absolute transition-transform duration-300 opacity-30 cursor-pointer translate-y-6"
 							}
 							onClick={() => handleYearChange(Direction.Up)}
-							onKeyUp={() => handleYearChange(Direction.Up)}
+							onKeyDown={() => {}}
 						>
 							{year + 1 < numTeams && teams[year + 1].year}
 						</span>
@@ -76,7 +80,7 @@ const Teams = () => {
 			<ul
 				className={`grid grid-cols-2 lg:grid-cols-4 gap-4 md:flex-row mx-8 bg-dark-surface pb-4 my-4 ease-in-out transition-opacity duration-500 ${teamCardOpacity}`}
 			>
-				{teams[year].list.map((team, index) => {
+				{teams[year].list.map((team) => {
 					return (
 						<TeamCard key={team.name}>
 							<div className="flex flex-col px-4">
@@ -86,20 +90,19 @@ const Teams = () => {
 											<img
 												className="object-cover w-full h-full rounded-full"
 												src={team.photo}
-												alt={`${team.name} portrait`}
+												alt={team.name}
 											/>
 										</div>
 									)}
 									<h1 className="font-bold pt-2">{team.name}</h1>
-									{/**<h2 className="pt-2">Leads: {team.leads.join(", ")}</h2>**/}
 								</div>
 								<div className="pt-4">
 									<div className="flex justify-end pb-4">
 										<a
 											href={team.github}
 											target="_blank"
-											rel="noreferrer"
 											aria-label="Go to GitHub"
+											rel="noreferrer"
 										>
 											<GitHubIcon />
 										</a>
@@ -114,4 +117,4 @@ const Teams = () => {
 	);
 };
 
-export default Teams;
+export default TeamsMembers;
