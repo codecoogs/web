@@ -1,6 +1,5 @@
 import type React from "react";
 import { useState } from "react";
-import * as fs from 'fs';
 
 import { InstagramIcon, LinkedInIcon } from "./AboutIcons";
 import { companyLogos } from "./AboutLogos";
