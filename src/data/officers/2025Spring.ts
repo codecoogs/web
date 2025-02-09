@@ -13,13 +13,15 @@ const officers2025Spring = [
 			linkedin: "https://www.linkedin.com/in/saieby/",
 		},
 	},
-	{
-		name: "Melina Moore",
-		position: "VP of External Affairs",
-		socials: {
-			linkedin: "https://www.linkedin.com/in/melina-moore-52515b24b/",
-		},
-	},
+	
+	// commented out as she is no longer vp?
+	// {
+	// 	name: "Melina Moore",
+	// 	position: "VP of External Affairs",
+	// 	socials: {
+	// 		linkedin: "https://www.linkedin.com/in/melina-moore-52515b24b/",
+	// 	},
+	// },
 
 	{
 		name: "Apraajita Sharma",
@@ -49,7 +51,7 @@ const officers2025Spring = [
 		name: "Angela Marie",
 		position: "Activities Director",
 		socials: {
-			linkedin: "www.linkedin.com/in/angelam-abrea",
+			linkedin: "https://www.linkedin.com/in/angelam-abrea",
 		},
 	},
 	{
