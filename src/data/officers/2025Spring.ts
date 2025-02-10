@@ -14,14 +14,13 @@ const officers2025Spring = [
 		},
 	},
 	
-	// commented out as she is no longer vp?
-	// {
-	// 	name: "Melina Moore",
-	// 	position: "VP of External Affairs",
-	// 	socials: {
-	// 		linkedin: "https://www.linkedin.com/in/melina-moore-52515b24b/",
-	// 	},
-	// },
+	{
+		name: "Jonathan Cummins",
+		position: "VP of External Affairs",
+		socials: {
+			linkedin: "https://www.linkedin.com/in/jonathan-cummins-58b326278/",
+		},
+	},
 
 	{
 		name: "Apraajita Sharma",
@@ -158,17 +157,8 @@ const officers2025Spring = [
 	},
 
 	{
-		name: "Jonathan Cummins",
-		position: "Corporate Relations Director",
-
-		socials: {
-			linkedin: "https://www.linkedin.com/in/jonathan-cummins-58b326278/",
-		},
-	},
-
-	{
 		name: "Gelila Habte",
-		position: "Corporate Relations Officer",
+		position: "Corporate Relations Director",
 
 		socials: {
 			linkedin: "https://www.linkedin.com/in/gelila-habte/",
