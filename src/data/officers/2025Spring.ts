@@ -13,11 +13,12 @@ const officers2025Spring = [
 			linkedin: "https://www.linkedin.com/in/saieby/",
 		},
 	},
+	
 	{
-		name: "Melina Moore",
+		name: "Jonathan Cummins",
 		position: "VP of External Affairs",
 		socials: {
-			linkedin: "https://www.linkedin.com/in/melina-moore-52515b24b/",
+			linkedin: "https://www.linkedin.com/in/jonathan-cummins-58b326278/",
 		},
 	},
 
@@ -49,7 +50,7 @@ const officers2025Spring = [
 		name: "Angela Marie",
 		position: "Activities Director",
 		socials: {
-			linkedin: "www.linkedin.com/in/angelam-abrea",
+			linkedin: "https://www.linkedin.com/in/angelam-abrea",
 		},
 	},
 	{
@@ -156,17 +157,8 @@ const officers2025Spring = [
 	},
 
 	{
-		name: "Jonathan Cummins",
-		position: "Corporate Relations Director",
-
-		socials: {
-			linkedin: "https://www.linkedin.com/in/jonathan-cummins-58b326278/",
-		},
-	},
-
-	{
 		name: "Gelila Habte",
-		position: "Corporate Relations Officer",
+		position: "Corporate Relations Director",
 
 		socials: {
 			linkedin: "https://www.linkedin.com/in/gelila-habte/",
