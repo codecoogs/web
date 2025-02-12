@@ -13,7 +13,7 @@ const officers2025Spring = [
 			linkedin: "https://www.linkedin.com/in/saieby/",
 		},
 	},
-	
+
 	{
 		name: "Jonathan Cummins",
 		position: "VP of External Affairs",
@@ -23,8 +23,16 @@ const officers2025Spring = [
 	},
 
 	{
+		name: "Saloni Sharma",
+		position: "VP of Administration",
+		socials: {
+			linkedin: "https://www.linkedin.com/in/saloni-sharma-scholar/",
+		},
+	},
+
+	{
 		name: "Apraajita Sharma",
-		position: "VP Operations",
+		position: "VP of Operations",
 		socials: {
 			linkedin: "",
 		},
