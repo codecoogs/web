@@ -215,6 +215,15 @@ const officers2025Spring = [
 			linkedin: "https://www.linkedin.com/in/dominic-mcdonald-uh",
 		},
 	},
+
+	{
+		name: "Reyna Obregon",
+		position: "Intern Success Director",
+
+		socials: {
+			linkedin: "https://www.linkedin.com/in/reyna-obreg%C3%B3n-8779322a8/",
+		},
+	},
 ];
 
 export default officers2025Spring;
