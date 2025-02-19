@@ -7,9 +7,9 @@ import { discordLink } from "../data/members";
 const setTextColor = (to: string) => {
 	const location = useLocation();
 
-    if (location.pathname === to) {
-        return "text-dark-primary"
-    }
+	if (location.pathname === to) {
+		return "text-dark-primary";
+	}
 
 	return "text-white";
 };
@@ -94,35 +94,36 @@ const Navbar = () => {
 		setClicked(!clicked);
 	};
 
-    return (
-        <nav className="bg-dark-surface border-b border-white border-opacity-10 lg:h-16 md:h-14">
-            <div className="flex flex-wrap justify-between items-center mx-auto">
-                <Navhome />
-                <button
-                    className="inline-flex items-center fill-white md:hidden"
-                    onClick={handleClick}
-                    type="button"
-                    aria-label="Hamburger menu"
-                >
-                    <MenuIcon />
-                </button>
-                <div className={`${clicked ? "hidden" : "block"} relative w-full md:w-auto md:block`}>
-                    <ul className="flex flex-col space-y-4 pb-4 items-center md:pb-0 md:space-y-0 md:flex-row md:space-x-4 md:mr-4">
-                        <Navlink to="/events" text="Events" />
-                        <Navlink to="/join" text="Membership" />
-                        <Navlink to="/opportunities" text="Opportunities" />
-                        <Navlink to="/sponsors" text="Sponsor" />
-                        <a href={discordLink} target="_blank" rel="noreferrer">
-                            <div className="fill-white self-center">
-                                <DiscordIcon />
-                            </div>
-                        </a>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    )
-        ;
+	return (
+		<nav className="bg-dark-surface border-b border-white border-opacity-10 lg:h-16 md:h-14">
+			<div className="flex flex-wrap justify-between items-center mx-auto">
+				<Navhome />
+				<button
+					className="inline-flex items-center fill-white md:hidden"
+					onClick={handleClick}
+					type="button"
+					aria-label="Hamburger menu"
+				>
+					<MenuIcon />
+				</button>
+				<div
+					className={`${clicked ? "hidden" : "block"} relative w-full md:w-auto md:block`}
+				>
+					<ul className="flex flex-col space-y-4 pb-4 items-center md:pb-0 md:space-y-0 md:flex-row md:space-x-4 md:mr-4">
+						<Navlink to="/events" text="Events" />
+						<Navlink to="/join" text="Membership" />
+						<Navlink to="/opportunities" text="Opportunities" />
+						<Navlink to="/sponsors" text="Sponsor" />
+						<a href={discordLink} target="_blank" rel="noreferrer">
+							<div className="fill-white self-center">
+								<DiscordIcon />
+							</div>
+						</a>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	);
 };
 
 export default Navbar;

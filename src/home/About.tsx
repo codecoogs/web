@@ -227,7 +227,10 @@ const About = () => {
 								<div className="flex flex-wrap justify-center items-center pt-8">
 									{sponsors.map((sponsor, index) => {
 										return (
-											<div key={sponsor.name} className="p-4 flex justify-center md:w-[max-content]">
+											<div
+												key={sponsor.name}
+												className="p-4 flex justify-center md:w-[max-content]"
+											>
 												<a href={sponsor.link} target="_blank" rel="noreferrer">
 													<img
 														className={sponsor.class || ""}
