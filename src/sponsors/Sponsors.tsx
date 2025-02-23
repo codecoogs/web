@@ -1,4 +1,3 @@
-import React from "react";
 import PDFViewer from "../common/PDFViewer";
 import "@react-pdf-viewer/default-layout/lib/styles/index.css";
 import { useTitle } from "../common/utils";
