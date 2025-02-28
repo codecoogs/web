@@ -175,6 +175,15 @@ const officers2025Spring = [
 	},
 
 	{
+		name: "Zahi Rafidi",
+		position: "Corporate Relations Officer",
+
+		socials: {
+			linkedin: "https://www.linkedin.com/in/zahirafidi/",
+		},
+	},
+
+	{
 		name: "Mark Pelico",
 		position: "Workshops Director",
 		socials: {
