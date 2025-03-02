@@ -74,7 +74,11 @@ const PricingCard = () => {
 				<ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
 					{benefits.map((benefit, index) => {
 						return (
-							<MemberBenefitCard key={benefit} benefit={benefit} index={index} />
+							<MemberBenefitCard
+								key={benefit}
+								benefit={benefit}
+								index={index}
+							/>
 						);
 					})}
 				</ul>
@@ -110,7 +114,7 @@ const FAQCard = ({ question, answer }: FAQCardProps) => {
 	return (
 		<div className="bg-dark-surface p-2 border-b-2 border-b-white/[.3]">
 			<button
-        type="button"
+				type="button"
 				className="text-base text-left w-full text-white"
 				onClick={() => setOpen(!open)}
 			>
@@ -140,7 +144,7 @@ const LoadingScreen = ({
 					href={stripeUrl}
 					onClick={() => submitProps.setSubmitProcess(false)}
 					target="_blank"
-          rel="noreferrer"
+					rel="noreferrer"
 					className="text-dark-primary"
 				>
 					Click here if you didn't get redirected
