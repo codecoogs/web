@@ -63,6 +63,7 @@ const OfficerCard = (props: OfficerCardProps) => {
 			.reverse()
 			.join("")
 			.toLowerCase();
+
 		image = `/assets/officers/${folderName}/${props.name.replace(
 			" ",
 			"",
@@ -79,6 +80,9 @@ const OfficerCard = (props: OfficerCardProps) => {
 						className="w-full h-full relative object-cover rounded-full"
 						src={image}
 						alt={props.name}
+						onError={(e) => {
+							e.currentTarget.src = "/assets/happy-coco.webp";
+						}}
 						// onMouseOver={e => (e.currentTarget.src = props.video ? props.video : props.photo)}
 						// onMouseOut={e => (e.currentTarget.src = props.photo)}
 					/>

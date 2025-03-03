@@ -6,6 +6,7 @@ const officers2025Spring = [
 			linkedin: "https://www.linkedin.com/in/tonyfloresf/",
 		},
 	},
+
 	{
 		name: "Yousif Saieb",
 		position: "VP of Internal Affairs",
@@ -13,17 +14,26 @@ const officers2025Spring = [
 			linkedin: "https://www.linkedin.com/in/saieby/",
 		},
 	},
+
 	{
-		name: "Melina Moore",
+		name: "Jonathan Cummins",
 		position: "VP of External Affairs",
 		socials: {
-			linkedin: "https://www.linkedin.com/in/melina-moore-52515b24b/",
+			linkedin: "https://www.linkedin.com/in/jonathan-cummins-58b326278/",
+		},
+	},
+
+	{
+		name: "Saloni Sharma",
+		position: "VP of Administration",
+		socials: {
+			linkedin: "https://www.linkedin.com/in/saloni-sharma-scholar/",
 		},
 	},
 
 	{
 		name: "Apraajita Sharma",
-		position: "VP Operations",
+		position: "VP of Operations",
 		socials: {
 			linkedin: "",
 		},
@@ -49,7 +59,7 @@ const officers2025Spring = [
 		name: "Angela Marie",
 		position: "Activities Director",
 		socials: {
-			linkedin: "www.linkedin.com/in/angelam-abrea",
+			linkedin: "https://www.linkedin.com/in/angelam-abrea",
 		},
 	},
 	{
@@ -156,20 +166,20 @@ const officers2025Spring = [
 	},
 
 	{
-		name: "Jonathan Cummins",
+		name: "Gelila Habte",
 		position: "Corporate Relations Director",
 
 		socials: {
-			linkedin: "https://www.linkedin.com/in/jonathan-cummins-58b326278/",
+			linkedin: "https://www.linkedin.com/in/gelila-habte/",
 		},
 	},
 
 	{
-		name: "Gelila Habte",
+		name: "Zahi Rafidi",
 		position: "Corporate Relations Officer",
 
 		socials: {
-			linkedin: "https://www.linkedin.com/in/gelila-habte/",
+			linkedin: "https://www.linkedin.com/in/zahirafidi/",
 		},
 	},
 
@@ -198,21 +208,39 @@ const officers2025Spring = [
 		},
 	},
 
-	// { (LEFT THIS SEMESTER FOR INTERNSHIP IN AUSTIN! :))
-	// 	name: "Kaylee Scanlin",
-	// 	position: "Full Stack Workshops Officer",
-
-	// 	socials: {
-	// 		linkedin: "",
-	// 	},
-	// },
-
 	{
 		name: "Dominic McDonald",
 		position: "Data Science Workshops Officer",
 
 		socials: {
 			linkedin: "https://www.linkedin.com/in/dominic-mcdonald-uh",
+		},
+	},
+
+	{
+		name: "Reyna Obregon",
+		position: "Intern Success Director",
+
+		socials: {
+			linkedin: "https://www.linkedin.com/in/reyna-obreg%C3%B3n-8779322a8/",
+		},
+	},
+
+	{
+		name: "Joseph Giap",
+		position: "Events Logistics Director",
+
+		socials: {
+			linkedin: "https://www.linkedin.com/in/joseph-giap/",
+		},
+	},
+
+	{
+		name: "Alexander Sangurima",
+		position: "Full Stack Workshops Officer",
+
+		socials: {
+			linkedin: "https://www.linkedin.com/in/asangurima/",
 		},
 	},
 ];
