@@ -602,4 +602,3 @@ export const companyLogos = [
 	{ name: "Oracle", component: OracleLogo },
 	{ name: "Sprout Social", component: SproutSocialLogo },
 ];
-
