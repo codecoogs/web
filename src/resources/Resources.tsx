@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
-import { useTitle } from "../common/utils";
+import { getDateFromResourceName, useTitle } from "../common/utils";
 import { resources } from "../data/resources";
 import { ResourceCategory } from "./ResourceCategory";
 import ResourceItem from "./ResourceItem";
@@ -10,17 +10,40 @@ function Resources() {
 	// Set up
 	const searchElement = useRef<HTMLInputElement>(null);
 	const images = ["teams", "workshops", "competitions"];
-	const categories = useMemo(() => new Array<string>(), []);
+	const categories = useMemo(() => {
+		const arr = new Array<string>();
+
+		resources.sort((a, b) => {
+			const dateA = getDateFromResourceName(a);
+			const dateB = getDateFromResourceName(b);
+
+			if (dateA && !dateB) {
+				return -1;
+			}
+
+			if (!dateA && dateB) {
+				return 1;
+			}
+
+			if (dateA && dateB) {
+				return dateA < dateB ? 1 : -1;
+			}
+
+			return 1;
+		});
+
+		for (const resource of resources) {
+			if (!arr.includes(resource.category)) {
+				arr.push(resource.category);
+			}
+		}
+
+		return arr;
+	}, []);
 	const queries = useMemo(
 		() => new URLSearchParams(window.location.search),
 		[],
 	);
-
-	for (const resource of resources) {
-		if (!categories.includes(resource.category)) {
-			categories.push(resource.category);
-		}
-	}
 
 	// State
 	const [selected, setSelected] = useState<string>(() => {
@@ -83,7 +106,7 @@ function Resources() {
 					type="text"
 					placeholder="Search"
 					onChange={(e) => setSearch(e.target.value)}
-					className="bg-white p-3 outline-none rounded focus:bg-light-primary transition-colors"
+					className="bg-white p-3 outline-none rounded focus:bg-light-primary focus:text-black focus:placeholder-black transition-colors"
 				/>
 
 				<div className="flex justify-center mx-auto m-2">
