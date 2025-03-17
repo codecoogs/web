@@ -6,6 +6,7 @@ const officers2025Spring = [
 			linkedin: "https://www.linkedin.com/in/tonyfloresf/",
 		},
 	},
+
 	{
 		name: "Yousif Saieb",
 		position: "VP of Internal Affairs",
@@ -174,6 +175,15 @@ const officers2025Spring = [
 	},
 
 	{
+		name: "Zahi Rafidi",
+		position: "Corporate Relations Officer",
+
+		socials: {
+			linkedin: "https://www.linkedin.com/in/zahirafidi/",
+		},
+	},
+
+	{
 		name: "Mark Pelico",
 		position: "Workshops Director",
 		socials: {
@@ -198,15 +208,6 @@ const officers2025Spring = [
 		},
 	},
 
-	// { (LEFT THIS SEMESTER FOR INTERNSHIP IN AUSTIN! :))
-	// 	name: "Kaylee Scanlin",
-	// 	position: "Full Stack Workshops Officer",
-
-	// 	socials: {
-	// 		linkedin: "",
-	// 	},
-	// },
-
 	{
 		name: "Dominic McDonald",
 		position: "Data Science Workshops Officer",
@@ -222,6 +223,24 @@ const officers2025Spring = [
 
 		socials: {
 			linkedin: "https://www.linkedin.com/in/reyna-obreg%C3%B3n-8779322a8/",
+		},
+	},
+
+	{
+		name: "Joseph Giap",
+		position: "Events Logistics Director",
+
+		socials: {
+			linkedin: "https://www.linkedin.com/in/joseph-giap/",
+		},
+	},
+
+	{
+		name: "Alexander Sangurima",
+		position: "Full Stack Workshops Officer",
+
+		socials: {
+			linkedin: "https://www.linkedin.com/in/asangurima/",
 		},
 	},
 ];

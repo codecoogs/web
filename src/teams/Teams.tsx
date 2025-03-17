@@ -18,7 +18,7 @@ const ApplyButton = () => {
 
 	return (
 		<div className="animate-fade-down animate-delay-200 relative group">
-			<div className="absolute -inset-0.5 bg-dark-primary blur-lg rounded-full opacity-50 transform scale-75 group-hover:scale-100 transition-all duration-300"/>
+			<div className="absolute -inset-0.5 bg-dark-primary blur-lg rounded-full opacity-50 transform scale-75 group-hover:scale-100 transition-all duration-300" />
 			<a href="#teamMembers" className={style}>
 				<span className="flex items-center">
 					<span>Explore our teams</span>
