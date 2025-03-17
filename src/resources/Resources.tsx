@@ -90,7 +90,7 @@ function Resources() {
 			</h1>
 
 			<div className="my-10">
-				<ul className="flex flex-row gap-10 justify-center my-3">
+				<ul className="flex flex-col gap-10 justify-center my-3 md:flex-row">
 					{categories.map((category) => (
 						<ResourceCategory
 							key={category}
@@ -111,7 +111,7 @@ function Resources() {
 
 				<div className="flex justify-center mx-auto m-2">
 					<img
-						className="w-fit h-20 relative object-cover rounded-md"
+						className="max-h-28 relative object-cover rounded-md"
 						src={`/assets/${images.find((image) => image.includes(selected.toLowerCase())) ?? "socials"}-coco.webp`}
 						alt={selected}
 					/>

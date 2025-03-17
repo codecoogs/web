@@ -26,7 +26,7 @@ export function ResourceCategory({
 	return (
 		<button
 			type="button"
-			className={`w-[175px] hover:text-dark-primary ${selected ? "text-dark-primary" : "text-white"}`}
+			className={`w-full hover:text-dark-primary ${selected ? "text-dark-primary" : "text-white"}`}
 			onClick={() => onClick(category)}
 			onMouseEnter={() => setHovering(true)}
 			onMouseLeave={() => setHovering(false)}
