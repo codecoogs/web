@@ -15,6 +15,7 @@ import {
 	partners,
 } from "../data/about";
 import FadeInSection from "../common/FadeInSection";
+import { Link } from "react-router-dom";
 
 interface AboutSectionProps {
 	id: string;
@@ -363,6 +364,14 @@ const About = () => {
 										<h2 className="text-lg text-dark-primary">Competitions</h2>
 										<p className="text-sm opacity-70">{competitionsDesc}</p>
 									</>
+
+									<Link
+										className="w-fit mt-3 flex bg-dark-surface-variant hover:ring-dark-primary px-4 h-10 items-center text-center text-sm text-white rounded-lg ring-1 ring-inset ring-white"
+										to="/resources"
+										target="_self"
+									>
+										See Resources
+									</Link>
 								</FadeInSection>
 							</div>
 						</div>

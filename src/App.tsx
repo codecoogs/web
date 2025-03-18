@@ -8,7 +8,7 @@ import Members from "./members/Members";
 import Sponsors from "./sponsors/Sponsors";
 import Success from "./payments/Success";
 import Opportunities from "./opportunities/Opportunities";
-import Teams from "./teams/Teams";
+import Resources from "./resources/Resources";
 
 const App = () => {
 	return (
@@ -21,6 +21,7 @@ const App = () => {
 					<Route path="/sponsors" element={<Sponsors />} />
 					<Route path="/success" element={<Success />} />
 					<Route path="/opportunities" element={<Opportunities />} />
+					<Route path="/resources" element={<Resources />} />
 				</Routes>
 			</Layout>
 		</BrowserRouter>
