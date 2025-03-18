@@ -29,6 +29,15 @@ export const sponsors = [
 		width: 130,
 		// height: 10,
 	},
+
+	{
+		name: "Sysco",
+		link: "https://www.sysco.com/",
+		logo: "/assets/logos/sysco.svg",
+		width: 130,
+		// height: 10,
+	},
+
 	{
 		name: "Energy AI Solutions",
 		link: "https://energyaisolutions.com/",
