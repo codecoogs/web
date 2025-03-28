@@ -89,8 +89,8 @@ function Resources() {
 				Resources
 			</h1>
 
-			<div className="my-10">
-				<ul className="flex flex-col gap-10 justify-center my-3 md:flex-row">
+			<div className="mt-10 space-y-5">
+				<ul className="flex flex-col gap-10 justify-center md:flex-row">
 					{categories.map((category) => (
 						<ResourceCategory
 							key={category}
@@ -108,17 +108,9 @@ function Resources() {
 					onChange={(e) => setSearch(e.target.value)}
 					className="bg-white p-3 outline-none rounded focus:bg-light-primary focus:text-black focus:placeholder-black transition-colors"
 				/>
-
-				<div className="flex justify-center mx-auto m-2">
-					<img
-						className="max-h-28 relative object-cover rounded-md"
-						src={`/assets/${images.find((image) => image.includes(selected.toLowerCase())) ?? "socials"}-coco.webp`}
-						alt={selected}
-					/>
-				</div>
 			</div>
 
-			<ul className="flex flex-row flex-wrap gap-10 justify-center">
+			<ul className="my-10 flex flex-row flex-wrap gap-10 justify-center">
 				{resources.map((resource) => (
 					<ResourceItem
 						key={resource.id}
