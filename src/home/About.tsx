@@ -65,10 +65,7 @@ const OfficerCard = (props: OfficerCardProps) => {
 			.join("")
 			.toLowerCase();
 
-		image = `/assets/officers/${folderName}/${props.name.replace(
-			" ",
-			"",
-		)}.webp`;
+		image = `/assets/officers/${folderName}/${props.name.replace(" ", "")}.webp`;
 	}
 
 	console.log(image);
@@ -364,14 +361,6 @@ const About = () => {
 										<h2 className="text-lg text-dark-primary">Competitions</h2>
 										<p className="text-sm opacity-70">{competitionsDesc}</p>
 									</>
-
-									<Link
-										className="w-fit mt-3 flex bg-dark-surface-variant hover:ring-dark-primary px-4 h-10 items-center text-center text-sm text-white rounded-lg ring-1 ring-inset ring-white"
-										to="/resources"
-										target="_self"
-									>
-										See Resources
-									</Link>
 								</FadeInSection>
 							</div>
 						</div>
@@ -401,6 +390,31 @@ const About = () => {
 									</>
 								</FadeInSection>
 							</div>
+						</div>
+						<div className="flex flex-col items-center justify-center mb-10">
+							<FadeInSection
+								className={
+									"animate-fade-right animate-once animate-duration-[1700ms]"
+								}
+							>
+								<p className="text-sm opacity-70">
+									Check all of our available resources for Workshops,
+									Competitions, etc
+								</p>
+							</FadeInSection>
+							<FadeInSection
+								className={
+									"animate-fade-left animate-once animate-duration-[1700ms]"
+								}
+							>
+								<Link
+									className="w-fit mt-3 flex bg-dark-surface-variant hover:ring-dark-primary hover:text-dark-primary transition-all- duration-200 px-4 h-10 items-center text-center text-sm text-white rounded-lg ring-1 ring-inset ring-white"
+									to="/resources"
+									target="_self"
+								>
+									See Resources
+								</Link>
+							</FadeInSection>
 						</div>
 					</div>
 				</AboutSection>
