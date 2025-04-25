@@ -49,6 +49,7 @@ interface OfficerCardProps {
 	position: string;
 	photo?: string;
 	video?: string;
+	retired?: boolean;
 	semester: number;
 	socials: SocialsObj;
 }
@@ -87,6 +88,9 @@ const OfficerCard = (props: OfficerCardProps) => {
 				</div>
 				<span className="block text-sm font-bold pt-4">{props.name}</span>
 				<span className="block text-sm opacity-50">{props.position}</span>
+				{props.retired && (
+					<span className="block text-xs opacity-50">(retired)</span>
+				)}
 			</div>
 			<div className="pt-4">
 				<div className="flex space-x-2 justify-end">
@@ -186,6 +190,7 @@ const OfficerSection = () => {
 							photo={officer.photo}
 							video={officer.video}
 							socials={officer.socials}
+							retired={officer.retired}
 							semester={semester}
 						/>
 					);

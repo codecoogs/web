@@ -12,6 +12,7 @@ type Officer = {
 	position: string;
 	photo?: string;
 	video?: string;
+	retired?: boolean;
 	socials: {
 		linkedin: string;
 	};

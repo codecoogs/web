@@ -30,6 +30,13 @@ const officers2025Spring = [
 			linkedin: "https://www.linkedin.com/in/saloni-sharma-scholar/",
 		},
 	},
+	{
+		name: "Mark Pelico",
+		position: "VP of Operations",
+		socials: {
+			linkedin: "https://www.linkedin.com/in/mark-pelico-226328327/",
+		},
+	},
 
 	{
 		name: "Apraajita Sharma",
@@ -37,6 +44,7 @@ const officers2025Spring = [
 		socials: {
 			linkedin: "",
 		},
+		retired: true,
 	},
 
 	{
@@ -180,14 +188,6 @@ const officers2025Spring = [
 
 		socials: {
 			linkedin: "https://www.linkedin.com/in/zahirafidi/",
-		},
-	},
-
-	{
-		name: "Mark Pelico",
-		position: "Workshops Director",
-		socials: {
-			linkedin: "https://www.linkedin.com/in/mark-pelico-226328327/",
 		},
 	},
 
