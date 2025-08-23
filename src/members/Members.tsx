@@ -13,6 +13,9 @@ interface MemberBenefitCardProps {
 	index: number;
 }
 
+const YEARLY_PRICE = 30; // preventing hard coding...
+const SEMESTER_PRICE = 20;
+
 const MemberBenefitCard = (props: MemberBenefitCardProps) => {
 	const { benefit, index } = props;
 
@@ -41,25 +44,23 @@ const PricingCard = () => {
 				<div className="flex flex-col text-2xl">
 					<div>
 						<span className="text-3xl text-dark-primary">
-							{isYearly ? "$25" : "$15"}
+							{`$${isYearly ? YEARLY_PRICE : SEMESTER_PRICE}`}
 						</span>
 						<span> per </span>
 						<div
 							className="inline-block relative cursor-pointer h-8"
 							onClick={togglePricing}
-							onKeyDown={() => {}}
+							onKeyDown={() => { }}
 						>
 							<span
-								className={`absolute transition-all duration-300 ${
-									isYearly ? "top-2 opacity-100" : "-top-4 opacity-20"
-								}`}
+								className={`absolute transition-all duration-300 ${isYearly ? "top-2 opacity-100" : "-top-4 opacity-20"
+									}`}
 							>
 								year
 							</span>
 							<span
-								className={`absolute transition-all duration-300 ${
-									isYearly ? "-top-4 opacity-20" : "top-2 opacity-100"
-								}`}
+								className={`absolute transition-all duration-300 ${isYearly ? "-top-4 opacity-20" : "top-2 opacity-100"
+									}`}
 							>
 								semester
 							</span>
