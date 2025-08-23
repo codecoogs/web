@@ -142,7 +142,7 @@ const officers2025Spring = [
 		position: "Historian",
 
 		socials: {
-			linkedin: "",
+			linkedin: "https://www.linkedin.com/in/adaeze-owunna/",
 		},
 	},
 
