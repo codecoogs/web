@@ -12,7 +12,7 @@ export const benefits = [
 export const MEMBER_PRICES = {
 	semester: 20,
 	year: 30,
-}
+};
 
 export const faq = [
 	{
