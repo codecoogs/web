@@ -9,6 +9,11 @@ export const benefits = [
 	"Complimentary food at events",
 ];
 
+export const MEMBER_PRICES = {
+	semester: 20,
+	year: 30,
+};
+
 export const faq = [
 	{
 		question: "How much is membership?",

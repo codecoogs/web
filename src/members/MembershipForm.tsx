@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { SIGNUP_API_URL } from "../data/members";
+import { MEMBER_PRICES, SIGNUP_API_URL } from "../data/members";
 import type { StripeURL, SubmitProps } from "../common/interface";
 
 const SignUpForm: React.FC<{
@@ -265,8 +265,8 @@ const SignUpForm: React.FC<{
 					onChange={handleChange}
 					required
 				>
-					<option value="Semester">Semester ($15)</option>
-					<option value="Year">Year ($25)</option>
+					<option value="Semester">Semester (${MEMBER_PRICES.semester})</option>
+					<option value="Year">Year (${MEMBER_PRICES.year})</option>
 					{/* <option value="Zelle">Zelle</option> */}
 				</select>
 			</div>

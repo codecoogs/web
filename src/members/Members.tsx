@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 import MembershipForm from "./MembershipForm";
 
-import { benefits, faq } from "../data/members";
+import { benefits, faq, MEMBER_PRICES } from "../data/members";
 import { CheckIcon } from "./MembersIcons";
 import type { StripeURL, SubmitProps } from "../common/interface";
 import { useTitle } from "../common/utils";
@@ -41,7 +41,7 @@ const PricingCard = () => {
 				<div className="flex flex-col text-2xl">
 					<div>
 						<span className="text-3xl text-dark-primary">
-							{isYearly ? "$25" : "$15"}
+							{`$${isYearly ? MEMBER_PRICES.year : MEMBER_PRICES.semester}`}
 						</span>
 						<span> per </span>
 						<div
