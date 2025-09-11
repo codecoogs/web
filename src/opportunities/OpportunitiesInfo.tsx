@@ -16,18 +16,15 @@ const OpportunitiesRoles = [
 		year: "Fall 2025 - Spring 2026",
 		description:
 			"Lead a team to create innovative projects and present them to company representatives.",
-		applicationLink:
-			"",
+		applicationLink: "",
 	},
 
 	{
 		name: "Advanced Team",
 		icon: "/assets/opportunities/cues.svg",
 		year: "Fall 2025 - Spring 2026",
-		description:
-			"TBD",
-		applicationLink:
-			"",
+		description: "TBD",
+		applicationLink: "",
 	},
 
 	{
@@ -36,8 +33,7 @@ const OpportunitiesRoles = [
 		year: "Fall 2025 - Spring 2026",
 		description:
 			"Contribute to workshops, events, web development, and marketing initiatives.",
-		applicationLink:
-			"",
+		applicationLink: "",
 	},
 ];
 
