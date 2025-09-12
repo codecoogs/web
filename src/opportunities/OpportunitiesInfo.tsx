@@ -16,15 +16,17 @@ const OpportunitiesRoles = [
 		year: "Fall 2025 - Spring 2026",
 		description:
 			"Lead a team to create innovative projects and present them to company representatives.",
-		applicationLink: "",
+		applicationLink: 
+		"https://docs.google.com/forms/d/e/1FAIpQLSerxtg1YGQIz4ulbFYA1haIU1VpxARK14-YHhrcnR20ut8hcw/viewform?usp=sharing&ouid=100624813009928062247",
 	},
 
 	{
 		name: "Advanced Team",
 		icon: "/assets/opportunities/cues.svg",
 		year: "Fall 2025 - Spring 2026",
-		description: "TBD",
-		applicationLink: "",
+		description: "Collaborate with a team to build an AI Coaching Mentor Pairing Application for a sponsor.",
+		applicationLink: 
+		"https://docs.google.com/forms/d/e/1FAIpQLSeQ_Rr9VR5Q87lsvt8ofQ033VBmOo4EtlSSpEyhsToXM0fM5w/viewform",
 	},
 
 	{
