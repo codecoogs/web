@@ -74,4 +74,9 @@ export const partners = [
 		link: "https://www.cougarai.org/",
 		logo: "/assets/logos/cougarai.webp",
 	},
+	{
+		name: "IEEE",
+		link: "https://www.ieee.org/",
+		logo: "/assets/logos/ieee.png",
+	}
 ];
