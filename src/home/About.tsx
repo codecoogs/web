@@ -82,8 +82,8 @@ const OfficerCard = (props: OfficerCardProps) => {
 						onError={(e) => {
 							e.currentTarget.src = "/assets/happy-coco.webp";
 						}}
-					// onMouseOver={e => (e.currentTarget.src = props.video ? props.video : props.photo)}
-					// onMouseOut={e => (e.currentTarget.src = props.photo)}
+						// onMouseOver={e => (e.currentTarget.src = props.video ? props.video : props.photo)}
+						// onMouseOut={e => (e.currentTarget.src = props.photo)}
 					/>
 				</div>
 				<span className="block text-sm font-bold pt-4">{props.name}</span>
