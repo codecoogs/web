@@ -74,4 +74,18 @@ export const partners = [
 		link: "https://www.cougarai.org/",
 		logo: "/assets/logos/cougarai.webp",
 	},
+	{
+		name: "Cougarettes",
+		link: "https://uhcougarettes.com/",
+		logo: "/assets/logos/cougarettes.webp",
+		width: 120,
+		height: 70,
+	},
+	{
+		name: "IEEE-NSM",
+		link: "https://www.ieee-nsm.com/",
+		logo: "/assets/logos/IEEE-NSM.webp",
+		width: 90,
+		height: 90,
+	},
 ];

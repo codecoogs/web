@@ -254,21 +254,21 @@ const About = () => {
 							</>
 						</FadeInSection>
 					</div>
-					<div className="p-8 text-center w-full md:w-1/2">
+					<div className="p-8 text-center w-full md:w-[40%]">
 						<FadeInSection className={"animate-fade-left"}>
 							<>
 								<AboutSectionTitle>Our partners</AboutSectionTitle>
 								<div className="flex flex-wrap justify-center items-center pt-8">
 									{partners.map((partner, index) => {
 										return (
-											<div key={partner.name} className="p-4">
+											<div key={partner.name} className="px-4	py-1">
 												<a href={partner.link} target="_blank" rel="noreferrer">
 													<img
 														className=""
 														src={partner.logo}
 														alt={partner.name}
-														width={70}
-														height={70}
+														width={partner.width || 70}
+														height={partner.height || 70}
 													/>
 												</a>
 											</div>

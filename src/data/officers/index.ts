@@ -6,6 +6,7 @@ import Fall2023 from "./2023Fall";
 import Spring2024 from "./2024Spring";
 import Fall2024 from "./2024Fall";
 import Spring2025 from "./2025Spring";
+import Fall2025 from "./2025Fall";
 
 type Officer = {
 	name: string;
@@ -55,6 +56,10 @@ const officers: Officers = [
 	{
 		semester: "Spring 2025",
 		list: Spring2025,
+	},
+	{
+		semester: "Fall 2025",
+		list: Fall2025,
 	},
 ];
 
