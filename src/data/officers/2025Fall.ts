@@ -15,13 +15,13 @@ const officers2025Spring = [
 		},
 	},
 
-	{
-		name: "Zahi Rafidi",
-		position: "VP of External Relations",
-		socials: {
-			linkedin: "https://www.linkedin.com/in/zahirafidi/",
-		},
-	},
+	// {
+	// 	name: "Zahi Rafidi",
+	// 	position: "VP of External Relations",
+	// 	socials: {
+	// 		linkedin: "https://www.linkedin.com/in/zahirafidi/",
+	// 	},
+	// },
 
 	{
 		name: "Lulu Sartaj Mohammad",
@@ -58,7 +58,7 @@ const officers2025Spring = [
 		name: "Faiza Sachwani",
 		position: "Marketing Officer",
 		socials: {
-			linkedin: "",
+			linkedin: "https://www.linkedin.com/in/faiza-sachwani-180542297/",
 		},
 	},
 
@@ -107,16 +107,33 @@ const officers2025Spring = [
 		position: "Software Development Officer",
 
 		socials: {
-			linkedin: "https://www.linkedin.com/in/duc-nguyen-b27425287/",
+			linkedin: "https://www.linkedin.com/in/henry-duc/",
 		},
 	},
 
 	{
-		name: "Henry Nguyen",
+		name: "Dylan Le",
 		position: "Software Development Officer",
 
 		socials: {
-			linkedin: "https://www.linkedin.com/in/duc-nguyen-b27425287/",
+			linkedin: "",
+		},
+	},
+
+	{
+		name: "Alexander Sangurima",
+		position: "Software Development Officer",
+
+		socials: {
+			linkedin: "https://www.linkedin.com/in/asangurima/",
+		},
+	},
+
+	{
+		name: "Emma Nguyen",
+		position: "Team Director",
+		socials: {
+			linkedin: "https://www.linkedin.com/in/emma-nguyen05/",
 		},
 	},
 
