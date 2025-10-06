@@ -243,11 +243,11 @@ const officers2025Spring = [
 	},
 
 	{
-		name: "Narciso Gonzales",
+		name: "Harrison Anjuwon",
 		position: "DevOps Workshops Officer",
 
 		socials: {
-			linkedin: "https://www.linkedin.com/in/nargon/",
+			linkedin: "https://www.linkedin.com/in/harrisonan/",
 		},
 	},
 
