@@ -225,6 +225,15 @@ const officers2025Spring = [
 	},
 
 	{
+		name: "Johann Perez",
+		position: "Social Director",
+
+		socials: {
+			linkedin: "https://www.linkedin.com/in/joperez10/",
+		},
+	},
+
+	{
 		name: "Dominic McDonald",
 		position: "Workshops Director",
 
@@ -288,11 +297,11 @@ const officers2025Spring = [
 	},
 
 	{
-		name: "Johann Perez",
+		name: "Daniel Emami",
 		position: "Collaboration Officer",
 
 		socials: {
-			linkedin: "https://www.linkedin.com/in/joperez10/",
+			linkedin: "https://www.linkedin.com/in/demami/",
 		},
 	},
 ];
