@@ -25,7 +25,7 @@ const BackgroundRoles = () => {
 				marketing
 			</span>
 			<span className="animate-jump-in animate-delay-[550ms] absolute top-[22%] left-[35%] opacity-40 text-lg md:text-2xl lg:text-4xl text-[#EE9BE6]">
-				software dev
+				software development
 			</span>
 			<span className="animate-jump-in animate-delay-[650ms] absolute top-[17%] left-[55%] opacity-40 text-lg md:text-2xl lg:text-4xl text-[#887FF2]">
 				corporate relations
