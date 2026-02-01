@@ -66,7 +66,7 @@ const OfficerCard = (props: OfficerCardProps) => {
 			.join("")
 			.toLowerCase();
 
-		image = `/assets/officers/${folderName}/${props.name.replace(" ", "")}.webp`;
+		image = `/assets/officers/${folderName}/${props.name.replace(/ /g, "").toLowerCase()}.webp`;
 	}
 
 	console.log(image);
