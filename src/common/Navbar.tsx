@@ -113,6 +113,7 @@ const Navbar = () => {
 						<Navlink to="/events" text="Events" />
 						<Navlink to="/join" text="Membership" />
 						<Navlink to="/opportunities" text="Opportunities" />
+						<Navlink to="/officers" text="Officers" />
 						<Navlink to="/sponsors" text="Sponsor" />
 						<a href={discordLink} target="_blank" rel="noreferrer">
 							<div className="fill-white self-center">

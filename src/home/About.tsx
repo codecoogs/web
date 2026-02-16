@@ -428,7 +428,15 @@ const About = () => {
 			<FadeInSection
 				className={"animate-fade-up animate-once animate-duration-[1700ms]"}
 			>
-				<OfficerSection />
+				<div className="flex justify-center my-8">
+					<Link
+						className="w-fit mt-3 flex bg-dark-surface-variant hover:ring-dark-primary hover:text-dark-primary transition-all- duration-200 px-4 h-10 items-center text-center text-sm text-white rounded-lg ring-1 ring-inset ring-white"
+						to="/officers"
+						target="_self"
+					>
+						See Officers
+					</Link>
+				</div>
 			</FadeInSection>
 		</div>
 	);
