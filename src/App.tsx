@@ -9,6 +9,7 @@ import Sponsors from "./sponsors/Sponsors";
 import Success from "./payments/Success";
 import Opportunities from "./opportunities/Opportunities";
 import Resources from "./resources/Resources";
+import Officers from "./officers/Officers";
 
 const App = () => {
 	return (
@@ -22,6 +23,7 @@ const App = () => {
 					<Route path="/success" element={<Success />} />
 					<Route path="/opportunities" element={<Opportunities />} />
 					<Route path="/resources" element={<Resources />} />
+					<Route path="/officers" element={<Officers />} />
 				</Routes>
 			</Layout>
 		</BrowserRouter>
