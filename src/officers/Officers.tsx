@@ -57,12 +57,22 @@ const OfficerCard = (props: OfficerCardProps) => {
 			<div className="pt-4">
 				<div className="flex space-x-2 justify-end">
 					{instagram && (
-						<a href={instagram} target="_blank" rel="noreferrer" aria-label="Go to our Instagram">
+						<a
+							href={instagram}
+							target="_blank"
+							rel="noreferrer"
+							aria-label="Go to our Instagram"
+						>
 							<InstagramIcon />
 						</a>
 					)}
 					{linkedin && (
-						<a href={linkedin} target="_blank" rel="noreferrer" aria-label="Go to our LinkedIn">
+						<a
+							href={linkedin}
+							target="_blank"
+							rel="noreferrer"
+							aria-label="Go to our LinkedIn"
+						>
 							<LinkedInIcon />
 						</a>
 					)}
@@ -75,7 +85,8 @@ const OfficerCard = (props: OfficerCardProps) => {
 const OfficersPage = () => {
 	const numOfficers = officers.length;
 	const [semester, setSemester] = useState<number>(numOfficers - 1);
-	const [officerCardOpacity, setOfficerCardOpacity] = useState<string>("opacity-100");
+	const [officerCardOpacity, setOfficerCardOpacity] =
+		useState<string>("opacity-100");
 
 	const changeSemester = (newSemester: number) => {
 		setOfficerCardOpacity("opacity-0");
@@ -103,8 +114,12 @@ const OfficersPage = () => {
 	const isVP = (p: string) => /\bvp\b|vice\s*president/i.test(p);
 
 	const presidents = currentList.filter((o) => isPresident(o.position));
-	const vps = currentList.filter((o) => !isPresident(o.position) && isVP(o.position));
-	const others = currentList.filter((o) => !isPresident(o.position) && !isVP(o.position));
+	const vps = currentList.filter(
+		(o) => !isPresident(o.position) && isVP(o.position),
+	);
+	const others = currentList.filter(
+		(o) => !isPresident(o.position) && !isVP(o.position),
+	);
 
 	return (
 		<div className="text-white p-4">
@@ -118,25 +133,44 @@ const OfficersPage = () => {
 					<div className="flex text-lg justify-center items-center space-x-4 my-8">
 						<div className="flex-1 relative">
 							<div className="relative flex justify-end">
-								<span className={"absolute transition-transform duration-300 opacity-30 cursor-pointer translate-x-0 -translate-y-6"} onClick={handleDecrementSemester} onKeyDown={handleDecrementSemester}>
+								<span
+									className={
+										"absolute transition-transform duration-300 opacity-30 cursor-pointer translate-x-0 -translate-y-6"
+									}
+									onClick={handleDecrementSemester}
+									onKeyDown={handleDecrementSemester}
+								>
 									{semester - 1 >= 0 && officers[semester - 1].semester}
 								</span>
 								<span className={"text-dark-primary opacity-100 z-10"}>
 									{officers[semester].semester}
 								</span>
-								<span className={"absolute transition-transform duration-300 opacity-30 cursor-pointer translate-y-6"} onClick={handleIncrementSemester} onKeyUp={handleIncrementSemester}>
-									{semester + 1 < numOfficers && officers[semester + 1].semester}
+								<span
+									className={
+										"absolute transition-transform duration-300 opacity-30 cursor-pointer translate-y-6"
+									}
+									onClick={handleIncrementSemester}
+									onKeyUp={handleIncrementSemester}
+								>
+									{semester + 1 < numOfficers &&
+										officers[semester + 1].semester}
 								</span>
 							</div>
 						</div>
-						<span className="flex-1 text-left relative z-10 ml-4">Officers</span>
+						<span className="flex-1 text-left relative z-10 ml-4">
+							Officers
+						</span>
 					</div>
 
 					{/* President section */}
 					{presidents.length > 0 && (
 						<div className="mb-8">
-							<h2 className="text-2xl text-dark-primary font-bold mb-4">President</h2>
-							<div className={`flex justify-center transition-opacity duration-500 ${officerCardOpacity}`}>
+							<h2 className="text-2xl text-dark-primary font-bold mb-4">
+								President
+							</h2>
+							<div
+								className={`flex justify-center transition-opacity duration-500 ${officerCardOpacity}`}
+							>
 								<div className="w-full md:w-1/3">
 									<div className="grid grid-cols-1 gap-4">
 										{presidents.map((officer) => (
@@ -160,8 +194,12 @@ const OfficersPage = () => {
 					{/* Vice Presidents section (larger title; responsive layout for 3 VPs) */}
 					{vps.length > 0 && (
 						<div className="mb-8">
-							<h2 className="text-2xl text-dark-primary font-bold mb-4">Vice Presidents</h2>
-							<div className={`transition-opacity duration-500 ${officerCardOpacity}`}>
+							<h2 className="text-2xl text-dark-primary font-bold mb-4">
+								Vice Presidents
+							</h2>
+							<div
+								className={`transition-opacity duration-500 ${officerCardOpacity}`}
+							>
 								{/* If exactly 3 VPs: show single-row on md+, stacked with top centered on small screens */}
 								{vps.length === 3 ? (
 									<>
@@ -213,7 +251,9 @@ const OfficersPage = () => {
 										</div>
 									</>
 								) : (
-									<div className={`grid grid-cols-1 md:grid-cols-3 gap-4 transition-opacity duration-500 ${officerCardOpacity}`}>
+									<div
+										className={`grid grid-cols-1 md:grid-cols-3 gap-4 transition-opacity duration-500 ${officerCardOpacity}`}
+									>
 										{vps.map((officer) => (
 											<OfficerCard
 												key={officer.name}
@@ -235,8 +275,12 @@ const OfficersPage = () => {
 					{/* Regular officers section */}
 					{others.length > 0 && (
 						<div className="mb-8">
-							<h2 className="text-2xl text-dark-primary font-bold mb-4">Officers</h2>
-							<div className={`grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-0 md:px-8 ease-in-out transition-opacity duration-500 ${officerCardOpacity}`}>
+							<h2 className="text-2xl text-dark-primary font-bold mb-4">
+								Officers
+							</h2>
+							<div
+								className={`grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-0 md:px-8 ease-in-out transition-opacity duration-500 ${officerCardOpacity}`}
+							>
 								{others.map((officer) => (
 									<OfficerCard
 										key={officer.name}
