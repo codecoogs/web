@@ -15,4 +15,4 @@ jobs:
         with:
           version: latest
       - name: Run Biome
-        run: biome ci --organize-imports-enabled=false .
+        run: npx @biomejs/biome check --linter-enabled=true --formatter-enabled=true --organize-imports-enabled=false .
