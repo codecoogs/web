@@ -17,7 +17,7 @@ export const MEMBER_PRICES = {
 export const faq = [
 	{
 		question: "How much is membership?",
-		answer: "$25 dollars for the whole year or $15 dollars per semester",
+		answer: "$30 dollars for the whole year or $20 dollars per semester",
 	},
 	{
 		question: "What makes Code[Coogs] special?",

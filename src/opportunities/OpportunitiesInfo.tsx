@@ -7,7 +7,8 @@ const OpportunitiesRoles = [
 		year: "Spring 2026",
 		description:
 			"Gain hands-on experience by working under a director, with the opportunity to grow into an officer role.",
-		applicationLink: "https://docs.google.com/forms/d/e/1FAIpQLSekGmK75Gv-zXcM_2FGh6JrjeQuMYID2OSyIDu3-VrQ8tyCXw/viewform?usp=dialog",
+		applicationLink:
+			"https://docs.google.com/forms/d/e/1FAIpQLSekGmK75Gv-zXcM_2FGh6JrjeQuMYID2OSyIDu3-VrQ8tyCXw/viewform?usp=dialog",
 	},
 
 	{
@@ -16,20 +17,17 @@ const OpportunitiesRoles = [
 		year: "Spring 2026",
 		description:
 			"Get mentorship from a Code Coogs mentor, get help with resumes, interviews, etc.",
-		applicationLink:
-			"https://forms.gle/DZ5kgJWWuPsxHFBs8",
+		applicationLink: "https://forms.gle/DZ5kgJWWuPsxHFBs8",
 	},
 
 	{
 		name: "Members Only Teams",
 		icon: "/assets/opportunities/cues.svg",
 		year: "Fall 2024 - Spring 2025",
-		description:
-			"Become a part of a team and build a fun project together!",
+		description: "Become a part of a team and build a fun project together!",
 		applicationLink:
 			"https://docs.google.com/forms/d/e/1FAIpQLSfXB-asea_xzEsDefKL5bBQmGolWeslRzXi08b7Bc2m1TO-EA/viewform?usp=dialog",
 	},
-
 ];
 
 const style =
