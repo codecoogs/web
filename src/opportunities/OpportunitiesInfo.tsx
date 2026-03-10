@@ -4,41 +4,32 @@ const OpportunitiesRoles = [
 	{
 		name: "Intern",
 		icon: "/assets/opportunities/intern.svg",
-		year: "Fall 2024",
+		year: "Spring 2026",
 		description:
 			"Gain hands-on experience by working under a director, with the opportunity to grow into an officer role.",
-		applicationLink: "https://forms.gle/9PZiZkXpjcGVRVzUA",
+		applicationLink: "https://docs.google.com/forms/d/e/1FAIpQLSekGmK75Gv-zXcM_2FGh6JrjeQuMYID2OSyIDu3-VrQ8tyCXw/viewform?usp=dialog",
 	},
 
 	{
-		name: "Team Lead",
+		name: "Code Coogs Mentorship",
 		icon: "/assets/opportunities/teamLead.svg",
-		year: "Fall 2024 - Spring 2025",
+		year: "Spring 2026",
 		description:
-			"Lead a team to create innovative projects and present them to company representatives.",
+			"Get mentorship from a Code Coogs mentor, get help with resumes, interviews, etc.",
 		applicationLink:
-			"https://docs.google.com/forms/d/e/1FAIpQLSdtJq9k76CMKvqo_MhmHVVGM0ZncKllp5vZ67BRs2IuGBOvsA/viewform",
+			"https://forms.gle/DZ5kgJWWuPsxHFBs8",
 	},
 
 	{
-		name: "CUES - Advanced Team",
+		name: "Members Only Teams",
 		icon: "/assets/opportunities/cues.svg",
 		year: "Fall 2024 - Spring 2025",
 		description:
-			"Partner with UH research faculty to develop a Nigerian employment database.",
+			"Become a part of a team and build a fun project together!",
 		applicationLink:
-			"https://docs.google.com/forms/d/e/1FAIpQLScwDkeMms9bg7D_SZ8mqVCBJWdYoHpaKomR38A0IXZcuJw3og/viewform",
+			"https://docs.google.com/forms/d/e/1FAIpQLSfXB-asea_xzEsDefKL5bBQmGolWeslRzXi08b7Bc2m1TO-EA/viewform?usp=dialog",
 	},
 
-	{
-		name: "Committee Position",
-		icon: "/assets/opportunities/committee.svg",
-		year: "Fall 2024 - Spring 2025",
-		description:
-			"Contribute to workshops, events, web development, and marketing initiatives.",
-		applicationLink:
-			"https://docs.google.com/forms/d/e/1FAIpQLSe2ek4WWAqtz3If-p55_HuN1DNjL9xHhegTxytHtZDXOb79Bw/viewform",
-	},
 ];
 
 const style =
