@@ -7,12 +7,12 @@
 	},
 	"dependencies": {
 		"@biomejs/biome": "^1.9.4",
-		"@react-pdf-viewer/core": "^3.12.0",
-		"@react-pdf-viewer/default-layout": "^3.12.0",
-		"esbuild": "^0.14.49",
+		"esbuild": "^0.28.0",
+		"pdfjs-dist": "^5.4.296",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"react-pageflip": "^2.0.3",
+		"react-pdf": "^10.4.1",
 		"react-quizlet-flashcard": "^3.0.0",
 		"react-router-dom": "^6.3.0",
 		"tailwindcss-animated": "^1.1.2"
@@ -20,12 +20,12 @@
 	"devDependencies": {
 		"@types/react": "^18.2.18",
 		"@types/react-dom": "^18.0.6",
-		"@vitejs/plugin-react": "^2.0.0",
+		"@vitejs/plugin-react": "^6.0.2",
 		"autoprefixer": "^10.4.7",
 		"husky": "^9.1.7",
 		"postcss": "^8.4.14",
 		"tailwindcss": "^3.1.6",
 		"typescript": "^4.7.4",
-		"vite": "^3.0.2"
+		"vite": "^8.0.16"
 	}
 }
