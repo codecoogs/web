@@ -53,11 +53,16 @@ const PDFViewer: React.FC<PDFViewerProps> = ({ pdfUrl }) => {
 	};
 
 	return (
-		<div ref={containerRef} className="w-full max-w-full h-[85vh] overflow-x-hidden overflow-y-auto bg-gray-900 px-4 py-4">
+		<div
+			ref={containerRef}
+			className="w-full max-w-full h-[85vh] overflow-x-hidden overflow-y-auto bg-gray-900 px-4 py-4"
+		>
 			<div className="mb-4 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
 				<div>
 					<p className="text-lg font-semibold text-white">Sponsorship PDF</p>
-					<p className="text-sm text-white">Download or view the document below.</p>
+					<p className="text-sm text-white">
+						Download or view the document below.
+					</p>
 				</div>
 				<a
 					href={pdfUrl}
@@ -76,10 +81,17 @@ const PDFViewer: React.FC<PDFViewerProps> = ({ pdfUrl }) => {
 					</p>
 				</div>
 			) : (
-				<Document file={pdfUrl} onLoadSuccess={onDocumentLoadSuccess} onLoadError={onDocumentLoadError}>
+				<Document
+					file={pdfUrl}
+					onLoadSuccess={onDocumentLoadSuccess}
+					onLoadError={onDocumentLoadError}
+				>
 					{numPages &&
 						Array.from(new Array(numPages), (_, index) => (
-							<div key={`page_${index + 1}`} className="mb-6 flex justify-center">
+							<div
+								key={`page_${index + 1}`}
+								className="mb-6 flex justify-center"
+							>
 								<Page pageNumber={index + 1} width={pageWidth || 300} />
 							</div>
 						))}
