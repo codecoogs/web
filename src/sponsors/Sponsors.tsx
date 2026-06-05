@@ -1,6 +1,4 @@
-import React from "react";
 import PDFViewer from "../common/PDFViewer";
-import "@react-pdf-viewer/default-layout/lib/styles/index.css";
 import { useTitle } from "../common/utils";
 
 const Sponsors = () => {
@@ -8,7 +6,7 @@ const Sponsors = () => {
 
 	return (
 		<div className=" flex justify-center">
-			<PDFViewer pdfUrl="/sponsorship.pdf" />
+			<PDFViewer pdfUrl="/26-27_Code_Coogs_Sponsorship.pdf" />
 		</div>
 	);
 };

@@ -13,6 +13,6 @@ jobs:
       - name: Setup Biome
         uses: biomejs/setup-biome@v2
         with:
-          version: latest
+          version: 1.9.4
       - name: Run Biome
-        run: npx @biomejs/biome check --linter-enabled=true --formatter-enabled=true --organize-imports-enabled=false .
+        run: biome check --linter-enabled=true --formatter-enabled=true --organize-imports-enabled=false .
