@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useTitle } from "../common/utils";
 import FadeInSection from "../common/FadeInSection";
+import { companyLogos } from "./AboutLogos";
+import { sponsors, partners } from "../data/about";
 
 // ─── Hero Buttons ────────────────────────────────────────────────────────────
 
@@ -238,6 +240,133 @@ const StatsBar = () => (
 			))}
 		</div>
 	</div>
+);
+
+// ─── Sponsor Carousel ─────────────────────────────────────────────────────────
+
+const SponsorCarousel = () => {
+	// Quadruple the list so the seamless loop never shows gaps
+	const items = [...sponsors, ...sponsors, ...sponsors, ...sponsors];
+
+	return (
+		<section className="py-14 bg-dark-surface border-y border-white/[0.05] overflow-hidden relative">
+			<FadeInSection className="animate-fade-up">
+				<p className="text-center text-xs font-semibold tracking-[0.3em] uppercase text-white/30 mb-8">
+					Our Sponsors
+				</p>
+			</FadeInSection>
+
+			<div className="relative">
+				{/* Left fade */}
+				<div
+					className="absolute left-0 top-0 bottom-0 w-32 z-10 pointer-events-none"
+					style={{
+						background:
+							"linear-gradient(to right, #121212 0%, transparent 100%)",
+					}}
+				/>
+				{/* Right fade */}
+				<div
+					className="absolute right-0 top-0 bottom-0 w-32 z-10 pointer-events-none"
+					style={{
+						background:
+							"linear-gradient(to left, #121212 0%, transparent 100%)",
+					}}
+				/>
+
+				{/* Scrolling track */}
+				<div className="flex animate-marquee w-max gap-16 items-center">
+					{items.map((sponsor, i) => (
+						<a
+							key={`${sponsor.name}-${i}`}
+							href={sponsor.link}
+							target="_blank"
+							rel="noreferrer"
+							title={sponsor.name}
+							className="flex-shrink-0 opacity-40 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0"
+						>
+							<img
+								src={sponsor.logo}
+								alt={sponsor.name}
+								className={`h-9 w-auto object-contain ${sponsor.class ?? ""}`}
+								style={{ maxWidth: sponsor.width ? `${sponsor.width}px` : "120px" }}
+							/>
+						</a>
+					))}
+				</div>
+			</div>
+		</section>
+	);
+};
+
+// ─── Alumni + Partners Split ──────────────────────────────────────────────────
+
+const AlumniPartnersSection = () => (
+	<section className="py-20 bg-dark-surface-variant border-b border-white/[0.05]">
+		<div className="max-w-6xl mx-auto px-6">
+			<div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-0 md:divide-x md:divide-white/[0.07]">
+				{/* Left — Alumni companies */}
+				<div className="md:pr-12">
+					<FadeInSection className="animate-fade-right">
+						<>
+							<p className="text-xs font-semibold tracking-[0.3em] uppercase text-white/30 mb-2">
+								Alumni Network
+							</p>
+							<h2 className="font-display text-2xl md:text-3xl font-bold text-white mb-8">
+								Where Our Alumni Work
+							</h2>
+							<div className="flex flex-wrap gap-x-8 gap-y-6 items-center">
+								{companyLogos.map(({ name, component: Logo }) => (
+									<div
+										key={name}
+										className="opacity-50 hover:opacity-100 transition-opacity duration-200 grayscale hover:grayscale-0"
+										title={name}
+									>
+										<Logo />
+									</div>
+								))}
+							</div>
+						</>
+					</FadeInSection>
+				</div>
+
+				{/* Right — Partner organizations */}
+				<div className="md:pl-12">
+					<FadeInSection className="animate-fade-left">
+						<>
+							<p className="text-xs font-semibold tracking-[0.3em] uppercase text-white/30 mb-2">
+								Collaborations
+							</p>
+							<h2 className="font-display text-2xl md:text-3xl font-bold text-white mb-8">
+								Our Partner Organizations
+							</h2>
+							<div className="flex flex-wrap gap-6 items-center">
+								{partners.map((partner) => (
+									<a
+										key={partner.name}
+										href={partner.link}
+										target="_blank"
+										rel="noreferrer"
+										title={partner.name}
+										className="opacity-50 hover:opacity-100 transition-opacity duration-200 grayscale hover:grayscale-0"
+									>
+										<img
+											src={partner.logo}
+											alt={partner.name}
+											className="h-14 w-auto object-contain"
+											style={{
+												maxWidth: partner.width ? `${partner.width}px` : "120px",
+											}}
+										/>
+									</a>
+								))}
+							</div>
+						</>
+					</FadeInSection>
+				</div>
+			</div>
+		</div>
+	</section>
 );
 
 // ─── Life at Code Coogs — Bento Gallery ──────────────────────────────────────
@@ -504,6 +633,8 @@ const Home = () => {
 		<div>
 			<HeroSection />
 			<StatsBar />
+			<SponsorCarousel />
+			<AlumniPartnersSection />
 			<GallerySection />
 			<FeatureTeaserSection />
 		</div>

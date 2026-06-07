@@ -11,6 +11,18 @@
 	}
 }
 
+/* ── Sponsor marquee ─────────────────────────────────────────── */
+@keyframes marquee {
+	0%   { transform: translateX(0); }
+	100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+	animation: marquee 28s linear infinite;
+}
+.animate-marquee:hover {
+	animation-play-state: paused;
+}
+
 /* HTML: <div class="loader"></div> */
 .loader {
 	width: 80px;
