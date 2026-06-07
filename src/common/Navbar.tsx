@@ -28,7 +28,9 @@ const Navlink = ({ to, text, onClick }: NavlinkProps) => {
 				{/* text colour */}
 				<span
 					className={`transition-colors duration-200 ${
-						isActive ? "text-dark-primary" : "text-white/70 group-hover:text-white"
+						isActive
+							? "text-dark-primary"
+							: "text-white/70 group-hover:text-white"
 					}`}
 				>
 					{text}
@@ -58,7 +60,9 @@ const Navhome = ({ onClick }: { onClick?: () => void }) => {
 			onMouseLeave={() => setHovered(false)}
 		>
 			<img
-				src={hovered ? "/assets/determined-coco.webp" : "/assets/happy-coco.webp"}
+				src={
+					hovered ? "/assets/determined-coco.webp" : "/assets/happy-coco.webp"
+				}
 				alt="Coco mascot"
 				width={40}
 				height={40}
@@ -189,7 +193,9 @@ const Navbar = () => {
 			{/* Mobile drawer backdrop */}
 			<div
 				className={`fixed inset-0 z-40 bg-black/50 backdrop-blur-sm transition-opacity duration-300 md:hidden ${
-					drawerOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+					drawerOpen
+						? "opacity-100 pointer-events-auto"
+						: "opacity-0 pointer-events-none"
 				}`}
 				aria-hidden="true"
 			/>

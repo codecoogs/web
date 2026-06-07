@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer base {
+	body {
+		@apply bg-dark-surface;
+	}
 	html {
 		@apply scroll-smooth;
 	}
