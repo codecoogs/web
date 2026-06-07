@@ -85,8 +85,7 @@ const HeroCollage = () => (
 		<div
 			className="absolute inset-y-0 left-0 w-32 z-10 pointer-events-none"
 			style={{
-				background:
-					"linear-gradient(to right, #121212 0%, transparent 100%)",
+				background: "linear-gradient(to right, #121212 0%, transparent 100%)",
 			}}
 		/>
 		<div className="grid grid-cols-3 grid-rows-2 w-full h-full gap-1">
@@ -384,9 +383,9 @@ const FeatureCard = ({
 	linkTo,
 	accentColor,
 }: FeatureCardProps) => (
-	<div className="group relative flex flex-col bg-dark-surface-variant rounded-2xl overflow-hidden ring-1 ring-white/[0.07] hover:ring-dark-primary/50 transition-all duration-300 hover:-translate-y-1">
-		{/* image area */}
-		<div className="relative h-44 overflow-hidden bg-dark-surface flex items-center justify-center">
+	<div className="group relative flex flex-col bg-dark-surface-variant rounded-2xl overflow-hidden ring-1 ring-white/[0.07] hover:ring-dark-primary/50 transition-all duration-300 hover:-translate-y-1 h-full">
+		{/* image area — fixed height so all cards match */}
+		<div className="relative h-48 flex-shrink-0 overflow-hidden bg-dark-surface flex items-center justify-center">
 			<img
 				src={image}
 				alt={title}
@@ -396,8 +395,7 @@ const FeatureCard = ({
 			<div
 				className="absolute bottom-0 left-0 right-0 h-16 pointer-events-none"
 				style={{
-					background:
-						"linear-gradient(to bottom, transparent, #161616)",
+					background: "linear-gradient(to bottom, transparent, #161616)",
 				}}
 			/>
 		</div>
@@ -413,9 +411,11 @@ const FeatureCard = ({
 			<p className="text-white/60 text-sm leading-relaxed flex-1">
 				{description}
 			</p>
+			{/* "Learn more" color matches the card's accent */}
 			<Link
 				to={linkTo}
-				className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-dark-primary hover:gap-3 transition-all duration-200"
+				className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold hover:gap-3 transition-all duration-200"
+				style={{ color: accentColor }}
 			>
 				Learn more
 				<svg
@@ -440,7 +440,7 @@ const FeatureCard = ({
 		<div
 			className="absolute -inset-px rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
 			style={{
-				background: `radial-gradient(400px circle at var(--mouse-x,50%) var(--mouse-y,50%), ${accentColor}18, transparent 40%)`,
+				background: `radial-gradient(400px circle at 50% 50%, ${accentColor}15, transparent 60%)`,
 			}}
 		/>
 	</div>
@@ -460,7 +460,7 @@ const FeatureTeaserSection = () => (
 				</div>
 			</FadeInSection>
 
-			<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+			<div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
 				<FadeInSection className="animate-fade-up">
 					<FeatureCard
 						image="/assets/teams-coco.webp"
