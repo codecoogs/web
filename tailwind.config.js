@@ -35,6 +35,8 @@ module.exports = {
 		},
 		fontFamily: {
 			custom: ["Fira Code"],
+			display: ["Montserrat", "sans-serif"],
+			body: ["Montserrat", "sans-serif"],
 		},
 	},
 
