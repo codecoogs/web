@@ -167,6 +167,7 @@ const Navbar = () => {
 
 				{/* Mobile hamburger — always visible on small screens */}
 				<button
+					type="button"
 					className="md:hidden mr-4 flex flex-col justify-center gap-[5px] w-8 h-8 group"
 					onClick={() => setDrawerOpen((o) => !o)}
 					aria-label="Toggle menu"
@@ -228,6 +229,7 @@ const Navbar = () => {
 								height="14"
 								viewBox="0 0 14 14"
 								fill="none"
+								aria-hidden="true"
 								className="text-white/20 group-hover:text-dark-primary transition-colors duration-200"
 							>
 								<path

@@ -201,7 +201,13 @@ const HeroSection = () => (
 		{/* scroll hint */}
 		<div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-white/30 text-xs tracking-widest uppercase animate-bounce">
 			<span>Scroll</span>
-			<svg width="12" height="18" viewBox="0 0 12 18" fill="none">
+			<svg
+				width="12"
+				height="18"
+				viewBox="0 0 12 18"
+				fill="none"
+				aria-hidden="true"
+			>
 				<path
 					d="M6 0v14M1 9l5 5 5-5"
 					stroke="currentColor"

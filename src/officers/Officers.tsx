@@ -212,12 +212,19 @@ const SemesterSelector = ({
 }: SemesterSelectorProps) => (
 	<div className="flex items-center justify-center gap-4 mb-10">
 		<button
+			type="button"
 			onClick={onPrev}
 			disabled={semester === 0}
 			aria-label="Previous semester"
 			className="w-8 h-8 flex items-center justify-center rounded-full ring-1 ring-white/10 text-white/40 hover:text-white hover:ring-dark-primary/60 disabled:opacity-20 disabled:cursor-not-allowed transition-all duration-200"
 		>
-			<svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+			<svg
+				width="14"
+				height="14"
+				viewBox="0 0 14 14"
+				fill="none"
+				aria-hidden="true"
+			>
 				<path
 					d="M9 2L4 7l5 5"
 					stroke="currentColor"
@@ -233,12 +240,19 @@ const SemesterSelector = ({
 		</span>
 
 		<button
+			type="button"
 			onClick={onNext}
 			disabled={semester === total - 1}
 			aria-label="Next semester"
 			className="w-8 h-8 flex items-center justify-center rounded-full ring-1 ring-white/10 text-white/40 hover:text-white hover:ring-dark-primary/60 disabled:opacity-20 disabled:cursor-not-allowed transition-all duration-200"
 		>
-			<svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+			<svg
+				width="14"
+				height="14"
+				viewBox="0 0 14 14"
+				fill="none"
+				aria-hidden="true"
+			>
 				<path
 					d="M5 2l5 5-5 5"
 					stroke="currentColor"
