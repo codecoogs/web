@@ -55,7 +55,7 @@ const PDFViewer: React.FC<PDFViewerProps> = ({ pdfUrl }) => {
 	return (
 		<div
 			ref={containerRef}
-			className="modern-scrollbar w-full max-w-full h-[85vh] overflow-x-hidden overflow-y-auto bg-gray-900"
+			className="w-full max-w-full h-[85vh] overflow-x-hidden overflow-y-auto bg-gray-900"
 		>
 			{/* Sticky toolbar — stays visible while scrolling through the PDF */}
 			<div className="sticky top-0 z-10 flex flex-col gap-3 border-b border-white/10 bg-gray-900/90 px-4 py-4 backdrop-blur md:flex-row md:items-center md:justify-between">
