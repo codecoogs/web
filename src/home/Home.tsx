@@ -289,7 +289,9 @@ const SponsorCarousel = () => {
 								src={sponsor.logo}
 								alt={sponsor.name}
 								className={`h-9 w-auto object-contain ${sponsor.class ?? ""}`}
-								style={{ maxWidth: sponsor.width ? `${sponsor.width}px` : "120px" }}
+								style={{
+									maxWidth: sponsor.width ? `${sponsor.width}px` : "120px",
+								}}
 							/>
 						</a>
 					))}
@@ -348,14 +350,16 @@ const AlumniPartnersSection = () => (
 										target="_blank"
 										rel="noreferrer"
 										title={partner.name}
-										className="opacity-50 hover:opacity-100 transition-opacity duration-200 grayscale hover:grayscale-0"
+										className="opacity-80 hover:opacity-100 transition-opacity duration-200"
 									>
 										<img
 											src={partner.logo}
 											alt={partner.name}
 											className="h-14 w-auto object-contain"
 											style={{
-												maxWidth: partner.width ? `${partner.width}px` : "120px",
+												maxWidth: partner.width
+													? `${partner.width}px`
+													: "120px",
 											}}
 										/>
 									</a>

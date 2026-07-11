@@ -69,9 +69,7 @@ const OfficerCard = (props: OfficerCardProps) => {
 	}
 
 	return (
-		<div
-			className="group relative flex flex-col bg-dark-surface-variant rounded-xl overflow-hidden ring-1 ring-inset ring-white/10 hover:ring-dark-primary/50 transform transition-all hover:-translate-y-1 duration-300"
-		>
+		<div className="group relative flex flex-col bg-dark-surface-variant rounded-xl overflow-hidden ring-1 ring-inset ring-white/10 hover:ring-dark-primary/50 transform transition-all hover:-translate-y-1 duration-300">
 			<div className="flex flex-col flex-1 p-4 text-center">
 				{/* Avatar */}
 				<div className="w-20 h-20 md:w-24 md:h-24 mx-auto mt-2 mb-3">
