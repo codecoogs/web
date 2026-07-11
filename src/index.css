@@ -3,9 +3,51 @@
 @tailwind utilities;
 
 @layer base {
+	body {
+		@apply bg-dark-surface;
+	}
 	html {
 		@apply scroll-smooth;
 	}
+}
+
+/* ── Modern scrollbar (applied app-wide) ─────────────────────── */
+html {
+	scrollbar-width: thin;
+	scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+::-webkit-scrollbar-track {
+	background: transparent;
+}
+::-webkit-scrollbar-thumb {
+	background-color: rgba(255, 255, 255, 0.18);
+	border-radius: 9999px;
+	border: 2px solid transparent;
+	background-clip: content-box;
+	transition: background-color 0.2s;
+}
+::-webkit-scrollbar-thumb:hover {
+	background-color: rgba(117, 228, 255, 0.6);
+}
+
+/* ── Sponsor marquee ─────────────────────────────────────────── */
+@keyframes marquee {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-50%);
+	}
+}
+.animate-marquee {
+	animation: marquee 28s linear infinite;
+}
+.animate-marquee:hover {
+	animation-play-state: paused;
 }
 
 /* HTML: <div class="loader"></div> */

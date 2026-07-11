@@ -9,7 +9,7 @@ interface LayoutProps {
 
 const Layout = (props: LayoutProps) => {
 	return (
-		<div className="flex flex-col min-h-screen font-custom">
+		<div className="flex flex-col min-h-screen font-body">
 			<Navbar />
 			<main className="flex-1 bg-dark-surface">{props.children}</main>
 			<Footer />

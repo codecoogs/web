@@ -53,50 +53,57 @@ const PDFViewer: React.FC<PDFViewerProps> = ({ pdfUrl }) => {
 	};
 
 	return (
-		<div
-			ref={containerRef}
-			className="w-full max-w-full h-[85vh] overflow-x-hidden overflow-y-auto bg-gray-900 px-4 py-4"
-		>
-			<div className="mb-4 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+		<div className="w-full max-w-full h-[85vh] flex flex-col overflow-hidden bg-gray-900">
+			{/* Toolbar — pinned above the scroll area so the scrollbar sits beneath it */}
+			<div className="flex flex-col gap-3 border-b border-white/10 bg-gray-900/90 px-4 py-4 backdrop-blur md:flex-row md:items-center md:justify-between">
 				<div>
 					<p className="text-lg font-semibold text-white">Sponsorship PDF</p>
-					<p className="text-sm text-white">
+					<p className="text-sm text-white/60">
 						Download or view the document below.
 					</p>
 				</div>
 				<a
 					href={pdfUrl}
 					download
-					className="inline-flex items-center justify-center rounded-md bg-cyan-500 px-4 py-2 text-sm font-medium text-white transition hover:bg-cyan-400"
+					className="inline-flex items-center justify-center rounded-md bg-dark-primary px-4 py-2 text-sm font-medium text-dark-surface transition hover:brightness-110"
 				>
 					Download PDF
 				</a>
 			</div>
-			{error ? (
-				<div className="p-4 text-red-300">
-					<p>Unable to load PDF.</p>
-					<p>{error}</p>
-					<p className="mt-2 text-sm text-gray-400">
-						Check the browser console and Network tab for more details.
-					</p>
+
+			{/* Scrollable page area — the scrollbar lives here, below the toolbar */}
+			<div
+				ref={containerRef}
+				className="flex-1 overflow-x-hidden overflow-y-auto"
+			>
+				<div className="px-4 py-4">
+					{error ? (
+						<div className="p-4 text-red-300">
+							<p>Unable to load PDF.</p>
+							<p>{error}</p>
+							<p className="mt-2 text-sm text-gray-400">
+								Check the browser console and Network tab for more details.
+							</p>
+						</div>
+					) : (
+						<Document
+							file={pdfUrl}
+							onLoadSuccess={onDocumentLoadSuccess}
+							onLoadError={onDocumentLoadError}
+						>
+							{numPages &&
+								Array.from(new Array(numPages), (_, index) => (
+									<div
+										key={`page_${index + 1}`}
+										className="mb-6 flex justify-center"
+									>
+										<Page pageNumber={index + 1} width={pageWidth || 300} />
+									</div>
+								))}
+						</Document>
+					)}
 				</div>
-			) : (
-				<Document
-					file={pdfUrl}
-					onLoadSuccess={onDocumentLoadSuccess}
-					onLoadError={onDocumentLoadError}
-				>
-					{numPages &&
-						Array.from(new Array(numPages), (_, index) => (
-							<div
-								key={`page_${index + 1}`}
-								className="mb-6 flex justify-center"
-							>
-								<Page pageNumber={index + 1} width={pageWidth || 300} />
-							</div>
-						))}
-				</Document>
-			)}
+			</div>
 		</div>
 	);
 };

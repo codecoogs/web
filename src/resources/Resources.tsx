@@ -1,4 +1,5 @@
-import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import FadeInSection from "../common/FadeInSection";
 import { getDateFromResourceName, useTitle } from "../common/utils";
 import { resources } from "../data/resources";
 import { ResourceCategory } from "./ResourceCategory";
@@ -84,13 +85,41 @@ function Resources() {
 	}, [selected, search]);
 
 	return (
-		<div className="relative min-h-screen min-w-full text-center">
-			<h1 className="font-extrabold text-3xl md:text-5xl text-center md:mt-8 text-white">
-				Resources
-			</h1>
+		<div className="text-white min-h-screen">
+			{/* Hero header */}
+			<div className="relative py-16 px-6 text-center overflow-hidden">
+				{/* ambient glow */}
+				<div
+					className="absolute inset-0 pointer-events-none"
+					style={{
+						background:
+							"radial-gradient(ellipse 60% 50% at 50% 0%, rgba(117,228,255,0.07) 0%, transparent 70%)",
+					}}
+				/>
+				<FadeInSection className="animate-fade-down">
+					<p className="text-xs font-semibold tracking-[0.3em] uppercase text-dark-primary mb-3">
+						Learning Materials
+					</p>
+				</FadeInSection>
+				<FadeInSection className="animate-fade-up">
+					<h1 className="font-display text-3xl md:text-5xl font-bold text-white leading-tight">
+						Slides, notebooks &amp;
+						<br />
+						<span className="text-dark-primary">workshop resources</span>
+					</h1>
+				</FadeInSection>
+				<FadeInSection className="animate-fade-up">
+					<p className="text-white/50 mt-4 text-sm max-w-md mx-auto">
+						Browse materials from our workshops, competitions, and
+						collaborations — everything we&apos;ve shared, in one place.
+					</p>
+				</FadeInSection>
+			</div>
 
-			<div className="my-10">
-				<ul className="flex flex-col gap-10 justify-center my-3 md:flex-row">
+			{/* Main content */}
+			<div className="max-w-5xl mx-auto px-4 pb-20">
+				{/* Category tabs */}
+				<div className="flex flex-wrap justify-center gap-3 mb-8">
 					{categories.map((category) => (
 						<ResourceCategory
 							key={category}
@@ -99,38 +128,63 @@ function Resources() {
 							onClick={() => setSelected(category)}
 						/>
 					))}
-				</ul>
+				</div>
 
-				<input
-					ref={searchElement}
-					type="text"
-					placeholder="Search"
-					onChange={(e) => setSearch(e.target.value)}
-					className="bg-white p-3 outline-none rounded focus:bg-light-primary focus:text-black focus:placeholder-black transition-colors"
-				/>
+				{/* Search + mascot */}
+				<div className="flex flex-col items-center gap-6 mb-12">
+					<div className="relative w-full max-w-sm">
+						<svg
+							className="absolute left-4 top-1/2 -translate-y-1/2 text-white/30"
+							width="16"
+							height="16"
+							viewBox="0 0 16 16"
+							fill="none"
+							aria-hidden="true"
+						>
+							<circle
+								cx="7"
+								cy="7"
+								r="5"
+								stroke="currentColor"
+								strokeWidth="1.5"
+							/>
+							<path
+								d="M11 11l3 3"
+								stroke="currentColor"
+								strokeWidth="1.5"
+								strokeLinecap="round"
+							/>
+						</svg>
+						<input
+							ref={searchElement}
+							type="text"
+							placeholder="Search resources"
+							onChange={(e) => setSearch(e.target.value)}
+							className="w-full bg-dark-surface-variant text-white placeholder-white/40 pl-11 pr-4 py-3 rounded-full outline-none ring-1 ring-inset ring-white/10 focus:ring-dark-primary/60 transition-all"
+						/>
+					</div>
 
-				<div className="flex justify-center mx-auto m-2">
 					<img
-						className="max-h-28 relative object-cover rounded-md"
+						className="max-h-28 object-cover rounded-md"
 						src={`/assets/${images.find((image) => image.includes(selected.toLowerCase())) ?? "socials"}-coco.webp`}
 						alt={selected}
 					/>
 				</div>
-			</div>
 
-			<ul className="flex flex-row flex-wrap gap-10 justify-center">
-				{resources.map((resource) => (
-					<ResourceItem
-						key={resource.id}
-						visible={
-							selected === resource.category &&
-							(search === "" ||
-								resource.name.toLowerCase().includes(search.toLowerCase()))
-						}
-						{...resource}
-					/>
-				))}
-			</ul>
+				<ul className="flex flex-row flex-wrap gap-6 justify-center">
+					{resources.map((resource) => (
+						<ResourceItem
+							key={resource.id}
+							visible={
+								selected === resource.category &&
+								(search === "" ||
+									resource.name.toLowerCase().includes(search.toLowerCase()))
+							}
+							{...resource}
+						/>
+					))}
+				</ul>
+			</div>
 		</div>
 	);
 }

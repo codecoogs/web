@@ -5,13 +5,47 @@ import { InstagramIcon, LinkedInIcon } from "../home/AboutIcons";
 import FadeInSection from "../common/FadeInSection";
 import { officers } from "../data/about";
 
+// ─── Department system ────────────────────────────────────────────────────────
+
+type Dept = "president" | "internal" | "external" | "admin";
+
+interface DeptMeta {
+	label: string;
+}
+
+const DEPTS: Record<Dept, DeptMeta> = {
+	president: { label: "President" },
+	internal: { label: "Internal" },
+	external: { label: "External" },
+	admin: { label: "Administration" },
+};
+
+// Dept ordering for section display
+const DEPT_ORDER: Dept[] = ["president", "admin", "internal", "external"];
+
+const getDept = (position: string): Dept => {
+	const p = position.toLowerCase();
+	if (/president/.test(p)) return "president";
+	if (/\b(internal|software|team|workshop|competition)\b/.test(p))
+		return "internal";
+	if (
+		/\b(external|corporate|academic|public.?relation|community|social|collaboration)\b/.test(
+			p,
+		)
+	)
+		return "external";
+	// administration, marketing, historian, activities, artist, events, operations, vp admin
+	return "admin";
+};
+
+// ─── Officer Card ─────────────────────────────────────────────────────────────
+
 interface SocialsObj {
 	instagram?: string;
 	linkedin: string;
 }
 
 interface OfficerCardProps {
-	key: React.Key;
 	name: string;
 	position: string;
 	photo?: string;
@@ -31,16 +65,16 @@ const OfficerCard = (props: OfficerCardProps) => {
 			.reverse()
 			.join("")
 			.toLowerCase();
-
 		image = `/assets/officers/${folderName}/${props.name.replace(/ /g, "").toLowerCase()}.webp`;
 	}
 
 	return (
-		<div className="flex flex-col bg-dark-surface-variant rounded-xl text-center p-4 hover:ring-dark-primary ring-1 ring-inset ring-white/[.3] transform transition-all hover:-translate-y-2 duration-300">
-			<div className="flex-grow">
-				<div className="w-24 h-24 md:w-32 md:h-32 mx-auto">
+		<div className="group relative flex flex-col bg-dark-surface-variant rounded-xl overflow-hidden ring-1 ring-inset ring-white/10 hover:ring-dark-primary/50 transform transition-all hover:-translate-y-1 duration-300">
+			<div className="flex flex-col flex-1 p-4 text-center">
+				{/* Avatar */}
+				<div className="w-20 h-20 md:w-24 md:h-24 mx-auto mt-2 mb-3">
 					<img
-						className="w-full h-full relative object-cover rounded-full"
+						className="w-full h-full object-cover rounded-full ring-2 ring-white/10 group-hover:ring-white/20 transition-all duration-300"
 						src={image}
 						alt={props.name}
 						onError={(e) => {
@@ -48,255 +82,258 @@ const OfficerCard = (props: OfficerCardProps) => {
 						}}
 					/>
 				</div>
-				<span className="block text-sm font-bold pt-4">{props.name}</span>
-				<span className="block text-sm opacity-50">{props.position}</span>
+
+				<span className="block text-sm font-bold text-white leading-snug">
+					{props.name}
+				</span>
+				<span className="block text-xs mt-0.5 font-medium text-dark-primary">
+					{props.position}
+				</span>
 				{props.retired && (
-					<span className="block text-xs opacity-50">(retired)</span>
+					<span className="block text-xs text-white/30 mt-0.5">(retired)</span>
 				)}
-			</div>
-			<div className="pt-4">
-				<div className="flex space-x-2 justify-end">
-					{instagram && (
-						<a
-							href={instagram}
-							target="_blank"
-							rel="noreferrer"
-							aria-label="Go to our Instagram"
-						>
-							<InstagramIcon />
-						</a>
-					)}
-					{linkedin && (
-						<a
-							href={linkedin}
-							target="_blank"
-							rel="noreferrer"
-							aria-label="Go to our LinkedIn"
-						>
-							<LinkedInIcon />
-						</a>
-					)}
-				</div>
+
+				{/* Socials */}
+				{(instagram || linkedin) && (
+					<div className="flex gap-2 justify-center mt-3">
+						{instagram && (
+							<a
+								href={instagram}
+								target="_blank"
+								rel="noreferrer"
+								aria-label="Instagram"
+								className="opacity-40 hover:opacity-100 transition-opacity duration-200"
+							>
+								<InstagramIcon />
+							</a>
+						)}
+						{linkedin && (
+							<a
+								href={linkedin}
+								target="_blank"
+								rel="noreferrer"
+								aria-label="LinkedIn"
+								className="opacity-40 hover:opacity-100 transition-opacity duration-200"
+							>
+								<LinkedInIcon />
+							</a>
+						)}
+					</div>
+				)}
 			</div>
 		</div>
 	);
 };
 
-const OfficersPage = () => {
-	const numOfficers = officers.length;
-	const [semester, setSemester] = useState<number>(numOfficers - 1);
-	const [officerCardOpacity, setOfficerCardOpacity] =
-		useState<string>("opacity-100");
+// ─── Department Section ───────────────────────────────────────────────────────
 
-	const changeSemester = (newSemester: number) => {
-		setOfficerCardOpacity("opacity-0");
-		setTimeout(() => {
-			setSemester(newSemester);
-			setOfficerCardOpacity("opacity-100");
-		}, 500);
-	};
+interface DeptSectionProps {
+	dept: Dept;
+	officerList: (typeof officers)[0]["list"];
+	semester: number;
+	opacity: string;
+}
 
-	const handleDecrementSemester = () => {
-		if (semester > 0) {
-			changeSemester(semester - 1);
-		}
-	};
+const DeptSection = ({
+	dept,
+	officerList,
+	semester,
+	opacity,
+}: DeptSectionProps) => {
+	const { label } = DEPTS[dept];
+	const filtered = officerList.filter((o) => getDept(o.position) === dept);
+	if (filtered.length === 0) return null;
 
-	const handleIncrementSemester = () => {
-		if (semester < numOfficers - 1) {
-			changeSemester(semester + 1);
-		}
-	};
-
-	// new: categorize officers by hierarchy
-	const currentList = officers[semester].list;
-	const isPresident = (p: string) => /president/i.test(p);
-	const isVP = (p: string) => /\bvp\b|vice\s*president/i.test(p);
-
-	const presidents = currentList.filter((o) => isPresident(o.position));
-	const vps = currentList.filter(
-		(o) => !isPresident(o.position) && isVP(o.position),
-	);
-	const others = currentList.filter(
-		(o) => !isPresident(o.position) && !isVP(o.position),
-	);
+	// President: single card, centred
+	const isPresident = dept === "president";
 
 	return (
-		<div className="text-white p-4">
-			<div className="md:w-3/4 mx-auto">
-				<FadeInSection className={"animate-fade-down"}>
-					<h1 className="text-2xl font-bold text-center">Officers</h1>
-				</FadeInSection>
+		<div className={`mb-10 transition-opacity duration-500 ${opacity}`}>
+			{/* Section header */}
+			<div className="flex items-center gap-3 mb-5">
+				<span className="block h-0.5 w-5 rounded-full flex-shrink-0 bg-dark-primary" />
+				<h2 className="font-display text-sm font-bold tracking-[0.2em] uppercase text-dark-primary">
+					{label}
+				</h2>
+				<span className="flex-1 h-px bg-gradient-to-r from-dark-primary/20 to-transparent" />
+			</div>
 
-				<div className="px-2 text-center mx-auto md:mt-6">
-					{/* semester navigation (unchanged) */}
-					<div className="flex text-lg justify-center items-center space-x-4 my-8">
-						<div className="flex-1 relative">
-							<div className="relative flex justify-end">
-								<span
-									className={
-										"absolute transition-transform duration-300 opacity-30 cursor-pointer translate-x-0 -translate-y-6"
-									}
-									onClick={handleDecrementSemester}
-									onKeyDown={handleDecrementSemester}
-								>
-									{semester - 1 >= 0 && officers[semester - 1].semester}
-								</span>
-								<span className={"text-dark-primary opacity-100 z-10"}>
-									{officers[semester].semester}
-								</span>
-								<span
-									className={
-										"absolute transition-transform duration-300 opacity-30 cursor-pointer translate-y-6"
-									}
-									onClick={handleIncrementSemester}
-									onKeyUp={handleIncrementSemester}
-								>
-									{semester + 1 < numOfficers &&
-										officers[semester + 1].semester}
-								</span>
-							</div>
-						</div>
-						<span className="flex-1 text-left relative z-10 ml-4">
-							Officers
-						</span>
+			{isPresident ? (
+				<div className="flex justify-center">
+					<div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+						{filtered.map((officer) => (
+							<OfficerCard
+								key={officer.name}
+								name={officer.name}
+								position={officer.position}
+								photo={officer.photo}
+								video={officer.video}
+								socials={officer.socials}
+								retired={officer.retired}
+								semester={semester}
+							/>
+						))}
 					</div>
-
-					{/* President section */}
-					{presidents.length > 0 && (
-						<div className="mb-8">
-							<h2 className="text-2xl text-dark-primary font-bold mb-4">
-								President
-							</h2>
-							<div
-								className={`flex justify-center transition-opacity duration-500 ${officerCardOpacity}`}
-							>
-								<div className="w-full md:w-1/3">
-									<div className="grid grid-cols-1 gap-4">
-										{presidents.map((officer) => (
-											<OfficerCard
-												key={officer.name}
-												name={officer.name}
-												position={officer.position}
-												photo={officer.photo}
-												video={officer.video}
-												socials={officer.socials}
-												retired={officer.retired}
-												semester={semester}
-											/>
-										))}
-									</div>
-								</div>
-							</div>
-						</div>
-					)}
-
-					{/* Vice Presidents section (larger title; responsive layout for 3 VPs) */}
-					{vps.length > 0 && (
-						<div className="mb-8">
-							<h2 className="text-2xl text-dark-primary font-bold mb-4">
-								Vice Presidents
-							</h2>
-							<div
-								className={`transition-opacity duration-500 ${officerCardOpacity}`}
-							>
-								{/* If exactly 3 VPs: show single-row on md+, stacked with top centered on small screens */}
-								{vps.length === 3 ? (
-									<>
-										{/* md+: three in one row */}
-										<div className="hidden md:grid md:grid-cols-3 md:gap-4">
-											{vps.map((officer) => (
-												<OfficerCard
-													key={officer.name}
-													name={officer.name}
-													position={officer.position}
-													photo={officer.photo}
-													video={officer.video}
-													socials={officer.socials}
-													retired={officer.retired}
-													semester={semester}
-												/>
-											))}
-										</div>
-										{/* sm: first centered, next two underneath */}
-										<div className="md:hidden">
-											<div className="flex justify-center mb-4">
-												<div className="w-full sm:w-2/3">
-													<OfficerCard
-														key={vps[0].name}
-														name={vps[0].name}
-														position={vps[0].position}
-														photo={vps[0].photo}
-														video={vps[0].video}
-														socials={vps[0].socials}
-														retired={vps[0].retired}
-														semester={semester}
-													/>
-												</div>
-											</div>
-											<div className="grid grid-cols-2 gap-4">
-												{[vps[1], vps[2]].map((officer) => (
-													<OfficerCard
-														key={officer.name}
-														name={officer.name}
-														position={officer.position}
-														photo={officer.photo}
-														video={officer.video}
-														socials={officer.socials}
-														retired={officer.retired}
-														semester={semester}
-													/>
-												))}
-											</div>
-										</div>
-									</>
-								) : (
-									<div
-										className={`grid grid-cols-1 md:grid-cols-3 gap-4 transition-opacity duration-500 ${officerCardOpacity}`}
-									>
-										{vps.map((officer) => (
-											<OfficerCard
-												key={officer.name}
-												name={officer.name}
-												position={officer.position}
-												photo={officer.photo}
-												video={officer.video}
-												socials={officer.socials}
-												retired={officer.retired}
-												semester={semester}
-											/>
-										))}
-									</div>
-								)}
-							</div>
-						</div>
-					)}
-
-					{/* Regular officers section */}
-					{others.length > 0 && (
-						<div className="mb-8">
-							<h2 className="text-2xl text-dark-primary font-bold mb-4">
-								Officers
-							</h2>
-							<div
-								className={`grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-0 md:px-8 ease-in-out transition-opacity duration-500 ${officerCardOpacity}`}
-							>
-								{others.map((officer) => (
-									<OfficerCard
-										key={officer.name}
-										name={officer.name}
-										position={officer.position}
-										photo={officer.photo}
-										video={officer.video}
-										socials={officer.socials}
-										retired={officer.retired}
-										semester={semester}
-									/>
-								))}
-							</div>
-						</div>
-					)}
 				</div>
+			) : (
+				<div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+					{filtered.map((officer) => (
+						<OfficerCard
+							key={officer.name}
+							name={officer.name}
+							position={officer.position}
+							photo={officer.photo}
+							video={officer.video}
+							socials={officer.socials}
+							retired={officer.retired}
+							semester={semester}
+						/>
+					))}
+				</div>
+			)}
+		</div>
+	);
+};
+
+// ─── Semester Selector ────────────────────────────────────────────────────────
+
+interface SemesterSelectorProps {
+	semester: number;
+	total: number;
+	onPrev: () => void;
+	onNext: () => void;
+}
+
+const SemesterSelector = ({
+	semester,
+	total,
+	onPrev,
+	onNext,
+}: SemesterSelectorProps) => (
+	<div className="flex items-center justify-center gap-4 mb-10">
+		<button
+			type="button"
+			onClick={onPrev}
+			disabled={semester === 0}
+			aria-label="Previous semester"
+			className="w-8 h-8 flex items-center justify-center rounded-full ring-1 ring-white/10 text-white/40 hover:text-white hover:ring-dark-primary/60 disabled:opacity-20 disabled:cursor-not-allowed transition-all duration-200"
+		>
+			<svg
+				width="14"
+				height="14"
+				viewBox="0 0 14 14"
+				fill="none"
+				aria-hidden="true"
+			>
+				<path
+					d="M9 2L4 7l5 5"
+					stroke="currentColor"
+					strokeWidth="1.5"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+				/>
+			</svg>
+		</button>
+
+		<span className="font-display font-semibold text-dark-primary text-sm tracking-wide min-w-[140px] text-center">
+			{officers[semester].semester}
+		</span>
+
+		<button
+			type="button"
+			onClick={onNext}
+			disabled={semester === total - 1}
+			aria-label="Next semester"
+			className="w-8 h-8 flex items-center justify-center rounded-full ring-1 ring-white/10 text-white/40 hover:text-white hover:ring-dark-primary/60 disabled:opacity-20 disabled:cursor-not-allowed transition-all duration-200"
+		>
+			<svg
+				width="14"
+				height="14"
+				viewBox="0 0 14 14"
+				fill="none"
+				aria-hidden="true"
+			>
+				<path
+					d="M5 2l5 5-5 5"
+					stroke="currentColor"
+					strokeWidth="1.5"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+				/>
+			</svg>
+		</button>
+	</div>
+);
+
+// ─── Page ─────────────────────────────────────────────────────────────────────
+
+const OfficersPage = () => {
+	const total = officers.length;
+	const [semester, setSemester] = useState(total - 1);
+	const [opacity, setOpacity] = useState("opacity-100");
+
+	const changeSemester = (next: number) => {
+		setOpacity("opacity-0");
+		setTimeout(() => {
+			setSemester(next);
+			setOpacity("opacity-100");
+		}, 350);
+	};
+
+	const currentList = officers[semester].list;
+
+	return (
+		<div className="text-white min-h-screen">
+			{/* Hero header */}
+			<div className="relative py-16 px-6 text-center overflow-hidden">
+				{/* ambient glow */}
+				<div
+					className="absolute inset-0 pointer-events-none"
+					style={{
+						background:
+							"radial-gradient(ellipse 60% 50% at 50% 0%, rgba(117,228,255,0.07) 0%, transparent 70%)",
+					}}
+				/>
+				<FadeInSection className="animate-fade-down">
+					<p className="text-xs font-semibold tracking-[0.3em] uppercase text-dark-primary mb-3">
+						Code Coogs Leadership
+					</p>
+				</FadeInSection>
+				<FadeInSection className="animate-fade-up">
+					<h1 className="font-display text-3xl md:text-5xl font-bold text-white leading-tight">
+						Meet the team that
+						<br />
+						<span className="text-dark-primary">makes it happen</span>
+					</h1>
+				</FadeInSection>
+				<FadeInSection className="animate-fade-up">
+					<p className="text-white/50 mt-4 text-sm max-w-md mx-auto">
+						Every event, workshop, and competition is driven by these dedicated
+						officers — past and present.
+					</p>
+				</FadeInSection>
+			</div>
+
+			{/* Main content */}
+			<div className="max-w-5xl mx-auto px-4 pb-20">
+				{/* Semester nav */}
+				<SemesterSelector
+					semester={semester}
+					total={total}
+					onPrev={() => changeSemester(Math.max(0, semester - 1))}
+					onNext={() => changeSemester(Math.min(total - 1, semester + 1))}
+				/>
+
+				{/* Department sections */}
+				{DEPT_ORDER.map((dept) => (
+					<DeptSection
+						key={dept}
+						dept={dept}
+						officerList={currentList}
+						semester={semester}
+						opacity={opacity}
+					/>
+				))}
 			</div>
 		</div>
 	);

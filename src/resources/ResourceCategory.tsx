@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-
 interface ResourceCategoryProps {
 	category: string;
 	selected: boolean;
@@ -12,26 +10,17 @@ export function ResourceCategory({
 	onClick,
 	selected,
 }: ResourceCategoryProps) {
-	const [hovering, setHovering] = useState(false);
-	const [text, setText] = useState(category);
-
-	useEffect(() => {
-		if (hovering) {
-			setText(`[${category}]`);
-		} else {
-			setText(category);
-		}
-	}, [hovering, category]);
-
 	return (
 		<button
 			type="button"
-			className={`md:w-52 w-full hover:text-dark-primary ${selected ? "text-dark-primary" : "text-white"}`}
+			className={`px-5 py-2 rounded-full text-sm font-semibold tracking-wide transition-all duration-200 ${
+				selected
+					? "bg-dark-primary text-dark-surface"
+					: "text-white/60 ring-1 ring-inset ring-white/10 hover:text-dark-primary hover:ring-dark-primary/60"
+			}`}
 			onClick={() => onClick(category)}
-			onMouseEnter={() => setHovering(true)}
-			onMouseLeave={() => setHovering(false)}
 		>
-			{text}
+			{category}
 		</button>
 	);
 }
