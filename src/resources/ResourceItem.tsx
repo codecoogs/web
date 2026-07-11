@@ -12,7 +12,7 @@ function ResourceItem(props: ResourceItemProps) {
 			to={props.link}
 			className={`${props.visible ? "visible" : "hidden"}`}
 		>
-			<div className="flex flex-col bg-dark-surface-variant rounded-xl text-center text-white p-4 hover:ring-dark-primary ring-1 ring-inset ring-white/[.3] transform transition-all hover:-translate-y-2 duration-300">
+			<div className="flex flex-col bg-dark-surface-variant rounded-xl text-center text-white p-4 hover:ring-dark-primary/50 ring-1 ring-inset ring-white/10 transform transition-all hover:-translate-y-2 duration-300">
 				<div className="w-[250px] h-[375px]">
 					<div className="mx-auto">
 						<img

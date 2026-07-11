@@ -11,36 +11,13 @@ type Dept = "president" | "internal" | "external" | "admin";
 
 interface DeptMeta {
 	label: string;
-	color: string;       // hex — used inline for card bar + heading
-	ring: string;        // Tailwind ring class for hover
-	bg: string;          // subtle card tint class
 }
 
 const DEPTS: Record<Dept, DeptMeta> = {
-	president: {
-		label: "President",
-		color: "#75e4ff",
-		ring: "hover:ring-[#75e4ff]/50",
-		bg: "hover:bg-[#75e4ff]/[0.04]",
-	},
-	internal: {
-		label: "Internal",
-		color: "#a78bfa",
-		ring: "hover:ring-[#a78bfa]/50",
-		bg: "hover:bg-[#a78bfa]/[0.04]",
-	},
-	external: {
-		label: "External",
-		color: "#f87171",
-		ring: "hover:ring-[#f87171]/50",
-		bg: "hover:bg-[#f87171]/[0.04]",
-	},
-	admin: {
-		label: "Administration",
-		color: "#fbbf24",
-		ring: "hover:ring-[#fbbf24]/50",
-		bg: "hover:bg-[#fbbf24]/[0.04]",
-	},
+	president: { label: "President" },
+	internal: { label: "Internal" },
+	external: { label: "External" },
+	admin: { label: "Administration" },
 };
 
 // Dept ordering for section display
@@ -49,9 +26,7 @@ const DEPT_ORDER: Dept[] = ["president", "admin", "internal", "external"];
 const getDept = (position: string): Dept => {
 	const p = position.toLowerCase();
 	if (/president/.test(p)) return "president";
-	if (
-		/\b(internal|software|team|workshop|competition)\b/.test(p)
-	)
+	if (/\b(internal|software|team|workshop|competition)\b/.test(p))
 		return "internal";
 	if (
 		/\b(external|corporate|academic|public.?relation|community|social|collaboration)\b/.test(
@@ -82,8 +57,6 @@ interface OfficerCardProps {
 
 const OfficerCard = (props: OfficerCardProps) => {
 	const { instagram, linkedin } = props.socials;
-	const dept = getDept(props.position);
-	const { color, ring, bg } = DEPTS[dept];
 
 	let image = props.photo;
 	if (!image) {
@@ -97,14 +70,8 @@ const OfficerCard = (props: OfficerCardProps) => {
 
 	return (
 		<div
-			className={`group relative flex flex-col bg-dark-surface-variant rounded-xl overflow-hidden ring-1 ring-inset ring-white/10 ${ring} ${bg} transform transition-all hover:-translate-y-1 duration-300`}
+			className="group relative flex flex-col bg-dark-surface-variant rounded-xl overflow-hidden ring-1 ring-inset ring-white/10 hover:ring-dark-primary/50 transform transition-all hover:-translate-y-1 duration-300"
 		>
-			{/* Department colour bar */}
-			<div
-				className="h-1 w-full flex-shrink-0"
-				style={{ backgroundColor: color }}
-			/>
-
 			<div className="flex flex-col flex-1 p-4 text-center">
 				{/* Avatar */}
 				<div className="w-20 h-20 md:w-24 md:h-24 mx-auto mt-2 mb-3">
@@ -121,7 +88,7 @@ const OfficerCard = (props: OfficerCardProps) => {
 				<span className="block text-sm font-bold text-white leading-snug">
 					{props.name}
 				</span>
-				<span className="block text-xs mt-0.5 font-medium" style={{ color }}>
+				<span className="block text-xs mt-0.5 font-medium text-dark-primary">
 					{props.position}
 				</span>
 				{props.retired && (
@@ -164,13 +131,18 @@ const OfficerCard = (props: OfficerCardProps) => {
 
 interface DeptSectionProps {
 	dept: Dept;
-	officerList: typeof officers[0]["list"];
+	officerList: (typeof officers)[0]["list"];
 	semester: number;
 	opacity: string;
 }
 
-const DeptSection = ({ dept, officerList, semester, opacity }: DeptSectionProps) => {
-	const { label, color } = DEPTS[dept];
+const DeptSection = ({
+	dept,
+	officerList,
+	semester,
+	opacity,
+}: DeptSectionProps) => {
+	const { label } = DEPTS[dept];
 	const filtered = officerList.filter((o) => getDept(o.position) === dept);
 	if (filtered.length === 0) return null;
 
@@ -181,20 +153,11 @@ const DeptSection = ({ dept, officerList, semester, opacity }: DeptSectionProps)
 		<div className={`mb-10 transition-opacity duration-500 ${opacity}`}>
 			{/* Section header */}
 			<div className="flex items-center gap-3 mb-5">
-				<span
-					className="block h-0.5 w-5 rounded-full flex-shrink-0"
-					style={{ backgroundColor: color }}
-				/>
-				<h2
-					className="font-display text-sm font-bold tracking-[0.2em] uppercase"
-					style={{ color }}
-				>
+				<span className="block h-0.5 w-5 rounded-full flex-shrink-0 bg-dark-primary" />
+				<h2 className="font-display text-sm font-bold tracking-[0.2em] uppercase text-dark-primary">
 					{label}
 				</h2>
-				<span
-					className="flex-1 h-px"
-					style={{ background: `linear-gradient(to right, ${color}30, transparent)` }}
-				/>
+				<span className="flex-1 h-px bg-gradient-to-r from-dark-primary/20 to-transparent" />
 			</div>
 
 			{isPresident ? (
@@ -234,22 +197,6 @@ const DeptSection = ({ dept, officerList, semester, opacity }: DeptSectionProps)
 	);
 };
 
-// ─── Legend ───────────────────────────────────────────────────────────────────
-
-const DeptLegend = () => (
-	<div className="flex flex-wrap justify-center gap-4 mb-10">
-		{DEPT_ORDER.map((d) => (
-			<div key={d} className="flex items-center gap-1.5">
-				<span
-					className="w-3 h-3 rounded-full flex-shrink-0"
-					style={{ backgroundColor: DEPTS[d].color }}
-				/>
-				<span className="text-xs text-white/50 font-medium">{DEPTS[d].label}</span>
-			</div>
-		))}
-	</div>
-);
-
 // ─── Semester Selector ────────────────────────────────────────────────────────
 
 interface SemesterSelectorProps {
@@ -259,7 +206,12 @@ interface SemesterSelectorProps {
 	onNext: () => void;
 }
 
-const SemesterSelector = ({ semester, total, onPrev, onNext }: SemesterSelectorProps) => (
+const SemesterSelector = ({
+	semester,
+	total,
+	onPrev,
+	onNext,
+}: SemesterSelectorProps) => (
 	<div className="flex items-center justify-center gap-4 mb-10">
 		<button
 			onClick={onPrev}
@@ -359,9 +311,6 @@ const OfficersPage = () => {
 					onPrev={() => changeSemester(Math.max(0, semester - 1))}
 					onNext={() => changeSemester(Math.min(total - 1, semester + 1))}
 				/>
-
-				{/* Dept legend */}
-				<DeptLegend />
 
 				{/* Department sections */}
 				{DEPT_ORDER.map((dept) => (
