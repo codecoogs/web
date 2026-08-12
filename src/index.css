@@ -73,3 +73,9 @@ html {
 		background-position: 0% 50%, 50% 50%, 100% 100%;
 	}
 }
+
+@media (hover: hover) {
+	.card-hover-lift:hover {
+		transform: translateY(-4px);
+	}
+}

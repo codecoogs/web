@@ -72,7 +72,7 @@ const OfficerCard = (props: OfficerCardProps) => {
 	console.log(image);
 
 	return (
-		<div className="flex flex-col bg-dark-surface-variant rounded-xl text-center p-4 hover:ring-dark-primary ring-1 ring-inset ring-white/[.3] transform transition-all hover:-translate-y-2 duration-300">
+		<div className="flex flex-col bg-dark-surface-variant rounded-xl text-center p-4 hover:ring-dark-primary ring-1 ring-inset ring-white/[.3] transition-all duration-300 card-hover-lift">
 			<div className="flex-grow">
 				<div className="w-24 h-24 md:w-32 md:h-32 mx-auto">
 					<img
