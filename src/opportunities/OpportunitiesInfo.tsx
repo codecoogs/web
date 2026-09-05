@@ -1,41 +1,13 @@
+import { useEffect, useState } from "react";
 import { Flashcard } from "react-quizlet-flashcard";
-
-const OpportunitiesRoles = [
-	{
-		name: "Intern",
-		icon: "/assets/opportunities/intern.svg",
-		year: "Spring 2026",
-		description:
-			"Gain hands-on experience by working under a director, with the opportunity to grow into an officer role.",
-		applicationLink:
-			"https://docs.google.com/forms/d/e/1FAIpQLSekGmK75Gv-zXcM_2FGh6JrjeQuMYID2OSyIDu3-VrQ8tyCXw/viewform?usp=dialog",
-	},
-
-	{
-		name: "Code Coogs Mentorship",
-		icon: "/assets/opportunities/teamLead.svg",
-		year: "Spring 2026",
-		description:
-			"Get mentorship from a Code Coogs mentor, get help with resumes, interviews, etc.",
-		applicationLink: "https://forms.gle/DZ5kgJWWuPsxHFBs8",
-	},
-
-	{
-		name: "Members Only Teams",
-		icon: "/assets/opportunities/cues.svg",
-		year: "Fall 2024 - Spring 2025",
-		description: "Become a part of a team and build a fun project together!",
-		applicationLink:
-			"https://docs.google.com/forms/d/e/1FAIpQLSfXB-asea_xzEsDefKL5bBQmGolWeslRzXi08b7Bc2m1TO-EA/viewform?usp=dialog",
-	},
-];
+import { type Opportunity, fetchOpportunities } from "../data/api";
 
 const style =
 	"flex items-start p-7 h-[200px] relative font-bold  rounded-lg bg-[#151515] text-white ring-1 ring-dark-primary ring-inset";
 
-const OpportunitiesItems = OpportunitiesRoles.map((role) => (
+const renderOpportunity = (role: Opportunity) => (
 	<Flashcard
-		key={role.name}
+		key={role.id}
 		style={{
 			flex: "1 1 auto",
 			width: "45%",
@@ -83,9 +55,35 @@ const OpportunitiesItems = OpportunitiesRoles.map((role) => (
 			</div>
 		}
 	/>
-));
+);
 
 const OpportunitiesInfo = () => {
+	const [opportunities, setOpportunities] = useState<Opportunity[]>([]);
+	const [status, setStatus] = useState<"loading" | "ready" | "error">(
+		"loading",
+	);
+
+	useEffect(() => {
+		let cancelled = false;
+
+		fetchOpportunities()
+			.then((data) => {
+				if (!cancelled) {
+					setOpportunities(data);
+					setStatus("ready");
+				}
+			})
+			.catch(() => {
+				if (!cancelled) {
+					setStatus("error");
+				}
+			});
+
+		return () => {
+			cancelled = true;
+		};
+	}, []);
+
 	return (
 		<div className="text-white p-4" id="opportunitiesInfo">
 			<div className="flex flex-wrap flex-col justify-center">
@@ -102,7 +100,28 @@ const OpportunitiesInfo = () => {
 
 				<div className="rounded md:mx-20 max-h-[100%] md:max-h-[30rem]">
 					<section className="md:w-8/12 mx-auto">
-						<div className="flex flex-wrap p-6">{OpportunitiesItems}</div>
+						{status === "loading" && (
+							<p className="text-center text-white/50 text-sm p-6">
+								Loading opportunities&hellip;
+							</p>
+						)}
+
+						{status === "error" && (
+							<p className="text-center text-white/50 text-sm p-6">
+								We couldn&apos;t load the opportunities right now. Please try
+								again later.
+							</p>
+						)}
+
+						{status === "ready" && opportunities.length === 0 && (
+							<p className="text-center text-white/50 text-sm p-6">
+								There are no open opportunities at the moment — check back soon.
+							</p>
+						)}
+
+						<div className="flex flex-wrap p-6">
+							{opportunities.map(renderOpportunity)}
+						</div>
 					</section>
 				</div>
 			</div>
