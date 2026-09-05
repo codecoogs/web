@@ -511,7 +511,6 @@ interface FeatureCardProps {
 	image: string;
 	title: string;
 	description: string;
-	linkTo: string;
 	accentColor: string;
 }
 
@@ -519,7 +518,6 @@ const FeatureCard = ({
 	image,
 	title,
 	description,
-	linkTo,
 	accentColor,
 }: FeatureCardProps) => (
 	<div className="group relative flex flex-col bg-dark-surface-variant rounded-2xl overflow-hidden ring-1 ring-white/[0.07] hover:ring-dark-primary/50 transition-all duration-300 hover:-translate-y-1 h-full">
@@ -550,29 +548,6 @@ const FeatureCard = ({
 			<p className="text-white/60 text-sm leading-relaxed flex-1">
 				{description}
 			</p>
-			{/* "Learn more" color matches the card's accent */}
-			<Link
-				to={linkTo}
-				className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold hover:gap-3 transition-all duration-200"
-				style={{ color: accentColor }}
-			>
-				Learn more
-				<svg
-					width="14"
-					height="14"
-					viewBox="0 0 14 14"
-					fill="none"
-					aria-hidden="true"
-				>
-					<path
-						d="M1 7h12M8 2l5 5-5 5"
-						stroke="currentColor"
-						strokeWidth="1.5"
-						strokeLinecap="round"
-						strokeLinejoin="round"
-					/>
-				</svg>
-			</Link>
 		</div>
 
 		{/* glow accent */}
@@ -605,7 +580,6 @@ const FeatureTeaserSection = () => (
 						image="/assets/teams-coco.webp"
 						title="Teams"
 						description="Join a squad of builders and ship a real project together. Teams are mentored, cross-disciplinary, and built for your portfolio."
-						linkTo="/#us"
 						accentColor="#75e4ff"
 					/>
 				</FadeInSection>
@@ -615,7 +589,6 @@ const FeatureTeaserSection = () => (
 						image="/assets/workshops-coco.webp"
 						title="Workshops"
 						description="Hands-on sessions led by industry engineers and senior members — from web dev to machine learning, every skill level welcome."
-						linkTo="/#us"
 						accentColor="#a78bfa"
 					/>
 				</FadeInSection>
@@ -625,7 +598,6 @@ const FeatureTeaserSection = () => (
 						image="/assets/competitions-coco.webp"
 						title="Competitions"
 						description="Hackathons, coding challenges, and invitational events. We've placed at nationals — come compete with us."
-						linkTo="/#us"
 						accentColor="#34d399"
 					/>
 				</FadeInSection>
