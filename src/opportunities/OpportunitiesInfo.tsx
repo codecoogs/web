@@ -5,6 +5,26 @@ import { type Opportunity, fetchOpportunities } from "../data/api";
 const style =
 	"flex items-start p-7 h-[200px] relative font-bold  rounded-lg bg-[#151515] text-white ring-1 ring-dark-primary ring-inset";
 
+// Mirrors the Flashcard's footprint so the cards do not jump when they arrive.
+const OpportunitySkeleton = () => (
+	<div
+		className="animate-pulse"
+		style={{
+			flex: "1 1 auto",
+			width: "45%",
+			height: "200px",
+			marginBottom: "1rem",
+			marginRight: "1rem",
+		}}
+	>
+		<div className={`${style} flex-col justify-start`}>
+			<div className="w-12 h-12 mb-3 rounded bg-white/10" />
+			<div className="w-2/3 h-5 mb-2 rounded bg-white/10" />
+			<div className="w-1/3 h-5 rounded bg-white/10" />
+		</div>
+	</div>
+);
+
 const renderOpportunity = (role: Opportunity) => (
 	<Flashcard
 		key={role.id}
@@ -101,9 +121,11 @@ const OpportunitiesInfo = () => {
 				<div className="rounded md:mx-20 max-h-[100%] md:max-h-[30rem]">
 					<section className="md:w-8/12 mx-auto">
 						{status === "loading" && (
-							<p className="text-center text-white/50 text-sm p-6">
-								Loading opportunities&hellip;
-							</p>
+							<div className="flex flex-wrap p-6" aria-busy="true">
+								{[0, 1, 2].map((index) => (
+									<OpportunitySkeleton key={index} />
+								))}
+							</div>
 						)}
 
 						{status === "error" && (
