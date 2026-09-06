@@ -6,3 +6,6 @@ build
 .idea
 .vscode
 .DS_Store
+
+# Single lockfile: this project installs with pnpm (see packageManager).
+package-lock.json
