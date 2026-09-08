@@ -27,6 +27,18 @@ interface ApiOpportunity {
 	term?: string;
 }
 
+interface ApiEvent {
+	id: number;
+	title: string;
+	description?: string;
+	location?: string;
+	start_time: string;
+	end_time: string;
+	point_category?: string;
+	flyer_url?: string;
+	status?: string;
+}
+
 export interface Resource {
 	id: string;
 	name: string;
@@ -45,6 +57,19 @@ export interface Opportunity {
 	icon: string;
 	year: string;
 	applicationLink: string;
+}
+
+export interface CalendarEvent {
+	id: number;
+	name: string;
+	description: string;
+	location: string;
+	start: Date;
+	end?: Date;
+	pointCategory: string;
+	flyerUrl: string;
+	/** All-day events arrive as a bare date, so there is no time to render. */
+	allDay: boolean;
 }
 
 function parseDate(value?: string): Date | undefined {
@@ -87,6 +112,29 @@ export function normalizeOpportunity(opportunity: ApiOpportunity): Opportunity {
 	};
 }
 
+// An all-day event is stored as "YYYY-MM-DD"; a timed one as a full timestamp.
+// The distinction decides whether the card shows a time at all, so it has to be
+// read before the string is turned into a Date.
+const DATE_ONLY = /^\d{4}-\d{2}-\d{2}$/;
+
+export function normalizeEvent(event: ApiEvent): CalendarEvent {
+	const allDay = DATE_ONLY.test(event.start_time);
+
+	return {
+		id: event.id,
+		name: event.title,
+		description: event.description ?? "",
+		location: event.location ?? "",
+		// parseDate handles the date-only case that would otherwise render a day
+		// early west of Greenwich.
+		start: parseDate(event.start_time) ?? new Date(Number.NaN),
+		end: parseDate(event.end_time),
+		pointCategory: event.point_category ?? "",
+		flyerUrl: event.flyer_url ?? "",
+		allDay,
+	};
+}
+
 async function get<T>(path: string): Promise<T[]> {
 	const response = await fetch(`${API_BASE_URL}${path}`);
 
@@ -118,4 +166,13 @@ export async function fetchOpportunities(): Promise<Opportunity[]> {
 	);
 
 	return opportunities.map(normalizeOpportunity);
+}
+
+export async function fetchEvents(): Promise<CalendarEvent[]> {
+	// is_public is the officer-controlled gate, and cancelled events stay in the
+	// table so the calendar sync can record the cancellation — neither belongs
+	// on the page. The API already orders by start_time.
+	const events = await get<ApiEvent>("/events?is_public=true&status=scheduled");
+
+	return events.map(normalizeEvent);
 }
