@@ -45,7 +45,9 @@ const EventCard = ({ event }: { event: CalendarEvent }) => {
 			)}
 
 			{event.description && (
-				<p className="text-white/80 text-sm mt-3">{event.description}</p>
+				<p className="text-white/80 text-sm mt-3 whitespace-pre-line">
+					{event.description}
+				</p>
 			)}
 
 			{event.pointCategory && (

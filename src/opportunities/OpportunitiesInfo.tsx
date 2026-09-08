@@ -52,7 +52,7 @@ const renderOpportunity = (role: Opportunity) => (
 				<div className="absolute -inset-0.5 bg-dark-primary blur-lg opacity-30 transform scale-90 group-hover:scale-100 transition-all duration-300" />
 				<div className={`${style} justify-around items-start h-full flex-col`}>
 					<span className="flex h-full flex-col items-center justify-between font-normal">
-						<span className="md:text-sm lg:text-base text-sm">
+						<span className="md:text-sm lg:text-base text-sm whitespace-pre-line">
 							{role.description}
 						</span>
 
