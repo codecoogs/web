@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import { email } from "../data/about";
+import { discordLink } from "../data/members";
 import {
 	DiscordIcon,
 	GitHubIcon,
@@ -6,9 +9,6 @@ import {
 	LinkedInIcon,
 	MailIcon,
 } from "./FooterIcons";
-import { email } from "../data/about";
-import { Link } from "react-router-dom";
-import { discordLink } from "../data/members";
 
 const Footer = () => {
 	const [isHover, setIsHover] = useState<boolean>(false);
@@ -61,6 +61,19 @@ const Footer = () => {
 					<div className="opacity-50 hover:opacity-90">
 						<Link className="text-sm" to="/join">
 							Membership
+						</Link>
+					</div>
+				</div>
+				<div className="flex-1 grid grid-cols-1">
+					<h2>Legal</h2>
+					<div className="opacity-50 hover:opacity-90">
+						<Link className="text-sm" to="/legal/privacy-policy">
+							Privacy Policy
+						</Link>
+					</div>
+					<div className="opacity-50 hover:opacity-90">
+						<Link className="text-sm" to="/legal/terms-of-service">
+							Terms of Service
 						</Link>
 					</div>
 				</div>
