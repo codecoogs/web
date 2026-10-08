@@ -357,15 +357,6 @@ export const Spotlight = ({
 	onOpenFlyer: (event: CalendarEvent) => void;
 }) => (
 	<section className="relative mb-16 overflow-hidden rounded-2xl bg-dark-surface-variant ring-1 ring-white/[.12]">
-		{/* Flyer bleeds into the card as ambient color. */}
-		{event.flyerUrl && (
-			<img
-				src={event.flyerUrl}
-				alt=""
-				aria-hidden
-				className="pointer-events-none absolute inset-0 h-full w-full scale-125 object-cover opacity-20 blur-3xl"
-			/>
-		)}
 		<div className="relative grid grid-cols-1 gap-8 p-6 md:grid-cols-[1fr_320px] md:p-10">
 			<div className="flex flex-col">
 				<span className="text-xs font-semibold uppercase tracking-[0.25em] text-dark-primary">
