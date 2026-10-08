@@ -9,11 +9,6 @@ export const benefits = [
 	"Complimentary food at events",
 ];
 
-export const MEMBER_PRICES = {
-	semester: 20,
-	year: 30,
-};
-
 export const faq = [
 	{
 		question: "How much is membership?",
@@ -43,4 +38,4 @@ export const faq = [
 
 export const discordLink = "https://discord.gg/e33CQVNTSV";
 
-export const SIGNUP_API_URL = import.meta.env.VITE_API_URL;
+export const appLink = "https://app.codecoogs.com";
