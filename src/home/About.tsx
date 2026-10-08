@@ -4,19 +4,19 @@ import { useState } from "react";
 import { InstagramIcon, LinkedInIcon } from "./AboutIcons";
 import { companyLogos } from "./AboutLogos";
 
-import {
-	aboutUsDesc,
-	socialsDesc,
-	teamsDesc,
-	competitionsDesc,
-	workshopsDesc,
-	officers,
-	sponsors,
-	partners,
-} from "../data/about";
+import { Link } from "react-router-dom";
 import FadeInSection from "../common/FadeInSection";
 import { ImageWithModal } from "../common/ImageWithModal";
-import { Link } from "react-router-dom";
+import {
+	aboutUsDesc,
+	competitionsDesc,
+	officers,
+	partners,
+	socialsDesc,
+	sponsors,
+	teamsDesc,
+	workshopsDesc,
+} from "../data/about";
 
 interface AboutSectionProps {
 	id: string;
@@ -79,6 +79,7 @@ const OfficerCard = (props: OfficerCardProps) => {
 					<ImageWithModal
 						src={image}
 						alt={props.name}
+						fallbackSrc="/assets/happy-coco.webp"
 						className="w-full h-full relative object-cover rounded-full"
 					/>
 				</div>
