@@ -6,7 +6,6 @@ import Home from "./home/Home";
 import Events from "./events/Events";
 import Members from "./members/Members";
 import Sponsors from "./sponsors/Sponsors";
-import Success from "./payments/Success";
 import Opportunities from "./opportunities/Opportunities";
 import Resources from "./resources/Resources";
 import Officers from "./officers/Officers";
@@ -20,7 +19,6 @@ const App = () => {
 					<Route path="/events" element={<Events />} />
 					<Route path="/join" element={<Members />} />
 					<Route path="/sponsors" element={<Sponsors />} />
-					<Route path="/success" element={<Success />} />
 					<Route path="/opportunities" element={<Opportunities />} />
 					<Route path="/resources" element={<Resources />} />
 					<Route path="/officers" element={<Officers />} />

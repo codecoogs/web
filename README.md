@@ -22,11 +22,6 @@ git clone https://github.com/codecoogs/web.git
 ```
 
 ## Usage
-Populate environment variables
-```bash
-VITE_API_URL=
-```
-
 Install dependencies
 ```bash
 pnpm i
