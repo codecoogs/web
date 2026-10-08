@@ -1,10 +1,10 @@
 import type React from "react";
 import { useState } from "react";
 
-import { InstagramIcon, LinkedInIcon } from "../home/AboutIcons";
 import FadeInSection from "../common/FadeInSection";
 import { ImageWithModal } from "../common/ImageWithModal";
 import { officers } from "../data/about";
+import { InstagramIcon, LinkedInIcon } from "../home/AboutIcons";
 
 // ─── Department system ────────────────────────────────────────────────────────
 
@@ -77,6 +77,7 @@ const OfficerCard = (props: OfficerCardProps) => {
 					<ImageWithModal
 						src={image}
 						alt={props.name}
+						fallbackSrc="/assets/happy-coco.webp"
 						className="w-full h-full object-cover rounded-full ring-2 ring-white/10 group-hover:ring-white/20 transition-all duration-300"
 					/>
 				</div>
@@ -285,15 +286,7 @@ const OfficersPage = () => {
 	return (
 		<div className="text-white min-h-screen">
 			{/* Hero header */}
-			<div className="relative py-16 px-6 text-center overflow-hidden">
-				{/* ambient glow */}
-				<div
-					className="absolute inset-0 pointer-events-none"
-					style={{
-						background:
-							"radial-gradient(ellipse 60% 50% at 50% 0%, rgba(117,228,255,0.07) 0%, transparent 70%)",
-					}}
-				/>
+			<div className="py-16 px-6 text-center">
 				<FadeInSection className="animate-fade-down">
 					<p className="text-xs font-semibold tracking-[0.3em] uppercase text-dark-primary mb-3">
 						Code Coogs Leadership
