@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import FadeInSection from "../common/FadeInSection";
-import { getDateFromResourceName, useTitle } from "../common/utils";
-import { resources } from "../data/resources";
+import { useTitle } from "../common/utils";
+import { type Resource, fetchResources } from "../data/api";
 import { ResourceCategory } from "./ResourceCategory";
 import ResourceItem from "./ResourceItem";
 
@@ -11,55 +11,83 @@ function Resources() {
 	// Set up
 	const searchElement = useRef<HTMLInputElement>(null);
 	const images = ["teams", "workshops", "competitions"];
-	const categories = useMemo(() => {
-		const arr = new Array<string>();
 
-		resources.sort((a, b) => {
-			const dateA = getDateFromResourceName(a);
-			const dateB = getDateFromResourceName(b);
+	const [resources, setResources] = useState<Resource[]>([]);
+	const [status, setStatus] = useState<"loading" | "ready" | "error">(
+		"loading",
+	);
 
-			if (dateA && !dateB) {
+	useEffect(() => {
+		let cancelled = false;
+
+		fetchResources()
+			.then((data) => {
+				if (!cancelled) {
+					setResources(data);
+					setStatus("ready");
+				}
+			})
+			.catch(() => {
+				if (!cancelled) {
+					setStatus("error");
+				}
+			});
+
+		return () => {
+			cancelled = true;
+		};
+	}, []);
+
+	const sorted = useMemo(() => {
+		return [...resources].sort((a, b) => {
+			if (a.date && !b.date) {
 				return -1;
 			}
 
-			if (!dateA && dateB) {
+			if (!a.date && b.date) {
 				return 1;
 			}
 
-			if (dateA && dateB) {
-				return dateA < dateB ? 1 : -1;
+			if (a.date && b.date) {
+				return a.date < b.date ? 1 : -1;
 			}
 
 			return 1;
 		});
+	}, [resources]);
 
-		for (const resource of resources) {
+	const categories = useMemo(() => {
+		const arr = new Array<string>();
+
+		for (const resource of sorted) {
 			if (!arr.includes(resource.category)) {
 				arr.push(resource.category);
 			}
 		}
 
 		return arr;
-	}, []);
+	}, [sorted]);
 	const queries = useMemo(
 		() => new URLSearchParams(window.location.search),
 		[],
 	);
 
 	// State
-	const [selected, setSelected] = useState<string>(() => {
-		const categoryQuery = queries.get("category");
+	const [selected, setSelected] = useState<string>(
+		() => queries.get("category") ?? "",
+	);
 
-		if (
-			categoryQuery &&
-			categoryQuery !== "" &&
-			categories.includes(categoryQuery)
-		) {
-			return categoryQuery;
+	// Categories only exist once the fetch resolves, so fall back to the first one
+	// when the query string named nothing usable.
+	useEffect(() => {
+		if (categories.length === 0) {
+			return;
 		}
 
-		return categories[0];
-	});
+		if (!categories.includes(selected)) {
+			setSelected(categories[0]);
+		}
+	}, [categories, selected]);
 	const [search, setSearch] = useState<string>(() => {
 		const searchQuery = queries.get("search");
 
@@ -171,8 +199,27 @@ function Resources() {
 					/>
 				</div>
 
+				{status === "loading" && (
+					<p className="text-center text-white/50 text-sm py-12">
+						Loading resources&hellip;
+					</p>
+				)}
+
+				{status === "error" && (
+					<p className="text-center text-white/50 text-sm py-12">
+						We couldn&apos;t load the resources right now. Please try again
+						later.
+					</p>
+				)}
+
+				{status === "ready" && sorted.length === 0 && (
+					<p className="text-center text-white/50 text-sm py-12">
+						No resources have been published yet — check back soon.
+					</p>
+				)}
+
 				<ul className="flex flex-row flex-wrap gap-6 justify-center">
-					{resources.map((resource) => (
+					{sorted.map((resource) => (
 						<ResourceItem
 							key={resource.id}
 							visible={

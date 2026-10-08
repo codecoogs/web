@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import type { Resource } from "../data/resources";
+import type { Resource } from "../data/api";
 
 interface ResourceItemProps extends Resource {
 	visible: boolean;
