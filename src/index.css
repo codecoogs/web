@@ -73,3 +73,39 @@ html {
 		background-position: 0% 50%, 50% 50%, 100% 100%;
 	}
 }
+
+/* ── Mobile-friendly card hover (only on devices that support hover) ── */
+@media (hover: hover) {
+	.card-hover-lift:hover {
+		transform: translateY(-4px);
+	}
+}
+
+/* ── Image Modal ─────────────────────────────────────────────────── */
+.modal-backdrop {
+	animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+.modal-content {
+	animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}

@@ -1,6 +1,7 @@
 import type React from "react";
 import { useState } from "react";
 
+import { ImageWithModal } from "../common/ImageWithModal";
 import teams from "../data/teams";
 import { GitHubIcon } from "../teams/TeamsIcons";
 
@@ -11,7 +12,7 @@ interface TeamCardProps {
 
 const TeamCard = (props: TeamCardProps) => {
 	return (
-		<li className="bg-dark-surface-variant rounded-lg text-white flex flex-col pt-2 ring-1 ring-inset ring-white/[.3] transform transition-all hover:-translate-y-2 duration-300 hover:ring-dark-primary">
+		<li className="bg-dark-surface-variant rounded-lg text-white flex flex-col pt-2 ring-1 ring-inset ring-white/[.3] transition-all duration-300 hover:ring-dark-primary card-hover-lift">
 			{props.children}
 		</li>
 	);
@@ -83,14 +84,16 @@ const Teams = () => {
 								<div className="flex-grow">
 									{team.photo && (
 										<div className="w-24 h-24 md:w-40 md:h-40 my-4 mx-auto">
-											<img
-												className="object-cover w-full h-full rounded-full"
+											<ImageWithModal
 												src={team.photo}
 												alt={`${team.name} portrait`}
+												className="object-cover w-full h-full rounded-full"
 											/>
 										</div>
 									)}
-									<h1 className="font-bold pt-2">{team.name}</h1>
+									<h1 className="font-bold pt-2 user-select-none">
+										{team.name}
+									</h1>
 									{/**<h2 className="pt-2">Leads: {team.leads.join(", ")}</h2>**/}
 								</div>
 								<div className="pt-4">

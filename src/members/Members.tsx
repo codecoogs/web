@@ -18,7 +18,7 @@ const MemberBenefitCard = (props: MemberBenefitCardProps) => {
 
 	return (
 		<li key={`member-benefit-${index}`}>
-			<div className="flex justify-between items-center bg-dark-surface-variant h-full rounded-lg text-center p-2 hover:ring-dark-primary transform transition-all hover:-translate-y-2 duration-300">
+			<div className="flex justify-between items-center bg-dark-surface-variant h-full rounded-lg text-center p-2 hover:ring-dark-primary transition-all duration-300 card-hover-lift">
 				<div className="flex-1 basis-1/4">
 					<CheckIcon />
 				</div>
