@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import type { Resource } from "../data/api";
 import { ImageWithModal } from "../common/ImageWithModal";
+import type { Resource } from "../data/api";
 
 interface ResourceItemProps extends Resource {
 	visible: boolean;
