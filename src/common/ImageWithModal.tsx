@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { ImageModal } from "./ImageModal";
-import { useDoubleTap } from "./useDoubleTap";
 
 interface ImageWithModalProps {
 	src: string;
@@ -19,11 +18,10 @@ export const ImageWithModal = ({
 	const [isModalOpen, setIsModalOpen] = useState(false);
 	const [currentSrc, setCurrentSrc] = useState(src);
 
-	const handleDoubleTap = useDoubleTap(() => {
-		setIsModalOpen(true);
-	});
-
-	const handleImageClick = (e: React.MouseEvent | React.TouchEvent) => {
+	// A tap already fires click, so there is no separate touch handler (that
+	// opened the viewer twice). preventDefault keeps a wrapping <Link> from
+	// navigating when the image itself is tapped.
+	const openModal = (e: React.MouseEvent) => {
 		e.stopPropagation();
 		e.preventDefault();
 		setIsModalOpen(true);
@@ -31,17 +29,23 @@ export const ImageWithModal = ({
 
 	return (
 		<>
-			<img
-				src={currentSrc}
-				alt={alt}
-				onError={() => {
-					if (fallbackSrc && currentSrc !== fallbackSrc)
-						setCurrentSrc(fallbackSrc);
-				}}
-				className={`${className} cursor-pointer select-none active:opacity-80 transition-opacity`}
-				onClick={handleImageClick}
-				onTouchEnd={handleImageClick}
-			/>
+			<button
+				type="button"
+				onClick={openModal}
+				aria-label={`View ${alt} full screen`}
+				className="block w-full h-full cursor-pointer select-none rounded-[inherit] active:opacity-80 transition-opacity"
+			>
+				<img
+					src={currentSrc}
+					alt={alt}
+					onError={() => {
+						if (fallbackSrc && currentSrc !== fallbackSrc) {
+							setCurrentSrc(fallbackSrc);
+						}
+					}}
+					className={className}
+				/>
+			</button>
 			<ImageModal
 				isOpen={isModalOpen}
 				imageUrl={currentSrc}

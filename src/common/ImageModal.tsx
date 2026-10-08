@@ -33,20 +33,15 @@ export const ImageModal = ({
 	if (!isOpen) return null;
 
 	return (
-		<div
-			className="modal-backdrop fixed inset-0 z-50 bg-black flex items-center justify-center"
-			onClick={onClose}
-		>
-			<div
-				className="modal-content relative w-full h-full flex items-center justify-center"
-				onClick={(e) => e.stopPropagation()}
-			>
+		<div className="modal-backdrop fixed inset-0 z-50 bg-black flex items-center justify-center">
+			<div className="modal-content relative w-full h-full flex items-center justify-center">
 				<img
 					src={imageUrl}
 					alt={imageAlt}
 					className="w-full h-full object-contain"
 				/>
 				<button
+					type="button"
 					onClick={onClose}
 					className="absolute top-6 right-6 w-12 h-12 flex items-center justify-center bg-white/20 hover:bg-white/30 rounded-full text-white transition-all duration-200 z-10"
 					aria-label="Close modal"
@@ -58,7 +53,9 @@ export const ImageModal = ({
 						fill="none"
 						stroke="currentColor"
 						strokeWidth="2"
+						aria-hidden="true"
 					>
+						<title>Close</title>
 						<path d="M18 6L6 18M6 6l12 12" />
 					</svg>
 				</button>
