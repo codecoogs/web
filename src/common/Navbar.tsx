@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-import { DiscordIcon } from "./NavbarIcons";
 import { discordLink } from "../data/members";
+import { DiscordIcon } from "./NavbarIcons";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -23,7 +23,7 @@ const Navlink = ({ to, text, onClick }: NavlinkProps) => {
 			<Link
 				to={to}
 				onClick={onClick}
-				className="relative block py-1 text-sm font-medium tracking-wide group"
+				className="relative block whitespace-nowrap py-1 text-sm font-medium tracking-wide group"
 			>
 				{/* text colour */}
 				<span
@@ -55,7 +55,7 @@ const Navhome = ({ onClick }: { onClick?: () => void }) => {
 		<Link
 			to="/"
 			onClick={onClick}
-			className="flex items-center gap-1 ml-4 md:ml-10 flex-shrink-0"
+			className="flex items-center gap-1 ml-4 lg:ml-8 flex-shrink-0"
 			onMouseEnter={() => setHovered(true)}
 			onMouseLeave={() => setHovered(false)}
 		>
@@ -126,8 +126,8 @@ const Navbar = () => {
 				{/* Logo */}
 				<Navhome onClick={closeDrawer} />
 
-				{/* Desktop nav links — centre */}
-				<ul className="hidden md:flex items-center gap-7 absolute left-1/2 -translate-x-1/2">
+				{/* Desktop nav links, centred in the space between logo and CTAs */}
+				<ul className="hidden lg:flex flex-1 min-w-0 items-center justify-center gap-5 min-[1200px]:gap-7 px-4">
 					<Navlink to="/#us" text="About" />
 					<Navlink to="/events" text="Events" />
 					<Navlink to="/opportunities" text="Opportunities" />
@@ -135,8 +135,8 @@ const Navbar = () => {
 					<Navlink to="/officers" text="Officers" />
 				</ul>
 
-				{/* Desktop CTAs — right */}
-				<div className="hidden md:flex items-center gap-3 mr-6">
+				{/* Desktop CTAs, right */}
+				<div className="hidden lg:flex flex-shrink-0 items-center gap-3 mr-6">
 					{/* Discord */}
 					<a
 						href={discordLink}
@@ -151,7 +151,7 @@ const Navbar = () => {
 					{/* Sponsor ghost button */}
 					<Link
 						to="/sponsors"
-						className="px-4 py-1.5 text-sm font-semibold rounded-lg text-white/70 ring-1 ring-white/20 hover:ring-dark-primary hover:text-dark-primary transition-all duration-200"
+						className="whitespace-nowrap px-4 py-1.5 text-sm font-semibold rounded-lg text-white/70 ring-1 ring-white/20 hover:ring-dark-primary hover:text-dark-primary transition-all duration-200"
 					>
 						Sponsor Us
 					</Link>
@@ -159,16 +159,16 @@ const Navbar = () => {
 					{/* Join CTA */}
 					<Link
 						to="/join"
-						className="relative px-4 py-1.5 text-sm font-bold rounded-lg bg-dark-primary text-dark-surface hover:brightness-110 transition-all duration-200"
+						className="relative whitespace-nowrap px-4 py-1.5 text-sm font-bold rounded-lg bg-dark-primary text-dark-surface hover:brightness-110 transition-all duration-200"
 					>
 						Join via CoCo ↗
 					</Link>
 				</div>
 
-				{/* Mobile hamburger — always visible on small screens */}
+				{/* Hamburger below lg, where the full nav doesn't fit */}
 				<button
 					type="button"
-					className="md:hidden mr-4 flex flex-col justify-center gap-[5px] w-8 h-8 group"
+					className="lg:hidden mr-4 flex flex-col justify-center gap-[5px] w-8 h-8 group"
 					onClick={() => setDrawerOpen((o) => !o)}
 					aria-label="Toggle menu"
 					aria-expanded={drawerOpen}
@@ -193,7 +193,7 @@ const Navbar = () => {
 
 			{/* Mobile drawer backdrop */}
 			<div
-				className={`fixed inset-0 z-40 bg-black/50 backdrop-blur-sm transition-opacity duration-300 md:hidden ${
+				className={`fixed inset-0 z-40 bg-black/50 backdrop-blur-sm transition-opacity duration-300 lg:hidden ${
 					drawerOpen
 						? "opacity-100 pointer-events-auto"
 						: "opacity-0 pointer-events-none"
@@ -204,7 +204,7 @@ const Navbar = () => {
 			{/* Mobile slide-in drawer from right */}
 			<div
 				ref={drawerRef}
-				className={`fixed top-0 right-0 z-50 h-full w-72 bg-dark-surface border-l border-white/[0.08] flex flex-col pt-20 pb-8 px-6 transition-transform duration-300 ease-in-out md:hidden ${
+				className={`fixed top-0 right-0 z-50 h-full w-72 bg-dark-surface border-l border-white/[0.08] flex flex-col pt-20 pb-8 px-6 transition-transform duration-300 ease-in-out lg:hidden ${
 					drawerOpen ? "translate-x-0" : "translate-x-full"
 				}`}
 			>
