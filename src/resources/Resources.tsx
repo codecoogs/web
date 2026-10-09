@@ -115,15 +115,7 @@ function Resources() {
 	return (
 		<div className="text-white min-h-screen">
 			{/* Hero header */}
-			<div className="relative py-16 px-6 text-center overflow-hidden">
-				{/* ambient glow */}
-				<div
-					className="absolute inset-0 pointer-events-none"
-					style={{
-						background:
-							"radial-gradient(ellipse 60% 50% at 50% 0%, rgba(117,228,255,0.07) 0%, transparent 70%)",
-					}}
-				/>
+			<div className="py-16 px-6 text-center">
 				<FadeInSection className="animate-fade-down">
 					<p className="text-xs font-semibold tracking-[0.3em] uppercase text-dark-primary mb-3">
 						Learning Materials
@@ -131,35 +123,15 @@ function Resources() {
 				</FadeInSection>
 				<FadeInSection className="animate-fade-up">
 					<h1 className="font-display text-3xl md:text-5xl font-bold text-white leading-tight">
-						Slides, notebooks &amp;
-						<br />
-						<span className="text-dark-primary">workshop resources</span>
+						Resources
 					</h1>
-				</FadeInSection>
-				<FadeInSection className="animate-fade-up">
-					<p className="text-white/50 mt-4 text-sm max-w-md mx-auto">
-						Browse materials from our workshops, competitions, and
-						collaborations — everything we&apos;ve shared, in one place.
-					</p>
 				</FadeInSection>
 			</div>
 
 			{/* Main content */}
 			<div className="max-w-5xl mx-auto px-4 pb-20">
-				{/* Category tabs */}
-				<div className="flex flex-wrap justify-center gap-3 mb-8">
-					{categories.map((category) => (
-						<ResourceCategory
-							key={category}
-							category={category}
-							selected={selected === category}
-							onClick={() => setSelected(category)}
-						/>
-					))}
-				</div>
-
-				{/* Search + mascot */}
-				<div className="flex flex-col items-center gap-6 mb-12">
+				{/* Search */}
+				<div className="flex justify-center mb-6">
 					<div className="relative w-full max-w-sm">
 						<svg
 							className="absolute left-4 top-1/2 -translate-y-1/2 text-white/30"
@@ -191,7 +163,22 @@ function Resources() {
 							className="w-full bg-dark-surface-variant text-white placeholder-white/40 pl-11 pr-4 py-3 rounded-full outline-none ring-1 ring-inset ring-white/10 focus:ring-dark-primary/60 transition-all"
 						/>
 					</div>
+				</div>
 
+				{/* Category tabs */}
+				<div className="flex flex-wrap justify-center gap-3 mb-8">
+					{categories.map((category) => (
+						<ResourceCategory
+							key={category}
+							category={category}
+							selected={selected === category}
+							onClick={() => setSelected(category)}
+						/>
+					))}
+				</div>
+
+				{/* Mascot for the selected category */}
+				<div className="flex justify-center mb-12">
 					<img
 						className="max-h-28 object-cover rounded-md"
 						src={`/assets/${images.find((image) => image.includes(selected.toLowerCase())) ?? "socials"}-coco.webp`}
@@ -214,7 +201,7 @@ function Resources() {
 
 				{status === "ready" && sorted.length === 0 && (
 					<p className="text-center text-white/50 text-sm py-12">
-						No resources have been published yet — check back soon.
+						No resources have been published yet. Check back soon!
 					</p>
 				)}
 

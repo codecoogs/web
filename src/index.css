@@ -49,3 +49,63 @@ html {
 .animate-marquee:hover {
 	animation-play-state: paused;
 }
+
+/* HTML: <div class="loader"></div> */
+.loader {
+	width: 80px;
+	aspect-ratio: 2;
+	--_g: no-repeat radial-gradient(circle closest-side, #ffffff 90%, #ffffff00);
+	background: var(--_g) 0% 50%, var(--_g) 50% 50%, var(--_g) 100% 50%;
+	background-size: calc(100% / 3) 50%;
+	animation: l3 1s infinite linear;
+}
+@keyframes l3 {
+	20% {
+		background-position: 0% 0%, 50% 50%, 100% 50%;
+	}
+	40% {
+		background-position: 0% 100%, 50% 0%, 100% 50%;
+	}
+	60% {
+		background-position: 0% 50%, 50% 100%, 100% 0%;
+	}
+	80% {
+		background-position: 0% 50%, 50% 50%, 100% 100%;
+	}
+}
+
+/* ── Mobile-friendly card hover (only on devices that support hover) ── */
+@media (hover: hover) {
+	.card-hover-lift:hover {
+		transform: translateY(-4px);
+	}
+}
+
+/* ── Image Modal ─────────────────────────────────────────────────── */
+.modal-backdrop {
+	animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+.modal-content {
+	animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}

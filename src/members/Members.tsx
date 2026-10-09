@@ -4,34 +4,18 @@ import { appLink, benefits, faq } from "../data/members";
 import { CheckIcon } from "./MembersIcons";
 import { useTitle } from "../common/utils";
 
-const JoinCard = () => (
-	<div className="bg-dark-surface-variant h-full rounded-lg p-6 ring-1 ring-inset ring-white/[.3] flex flex-col items-center text-center">
-		<img
-			src="/assets/happy-coco.webp"
-			alt="CoCo mascot"
-			className="w-24 h-24 object-contain"
-		/>
-		<h2 className="mt-4 font-bold text-2xl">Sign up on the CoCo app</h2>
-		<p className="mt-2 text-white/60 max-w-md">
-			Membership registration and dues are handled on the Code[Coogs] app.
-			Create your account there to become a member.
-		</p>
-		<a
-			href={appLink}
-			target="_blank"
-			rel="noreferrer"
-			className="mt-6 px-7 py-3 font-bold rounded-lg bg-dark-primary text-dark-surface hover:brightness-110 transition-all duration-200"
-		>
-			Join via CoCo ↗
-		</a>
+interface MemberBenefitCardProps {
+	benefit: string;
+	index: number;
+}
 
-		<h2 className="mt-10 mb-4 font-bold text-lg">Benefits</h2>
-		<ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm w-full">
-			{benefits.map((benefit) => (
-				<li
-					key={benefit}
-					className="flex items-center gap-3 bg-dark-surface rounded-lg p-2 text-left"
-				>
+const MemberBenefitCard = (props: MemberBenefitCardProps) => {
+	const { benefit, index } = props;
+
+	return (
+		<li key={`member-benefit-${index}`}>
+			<div className="flex justify-between items-center bg-dark-surface-variant h-full rounded-lg text-center p-2 hover:ring-dark-primary transition-all duration-300 card-hover-lift">
+				<div className="flex-1 basis-1/4">
 					<CheckIcon />
 					<span className="opacity-50">{benefit}</span>
 				</li>

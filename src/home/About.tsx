@@ -4,18 +4,19 @@ import { useState } from "react";
 import { InstagramIcon, LinkedInIcon } from "./AboutIcons";
 import { companyLogos } from "./AboutLogos";
 
+import { Link } from "react-router-dom";
+import FadeInSection from "../common/FadeInSection";
+import { ImageWithModal } from "../common/ImageWithModal";
 import {
 	aboutUsDesc,
-	socialsDesc,
-	teamsDesc,
 	competitionsDesc,
-	workshopsDesc,
 	officers,
-	sponsors,
 	partners,
+	socialsDesc,
+	sponsors,
+	teamsDesc,
+	workshopsDesc,
 } from "../data/about";
-import FadeInSection from "../common/FadeInSection";
-import { Link } from "react-router-dom";
 
 interface AboutSectionProps {
 	id: string;
@@ -72,24 +73,26 @@ const OfficerCard = (props: OfficerCardProps) => {
 	console.log(image);
 
 	return (
-		<div className="flex flex-col bg-dark-surface-variant rounded-xl text-center p-4 hover:ring-dark-primary ring-1 ring-inset ring-white/[.3] transform transition-all hover:-translate-y-2 duration-300">
+		<div className="flex flex-col bg-dark-surface-variant rounded-xl text-center p-4 hover:ring-dark-primary ring-1 ring-inset ring-white/[.3] transition-all duration-300 card-hover-lift">
 			<div className="flex-grow">
 				<div className="w-24 h-24 md:w-32 md:h-32 mx-auto">
-					<img
-						className="w-full h-full relative object-cover rounded-full"
+					<ImageWithModal
 						src={image}
 						alt={props.name}
-						onError={(e) => {
-							e.currentTarget.src = "/assets/happy-coco.webp";
-						}}
-						// onMouseOver={e => (e.currentTarget.src = props.video ? props.video : props.photo)}
-						// onMouseOut={e => (e.currentTarget.src = props.photo)}
+						fallbackSrc="/assets/happy-coco.webp"
+						className="w-full h-full relative object-cover rounded-full"
 					/>
 				</div>
-				<span className="block text-sm font-bold pt-4">{props.name}</span>
-				<span className="block text-sm opacity-50">{props.position}</span>
+				<span className="block text-sm font-bold pt-4 user-select-none">
+					{props.name}
+				</span>
+				<span className="block text-sm opacity-50 user-select-none">
+					{props.position}
+				</span>
 				{props.retired && (
-					<span className="block text-xs opacity-50">(retired)</span>
+					<span className="block text-xs opacity-50 user-select-none">
+						(retired)
+					</span>
 				)}
 			</div>
 			<div className="pt-4">
