@@ -162,7 +162,7 @@ const Navbar = () => {
 						className="relative whitespace-nowrap px-4 py-1.5 text-sm font-bold rounded-lg bg-dark-primary text-dark-surface hover:brightness-110 transition-all duration-200"
 					>
 						Join via CoCo ↗
-					</Link>
+					</a>
 				</div>
 
 				{/* Hamburger below lg, where the full nav doesn't fit */}
@@ -264,13 +264,15 @@ const Navbar = () => {
 					>
 						Sponsor Us
 					</Link>
-					<Link
-						to="/join"
+					<a
+						href={appLink}
+						target="_blank"
+						rel="noreferrer"
 						onClick={closeDrawer}
 						className="py-2.5 px-4 text-center rounded-lg bg-dark-primary text-dark-surface text-sm font-bold hover:brightness-110 transition-all duration-200"
 					>
 						Join via CoCo ↗
-					</Link>
+					</a>
 				</div>
 			</div>
 

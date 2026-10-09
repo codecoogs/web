@@ -10,7 +10,6 @@ import LegalDocument from "./legal/LegalDocument";
 import Members from "./members/Members";
 import Officers from "./officers/Officers";
 import Opportunities from "./opportunities/Opportunities";
-import Success from "./payments/Success";
 import Resources from "./resources/Resources";
 import Sponsors from "./sponsors/Sponsors";
 
@@ -24,7 +23,6 @@ const App = () => {
 					<Route path="/events/past" element={<PastEvents />} />
 					<Route path="/join" element={<Members />} />
 					<Route path="/sponsors" element={<Sponsors />} />
-					<Route path="/success" element={<Success />} />
 					<Route path="/opportunities" element={<Opportunities />} />
 					<Route path="/resources" element={<Resources />} />
 					<Route path="/officers" element={<Officers />} />
