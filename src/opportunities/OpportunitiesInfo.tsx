@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Flashcard } from "react-quizlet-flashcard";
 import { type Opportunity, fetchOpportunities } from "../data/api";
 import { useScrollLock } from "../common/utils";
@@ -90,7 +90,12 @@ const OpportunityCard = ({ role }: { role: Opportunity }) => {
 		const el = cardRef.current;
 		if (el) {
 			const r = el.getBoundingClientRect();
-			setStartRect({ top: r.top, left: r.left, width: r.width, height: r.height });
+			setStartRect({
+				top: r.top,
+				left: r.left,
+				width: r.width,
+				height: r.height,
+			});
 		}
 		setDetached(true);
 		requestAnimationFrame(() => {
@@ -101,14 +106,14 @@ const OpportunityCard = ({ role }: { role: Opportunity }) => {
 		});
 	};
 
-	const close = () => {
+	const close = useCallback(() => {
 		setExpanded(false);
 		flipRef.current();
 		closeTimeoutRef.current = setTimeout(() => {
 			setDetached(false);
 			setStartRect(null);
 		}, TRANSITION_MS);
-	};
+	}, []);
 
 	useScrollLock(detached);
 
@@ -118,6 +123,17 @@ const OpportunityCard = ({ role }: { role: Opportunity }) => {
 		},
 		[],
 	);
+
+	// Keyboard equivalent of the backdrop click, which is aria-hidden and
+	// therefore unreachable via keyboard navigation.
+	useEffect(() => {
+		if (!expanded) return;
+		const onKeyDown = (e: KeyboardEvent) => {
+			if (e.key === "Escape") close();
+		};
+		document.addEventListener("keydown", onKeyDown);
+		return () => document.removeEventListener("keydown", onKeyDown);
+	}, [expanded, close]);
 
 	// Tracks whether the description overflows and whether it's scrolled to
 	// the bottom, so the "scroll for more" hint only shows when it's true.
@@ -163,6 +179,7 @@ const OpportunityCard = ({ role }: { role: Opportunity }) => {
 			    siblings don't reflow into the gap. */}
 			{detached && <div aria-hidden="true" style={cardSlotStyle} />}
 
+			{/* biome-ignore lint/a11y/useKeyWithClickEvents: decorative, aria-hidden backdrop — unreachable via keyboard; Escape (handled above) and the Close button are the keyboard equivalents. */}
 			<div
 				className={cn(
 					"fixed inset-0 z-40 bg-black/70 backdrop-blur-sm transition-opacity duration-300",
@@ -180,8 +197,10 @@ const OpportunityCard = ({ role }: { role: Opportunity }) => {
 					height="100%"
 					width="100%"
 					frontHTML={
-						<div
-							className="relative group h-full cursor-pointer"
+						<button
+							type="button"
+							aria-label={`View details for ${role.name}`}
+							className="relative group block h-full w-full text-left cursor-pointer"
 							onClick={open}
 						>
 							<div className="absolute -inset-0.5 bg-dark-primary blur-lg opacity-30 transform scale-90 group-hover:scale-100 transition-all duration-300" />
@@ -192,14 +211,12 @@ const OpportunityCard = ({ role }: { role: Opportunity }) => {
 									<h1 className="text-lg font-normal">{role.year}</h1>
 								</span>
 							</div>
-						</div>
+						</button>
 					}
 					backHTML={
 						<div className="relative group h-full">
 							<div className="absolute -inset-0.5 bg-dark-primary blur-lg opacity-30 transform scale-90 group-hover:scale-100 transition-all duration-300" />
-							<div
-								className={`${style} items-stretch h-full flex-col gap-3`}
-							>
+							<div className={`${style} items-stretch h-full flex-col gap-3`}>
 								<button
 									type="button"
 									aria-label="Close"
