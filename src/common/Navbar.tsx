@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-import { discordLink } from "../data/members";
+import { appLink, discordLink } from "../data/members";
 import { DiscordIcon } from "./NavbarIcons";
+import { useScrollLock } from "./utils";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -105,12 +106,7 @@ const Navbar = () => {
 	}, [drawerOpen]);
 
 	// Prevent body scroll when drawer is open
-	useEffect(() => {
-		document.body.style.overflow = drawerOpen ? "hidden" : "";
-		return () => {
-			document.body.style.overflow = "";
-		};
-	}, [drawerOpen]);
+	useScrollLock(drawerOpen);
 
 	const closeDrawer = () => setDrawerOpen(false);
 
@@ -157,11 +153,13 @@ const Navbar = () => {
 					</Link>
 
 					{/* Join CTA */}
-					<Link
-						to="/join"
+					<a
+						href={appLink}
+						target="_blank"
+						rel="noreferrer"
 						className="relative whitespace-nowrap px-4 py-1.5 text-sm font-bold rounded-lg bg-dark-primary text-dark-surface hover:brightness-110 transition-all duration-200"
 					>
-						Join via CoCo ↗
+						Join via CoCo
 					</a>
 				</div>
 
