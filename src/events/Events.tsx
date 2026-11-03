@@ -1,167 +1,108 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import { useTitle } from "../common/utils";
-import { type CalendarEvent, fetchEvents } from "../data/api";
+import type { CalendarEvent } from "../data/api";
+import {
+	AgendaRow,
+	AgendaSkeleton,
+	FlyerLightbox,
+	Spotlight,
+	groupByMonth,
+	isPast,
+	useEvents,
+} from "./EventParts";
 
-const cardStyle =
-	"flex flex-col bg-dark-surface-variant rounded text-white p-6 ring-1 ring-white/[.15]";
-
-// Mirrors an event card's footprint so the list does not jump when it arrives.
-const EventSkeleton = () => (
-	<li className={`${cardStyle} animate-pulse`}>
-		<div className="w-1/3 h-4 mb-3 rounded bg-white/10" />
-		<div className="w-2/3 h-6 mb-3 rounded bg-white/10" />
-		<div className="w-1/2 h-4 rounded bg-white/10" />
-	</li>
+const PastEventsLink = () => (
+	<Link
+		to="/events/past"
+		className="inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-sm font-semibold tracking-wide text-white/80 ring-1 ring-white/20 transition-all duration-200 hover:text-dark-primary hover:ring-dark-primary"
+	>
+		Browse past events
+		<span aria-hidden>→</span>
+	</Link>
 );
-
-const formatDay = (date: Date) =>
-	date.toLocaleDateString("en-US", {
-		weekday: "long",
-		month: "long",
-		day: "numeric",
-	});
-
-const formatTime = (date: Date) =>
-	date.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" });
-
-const formatMonth = (date: Date) =>
-	date.toLocaleDateString("en-US", { month: "long", year: "numeric" });
-
-const EventCard = ({ event }: { event: CalendarEvent }) => {
-	const when = event.allDay
-		? `${formatDay(event.start)} · All day`
-		: `${formatDay(event.start)} · ${formatTime(event.start)}${
-				event.end ? ` – ${formatTime(event.end)}` : ""
-			}`;
-
-	return (
-		<li className={cardStyle}>
-			<span className="text-dark-primary text-sm font-bold">{when}</span>
-
-			<h3 className="text-xl font-bold mt-1">{event.name}</h3>
-
-			{event.location && (
-				<span className="text-white/70 text-sm mt-1">{event.location}</span>
-			)}
-
-			{event.description && (
-				<p className="text-white/80 text-sm mt-3 whitespace-pre-line">
-					{event.description}
-				</p>
-			)}
-
-			{event.pointCategory && (
-				<span className="text-white/50 text-xs mt-3">
-					{event.pointCategory}
-				</span>
-			)}
-
-			{event.flyerUrl && (
-				<img
-					src={event.flyerUrl}
-					alt={`Flyer for ${event.name}`}
-					className="rounded mt-4"
-					loading="lazy"
-				/>
-			)}
-		</li>
-	);
-};
 
 const Events = () => {
 	useTitle("Events");
 
-	const [events, setEvents] = useState<CalendarEvent[]>([]);
-	const [status, setStatus] = useState<"loading" | "ready" | "error">(
-		"loading",
-	);
-
-	useEffect(() => {
-		let cancelled = false;
-
-		fetchEvents()
-			.then((data) => {
-				if (!cancelled) {
-					setEvents(data);
-					setStatus("ready");
-				}
-			})
-			.catch(() => {
-				if (!cancelled) {
-					setStatus("error");
-				}
-			});
-
-		return () => {
-			cancelled = true;
-		};
-	}, []);
+	const { events, status } = useEvents();
+	const [openFlyer, setOpenFlyer] = useState<CalendarEvent | null>(null);
 
 	// The calendar syncs a window that reaches into the past so the club keeps a
-	// record, but the page is about what is coming up.
-	const upcoming = useMemo(() => {
-		const startOfToday = new Date();
-		startOfToday.setHours(0, 0, 0, 0);
+	// record; that record lives on /events/past and this page is what's ahead.
+	const upcoming = useMemo(
+		() => events.filter((event) => !isPast(event.start)),
+		[events],
+	);
 
-		return events.filter((event) => event.start >= startOfToday);
-	}, [events]);
-
-	// The API already orders by start_time, so grouping in a single pass keeps
-	// the months in order without re-sorting.
-	const months = useMemo(() => {
-		const grouped = new Map<string, CalendarEvent[]>();
-
-		for (const event of upcoming) {
-			const key = formatMonth(event.start);
-			const bucket = grouped.get(key);
-
-			if (bucket) {
-				bucket.push(event);
-			} else {
-				grouped.set(key, [event]);
-			}
-		}
-
-		return [...grouped.entries()];
-	}, [upcoming]);
+	const next = upcoming[0];
+	const months = useMemo(() => groupByMonth(upcoming.slice(1)), [upcoming]);
 
 	return (
 		<div className="p-4 text-white">
-			<h1 className="text-3xl font-bold text-center mt-8">Upcoming Events</h1>
+			<div className="mx-auto mt-8 max-w-5xl">
+				<div className="mb-10 flex flex-wrap items-end justify-between gap-4">
+					<div>
+						<p className="mb-2 text-sm font-medium uppercase tracking-[0.25em] text-dark-primary">
+							Events
+						</p>
+						<h1 className="text-3xl font-bold md:text-4xl">Upcoming Events</h1>
+					</div>
+					<Link
+						to="/events/past"
+						className="text-sm font-semibold text-white/60 transition-colors hover:text-dark-primary"
+					>
+						Past events <span aria-hidden>→</span>
+					</Link>
+				</div>
 
-			<div className="max-w-3xl mx-auto mt-8">
-				{status === "loading" && (
-					<ul className="grid grid-cols-1 gap-4" aria-busy="true">
-						{[0, 1, 2].map((index) => (
-							<EventSkeleton key={index} />
-						))}
-					</ul>
-				)}
+				{status === "loading" && <AgendaSkeleton />}
 
 				{status === "error" && (
-					<p className="text-center text-white/50 text-sm p-6">
+					<p className="p-6 text-center text-sm text-white/50">
 						We couldn&apos;t load the events right now. Please try again later.
 					</p>
 				)}
 
-				{status === "ready" && months.length === 0 && (
-					<p className="text-center text-white/50 text-sm p-6">
-						There are no upcoming events right now — check back soon.
-					</p>
+				{status === "ready" && !next && (
+					<div className="flex flex-col items-center gap-6 p-10 text-center">
+						<p className="text-sm text-white/50">
+							There are no upcoming events right now. Check back soon!
+						</p>
+						<PastEventsLink />
+					</div>
 				)}
 
-				{months.map(([month, monthEvents]) => (
-					<section key={month} className="mb-8">
-						<h2 className="text-lg font-bold text-white/60 mb-3">{month}</h2>
+				{next && <Spotlight event={next} onOpenFlyer={setOpenFlyer} />}
 
-						<ul className="grid grid-cols-1 gap-4">
+				{months.map(([month, monthEvents]) => (
+					<section key={month} className="mb-10">
+						<h2 className="sticky top-14 z-10 -mx-3 mb-2 bg-dark-surface/90 px-3 py-3 text-sm font-semibold uppercase tracking-[0.25em] text-white/50 backdrop-blur">
+							{month}
+						</h2>
+						<ul className="flex flex-col divide-y divide-white/[.06]">
 							{monthEvents.map((event) => (
-								<EventCard key={event.id} event={event} />
+								<AgendaRow
+									key={event.id}
+									event={event}
+									onOpenFlyer={setOpenFlyer}
+								/>
 							))}
 						</ul>
 					</section>
 				))}
+
+				{next && (
+					<div className="mb-8 mt-4 flex flex-col items-center gap-4 border-t border-white/10 pt-10 text-center">
+						<p className="text-sm text-white/50">
+							Curious what we&apos;ve done before?
+						</p>
+						<PastEventsLink />
+					</div>
+				)}
 			</div>
+
+			<FlyerLightbox event={openFlyer} onClose={() => setOpenFlyer(null)} />
 		</div>
 	);
 };
