@@ -7,9 +7,11 @@ import { useTitle } from "../common/utils";
 const cn = (...classes: Array<string | false | undefined>) =>
 	classes.filter(Boolean).join(" ");
 
+// One card with the video above the benefits on small screens; from lg up it
+// splits into two cards, benefits on the left and the video on the right.
 const DemoCard = () => (
-	<div className="w-full overflow-hidden rounded-lg bg-dark-surface-variant ring-1 ring-inset ring-white/[.1]">
-		<div className="flex w-full flex-col items-center justify-center bg-gradient-to-b from-dark-primary/30 via-dark-primary/20 to-transparent p-1">
+	<div className="grid w-full grid-cols-1 overflow-hidden rounded-lg bg-dark-surface-variant ring-1 ring-inset ring-white/[.1] lg:grid-cols-2 lg:items-center lg:gap-6 lg:overflow-visible lg:rounded-none lg:bg-[transparent] lg:ring-0">
+		<div className="flex w-full flex-col items-center justify-center bg-gradient-to-b from-dark-primary/30 via-dark-primary/20 to-transparent p-1 lg:order-2 lg:rounded-lg">
 			<video
 				className="w-full rounded-lg shadow-lg shadow-black/40"
 				autoPlay
@@ -20,20 +22,24 @@ const DemoCard = () => (
 				<source src="/assets/membership-purchase-demo.mp4" type="video/mp4" />
 			</video>
 		</div>
-		<h2 className="mt-8 mb-4 text-center font-bold text-lg">Benefits</h2>
-		<div className="grid grid-cols-1 gap-2 px-6 pb-6 text-sm md:grid-cols-2">
-			{benefits.map((item, index) => (
-				<div
-					key={item}
-					className={cn(
-						"flex items-center gap-3 rounded-lg px-3 py-2.5 transition-colors",
-						index % 2 === 0 && "bg-dark-surface",
-					)}
-				>
-					<CheckIcon />
-					<span className="text-sm text-white/[.5]">{item}</span>
-				</div>
-			))}
+		<div className="lg:order-1 lg:rounded-lg lg:bg-dark-surface-variant lg:ring-1 lg:ring-inset lg:ring-white/[.1]">
+			<h2 className="mt-8 mb-4 text-center font-bold text-lg lg:mt-6">
+				Benefits
+			</h2>
+			<div className="grid grid-cols-1 gap-2 px-6 pb-6 text-sm md:grid-cols-2 lg:grid-cols-1">
+				{benefits.map((item, index) => (
+					<div
+						key={item}
+						className={cn(
+							"flex items-center gap-3 rounded-lg px-3 py-2.5 transition-colors",
+							index % 2 === 0 && "bg-dark-surface",
+						)}
+					>
+						<CheckIcon />
+						<span className="text-sm text-white/[.5]">{item}</span>
+					</div>
+				))}
+			</div>
 		</div>
 	</div>
 );
@@ -133,11 +139,11 @@ const Members = () => {
 						community
 					</a>
 				</span>{" "}
-				of hobbyist programmers
+				with CoCo
 			</h1>
-			<div className="mx-auto max-w-3xl my-8 flex flex-col gap-6">
-				<JoinCard />
+			<div className="mx-auto max-w-3xl my-8 flex flex-col gap-6 lg:max-w-6xl">
 				<DemoCard />
+				<JoinCard />
 			</div>
 			<div className="mx-auto my-8 w-full max-w-lg">
 				<h2 className="text-3xl text-center mb-4 mt-24">FAQs</h2>
