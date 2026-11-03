@@ -298,7 +298,7 @@ const OpportunitiesInfo = () => {
 
 	return (
 		<div className="text-white p-4" id="opportunitiesInfo">
-			<div className="flex flex-wrap flex-col justify-center">
+			<div className="flex flex-col justify-center">
 				<div className="rounded md:mx-20 my-4">
 					<section className="md:w-3/4 mx-auto">
 						<p className="text-lg p-6 opacity-90">
@@ -310,7 +310,7 @@ const OpportunitiesInfo = () => {
 					</section>
 				</div>
 
-				<div className="rounded md:mx-20 max-h-[100%] md:max-h-[30rem]">
+				<div className="rounded md:mx-20">
 					<section className="md:w-8/12 mx-auto">
 						{status === "loading" && (
 							<div className="flex flex-wrap p-6" aria-busy="true">
