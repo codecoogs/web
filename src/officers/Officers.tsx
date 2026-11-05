@@ -1,9 +1,10 @@
 import type React from "react";
 import { useState } from "react";
 
-import { InstagramIcon, LinkedInIcon } from "../home/AboutIcons";
 import FadeInSection from "../common/FadeInSection";
+import { ImageWithModal } from "../common/ImageWithModal";
 import { officers } from "../data/about";
+import { InstagramIcon, LinkedInIcon } from "../home/AboutIcons";
 
 // ─── Department system ────────────────────────────────────────────────────────
 
@@ -69,28 +70,28 @@ const OfficerCard = (props: OfficerCardProps) => {
 	}
 
 	return (
-		<div className="group relative flex flex-col bg-dark-surface-variant rounded-xl overflow-hidden ring-1 ring-inset ring-white/10 hover:ring-dark-primary/50 transform transition-all hover:-translate-y-1 duration-300">
+		<div className="group relative flex flex-col bg-dark-surface-variant rounded-xl overflow-hidden ring-1 ring-inset ring-white/10 hover:ring-dark-primary/50 transition-all duration-300 card-hover-lift">
 			<div className="flex flex-col flex-1 p-4 text-center">
 				{/* Avatar */}
 				<div className="w-20 h-20 md:w-24 md:h-24 mx-auto mt-2 mb-3">
-					<img
-						className="w-full h-full object-cover rounded-full ring-2 ring-white/10 group-hover:ring-white/20 transition-all duration-300"
+					<ImageWithModal
 						src={image}
 						alt={props.name}
-						onError={(e) => {
-							e.currentTarget.src = "/assets/happy-coco.webp";
-						}}
+						fallbackSrc="/assets/happy-coco.webp"
+						className="w-full h-full object-cover rounded-full ring-2 ring-white/10 group-hover:ring-white/20 transition-all duration-300"
 					/>
 				</div>
 
-				<span className="block text-sm font-bold text-white leading-snug">
+				<span className="block text-sm font-bold text-white leading-snug user-select-none">
 					{props.name}
 				</span>
-				<span className="block text-xs mt-0.5 font-medium text-dark-primary">
+				<span className="block text-xs mt-0.5 font-medium text-dark-primary user-select-none">
 					{props.position}
 				</span>
 				{props.retired && (
-					<span className="block text-xs text-white/30 mt-0.5">(retired)</span>
+					<span className="block text-xs text-white/30 mt-0.5 user-select-none">
+						(retired)
+					</span>
 				)}
 
 				{/* Socials */}
@@ -285,15 +286,7 @@ const OfficersPage = () => {
 	return (
 		<div className="text-white min-h-screen">
 			{/* Hero header */}
-			<div className="relative py-16 px-6 text-center overflow-hidden">
-				{/* ambient glow */}
-				<div
-					className="absolute inset-0 pointer-events-none"
-					style={{
-						background:
-							"radial-gradient(ellipse 60% 50% at 50% 0%, rgba(117,228,255,0.07) 0%, transparent 70%)",
-					}}
-				/>
+			<div className="py-16 px-6 text-center">
 				<FadeInSection className="animate-fade-down">
 					<p className="text-xs font-semibold tracking-[0.3em] uppercase text-dark-primary mb-3">
 						Code Coogs Leadership

@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Layout from "./common/Layout";
 
 import Events from "./events/Events";
+import PastEvents from "./events/PastEvents";
 import Home from "./home/Home";
 import Legal from "./legal/Legal";
 import LegalDocument from "./legal/LegalDocument";
@@ -19,6 +20,7 @@ const App = () => {
 				<Routes>
 					<Route path="/" element={<Home />} />
 					<Route path="/events" element={<Events />} />
+					<Route path="/events/past" element={<PastEvents />} />
 					<Route path="/join" element={<Members />} />
 					<Route path="/sponsors" element={<Sponsors />} />
 					<Route path="/opportunities" element={<Opportunities />} />
