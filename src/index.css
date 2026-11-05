@@ -13,6 +13,8 @@
 
 /* ── Modern scrollbar (applied app-wide) ─────────────────────── */
 html {
+	/* Keeps the scrollbar's space reserved when scroll is locked (see useScrollLock). */
+	scrollbar-gutter: stable;
 	scrollbar-width: thin;
 	scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
 }
