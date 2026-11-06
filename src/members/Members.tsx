@@ -7,26 +7,11 @@ import { useTitle } from "../common/utils";
 const cn = (...classes: Array<string | false | undefined>) =>
 	classes.filter(Boolean).join(" ");
 
-// One card with the video above the benefits on small screens; from lg up it
-// splits into two cards, benefits on the left and the video on the right.
 const DemoCard = () => (
-	<div className="grid w-full grid-cols-1 overflow-hidden rounded-lg bg-dark-surface-variant ring-1 ring-inset ring-white/[.1] lg:grid-cols-2 lg:items-center lg:gap-6 lg:overflow-visible lg:rounded-none lg:bg-[transparent] lg:ring-0">
-		<div className="flex w-full flex-col items-center justify-center bg-gradient-to-b from-dark-primary/30 via-dark-primary/20 to-transparent p-1 lg:order-2 lg:rounded-lg">
-			<video
-				className="w-full rounded-lg shadow-lg shadow-black/40"
-				autoPlay
-				loop
-				muted
-				playsInline
-			>
-				<source src="/assets/membership-purchase-demo.mp4" type="video/mp4" />
-			</video>
-		</div>
-		<div className="lg:order-1 lg:rounded-lg lg:bg-dark-surface-variant lg:ring-1 lg:ring-inset lg:ring-white/[.1]">
-			<h2 className="mt-8 mb-4 text-center font-bold text-lg lg:mt-6">
-				Benefits
-			</h2>
-			<div className="grid grid-cols-1 gap-2 px-6 pb-6 text-sm md:grid-cols-2 lg:grid-cols-1">
+	<div className="flex w-full flex-col gap-12 lg:flex-row lg:items-center lg:justify-center">
+		<div className="shrink-0 rounded-lg bg-dark-surface-variant p-6 ring-1 ring-inset ring-white/[.1] lg:w-80">
+			<h2 className="mb-4 text-center font-bold text-lg">Benefits</h2>
+			<div className="flex flex-col gap-2 text-sm">
 				{benefits.map((item, index) => (
 					<div
 						key={item}
@@ -41,19 +26,28 @@ const DemoCard = () => (
 				))}
 			</div>
 		</div>
+		<div className="relative isolate min-w-0 lg:w-[42rem]">
+			{/* Soft glow spreading out from behind the video so it blends into the page. */}
+			<div
+				aria-hidden="true"
+				className="absolute -inset-24 -z-10 bg-[radial-gradient(ellipse_closest-side,rgba(117,228,255,0.3)_55%,transparent)] blur-2xl"
+			/>
+			<video
+				className="w-full rounded-lg shadow-lg shadow-black/40"
+				autoPlay
+				loop
+				muted
+				playsInline
+			>
+				<source src="/assets/membership-purchase-demo.mp4" type="video/mp4" />
+			</video>
+		</div>
 	</div>
 );
 
 const JoinCard = () => (
 	<div className="flex h-full flex-col items-center rounded-lg bg-dark-surface p-6 text-center">
-		<img
-			src="/assets/happy-coco.webp"
-			alt="CoCo mascot"
-			className="w-24 h-24 object-contain"
-		/>
-		<h2 className="mt-2 font-bold text-2xl">
-			Get your membership via the CoCo app
-		</h2>
+		<h2 className="font-bold text-2xl">Get your membership via the CoCo app</h2>
 		<a
 			href={appLink}
 			target="_blank"
@@ -126,7 +120,7 @@ const Members = () => {
 	const [openFaq, setOpenFaq] = useState<string | null>(null);
 
 	return (
-		<div className="text-white p-8">
+		<div className="overflow-x-clip text-white p-8">
 			<h1 className="font-extrabold text-3xl md:text-5xl text-center md:mt-8 ">
 				Join a{" "}
 				<span className="text-dark-primary-variant">
@@ -139,9 +133,9 @@ const Members = () => {
 						community
 					</a>
 				</span>{" "}
-				with CoCo
+				of hobbyist programmers
 			</h1>
-			<div className="mx-auto max-w-3xl my-8 flex flex-col gap-6 lg:max-w-6xl">
+			<div className="mx-auto max-w-7xl my-8 flex flex-col gap-6">
 				<DemoCard />
 				<JoinCard />
 			</div>

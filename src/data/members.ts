@@ -3,7 +3,7 @@ export const benefits = [
 	"Resume distribution to sponsors",
 	"ICPC team eligibility",
 	"Up to $250 in project supplies",
-	"Up to $500 in scholarships/prizes",
+	"Up to $5,000 in scholarships/prizes",
 	"Workshop materials access",
 	"Exclusive member events",
 	"Complimentary food at events",

@@ -8,7 +8,7 @@ import { InstagramIcon, LinkedInIcon } from "../home/AboutIcons";
 
 // ─── Department system ────────────────────────────────────────────────────────
 
-type Dept = "president" | "internal" | "external" | "admin";
+type Dept = "president" | "vicePresident" | "internal" | "external" | "admin";
 
 interface DeptMeta {
 	label: string;
@@ -16,17 +16,25 @@ interface DeptMeta {
 
 const DEPTS: Record<Dept, DeptMeta> = {
 	president: { label: "President" },
+	vicePresident: { label: "Vice President" },
 	internal: { label: "Internal" },
 	external: { label: "External" },
 	admin: { label: "Administration" },
 };
 
 // Dept ordering for section display
-const DEPT_ORDER: Dept[] = ["president", "admin", "internal", "external"];
+const DEPT_ORDER: Dept[] = [
+	"president",
+	"vicePresident",
+	"admin",
+	"internal",
+	"external",
+];
 
 const getDept = (position: string): Dept => {
 	const p = position.toLowerCase();
 	if (/president/.test(p)) return "president";
+	if (/\b(vp)\b/.test(p)) return "vicePresident";
 	if (/\b(internal|software|team|workshop|competition)\b/.test(p))
 		return "internal";
 	if (
@@ -175,6 +183,25 @@ const DeptSection = ({
 							/>
 						))}
 					</div>
+				</div>
+			) : dept === "vicePresident" ? (
+				<div className="flex flex-row justify-center gap-10">
+					{filtered.map((officer) => (
+						<div
+							key={officer.name}
+							className="w-full sm:w-1/3 md:w-1/4 lg:w-1/5"
+						>
+							<OfficerCard
+								name={officer.name}
+								position={officer.position}
+								photo={officer.photo}
+								video={officer.video}
+								socials={officer.socials}
+								retired={officer.retired}
+								semester={semester}
+							/>
+						</div>
+					))}
 				</div>
 			) : (
 				<div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
