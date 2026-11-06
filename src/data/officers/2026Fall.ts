@@ -6,7 +6,6 @@ const officers2026Fall = [
 			linkedin: "https://www.linkedin.com/in/jonathan-cummins-58b326278/",
 		},
 	},
-
 	{
 		name: "Evan Fraustro",
 		position: "VP of Internal Relations",
@@ -15,18 +14,17 @@ const officers2026Fall = [
 		},
 	},
 	{
-		name: "Israel Trejo",
-		position: "VP of Administration",
-
+		name: "Amna Ahmed",
+		position: "VP of External Relations",
 		socials: {
-			linkedin: "https://www.linkedin.com/in/israel-trejo-2863a8226/",
+			linkedin: "https://www.linkedin.com/in/",
 		},
 	},
 	{
-		name: "Faiza Sachwani",
-		position: "Marketing Director",
+		name: "Reyna Obregon",
+		position: "VP of Administration",
 		socials: {
-			linkedin: "https://www.linkedin.com/in/faiza-sachwani-180542297/",
+			linkedin: "https://www.linkedin.com/in/reyna-obregon-8779322a8/",
 		},
 	},
 	{
@@ -37,73 +35,129 @@ const officers2026Fall = [
 		},
 	},
 	{
-		name: "Andrew",
+		name: "Sadie Bell",
+		position: "Marketing Director",
+		socials: {
+			linkedin: "https://www.linkedin.com/in/",
+		},
+	},
+	{
+		name: "Arham Faheem",
 		position: "Activities Officer",
 		socials: {
 			linkedin: "https://www.linkedin.com/in/",
 		},
 	},
 	{
-		name: "Reyna Obregon",
-		position: "Teams Manager",
-		socials: {
-			linkedin: "https://www.linkedin.com/in/reyna-obregon-8779322a8/",
-		},
-	},
-	{
-		name: "Jonathon Robin",
-		position: "Teams Manager",
-		socials: {
-			linkedin: "https://www.linkedin.com/in/jonathan-joseph-robin/",
-		},
-	},
-	{
-		name: "Melisa Unlu",
-		position: "Workshop Officer",
-		socials: {
-			linkedin: "https://www.linkedin.com/in/melisa-unlu-035726159/",
-		},
-	},
-	{
-		name: "Mirha",
-		position: "Workshop Officer",
+		name: "Janna Ali",
+		position: "Artist",
 		socials: {
 			linkedin: "https://www.linkedin.com/in/",
 		},
 	},
 	{
-		name: "Bill Le",
-		position: "Software Developer",
-		socials: {
-			linkedin: "https://www.linkedin.com/in/phuocvinhle/",
-		},
-	},
-	{
-		name: "Nick Russel",
-		position: "Corporate Relations",
-		socials: {
-			linkedin: "https://www.linkedin.com/in/-nickjrussell/",
-		},
-	},
-	{
-		name: "Amna",
-		position: "Academic Relation Officer",
+		name: "Truc Le",
+		position: "Events Logistics Officer",
 		socials: {
 			linkedin: "https://www.linkedin.com/in/",
 		},
 	},
 	{
-		name: "Alesha",
-		position: "Public Relations Officer",
+		name: "Adeena Shah",
+		position: "Marketing Officer",
+		socials: {
+			linkedin: "https://www.linkedin.com/in/",
+		},
+	},
+	{
+		name: "Alesha Shahid",
+		position: "Marketing Officer",
 		socials: {
 			linkedin: "https://www.linkedin.com/in/aleshashahid/",
 		},
 	},
 	{
-		name: "Anne",
-		position: "Artist",
+		name: "Jordan Saint-Fort",
+		position: "Corporate Relation Officer",
 		socials: {
 			linkedin: "https://www.linkedin.com/in/",
+		},
+	},
+	{
+		name: "Andy Dao",
+		position: "Competitions Director",
+		socials: {
+			linkedin: "https://www.linkedin.com/in/andy-h-dao/",
+		},
+	},
+	{
+		name: "Jeric Panugaling",
+		position: "Competitions Officer",
+		socials: {
+			linkedin: "https://www.linkedin.com/in/",
+		},
+	},
+	{
+		name: "Jonathan Robin",
+		position: "Teams Director",
+		socials: {
+			linkedin: "https://www.linkedin.com/in/jonathan-joseph-robin/",
+		},
+	},
+	{
+		name: "Evan Duncan",
+		position: "Team Manager",
+		socials: {
+			linkedin: "https://www.linkedin.com/in/",
+		},
+	},
+	{
+		name: "Aaron Ramos",
+		position: "Team Manager",
+		socials: {
+			linkedin: "https://www.linkedin.com/in/",
+		},
+	},
+	{
+		name: "Bin Nguyen",
+		position: "Team Manager",
+		socials: {
+			linkedin: "https://www.linkedin.com/in/",
+		},
+	},
+	{
+		name: "Mirha Batool",
+		position: "Workshops Director",
+		socials: {
+			linkedin: "https://www.linkedin.com/in/",
+		},
+	},
+	{
+		name: "Abdulrahman Ibrahim",
+		position: "Workshops Officer",
+		socials: {
+			linkedin: "https://www.linkedin.com/in/",
+		},
+	},
+	{
+		name: "Abeeha Haider",
+		position: "Workshops Officer",
+		socials: {
+			linkedin: "https://www.linkedin.com/in/",
+		},
+	},
+	{
+		name: "Kamsy Ihejika",
+		position: "Software Director",
+		socials: {
+			linkedin: "https://www.linkedin.com/in/kamsy-ihejika/",
+		},
+	},
+	{
+		name: "Bill Le",
+		position: "Software Developement Officer",
+		socials: {
+			linkedin: "https://www.linkedin.com/in/phuocvinhle/",
 		},
 	},
 ];
